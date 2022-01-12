@@ -1,0 +1,83 @@
+# Faculty
+- id: mariakakis
+  name: Alex Mariakakis
+  affiliation: CS
+  image: /images/members/alexmariakakis.jpeg
+  website: https://mariakakis.github.io
+  status: prof
+
+# Current PhDs
+- id: blue_lin
+  name: Blue Lin
+  affiliation: CS
+  image: /images/members/bluelin.jpeg
+  website: https://www.bluelin.me/
+  startyear: 2020
+  status: phd_current
+
+- id: dhruv_verma
+  name: Dhruv Verma
+  affiliation: CS
+  image: /images/members/dhruvverma.jpeg
+  website: https://dhruv-verma.com/
+  startyear: 2020
+  status: phd_current
+
+- id: brenna_li
+  name: Brenna Li
+  affiliation: CS
+  image: /images/members/brennali.jpeg
+  website: https://www.linkedin.com/in/brenna-li/
+  startyear: 2020
+  status: phd_current
+
+- id: ken_christofferson
+  name: Ken Christofferson
+  affiliation: CS
+  image: /images/members/kenchristofferson.jpeg
+  website: https://ca.linkedin.com/in/kenneth-christofferson
+  startyear: 2020
+  status: phd_current
+
+- id: sejal_bhalla
+  name: Sejal Bhalla
+  affiliation: CS
+  image: /images/members/sejalbhalla.jpeg
+  website: https://www.linkedin.com/in/sejal-bhalla/
+  startyear: 2020
+  status: phd_current
+
+# Current Masters
+- id: ian_ruffolo
+  name: Ian Ruffolo
+  affiliation: CS
+  image: /images/members/ianruffolo.jpeg
+  website: https://www.linkedin.com/in/ian-ruffolo-7991471aa/
+  startyear: 2020
+  status: master_current
+
+# Current Undergrads
+- id: sixuan_wu
+  name: Sixuan Wu
+  affiliation: CS
+  image: /images/members/sixuanwu.jpeg
+  website: https://www.linkedin.com/in/sixuan-wu-a6b794190/
+  startyear: 2020
+  status: ugrad_current
+
+# Staff
+
+# PhD Alumni
+
+# Masters Alumni
+
+# Undergrad Alumni
+- id: sid_gupta
+  name: Sidharth Gupta
+  affiliation: CS
+  image: /images/members/sidgupta.jpeg
+  website: https://www.linkedin.com/in/sidgupta-99
+  startyear: 2020
+  endyear: 2021
+  newplace: test
+  status: ugrad_alumni

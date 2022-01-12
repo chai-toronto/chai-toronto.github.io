@@ -1,0 +1,33 @@
+---
+layout: page
+title: Getting Involved
+---
+
+<h1>PhD and Masters Students</h1>
+<p>
+  <!-- I am actively looking for motivated people to join my research group. 
+  I enjoy working with people from diverse backgrounds, so I encourage anyone who is interested in working with me to fill out this <a href="https://forms.gle/g4TxzvQcxD4JB8MJ8" target="_blank">Google form</a>. -->
+  Prof. Mariakakis will not be looking at MSc or PhD applications that are submitted during the 2021–2022 academic year.
+</p>
+
+<h1>Undergraduate Students</h1>
+<p>
+  At the start of every session (fall semester, winter semester, summer break), our group identifies projects that would be significantly accelerated with the help of an undergraduate student. These projects can require a variety of skills: building a smartphone app, building machine learning models, conducting interviews, helping run longitudinal studies, etc. Undergraduate students at various experience levels may be suitable for these positions depending on the project's timeline and the skills that are already on hand. The list below describes the positions that are available for the current semester, but note that all applicants will be considered for all positions:
+</p>
+
+<dl class="row">
+{% for project in site.data.ugrad_projects %}
+<dt class="col-sm-2"><b>{{ project.name }}</b></dt>
+<dd class="col-sm-9">
+  {% for role in project.roles %}
+    <p>{{ role }}</p>
+  {% endfor %}
+</dd>
+{% endfor %}
+</dl>
+<br/>
+
+<p>
+  If you are interested in any of the projects listed above, please fill out this <a href="https://forms.gle/AFSkKoxB1eQUgzvp6" target="_blank">Google form</a>. Note that we will only consider students from the University of Toronto at this time. Students may engage with us as either a volunteer or for course credit (e.g., CSC494).
+</p>
+<!-- <h2>High School Students</h2> -->

@@ -1,0 +1,13 @@
+---
+layout: page
+title: Alumni
+---
+
+{% assign sorted_members = site.data.members | sort: 'id' %}
+{% assign phd_alumni = sorted_members | where:"status","phd_alumni" %}
+{% assign master_alumni = sorted_members | where:"status","master_alumni" %}
+{% assign ugrad_alumni = sorted_members | where:"status","ugrad_alumni" %}
+
+{% include people_icon_grid.html people=phd_alumni title="PhD Alumni" is_alum=true %}
+{% include people_name_grid.html people=masters_alumni title="Masters Alumni" is_alum=true %}
+{% include people_name_grid.html people=ugrad_alumni title="Undergraduate Alumni" is_alum=true %}

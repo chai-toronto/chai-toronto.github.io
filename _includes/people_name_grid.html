@@ -1,0 +1,30 @@
+{% capture people_grid %}
+{% if include.people.size > 0 %}
+<h1>{{ include.title }}</h1>
+<div class="row">
+{% for member in include.people %}
+  <div class="member-badge col-md-2 col-sm-3 col-xs-4">
+    <div class="details">
+      <div class="name">
+        {% if member.website == nil %}
+          {{ member.name }}
+        {% else %}
+          <a href="{{ member.website }}">{{ member.name }}</a>
+        {% endif %}
+      </div>
+      {% if include.is_alum == true %}
+        <div class="year">
+          {{ member.startyear }} – {{ member.endyear }}
+        </div>
+        <div class="place">
+          {{ member.newplace }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endfor %}
+</div>
+{% endif %}
+{% endcapture %}
+  
+{{ people_grid }}

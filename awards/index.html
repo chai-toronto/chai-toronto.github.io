@@ -1,0 +1,35 @@
+---
+layout: page
+title: Awards
+---
+
+{% assign sorted_awards = site.data.awards | sort: 'date' %}
+{% assign sorted_fellowships = site.data.fellowships | sort: 'date' %}
+{% assign sorted_pubs = site.publications | sort: 'date' | where_exp:"pub","pub.award.size > 0 " %}
+
+<!-- Awards -->
+<h1>Awards and Distinctions</h1>
+{% for award in sorted_awards %}
+  <b>{{ award.award }}</b>: {% include award_list.html winners=award.winners %} <br/>
+{% endfor %}
+<br/>
+
+<!-- Fellowships -->        
+<h1>Student Fellowships</h1>
+{% for award in sorted_fellowships %}
+  <b>{{ award.award }}</b>: {% include award_list.html winners=award.winners %} <br/>
+{% endfor %}
+
+<!-- Best Papers -->
+<!-- <h1>Best Paper / Honorable Mention Awards</h1>
+{% for pub in sorted_pubs reversed %}
+<div class="row publication-badge">
+  <div class="publication-info col-md-10 col-sm-9 col-xs-12">
+    <a href="{{ pub.url }}"><b>{{ pub.title }}</b></a>
+    <p>{% include author_list.html authors=pub.authors %}<br />
+      <i>{{ pub.conference }}</i>{% if pub.award %}, <font color="red">{{ pub.award }}</font>{% endif %}
+      <br/>
+    </p>
+  </div>
+</div>
+{% endfor %} -->
