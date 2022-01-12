@@ -1,6 +1,6 @@
 ## Table of Contents
-- **[Updating profile](updating-your-profile)**: `_data/members.yml`
-- **[Adding publications](adding-a-publication)**: `_publications/paper_name.yml`
+- **[Updating profile](#updating-your-profile)**: `_data/members.yml`
+- **[Adding publications](#adding-a-publication)**: `_publications/paper_name.yml`
 
 ## Updating Your Profile
 #### Edit Metadata
