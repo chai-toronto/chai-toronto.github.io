@@ -1,0 +1,25 @@
+<!-- Compute number of items to show -->
+{% assign sorted_news = site.data.news | sort: 'date' | reverse %}
+{% if include.num_items == -1 %}
+  {% assign num_items = sorted_news.size %}
+{% else %}
+  {% assign num_items = include.num_items %}
+{% endif %}
+
+<!-- Generate the news list -->
+{% capture news_list %}
+<ul>
+{% for news in sorted_news limit:num_items %}
+  <li>
+    {{ news.date | date: '%B %d, %Y' }}:
+    {% if news.url == nil %}
+    {{ news.blurb }}
+    {% else %}
+    <a href="{{ news.url }}">{{ news.blurb }}</a>
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>
+{% endcapture %}
+  
+{{ news_list }}

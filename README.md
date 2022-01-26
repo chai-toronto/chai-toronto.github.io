@@ -1,6 +1,8 @@
 ## Table of Contents
-- **[Updating profile](#updating-your-profile)**: `_data/members.yml`
-- **[Adding publications](#adding-a-publication)**: `_publications/paper_name.yml`
+- **[Updating your profile](#updating-your-profile)**: `_data/members.yml`
+- **[Adding a publication](#adding-a-publication)**: `_publications/paper_name.yml`
+- **[Local development](#local-development)**
+- **[Updating the backend](#updating-the-backend)**
 
 ## Updating Your Profile
 #### Edit Metadata
@@ -41,10 +43,25 @@ Create a new file in `_publications/`. I recommend copying an existing file (suc
 If your paper is published by the ACM, you can create most of this metadata automatically using `resources/process_bibtex.py`. Edit the BibTeX at the end of the file and run it. It will download the PDF and create the markdown file for you.
 
 ## Local Development
-
-1. Install Ruby if not already installed (installed by default on OS X). On Windows, use http://rubyinstaller.org/. On Linux, run `sudo apt-get install ruby-full`. This should come with the gem package manager.
+1. Install Ruby if it is not already on your machine.
+	* Mac: Ruby is installed by default, but you may choose to update it using Homebrew or RVM. 
+	* Windows: use http://rubyinstaller.org/. 
+	* Linux: run `sudo apt-get install ruby-full`.
 2. Install Jekyll and plug-ins in one fell swoop. `gem install github-pages` (OS X users may need to `sudo gem install github-pages`) This mirrors the plug-ins used by GitHub Pages on your local machine including Jekyll, Sass, etc.
 3. Clone down your fork `git clone git@github.com:chai-toronto/chai-toronto.github.io.git`
 4. Serve the site and watch for markup/sass changes `jekyll serve`
 5. View your website at http://127.0.0.1:4000/
 6. Commit any changes and push everything to the master branch of your GitHub user repository. GitHub Pages will then rebuild and serve your website.
+
+## Updating the Backend
+This section assumes that you are using MacOS. These instructions may be updated later for other operating systems.
+
+#### npm
+1. Run `npm install -g npm@latest`
+
+#### Bower:
+1. Run `npm i -g bower`
+
+#### Bootstrap:
+1. Change the version number in `bower.json`
+2. Run `bower install`

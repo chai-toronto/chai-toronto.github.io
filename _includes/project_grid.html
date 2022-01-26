@@ -1,0 +1,36 @@
+<!-- Compute grid dimensions -->
+{% assign md_width = 12 | divided_by: include.md_columns %}
+{% assign sm_width = 12 | divided_by: include.sm_columns %}
+{% assign xs_width = 12 | divided_by: include.xs_columns %}
+{% capture badge_class %}col-md-{{ md_width }} coll-sm-{{ sm_width }} col-xs-{{ xs_width }}{% endcapture %}
+
+<!-- Generate the grid -->
+{% capture project_grid %}
+<div class="row">
+  <h1>{{ include.title }}</h1>
+  <p>{{ include.description }}</p>
+
+  {% for project in include.projects %}
+    <div class="project-badge {{ badge_class }}">
+      <!-- Image -->
+      <div class="project-pic">
+        <img src="{{ project.thumbnail }}"/>
+      </div>
+
+      <div class="details">
+        <!-- Title -->
+        <div class="title">{{ project.title }}</div>
+
+        <!-- Lead(s) -->
+        Project Lead: {% include author_list.html authors=project.lead %}
+        <br/>
+
+        <!-- Description -->
+        <p>{{ project.description }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endcapture %}
+  
+{{ project_grid }}

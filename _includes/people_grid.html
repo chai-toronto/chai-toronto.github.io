@@ -1,0 +1,61 @@
+<!-- Compute grid dimensions -->
+{% assign md_width = 12 | divided_by: include.md_columns %}
+{% assign sm_width = 12 | divided_by: include.sm_columns %}
+{% assign xs_width = 12 | divided_by: include.xs_columns %}
+{% capture badge_class %}col-md-{{ md_width }} coll-sm-{{ sm_width }} col-xs-{{ xs_width }}{% endcapture %}
+
+{% assign years = include.people | group_by: "startyear" %}
+{% assign years_sorted = years | sort: "name" %}
+
+<!-- Generate the grid -->
+{% capture people_grid %}
+{% if include.people.size > 0 %}
+<div class="row">
+<h1>{{ include.title }}</h1>
+
+{% for year in years_sorted %}
+  {% assign members = year.items | sort: "name" %}
+  {% for member in members %}
+    <div class="member-badge {{ badge_class }}">
+      <!-- Image -->
+      {% if include.image %}
+        {% if member.website != nil %}<a href="{{ member.website }}">{% endif %}
+          <img alt="{{ member.id }}" src="{{ member.image }}"/>
+        {% if member.website != nil %}</a>{% endif %}
+      {% endif %}
+
+      <div class="details">
+        <!-- Name -->
+        <div class="name">
+          {% if member.website == nil %}
+            {{ member.name }}
+          {% else %}
+            <a href="{{ member.website }}">{{ member.name }}</a>
+          {% endif %}
+        </div>
+
+        <!-- Degree and Years -->
+        <div class="year">
+          {{ member.degree }},
+          {% if include.is_alum == true %}
+            {{ member.startyear }} – {{ member.endyear }}
+          {% else %}
+            {{ member.startyear }} – 
+          {% endif %}
+        </div>
+
+        <!-- Alum Destination -->
+        {% if include.is_alum == true and (member.degree == 'PhD' or member.degree == 'MSc') %}
+          <div class="place">
+            Current Position: {{ member.newplace }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+{% endfor %}
+</div>
+{% endif %}
+{% endcapture %}
+  
+{{ people_grid }}

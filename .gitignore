@@ -10,3 +10,4 @@ package.json
 resources/files
 resources/pdfs
 .idea/
+.package-lock.json

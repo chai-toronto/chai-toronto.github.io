@@ -2,82 +2,91 @@
 layout: default
 
 ---
-
-{% assign sorted_news = site.data.news | sort: 'date' | reverse %}
-
 <div class="row">
-  <div class="col-md-8 col-md-offset-2">
-  <ul class="bxslider">
-    <li><a href="{{site.base_url}}/pdfs/lab/ubicomplab-flyer.pdf"><img src="{{site.base_url}}/images/slider/poster_banner_new.png" title=""/></a></li>
-    <li><a href="{{site.base_url}}/publications/hemaapp"><img src="{{site.base_url}}/images/slider/hemaapp.png" title="HemaApp screens for anemia and other blood conditions using the camera on a smartphone. "/></a></li>
-    <li><a href="{{site.base_url}}/publications/bilicam"><img src="{{site.base_url}}/images/slider/bilicam.jpg" title="BiliCam uses a smartphone to screen newborns for jaundice."/></a></li>
-  </ul>
+  <div class="carousel fade-carousel slide" id="main-carousel" data-ride="carousel" data-interval="5000">
+
+    <div class="carousel-inner">
+      <div class="carousel-overlay">
+        <div class="container">
+          <div class="text-center bg-transparent">
+            <div class="carousel-text">
+              <img src="{{ site.baseurl }}/images/chai_logo.png" alt="The Computational Health and Interaction lab logo">
+              <h1>The Computational Health and Interaction (CHAI) lab uses ubiquitous and emergent technologies to address problems related to people’s health and wellbeing.</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item slides active">
+        <img src="/images/slider/bilicam.jpg" alt="Alt text">
+      </div>
+      <div class="item slides">
+        <img src="/images/slider/poster_banner.png" alt="Alt text">
+      </div>
+      <div class="item slides">
+        <img src="/images/projects/chatbot.jpeg" alt="Alt text">
+      </div>
+    </div> 
   </div>
+
 </div>
 
-<script>
-$(document).ready(function(){
+<br  />
 
-  $('.bxslider').bxSlider({
-    adaptiveHeight: false,
-    speed: 500,
-    captions: true,
-    auto: true,
-    pause: 5000,
-    autoControls: true
-    });
-});
-</script>
-
-<div class="row">
-  <div class="col-xs-8 text-justify">
-The Computational Health and Interaction (CHAI) lab is led by Prof. Alex Mariakakis in the Department of Computer Science at the University of Toronto. Our main research focuses on using ubiquitous and emergent technologies (e.g., smartphones, wearables, virtual reality) to address problems related to people’s health and wellbeing. We investigate research questions from multiple perspectives — hardware, software, design, and human factors — using our diverse expertise in machine learning, computer vision, signal processing, and user-centered design. We both develop new sensing technologies for measuring physiological, behavioral, and contextual health indicators and also take the time to understand the implications of these technologies in people’s hands. We proactively engage relevant stakeholders to ensure that our designs are sensitive to the needs of their potential users. As such, we frequently collaborate with academics, clinicians, global health organizations, special interest groups, and industrial collaborators.
-  </div>
-
-  <div class="col-md-4 news">
-    <h2>News</h2>
-    <ul>
-    {% for news in sorted_news limit:5 %}
-      <li><div class="date">{{ news.date | date: '%B %d, %Y' }}:</div>
-        <div class="blurb">
-          {% if news.url == nil %}
-          {{ news.blurb }}
-          {% else %}
-          <a href="{{ news.url }}">{{ news.blurb }}</a>
-          {% endif %}
-          </div></li>
-    {% endfor %}
-    </ul>
-    <a href="{{site.base_url}}/news/">(More news...)</a>
-  </div>
-</div>
-
-<!-- Get arrays -->
+<!-- PEOPLE -->
 {% assign sorted_members = site.data.members | sort: 'id' %}
-{% assign faculty = sorted_members | where:"status","prof" %}
-{% assign alex = faculty | first %}
-{% assign phds = sorted_members | where:"status","phd_current" %}
-{% assign masters = sorted_members | where:"status","master_current" %}
-{% assign ugrads = sorted_members | where:"status","ugrad_current" %}
-{% assign staff = sorted_members | where:"status","staff" %}
-{% assign visiting = sorted_members | where:"status","visiting" %}
-
-<!-- Faculty -->
-{% assign member = alex %}
-<h1>Faculty</h1>
 <div class="row">
-  <div class="member-badge col-md-2 col-sm-3 col-xs-4">
-    <div class="image">{% if member.website != nil %}<a href="{{ member.website }}">{% endif %}<img src="{{site.url}}{{member.image}}"/>{% if member.website != nil %}</a>{% endif %}</div>
-  </div>
-  <div class="member-badge col-md-10 col-sm-9 col-xs-8">
-    <div class="details">
-      <div class="name">{% if member.website == nil %}{{ member.name }}{% else %}<a href="{{ member.website }}">{{ member.name }}</a>{% endif %}</div>
-      <div class="affiliation text-justify">Alex Mariakakis is an Assistant Professor in the Department of Computer Science at the University of Toronto and an Affiliate Scientist at Techna. He received his Ph.D. in Computer Science and Engineering at the University of Washington. Alex's work is published in top-tier venues in his field, including CHI and IMWUT. His work has also been featured by many media outlets (e.g., BBC, National Geographic, and USA Today). Alex is a recipient of the National Science Foundation Graduation Research Fellowship, the Qualcomm Innovation Fellowship, and the Gaetano Borriello Outstanding Student Award at UbiComp 2018.</div>
+  <div class="col-md-8 text-justify">
+
+    <!-- Faculty -->
+    <div class="row">
+      {% assign faculty = sorted_members | where:"degree", "prof" %}
+      {% assign alex = faculty | first %}
+      {% assign member = alex %}
+      <h1>Faculty</h1>
+      <div class="row">
+        <div class="member-badge col-md-3 col-sm-4">
+          <div class="image"><a href="{{ member.website }}"><img src="{{site.url}}{{member.image}}"/></a></div>
+        </div>
+        <div class="member-badge col-md-9 col-sm-8">
+          <div class="details">
+            <div class="name" style="text-align: left;"><a href="{{ member.website }}">{{ member.name }}</a></div>
+          </div>
+          <div class="text-justify">Alex Mariakakis is an Assistant Professor in the Department of Computer Science at the University of Toronto and an Affiliate Scientist at Techna. He received his Ph.D. in Computer Science and Engineering at the University of Washington. Alex's work is published in top-tier venues in his field, including CHI and IMWUT. His work has also been featured by many media outlets (e.g., BBC, National Geographic, and USA Today). Alex is a recipient of the National Science Foundation Graduation Research Fellowship, the Qualcomm Innovation Fellowship, and the Gaetano Borriello Outstanding Student Award at UbiComp 2018.</div>
+        </div>
+      </div>
     </div>
+
+    <!-- Current students-->
+    {% assign current_members = sorted_members | where:"status", "current" %}
+    {% assign phds = current_members | where:"degree", "PhD" %}
+    {% assign masters = current_members | where:"degree", "MSc" %}
+    {% assign ugrads = current_members | where:"degree", "BS" %}
+
+    {% include people_grid.html 
+    people=phds title="PhD Students" is_alum=false image=true
+    md_columns=4 sm_columns=4 xs_columns=4
+    %}
+
+    {% include people_grid.html 
+    people=masters title="Masters Students" is_alum=false image=true
+    md_columns=4 sm_columns=4 xs_columns=4 
+    %}
+    
+    {% include people_grid.html 
+    people=ugrads title="Undergraduate Students" is_alum=false image=true
+    md_columns=4 sm_columns=4 xs_columns=4 
+    %}
+  </div>
+
+  <div class="col-md-4">
+    <!-- NEWS -->
+    <h1>News</h1>
+    {% include news_list.html num_items=5 %}
+    <a href="{{ site.base_url }}/news/">(More news...)</a>
+
+    <!-- RECENT PAPERS -->
+    <h1>Recent Publications</h1>
+    {% include publication_short_list.html num_items=5 %}
+    <a href="{{ site.base_url }}/publications/">(More publications...)</a>
   </div>
 </div>
-
-{% include people_icon_grid.html people=phds title="PhD Students" is_alum=false %}
-{% include people_icon_grid.html people=masters title="Masters Students" is_alum=false %}
-{% include people_icon_grid.html people=ugrads title="Undergraduate Students" is_alum=false %}
-{% include people_icon_grid.html people=staff title="Staff" is_alum=false %}

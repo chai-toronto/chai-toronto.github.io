@@ -19,12 +19,13 @@ code {
 }
 
 .publication-badge {
+  font-size: 15px;
+  
   margin-bottom: 5px;
   .glyphicon-file {
     color: #980000;
   }
 
-  font-size: 15px;
   .publication-pic {
     max-width: 300px;
     a {
@@ -36,7 +37,6 @@ code {
       @media (min-width: 768px){
       }
       img {
-
         width: 100%;
         vertical-align: middle;
         position: absolute;
