@@ -20,7 +20,7 @@
       <!-- Image -->
       {% if include.image %}
         {% if member.website != nil %}<a href="{{ member.website }}">{% endif %}
-          <img alt="{{ member.id }}" src="{{ member.image }}"/>
+          <img src="{{ member.image }}" alt="{{ member.id }}"/>
         {% if member.website != nil %}</a>{% endif %}
       {% endif %}
 

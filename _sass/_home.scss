@@ -13,11 +13,10 @@
 }
 .fade-carousel .slides {
   img {
-    height: 100%;
     width: 100%;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
   }
 }
 
@@ -33,10 +32,10 @@
 }
 .carousel-text {
   position: absolute;
-  top: 35%;
+  top: 45%;
   left: 50%;
   background: rgba(0, 0, 0, 0);
-  transform: translate(-50%,-35%);
+  transform: translate(-50%,-50%);
   h1 {
     font-size: 20px;
     color: $white;

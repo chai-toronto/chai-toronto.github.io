@@ -1,20 +1,16 @@
 .project-badge {
   display: block;
-  margin-bottom: 20px;
 
   .project-pic {
     max-width: 100%;
     display: block;
     position: relative;
-    padding-bottom: 56.25%;
     overflow: hidden;
-    margin-bottom: 15px;
     img {
       width: 100%;
-      vertical-align: middle;
-      position: absolute;
-      top: 0px;
-      left: 0px;
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
     }
   }
 
