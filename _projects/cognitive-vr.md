@@ -2,6 +2,6 @@
 title: 'Virtual Reality for Cognitive Exams'
 lead: blue_lin
 thumbnail: /images/projects/cognitive-vr.jpeg
-category: 'passive'
-description: 'This project aims to translate and improve upon traditional cognitive assessments using virtual reality.'
+category: passive
+description: To improve upon traditional paper-based cognitive assessments like the Flanker test with virtual reality.
 ---

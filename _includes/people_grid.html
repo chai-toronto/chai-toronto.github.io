@@ -2,7 +2,7 @@
 {% assign md_width = 12 | divided_by: include.md_columns %}
 {% assign sm_width = 12 | divided_by: include.sm_columns %}
 {% assign xs_width = 12 | divided_by: include.xs_columns %}
-{% capture badge_class %}col-md-{{ md_width }} coll-sm-{{ sm_width }} col-xs-{{ xs_width }}{% endcapture %}
+{% capture badge_class %}col-md-{{ md_width }} col-sm-{{ sm_width }} col-xs-{{ xs_width }}{% endcapture %}
 
 {% assign years = include.people | group_by: "startyear" %}
 {% assign years_sorted = years | sort: "name" %}
@@ -24,9 +24,9 @@
         {% if member.website != nil %}</a>{% endif %}
       {% endif %}
 
-      <div class="details">
+      <div class="member-details">
         <!-- Name -->
-        <div class="name">
+        <div class="member-name">
           {% if member.website == nil %}
             {{ member.name }}
           {% else %}
@@ -35,18 +35,18 @@
         </div>
 
         <!-- Degree and Years -->
-        <div class="year">
+        <div class="member-year">
           {{ member.degree }},
           {% if include.is_alum == true %}
             {{ member.startyear }} – {{ member.endyear }}
           {% else %}
-            {{ member.startyear }} – 
+            {{ member.startyear }} – present
           {% endif %}
         </div>
 
         <!-- Alum Destination -->
         {% if include.is_alum == true and (member.degree == 'PhD' or member.degree == 'MSc') %}
-          <div class="place">
+          <div class="member-place">
             Current Position: {{ member.newplace }}
           </div>
         {% endif %}

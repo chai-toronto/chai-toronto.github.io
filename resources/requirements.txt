@@ -1,7 +1,0 @@
-bibtexparser
-python-slugify
-python-frontmatter
-pyyaml
-pylev
-requests
-beautifulsoup4

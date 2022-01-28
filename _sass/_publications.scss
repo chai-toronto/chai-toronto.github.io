@@ -7,7 +7,7 @@
   display: block;
   small {
     p {
-    line-height: 1.2;
+      line-height: 1.2;
     }
   }
 }
@@ -56,18 +56,10 @@ code {
     margin-top: 0px;
     margin-bottom: 2px;
     font-size: 15px;
-    font-family: $avenirHeavy;
-  }
-
-  .btn {
-    //width: 70px;
-    //margin-top: 5px;
-    //text-align:left;
   }
 
   .award {
     color: #c70000;
-    font-family: $avenirHeavy;
   }
   .to-appear {
     color: rgb(13, 95, 180);

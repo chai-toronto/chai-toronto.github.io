@@ -32,7 +32,7 @@ title: Awards and Alumni
       <div class="publication-info col-md-10 col-sm-9 col-xs-12">
         <a href="{{ pub.url }}"><b>{{ pub.title }}</b></a>
         <p>{% include author_list.html authors=pub.authors %}<br />
-          <i>{{ pub.conference }}</i>{% if pub.award %}, <font color="red">{{ pub.award }}</font>{% endif %}
+          <i>{{ pub.venue }}</i>{% if pub.award %}, <font color="red">{{ pub.award }}</font>{% endif %}
           <br/>
         </p>
       </div>

@@ -1,16 +1,6 @@
 .project-badge {
   display: block;
-  margin-bottom: 30px;
-  
-  .details {
-    font-size: 12pt;
-    text-align: center;
-    word-break: keep-all;
-    .title {
-      font-size: 16pt;
-      display: block;
-    }
-  }
+  margin-bottom: 20px;
 
   .project-pic {
     max-width: 100%;
@@ -25,6 +15,22 @@
       position: absolute;
       top: 0px;
       left: 0px;
+    }
+  }
+
+  .project-details {
+    font-size: 12pt;
+    text-align: center;
+    word-break: keep-all;
+    .project-title {
+      font-size: 16pt;
+      display: block;
+    }
+    .project-lead {
+      margin-top: 5px;
+    }
+    .project-goal {
+      margin-top: 5px;
     }
   }
 }

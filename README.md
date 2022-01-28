@@ -25,7 +25,6 @@ Create a new file in `_publications/`. I recommend copying an existing file (suc
 - `bibtex`: Copy from the ACM DL, not from Google.
 - `caption`: This will go under the image on the project detail page.
 - `citation`: Copy from the ACM DL, not from Google.
-- `conference`: This should be in the format: ACM International Joint Conference on Pervasive and Ubiquitous Computing (UbiComp), 2011
 - `date`: Publication/presentation date
 - `image`: Hi res image for the project detail page (accompanies `caption`). Add to `images/pubs/`.
 - `news`: (optional) List of different press releases, which contains
@@ -36,6 +35,7 @@ Create a new file in `_publications/`. I recommend copying an existing file (suc
 - `pdf`: Copy from the ACM DL, not anywhere else.
 - `thumbnail`: Must be 16x9 and 300px wide. Add to `images/pubs/`.
 - `title`: Verbatim paper title
+- `venue`: This should be in the format: ACM International Joint Conference on Pervasive and Ubiquitous Computing (UbiComp), 2011
 - `video`: (optional) Link to external video, such as YouTube or Vimeo.
 - `video_embed`: (optional) HTML embed code for video player
 

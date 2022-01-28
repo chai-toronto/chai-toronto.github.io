@@ -1,35 +1,26 @@
-
 //
-// VARIABLES
+// COLORS
 //
 
-// Colors
+// School colors
+$torontoBlue: #00204e;
+$torontoRed: #bb133e;
+$white: #fff;
+
+// Other colors
 $blue: #4183C4;
-
-// Grays
 $black: #000;
 $darkerGray: #222;
 $darkGray: #333;
 $gray: #666;
 $lightGray: #eee;
-$white: #fff;
 
-@font-face {
-    font-family: "Avenir";
-    src: url("fonts/Avenir-Medium.woff") format('woff');
-}
-@font-face {
-    font-family: "AvenirHeavy";
-    src: url("fonts/Avenir-Heavy.woff") format('woff');
-}
+//
+// FONTS
+//
 
-
-// Font stacks
-$avenir: Avenir, Helvetica, Arial;
-$avenirHeavy: AvenirHeavy, Helvetica, Arial;
-$helvetica: Helvetica, Arial, sans-serif;
-$helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$georgia: Georgia, serif;
+// Stacks
+$lato: 'Lato', sans-serif;
 $opensans: 'Open Sans', sans-serif;
 
 // Mobile breakpoints
@@ -38,8 +29,6 @@ $opensans: 'Open Sans', sans-serif;
     @content;
   }
 }
-
-
 
 // Extra small screen / phone
 //** Deprecated `$screen-xs` as of v3.0.1

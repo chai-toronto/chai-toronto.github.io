@@ -29,7 +29,7 @@
   </head>
 
   <body>
-
+    <!-- NAVBAR -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -53,16 +53,44 @@
         </div>
       </div>
     </nav>
+
+    <!-- CAROUSEL -->
+    {% if page.title == "Home" %}
+      <div class="carousel fade-carousel slide" id="main-carousel" data-ride="carousel" data-interval="5000">
+        <div class="carousel-inner">
+          <!-- Overlay -->
+          <div class="carousel-overlay">
+            <div class="container">
+              <div class="text-center bg-transparent">
+                <div class="carousel-text">
+                  <img src="{{ site.baseurl }}/images/chai_logo.png" alt="Logo for the Computational Health and Interaction lab">
+                  <h1>The Computational Health and Interaction (CHAI) lab uses ubiquitous and emergent technologies to address problems related to people’s health and wellbeing.</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slides -->
+          <div class="item slides active">
+            <img src="/images/slider/bilicam.jpg" alt="Alt text">
+          </div>
+          <div class="item slides">
+            <img src="/images/slider/poster_banner.png" alt="Alt text">
+          </div>
+          <div class="item slides">
+            <img src="/images/projects/chatbot.jpeg" alt="Alt text">
+          </div>
+        </div> 
+      </div>
+    {% endif %}
     
-    <div id="main" role="main" class="container" style="padding-top:80px">
+    <div id="main" role="main" class="container">
       {{ content }}
     </div>
 
     <div class="wrapper-footer container">
       <footer class="footer">
         <div class="row">
-          <div class="col-xs-6 text-left"><a href="https://cs.toronto.edu" target="_blank"><img src="{{ site.baseurl }}/images/uoft_cs.png"/></a></div>
-          <!-- <div class="col-xs-6 text-center"><a href="http://dub.washington.edu" target="_blank"><img src="{{ site.baseurl }}/images/dub.png"/></a></div> -->
+          <div class="col-xs-6 text-left"><a href="https://web.cs.toronto.edu" target="_blank"><img src="{{ site.baseurl }}/images/uoft_cs.png" alt="Logo for the University of Toronto's Department of Computer Science"/></a></div>
         </div>
       </footer>
     </div>
