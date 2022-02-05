@@ -43,7 +43,7 @@ title: Awards and Alumni
 <!-- Alumni -->
 <hr />
 {% assign sorted_members = site.data.members | sort: 'id' %}
-{% assign past_members = sorted_members | where:"status", "alum" %}
+{% assign past_members = sorted_members | where:"active",false %}
 {% assign phd_alumni = past_members | where:"degree", "PhD" %}
 {% assign masters_alumni = past_members | where:"degree", "MSc" %}
 {% assign ugrad_alumni = past_members | where:"degree", "BS" %}

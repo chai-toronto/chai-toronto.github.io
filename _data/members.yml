@@ -5,6 +5,7 @@
   image: /images/members/alexmariakakis.jpeg
   website: https://mariakakis.github.io
   degree: prof
+  active: true
 
 # Current PhDs
 - id: blue_lin
@@ -14,7 +15,7 @@
   website: https://www.bluelin.me/
   startyear: 2021
   degree: PhD
-  status: current
+  active: true
 
 - id: dhruv_verma
   name: Dhruv Verma
@@ -23,7 +24,7 @@
   website: https://dhruv-verma.com/
   startyear: 2021
   degree: PhD
-  status: current
+  active: true
 
 - id: brenna_li
   name: Brenna Li
@@ -32,7 +33,7 @@
   website: https://www.linkedin.com/in/brenna-li/
   startyear: 2018
   degree: PhD
-  status: current
+  active: true
 
 - id: ken_christofferson
   name: Ken Christofferson
@@ -41,7 +42,7 @@
   website: https://ca.linkedin.com/in/kenneth-christofferson
   startyear: 2021
   degree: PhD
-  status: current
+  active: true
 
 - id: sejal_bhalla
   name: Sejal Bhalla
@@ -50,7 +51,7 @@
   website: https://www.linkedin.com/in/sejal-bhalla/
   startyear: 2021
   degree: PhD
-  status: current
+  active: true
 
 # Current Masters
 - id: ian_ruffolo
@@ -60,7 +61,7 @@
   website: https://www.linkedin.com/in/ian-ruffolo-7991471aa/
   startyear: 2021
   degree: MSc
-  status: current
+  active: true
 
 # Current Undergrads
 - id: sixuan_wu
@@ -70,7 +71,7 @@
   website: https://www.linkedin.com/in/sixuan-wu-a6b794190/
   startyear: 2020
   degree: BS
-  status: current
+  active: true
 
 # Staff
 
@@ -87,4 +88,4 @@
   startyear: 2020
   endyear: 2021
   degree: BS
-  status: alum
+  active: false

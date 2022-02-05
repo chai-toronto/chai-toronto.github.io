@@ -27,18 +27,23 @@ title: Home
       </div>
     </div>
 
-    <!-- Current students-->
-    {% assign current_members = sorted_members | where:"status", "current" %}
+    <!-- Get collections, including hack for getting all grads in same collection -->
+    {% assign current_members = sorted_members | where:"active",true %}
     {% assign phds = current_members | where:"degree", "PhD" %}
     {% assign masters = current_members | where:"degree", "MSc" %}
     {% assign ugrads = current_members | where:"degree", "BS" %}
 
-    {% include people_grid.html 
-    people=phds title="PhD Students" is_alum=false image=true
-    %}
+    {% assign grads = "" | split:"/" %}
+    {% for phd in phds %}
+      {% assign grads = grads | push: phd %}
+    {% endfor %}
+    {% for master in masters %}
+      {% assign grads = grads | push: master %}
+    {% endfor %}
+    {% assign grads = grads | sort: 'id' %}
 
     {% include people_grid.html 
-    people=masters title="Masters Students" is_alum=false image=true
+    people=grads title="Graduate Students" is_alum=false image=true
     %}
     
     {% include people_grid.html 
