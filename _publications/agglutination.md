@@ -13,7 +13,7 @@ authors:
 - Teodor Veres
 - Aaron Wheeler
 - mariakakis
-venue: ARDUOUS Workshop, IEEE International Conference on Pervasive Computing and Communications (PerCom), 2022
+venue: ARDUOUS Workshop, $PERCOM$
 date: 2022-03-21
 # pdf: /pdfs/biliscreen.pdf
 image: /images/pubs/agglutination.png

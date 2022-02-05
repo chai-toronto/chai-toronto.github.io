@@ -5,27 +5,32 @@ title: Current Research
 
 <div class="row">
   <h1>Overview</h1>
-  <p>The Computational Health and Interaction (CHAI) lab is led by <a href="https://mariakakis.github.io">Prof. Alex Mariakakis</a> in the <a href="https://cs.toronto.edu/">Department of Computer Science</a> at the <a href="https://www.utoronto.ca/">University of Toronto</a>. Our main research focuses on using ubiquitous and emergent technologies (e.g., smartphones, wearables, virtual reality) to address problems related to people’s health and wellbeing. We investigate research questions from multiple perspectives — hardware, software, design, and human factors — using our diverse expertise in machine learning, computer vision, signal processing, and human-computer interaction. We both develop new sensing technologies for measuring physiological, behavioral, and contextual health indicators and also take the time to understand the implications of these technologies in people’s hands. We proactively engage relevant stakeholders to ensure that our designs are sensitive to the needs of their potential users. As such, we frequently collaborate with academics, clinicians, global health organizations, special interest groups, and industrial collaborators.</p>
+  <p>The Computational Health and Interaction (CHAI) lab is led by <a href="https://mariakakis.github.io">Prof. Alex Mariakakis</a> in the <a href="https://cs.toronto.edu/">Department of Computer Science</a> at the <a href="https://www.utoronto.ca/">University of Toronto</a>. We focus on using ubiquitous and emergent technologies like smartphones, wearables, and virtual reality to address problems related to people’s health and wellbeing. We develop new sensing technologies for measuring physiological, behavioral, and contextual health indicators, and we also take the time to understand the implications of these technologies in people’s hands. We proactively engage relevant stakeholders like clinicians, global health organizations, and industry to ensure that our designs are sensitive to their needs. Our group has expertise in multiple subareas of computer science, particularly machine learning, signal processing, computer vision, and human-computer interaction. We therefore publish our work at various international venues such as <a href="https://dl.acm.org/journal/imwut">IMWUT</a>, <a href="https://dl.acm.org/conference/chi">CHI</a>, and <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?reload=true&punumber=7756">PerCom</a>.</p>
+  <!-- We also publish our work at digital health venues like <a href="https://www.nature.com/npjdigitalmed/">NPJ Digital Medicine</a> and <a href="https://mhealth.jmir.org/">JMIR mHealth & uHealth</a>. -->
 
-  <p>The projects listed below represent just a subset of our group's current work. The categories are loosely defined since our work often spans multiple fields of computer science and engineering. Feel free to reach out to either the project leads or <a href="https://mariakakis.github.io">Prof. Alex Mariakakis</a> to learn more about these projects or any others.</p>
+  <h1>Examples of Ongoing Projects</h1>
+  <p>Our work can be loosely split into three categories: <a href="#active">active sensing</a>, <a href="#passive">passive sensing</a>, and <a href="#design">design</a>. The projects listed below represent just a subset of our group's ongoing projects. For more information, please reach out to either the project leads or <a href="https://mariakakis.github.io">Prof. Alex Mariakakis</a> to learn more about these projects or any others.</p>
 </div>
 
 {% assign sorted_projects = site.projects | sort: 'name' %}
-{% assign passive_projects = sorted_projects | where:"category", "passive" %}
 {% assign active_projects = sorted_projects | where:"category", "active" %}
-{% assign interaction_projects = sorted_projects | where:"category", "interaction" %}
+{% assign passive_projects = sorted_projects | where:"category", "passive" %}
+{% assign design_projects = sorted_projects | where:"category", "design" %}
 
 {% include project_grid.html 
-projects=passive_projects title="Passive Sensing" 
-md_columns=3 sm_columns=3 xs_columns=3 
+projects=active_projects 
+title="Active Sensing" id="active"
+description="These projects involve assessments that require people to perform a particular task in order to learn something about their health."
 %}
 
 {% include project_grid.html 
-projects=active_projects title="Active Sensing" 
-md_columns=3 sm_columns=3 xs_columns=3
+projects=passive_projects 
+title="Passive Sensing" id="passive"
+description="These projects involve the use of sensors to detect and quanitfy indicators of health without requiring direct involvement the people being monitored." 
 %}
 
 {% include project_grid.html 
-projects=interaction_projects title="Human-Computer Interaction" 
-md_columns=3 sm_columns=3 xs_columns=3 
+projects=design_projects 
+title="Design" id="design"
+description="These projects involve people's experiences as they interact with health-related technologies."
 %}

@@ -49,15 +49,16 @@ title: Awards and Alumni
 {% assign ugrad_alumni = past_members | where:"degree", "BS" %}
 
 {% include people_grid.html 
-people=phd_alumni title="PhD Alumni" is_alum=true image=false
-md_columns=6 sm_columns=4 xs_columns=4 
+people=phd_alumni title="PhD Alumni" 
+is_alum=true image=false
 %}
 
 {% include people_grid.html 
-people=masters_alumni title="Masters Alumni" is_alum=true image=false
-md_columns=6 sm_columns=4 xs_columns=4 
+people=masters_alumni title="Masters Alumni" 
+is_alum=true image=false
 %}
 
-{% include people_grid.html people=ugrad_alumni title="Undergraduate Alumni" is_alum=true image=false
-md_columns=6 sm_columns=4 xs_columns=4 
+{% include people_grid.html 
+people=ugrad_alumni title="Undergraduate Alumni" 
+is_alum=true image=false
 %}

@@ -26,7 +26,7 @@ title: Publications
         <span class="authors">{% include author_list.html authors=pub.authors %}</span><br />
 
         <!-- Venue and award -->
-        <i>{% if pub.date > site.time %}<span class="to-appear">To appear in </span>{% endif %}{{ pub.venue }}</i>{% if pub.award %}, <span class="award">{{ pub.award }}</span>{% endif %}<br/>
+        <i>{% if pub.date > site.time %}<span class="to-appear">To appear in </span>{% endif %}{% include conference_extender.html venue=pub.venue %}, {{ this_year }}</i>{% if pub.award %}, <span class="award">{{ pub.award }}</span>{% endif %}<br/>
 
         {% if pub.date <= site.time %}
           <!-- PDF -->

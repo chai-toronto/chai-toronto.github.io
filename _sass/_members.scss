@@ -1,6 +1,23 @@
+@media (max-width: $screen-xs-max){
+.member-badge.col-xs-6:nth-child(2n+1) {
+    clear: both;
+}
+}
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max){
+.member-badge.col-sm-4:nth-child(3n+1) {
+    clear: both;
+}
+}
+@media (min-width: $screen-md-min){
+.member-badge.col-md-3:nth-child(4n+1) {
+    clear: both;
+}
+}
+
 .member-badge {
   display: block;
   margin-bottom: 30px;
+
   img {
     width: 100%;
     border-radius: 50%;

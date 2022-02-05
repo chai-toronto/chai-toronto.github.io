@@ -6,7 +6,7 @@ authors:
 - Zeyu Chang
 - mariakakis
 - Yuntao Wang
-venue: HCCS Workshop, IEEE International Conference on Pervasive Computing and Communications (PerCom), 2022
+venue: HCCS Workshop, $PERCOM$
 date: 2022-03-21
 # pdf: /pdfs/biliscreen.pdf
 image: /images/pubs/sleep_earbuds.jpeg
