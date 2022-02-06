@@ -4,15 +4,11 @@
 - **[Adding a publication](#adding-a-publication)**: `_publications/paper_name.yml`
 
 # Local Development
-1. Install Ruby if it is not already on your machine.
-	* Mac: Ruby is installed by default, but you may choose to update it using Homebrew or RVM. 
-	* Windows: use http://rubyinstaller.org/. 
-	* Linux: run `sudo apt-get install ruby-full`.
-2. Install Jekyll and plug-ins in one fell swoop. `gem install github-pages` (OS X users may need to `sudo gem install github-pages`) This mirrors the plug-ins used by GitHub Pages on your local machine including Jekyll, Sass, etc.
-3. Clone down your fork `git clone git@github.com:chai-toronto/chai-toronto.github.io.git`
-4. Serve the site and watch for markup/sass changes `jekyll serve`
-5. View your website at http://127.0.0.1:4000/
-6. Commit any changes and push everything to the master branch of your GitHub user repository. GitHub Pages will then rebuild and serve your website.
+1. Follow the instructions [here](https://jekyllrb.com/docs/installation/) to install `ruby`, `jekyll`, and `bundler`
+2. Clone down your fork `git clone git@github.com:chai-toronto/chai-toronto.github.io.git`
+3. Serve the site and watch for markup/sass changes `bundle exec jekyll serve`
+4. View your website at http://127.0.0.1:4000/
+5. Commit any changes and push everything to the master branch of your GitHub user repository. GitHub Pages will then rebuild and serve your website.
 
 # Updating Your Profile
 ## Edit Metadata

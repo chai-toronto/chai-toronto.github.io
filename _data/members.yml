@@ -73,6 +73,24 @@
   degree: BS
   active: true
 
+- id: helen_li
+  name: Helen Li
+  affiliation: CS
+  image: /images/members/helenli.jpg
+  website: https://helen-li.github.io/
+  startyear: 2021
+  degree: BS
+  active: true
+
+- id: kaartik_issar
+  name: Kaartik Issar
+  affiliation: CS
+  image: /images/members/kaartikissar.jpeg
+  website: https://www.linkedin.com/in/kaartik-issar-2492201a4/
+  startyear: 2021
+  degree: BS
+  active: true
+
 # Staff
 
 # PhD Alumni
