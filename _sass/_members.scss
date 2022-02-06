@@ -1,5 +1,5 @@
-@media (max-width: $screen-xs-max){
-.member-badge.col-xs-6:nth-child(2n+1) {
+@media (min-width: $screen-md-min){
+.member-badge.col-md-3:nth-child(4n+1) {
     clear: both;
 }
 }
@@ -8,8 +8,8 @@
     clear: both;
 }
 }
-@media (min-width: $screen-md-min){
-.member-badge.col-md-3:nth-child(4n+1) {
+@media (max-width: $screen-xs-max){
+.member-badge.col-xs-6:nth-child(2n+1) {
     clear: both;
 }
 }

@@ -4,13 +4,13 @@ title: Home
 ---
 
 <!-- PEOPLE -->
-{% assign sorted_members = site.data.members | sort: 'id' %}
+{% assign members = site.data.members %}
 <div class="row">
   <div class="col-md-8 text-justify">
 
     <!-- Faculty -->
     <div class="row">
-      {% assign faculty = sorted_members | where:"degree", "prof" %}
+      {% assign faculty = members | where:"degree", "prof" %}
       {% assign alex = faculty | first %}
       {% assign member = alex %}
       <h1>Faculty</h1>
@@ -28,7 +28,7 @@ title: Home
     </div>
 
     <!-- Get collections, including hack for getting all grads in same collection -->
-    {% assign current_members = sorted_members | where:"active",true %}
+    {% assign current_members = members | where:"active",true %}
     {% assign phds = current_members | where:"degree", "PhD" %}
     {% assign masters = current_members | where:"degree", "MSc" %}
     {% assign ugrads = current_members | where:"degree", "BS" %}

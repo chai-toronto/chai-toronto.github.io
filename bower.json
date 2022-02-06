@@ -2,7 +2,6 @@
     "name": "chai-toronto.github.io",
     "dependencies": {
         "bootstrap": "3.3.7",
-        "bxslider-4": "4.2.15",
         "jquery": "3.6.0",
         "jquery-migrate": "3.0.0"
     }

@@ -6,7 +6,9 @@
 {% if include.people.size > 0 %}
 <div class="row">
 <h1>{{ include.title }}</h1>
+</div>
 
+<div class="row flex">
 {% for year in years_sorted %}
   {% assign members = year.items | sort: "name" %}
   {% for member in members %}

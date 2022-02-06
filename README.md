@@ -10,9 +10,11 @@ Modify `_data/members.yml`.
 Fields:
 - `id`: This should be your last name. This is what you'll use throughout the site to refer to you. If you have a website listed, it will replace references of your name with a link to your website.
 - `name`: Full name
+- `affiliation`: Departmental program
 - `image`: Path to your profile picture. Images should be square and ideally 165x165px.
 - `website`: Full link to your personal website
-- `status`: One of `phd_current`, `master_current`, `ugrad_current`, `staff`, `phd_alumni`, `master_alumni`, or `ugrad_alumni`
+- `degree`: The shorthand name of your degree, such as `PhD`, `MSc`, or `BS`
+- `active`: Put `true` if you are currently working in the lab or `false` if you are now working elsewhere
 
 #### Upload image
 Images should be uploaded to `images/members/`. Images should be square and (ideally) 165x165px. If you upload something else, it will be cropped.
@@ -35,7 +37,7 @@ Create a new file in `_publications/`. I recommend copying an existing file (suc
 - `pdf`: Copy from the ACM DL, not anywhere else.
 - `thumbnail`: Must be 16x9 and 300px wide. Add to `images/pubs/`.
 - `title`: Verbatim paper title
-- `venue`: This should be in the format: ACM International Joint Conference on Pervasive and Ubiquitous Computing (UbiComp), 2011
+- `venue`: Full name of the publication venue. If it is a common name, look in `_data/venues.yml` to see if a shortcut has been defined. If so, you can use the shorthand name (including the `$` delimiters) and the full name will automatically be used. You can mix shorthand names with other text if you need to specify that it was submitted to a workshop or alternative track.
 - `video`: (optional) Link to external video, such as YouTube or Vimeo.
 - `video_embed`: (optional) HTML embed code for video player
 

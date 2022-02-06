@@ -3,7 +3,9 @@
 <div class="row">
   <h2 id="{{ include.id }}">{{ include.title }}</h2>
   <p>{{ include.description }}</p>
+</div>
 
+<div class="row flex">
   {% for project in include.projects %}
     <div class="project-badge col-xs-12 col-sm-6 col-md-4">
       <!-- Image -->
