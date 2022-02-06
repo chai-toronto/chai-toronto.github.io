@@ -13,34 +13,34 @@
 # Updating Your Profile
 ## Edit Metadata
 Add an entry to `_data/members.yml` with the following fields:
-- `id`: This should be your last name. This is what you'll use throughout the site to refer to you. If you have a website listed, it will replace references of your name with a link to your website.
-- `name`: Full name
-- `affiliation`: Departmental program
-- `image`: Path to your profile picture. Images should be square and ideally 165x165px.
-- `website`: Full link to your personal website
-- `degree`: The shorthand name of your degree, such as `PhD`, `MSc`, or `BS`
-- `active`: Put `true` if you are currently working in the lab or `false` if you are now working elsewhere
+| Field | Required | Details |
+| --- | --- | --- |
+| `id` | yes | Should usually be formatted as `lastname_firstname`. This is what you'll use throughout the site to refer to yourself and link to your homepage. |
+| `name` | yes | Full name |
+| `affiliation` | yes | Departmental program |
+| `image` | yes | Path to your profile picture. Images should be square and ideally 165x165px. |
+| `website` | yes | Full link to your personal website |
+| `degree` | yes | The shorthand name of your degree, such as `PhD`, `MSc`, or `BS` |
+| `active` | yes | Put `true` if you are currently working in the lab or `false` if you are now working elsewhere |
 
 ## Upload image
 Images should be uploaded to `images/members/`. Images should be square and (ideally) 165x165px. If you upload something else, it will be cropped.
 
 # Adding a Publication
 Create a new file in `_publications/`. The file should have the following fields:
-- `authors`: This should be a list of full names. If an author is a lab member (or former lab member), use the member's `id` instead of their name to link it to their website.
-- `award`: (optional) The name of the award the paper received (e.g., `'Best Paper Award'` or `'Honorable Mention Award'`)
-- `bibtex`: Copy from the ACM DL, not from Google.
-- `caption`: This will go under the image on the project detail page.
-- `citation`: Copy from the ACM DL, not from Google.
-- `date`: Publication/presentation date
-- `image`: Hi-res image for the project detail page (accompanies `caption`). Add to `images/pubs/`.
-- `news`: (optional) List of different press releases, which contains
-	- `name`: the name of the news entity
-	- `url`: the url to the article
-	- `headline`: the headline
-	- `date`: the date the article was published
-- `pdf`: Copy from the ACM DL, not anywhere else.
-- `thumbnail`: Must be 16x9 and 300px wide. Add to `images/pubs/`.
-- `title`: Verbatim paper title
-- `venue`: Full name of the publication venue. If it is a common name, look in `_data/venues.yml` to see if a shortcut has been defined. If so, you can use the shorthand name (including the `$` delimiters) and the full name will automatically be used. You can mix shorthand names with other text if you need to specify that it was submitted to a workshop or alternative track.
-- `video`: (optional) Link to external video, such as YouTube or Vimeo.
-- `video_embed`: (optional) HTML embed code for video player
+| Field | Required | Details |
+| --- | --- | --- |
+| `title` | yes | Verbatim paper title |
+| `authors` | yes | This should be a list of full names. If an author is a lab member (or former lab member), use the member's `id` instead of their name to link it to their website. |
+| `venue` | yes | Full name of the publication venue. If it is a common name, look in `_data/venues.yml` to see if a shortcut has been defined. If so, you can use the shorthand name (including the `$` delimiters) and the full name will automatically be used. You can mix shorthand names with other text if you need to specify that it was submitted to a workshop or alternative track. |
+| `date` | yes | Publication/presentation date |
+| `pdf` | yes | Copy from the ACM DL or equivalent when possible, otherwise use your camera-ready. |
+| `image` | yes | Hi-res image for the project detail page (accompanies `caption`). Add to `images/pubs/`. |
+| `thumbnail` | yes | Must be 16x9 and 300px wide. Add to `images/pubs/`. |
+| `caption` | yes | This will go under the image on the project detail page |
+| `award` | no | The name of the award the paper received (e.g., `'Best Paper Award'` or `'Honorable Mention Award'`) |
+| `bibtex` | no | Copy from the ACM DL or equivalent when possible, otherwise use Google Scholar. |
+| `citation` | no | Copy from the ACM DL or equivalent when possible, otherwise use the Chicago format from Google Scholar. |
+| `news` | no | List of different press releases, which contains <ul><li>`name`: the name of the news entity</li><li>`url`: the url to the article</li><li>`headline`: the headline</li><li>`date`: the date the article was published</li></ul>
+| `video` | no | Link to external video, such as YouTube or Vimeo |
+| `video_embed` | no | HTML embed code for video player |
