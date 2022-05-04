@@ -100,6 +100,15 @@
   degree: BS
   active: true
 
+- id: chloe_zhao
+  name: Chole Zhao
+  affiliation: CS
+  image: /images/members/chloezhao.jpg
+  website: https://www.linkedin.com/in/chloe-yichen-zhao/
+  startyear: 2022
+  degree: BS
+  active: true
+
 # Staff
 
 # PhD Alumni
