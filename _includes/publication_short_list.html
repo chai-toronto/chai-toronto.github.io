@@ -12,7 +12,7 @@
 {% for pub in sorted_pubs limit:num_items %}
   <li>
     {{ pub.date | date: '%B %d, %Y' }}: 
-    <a href="{{ pub.url }}">{{ pub.title }}</a>
+    <a href="{{ pub.link }}">{{ pub.title }}</a>
   </li>
 {% endfor %}
 </ul>
