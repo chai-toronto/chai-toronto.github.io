@@ -82,15 +82,6 @@
   degree: BS
   active: true
 
-- id: kaartik_issar
-  name: Kaartik Issar
-  affiliation: CS
-  image: /images/members/kaartikissar.jpeg
-  website: https://kaartik7.github.io/
-  startyear: 2021
-  degree: BS
-  active: true
-
 - id: sannat_bhasin
   name: Sannat Bhasin
   affiliation: CS
@@ -122,6 +113,16 @@
   image: /images/members/sidgupta.jpeg
   website: https://www.linkedin.com/in/sidgupta-99
   startyear: 2020
+  endyear: 2021
+  degree: BS
+  active: false
+
+- id: kaartik_issar
+  name: Kaartik Issar
+  affiliation: CS
+  image: /images/members/kaartikissar.jpeg
+  website: https://kaartik7.github.io/
+  startyear: 2021
   endyear: 2021
   degree: BS
   active: false
