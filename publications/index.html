@@ -15,11 +15,11 @@ title: Publications
 
   <div class="row publication-badge">
     <div class="publication-pic col-md-2 col-sm-3 col-xs-12 text-left">
-      {% if pub.thumbnail.size > 0 %}<a href="{{ pub.url }}"><img src="{{ pub.thumbnail }}"/></a>{% endif %}&nbsp;
+      {% if pub.thumbnail.size > 0 %}<a href="{{ pub.link }}"><img src="{{ pub.thumbnail }}"/></a>{% endif %}&nbsp;
     </div>
     <div class="publication-info col-md-10 col-sm-9 col-xs-12">
       <!-- Title -->
-      <a href="{{ pub.url }}"><h2>{{ pub.title }}</h2></a>
+      <a href="{{ pub.link }}"><h2>{{ pub.title }}</h2></a>
       
       <p>
         <!-- Authors -->
@@ -29,12 +29,6 @@ title: Publications
         <i>{% if pub.date > site.time %}<span class="to-appear">To appear in </span>{% endif %}{% include conference_extender.html venue=pub.venue %}, {{ this_year }}</i>{% if pub.award %}, <span class="award">{{ pub.award }}</span>{% endif %}<br/>
 
         {% if pub.date <= site.time %}
-          <!-- PDF -->
-          {% if pub.pdf %}
-            <a href="{{ pub.pdf }}" class="btn btn-default btn-xs" aria-label="Download PDF">
-            <span class="glyphicon glyphicon-file" aria-hidden="true"></span> PDF
-            </a>
-          {% endif %}
           <!-- Video -->
           {% if pub.video.size > 0 %}
             <a href="{{ pub.video }}" class="btn btn-default btn-xs" aria-label="Video" target="_blank">

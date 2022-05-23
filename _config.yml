@@ -17,16 +17,7 @@ future: true
 
 collections:
   publications:
-    output: true
   projects:
-    output: false
-
-defaults:
-  - scope:
-      path: ""
-      type: publications
-    values:
-      layout: publication
 
 #
 # Flags below are optional
