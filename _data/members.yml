@@ -2,7 +2,7 @@
 - id: mariakakis
   name: Alex Mariakakis
   affiliation: CS
-  image: /images/members/alexmariakakis.jpeg
+  image: /images/members/alex_mariakakis.jpeg
   website: https://mariakakis.github.io
   degree: prof
   active: true
@@ -11,7 +11,7 @@
 - id: blue_lin
   name: Blue Lin
   affiliation: CS
-  image: /images/members/bluelin.jpeg
+  image: /images/members/blue_lin.jpeg
   website: https://www.bluelin.me/
   startyear: 2021
   degree: PhD
@@ -20,7 +20,7 @@
 - id: dhruv_verma
   name: Dhruv Verma
   affiliation: CS
-  image: /images/members/dhruvverma.jpeg
+  image: /images/members/dhruv_verma.jpeg
   website: https://dhruv-verma.com/
   startyear: 2021
   degree: PhD
@@ -29,7 +29,7 @@
 - id: brenna_li
   name: Brenna Li
   affiliation: CS
-  image: /images/members/brennali.jpeg
+  image: /images/members/brenna_li.jpeg
   website: https://www.linkedin.com/in/brenna-li/
   startyear: 2018
   degree: PhD
@@ -38,7 +38,7 @@
 - id: ken_christofferson
   name: Ken Christofferson
   affiliation: CS
-  image: /images/members/kenchristofferson.jpeg
+  image: /images/members/ken_christofferson.jpeg
   website: https://ken-chris.github.io/
   startyear: 2021
   degree: PhD
@@ -47,7 +47,7 @@
 - id: sejal_bhalla
   name: Sejal Bhalla
   affiliation: CS
-  image: /images/members/sejalbhalla.jpeg
+  image: /images/members/sejal_bhalla.jpeg
   website: https://www.linkedin.com/in/sejal-bhalla/
   startyear: 2021
   degree: PhD
@@ -57,7 +57,7 @@
 - id: ian_ruffolo
   name: Ian Ruffolo
   affiliation: CS
-  image: /images/members/ianruffolo.jpeg
+  image: /images/members/ian_ruffolo.jpeg
   website: https://www.linkedin.com/in/ian-ruffolo-7991471aa/
   startyear: 2021
   degree: MSc
@@ -67,7 +67,7 @@
 - id: sixuan_wu
   name: Sixuan Wu
   affiliation: CS
-  image: /images/members/sixuanwu.jpeg
+  image: /images/members/sixuan_wu.jpeg
   website: https://www.linkedin.com/in/sixuan-wu-a6b794190/
   startyear: 2020
   degree: BS
@@ -76,7 +76,7 @@
 - id: helen_li
   name: Helen Li
   affiliation: CS
-  image: /images/members/helenli.jpg
+  image: /images/members/helen_li.jpg
   website: https://helen-li.github.io/
   startyear: 2021
   degree: BS
@@ -94,8 +94,17 @@
 - id: chloe_zhao
   name: Chole Zhao
   affiliation: CS
-  image: /images/members/chloezhao.jpg
+  image: /images/members/chloe_zhao.jpg
   website: https://www.linkedin.com/in/chloe-yichen-zhao/
+  startyear: 2022
+  degree: BS
+  active: true
+
+- id: tanya_skoropad
+  name: Tanya Skoropad
+  affiliation: CS
+  image: /images/members/tanya_skoropad.jpeg
+  website: https://www.linkedin.com/in/tetyana-skoropad-446725207/
   startyear: 2022
   degree: BS
   active: true
@@ -110,7 +119,7 @@
 - id: sid_gupta
   name: Sidharth Gupta
   affiliation: CS
-  image: /images/members/sidgupta.jpeg
+  image: /images/members/sid_gupta.jpeg
   website: https://www.linkedin.com/in/sidgupta-99
   startyear: 2020
   endyear: 2021
@@ -120,9 +129,9 @@
 - id: kaartik_issar
   name: Kaartik Issar
   affiliation: CS
-  image: /images/members/kaartikissar.jpeg
+  image: /images/members/kaartik_issar.jpeg
   website: https://kaartik7.github.io/
   startyear: 2021
-  endyear: 2021
+  endyear: 2022
   degree: BS
   active: false
