@@ -109,6 +109,16 @@
   degree: BS
   active: true
 
+- id: andrii_lenyshyn
+  name: Andrii Lenyshyn
+  affiliation: CS
+  image: /images/members/andrii_lenyshyn.jpg
+  website: https://www.linkedin.com/in/andrew2k/
+  startyear: 2022
+  degree: BS
+  active: true
+
+
 # Staff
 
 # PhD Alumni
