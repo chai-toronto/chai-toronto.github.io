@@ -33,15 +33,15 @@
         <!-- Degree and Years -->
         <div class="member-year">
           {{ member.degree }},
-          {% if include.active %}
-            {{ member.startyear }} – {{ member.endyear }}
-          {% else %}
+          {% if member.active == true %}
             {{ member.startyear }} – present
+          {% else %}
+            {{ member.startyear }} – {{ member.endyear }}
           {% endif %}
         </div>
 
         <!-- Alum Destination -->
-        {% if include.active and (member.degree == 'PhD' or member.degree == 'MSc') %}
+        {% if member.active == false and (member.degree == 'PhD' or member.degree == 'MSc') %}
           <div class="member-place">
             Current Position: {{ member.newplace }}
           </div>
