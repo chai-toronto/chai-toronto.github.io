@@ -118,6 +118,15 @@
   degree: BS
   active: true
 
+- id: yining_wang
+  name: Yining Wang
+  affiliation: CS
+  image: /images/members/yining_wang.jpg
+  website: https://www.linkedin.com/in/yining-wang-69990a196/
+  startyear: 2022
+  degree: BS
+  active: true
+
 
 # Staff
 
