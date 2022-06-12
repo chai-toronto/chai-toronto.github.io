@@ -145,6 +145,13 @@ title: Publications
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+
+    <!-- Close video when window closes -->
+    <script>
+      $('#{{pub.title | slugify}}_video').on('hidden.bs.modal', function () {
+          $("#{{pub.title | slugify}}_video iframe").attr("src", $("#{{pub.title | slugify}}_video iframe").attr("src"));
+      });
+    </script>
   {% endif %}
 
 {% endfor %}
