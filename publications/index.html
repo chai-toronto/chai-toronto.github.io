@@ -53,6 +53,12 @@ title: Publications
             <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> Media Coverage
             </button>
           {% endif %}
+          <!-- Video -->
+          {% if pub.video_embed %}
+            <button type="button" class="btn btn-default btn-xs" aria-label="Video" data-toggle="modal" data-target="#{{pub.title | slugify}}_video">
+            <span class="glyphicon glyphicon-play" aria-hidden="true"></span> Video
+            </button>
+          {% endif %}
         {% endif %}
       </p>
     </div>
@@ -112,6 +118,26 @@ title: Publications
             {% for article in sorted_articles %}
               <u><a href="{{article.url}}">{{ article.name }}</a></u> ({{ article.date  | date: '%B %d, %Y'}}): {{ article.headline }}<br/>
             {% endfor %}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+  {% endif %}
+
+  <!-- Video -->
+  {% if pub.video_embed %}
+    <div class="modal fade" tabindex="-1" role="dialog" id="{{pub.title | slugify}}_video">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">{{ pub.title }}</h4>
+          </div>
+          <div class="modal-body">
+            {{ pub.video_embed }}
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

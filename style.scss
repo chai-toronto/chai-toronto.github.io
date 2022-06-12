@@ -200,13 +200,8 @@ footer {
 }
 
 .navbar-collapse {
-  position: relative;
-
   ul {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
+    margin-top: 15px;
   }
 }
 
@@ -243,7 +238,7 @@ footer {
       padding-top: 10px;
       padding-bottom: 10px;
   }
-  .collapse.in{
+  .collapse.in {
       display:block !important;
   }
 }
