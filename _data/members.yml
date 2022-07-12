@@ -82,15 +82,6 @@
   degree: BS
   active: true
 
-- id: sannat_bhasin
-  name: Sannat Bhasin
-  affiliation: CS
-  image: /images/members/sannat_bhasin.jpg
-  website: https://www.linkedin.com/in/sannatbhasin/
-  startyear: 2022
-  degree: BS
-  active: true
-
 - id: chloe_zhao
   name: Chloe Zhao
   affiliation: CS
