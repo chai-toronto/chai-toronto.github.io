@@ -127,6 +127,14 @@
   degree: BS
   active: true
 
+- id: zixiong_lin
+  name: Zixiong Lin
+  affiliation: CS
+  image: /images/members/zixiong_lin.jpg
+  website: https://www.linkedin.com/in/zixiong-lin/
+  startyear: 2022
+  degree: BS
+  active: true
 
 # Staff
 
