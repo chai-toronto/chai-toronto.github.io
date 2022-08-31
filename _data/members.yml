@@ -100,15 +100,6 @@
   degree: BS
   active: true
 
-- id: tanya_skoropad
-  name: Tanya Skoropad
-  affiliation: CS
-  image: /images/members/tanya_skoropad.jpeg
-  website: https://www.linkedin.com/in/tetyana-skoropad-446725207/
-  startyear: 2022
-  degree: BS
-  active: true
-
 - id: andrii_lenyshyn
   name: Andrii Lenyshyn
   affiliation: CS
@@ -159,6 +150,16 @@
   image: /images/members/kaartik_issar.jpeg
   website: https://kaartik7.github.io/
   startyear: 2021
+  endyear: 2022
+  degree: BS
+  active: false
+
+- id: tanya_skoropad
+  name: Tanya Skoropad
+  affiliation: CS
+  image: /images/members/tanya_skoropad.jpeg
+  website: https://www.linkedin.com/in/tetyana-skoropad-446725207/
+  startyear: 2022
   endyear: 2022
   degree: BS
   active: false
