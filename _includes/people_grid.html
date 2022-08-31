@@ -30,13 +30,24 @@
           {% endif %}
         </div>
 
+        <!-- Coadvisor -->
+        <div class="member-coadvisor">
+          {% if member.coadvisor != nil %}
+            Coadvisor: <span class="authors">{% include author_list.html authors=member.coadvisor %}</span>
+          {% endif %}
+        </div>
+
         <!-- Degree and Years -->
         <div class="member-year">
           {{ member.degree }},
           {% if member.active == true %}
             {{ member.startyear }} – present
           {% else %}
-            {{ member.startyear }} – {{ member.endyear }}
+            {% if member.startyear == member.endyear %}
+              {{ member.startyear }}
+            {% else %}
+              {{ member.startyear }} – {{ member.endyear }}
+            {% endif %}
           {% endif %}
         </div>
 

@@ -10,7 +10,7 @@ title: Home
 
     <!-- Faculty -->
     <div class="row">
-      {% assign faculty = members | where:"degree", "prof" %}
+      {% assign faculty = members | where:"id", "mariakakis" %}
       {% assign alex = faculty | first %}
       {% assign member = alex %}
       <h1>Faculty</h1>
