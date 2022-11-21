@@ -50,16 +50,6 @@
   degree: PhD
   active: true
 
-- id: brenna_li
-  name: Brenna Li
-  affiliation: CS
-  image: /images/members/brenna_li.jpeg
-  website: https://www.linkedin.com/in/brenna-li/
-  startyear: 2018
-  degree: PhD
-  coadvisor: khai
-  active: true
-
 - id: ken_christofferson
   name: Ken Christofferson
   affiliation: CS
@@ -80,6 +70,26 @@
   coadvisor: delara
   active: true
 
+- id: brenna_li
+  name: Brenna Li
+  affiliation: CS
+  image: /images/members/brenna_li.jpeg
+  website: https://www.linkedin.com/in/brenna-li/
+  startyear: 2018
+  degree: PhD
+  coadvisor: khai
+  active: true
+
+- id: salaar_liaqat
+  name: Salaar Liaqat
+  affiliation: CS
+  image: /images/members/placeholder.png
+  website: https://www.cs.toronto.edu/~sliaqat/
+  startyear: 2018
+  degree: PhD
+  coadvisor: eyal
+  active: true
+
 # Current Masters
 - id: ian_ruffolo
   name: Ian Ruffolo
@@ -91,16 +101,17 @@
   coadvisor: brudno
   active: true
 
-# Current Undergrads
-- id: sannat_bhasin
-  name: Sannat Bhasin
+- id: filip_miscevic
+  name: Filip Miscevic
   affiliation: CS
-  image: /images/members/sannat_bhasin.jpg
-  website: https://www.linkedin.com/in/sannatbhasin/
+  image: /images/members/filip_miscevic.jpeg
+  website: https://www.linkedin.com/in/filip-miscevic-1874498b/
   startyear: 2022
-  degree: BS
+  degree: MSc
+  coadvisor: Gerard O'Leary
   active: true
 
+# Current Undergrads
 - id: sixuan_wu
   name: Sixuan Wu
   affiliation: CS
@@ -162,6 +173,15 @@
 # Masters Alumni
 
 # Undergrad Alumni
+- id: sannat_bhasin
+  name: Sannat Bhasin
+  affiliation: CS
+  image: /images/members/sannat_bhasin.jpg
+  website: https://www.linkedin.com/in/sannatbhasin/
+  startyear: 2022
+  degree: BS
+  active: false
+
 - id: sid_gupta
   name: Sidharth Gupta
   affiliation: CS
