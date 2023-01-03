@@ -83,7 +83,7 @@
 - id: salaar_liaqat
   name: Salaar Liaqat
   affiliation: CS
-  image: /images/members/placeholder.png
+  image: /images/members/salaar_liaqat.png
   website: https://www.cs.toronto.edu/~sliaqat/
   startyear: 2018
   degree: PhD
@@ -99,16 +99,6 @@
   startyear: 2021
   degree: MSc
   coadvisor: brudno
-  active: true
-
-- id: filip_miscevic
-  name: Filip Miscevic
-  affiliation: CS
-  image: /images/members/filip_miscevic.jpeg
-  website: https://www.linkedin.com/in/filip-miscevic-1874498b/
-  startyear: 2022
-  degree: MSc
-  coadvisor: Gerard O'Leary
   active: true
 
 # Current Undergrads
@@ -148,15 +138,6 @@
   degree: BS
   active: true
 
-- id: yining_wang
-  name: Yining Wang
-  affiliation: CS
-  image: /images/members/yining_wang.jpg
-  website: https://www.linkedin.com/in/yining-wang-69990a196/
-  startyear: 2022
-  degree: BS
-  active: true
-
 - id: zixiong_lin
   name: Zixiong Lin
   affiliation: CS
@@ -171,6 +152,16 @@
 # PhD Alumni
 
 # Masters Alumni
+- id: filip_miscevic
+  name: Filip Miscevic
+  affiliation: CS
+  image: /images/members/filip_miscevic.jpeg
+  website: https://www.linkedin.com/in/filip-miscevic-1874498b/
+  startyear: 2022
+  endyear: 2022
+  degree: MScAC
+  coadvisor: Gerard O'Leary
+  active: false
 
 # Undergrad Alumni
 - id: sannat_bhasin
@@ -207,6 +198,16 @@
   affiliation: CS
   image: /images/members/tanya_skoropad.jpeg
   website: https://www.linkedin.com/in/tetyana-skoropad-446725207/
+  startyear: 2022
+  endyear: 2022
+  degree: BS
+  active: false
+
+- id: yining_wang
+  name: Yining Wang
+  affiliation: CS
+  image: /images/members/yining_wang.jpg
+  website: https://www.linkedin.com/in/yining-wang-69990a196/
   startyear: 2022
   endyear: 2022
   degree: BS
