@@ -120,15 +120,6 @@
   degree: BS
   active: true
 
-- id: chloe_zhao
-  name: Chloe Zhao
-  affiliation: CS
-  image: /images/members/chloe_zhao.jpg
-  website: https://www.linkedin.com/in/chloe-yichen-zhao/
-  startyear: 2022
-  degree: BS
-  active: true
-
 - id: andrii_lenyshyn
   name: Andrii Lenyshyn
   affiliation: CS
@@ -213,3 +204,13 @@
   endyear: 2022
   degree: BS
   active: false
+
+- id: chloe_zhao
+  name: Chloe Zhao
+  affiliation: CS
+  image: /images/members/chloe_zhao.jpg
+  website: https://www.linkedin.com/in/chloe-yichen-zhao/
+  startyear: 2022
+  endyear: 2022
+  degree: BS
+  active: False
