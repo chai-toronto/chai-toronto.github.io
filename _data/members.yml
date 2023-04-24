@@ -64,7 +64,7 @@
   name: Sejal Bhalla
   affiliation: CS
   image: /images/members/sejal_bhalla.jpeg
-  website: https://www.linkedin.com/in/sejal-bhalla/
+  website: https://www.sejalbhalla.com/
   startyear: 2021
   degree: PhD
   coadvisor: delara
@@ -90,16 +90,17 @@
   coadvisor: delara
   active: true
 
-# Current Masters
 - id: ian_ruffolo
   name: Ian Ruffolo
   affiliation: CS
   image: /images/members/ian_ruffolo.jpeg
-  website: https://www.linkedin.com/in/ian-ruffolo-7991471aa/
+  website: https://ian.ruffolo.me
   startyear: 2021
-  degree: MSc
+  degree: PhD
   coadvisor: brudno
   active: true
+
+# Current Masters
 
 # Current Undergrads
 - id: sixuan_wu
@@ -210,6 +211,16 @@
   affiliation: CS
   image: /images/members/yining_wang.jpg
   website: https://www.linkedin.com/in/yining-wang-69990a196/
+  startyear: 2022
+  endyear: 2022
+  degree: BS
+  active: false
+
+- id: chloe_zhao
+  name: Chloe Zhao
+  affiliation: CS
+  image: /images/members/chloe_zhao.jpg
+  website: https://www.linkedin.com/in/chloe-yichen-zhao/
   startyear: 2022
   endyear: 2022
   degree: BS
