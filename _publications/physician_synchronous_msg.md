@@ -7,14 +7,14 @@ authors:
 - Mohit Jain
 - Khai N. Truong
 - mariakakis
-venue: Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems (CHI)
+venue: $CHI$
 date: 2023-04-20
 link: https://doi.org/10.1145/3544548.3581014 
 thumbnail: /images/pubs/physician_synchronous_messaging.jpeg
 citation: |
     Brenna Li, Tetyana Skoropad, Puneet Seth, Mohit Jain, Khai Truong, and Alex Mariakakis. 2023. Constraints and Workarounds to Support Clinical Consultations in Synchronous Text-based Platforms. In Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems (CHI '23). Association for Computing Machinery, New York, NY, USA, Article 342, 1–17. https://doi.org/10.1145/3544548.3581014
 bibtex: |
-    {@inproceedings{10.1145/3544548.3581014,
+    @inproceedings{10.1145/3544548.3581014,
     author = {Li, Brenna and Skoropad, Tetyana and Seth, Puneet and Jain, Mohit and Truong, Khai and Mariakakis, Alex},
     title = {Constraints and Workarounds to Support Clinical Consultations in Synchronous Text-Based Platforms},
     year = {2023},
