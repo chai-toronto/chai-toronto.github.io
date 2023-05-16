@@ -139,6 +139,15 @@
   degree: BS
   active: true
 
+- id: pierre_lessard
+  name: Pierre-William Lessard
+  affiliation: CS
+  image: /images/members/pierre_lessard.jpg
+  website: https://www.linkedin.com/in/pierre-william-lessard/
+  startyear: 2023
+  degree: BS
+  active: true
+
 # Staff
 
 # PhD Alumni
