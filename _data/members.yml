@@ -148,6 +148,15 @@
   degree: BS
   active: true
 
+- id: minh_le
+  name: Minh Le
+  affiliation: CS
+  image: /images/members/minh_le.png
+  website: https://www.linkedin.com/in/nm-le/
+  startyear: 2023
+  degree: BS
+  active: true
+
 # Staff
 
 # PhD Alumni
