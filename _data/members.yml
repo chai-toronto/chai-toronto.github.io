@@ -157,6 +157,15 @@
   degree: BS
   active: true
 
+- id: ofek_gross
+  name: Ofek ofek_gross
+  affiliation: CS 
+  image: /images/members/ofek_gross.png
+  website:
+  startyear: 2023
+  degree: BS 
+  active: true
+
 # Staff
 
 # PhD Alumni
