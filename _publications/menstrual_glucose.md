@@ -9,9 +9,8 @@ authors:
 - khai
 - mariakakis
 venue: NPJ Digital Medicine, $NPJDM$
-<!-- date: 2023
- --><!-- link: 
- -->
+date: 2023-10-01
+link:
 thumbnail: /images/pubs/glucose.png
 citation: |
     Georgianna Lin, Rumsha Siddiqui, Zixiong Lin, Joanna M. Blodgett, Shwetak N. Patel, Khai Truong, and Alex Mariakakis. 2023. Blood Glucose Variance Measured by Continuous Glucose Monitors Across the Menstrual Cycle. In NPJ Digital Medicine (2023).
