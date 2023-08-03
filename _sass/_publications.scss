@@ -28,26 +28,16 @@ code {
 
   .publication-pic {
     max-width: 300px;
-    a {
-      display: block;
-      position: relative;
-      padding-bottom: 56.25%;
-      //border-radius: 10px;
-      overflow: hidden;
-      @media (min-width: 768px){
-      }
-      img {
-        width: 100%;
-        vertical-align: middle;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        @media (min-width: 768px){
-          //max-width: 150px;
-        }
-      }
-    }
+    overflow: hidden;
+    position: relative;
   }
+  .publication-pic img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+
   .authors a {
     color: $darkGray;
     text-decoration: underline;
