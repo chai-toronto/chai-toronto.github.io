@@ -1,5 +1,5 @@
 ---
-title: 'Blood Glucose Variance Measured by Continuous Glucose Monitors Across the Menstrual Cycle (Accepted)'
+title: 'Blood Glucose Variance Measured by Continuous Glucose Monitors Across the Menstrual Cycle (Accepted 2023)'
 authors: 
 - blue_lin
 - Rumsha Siddiqui
@@ -9,8 +9,8 @@ authors:
 - khai
 - mariakakis
 venue: NPJ Digital Medicine, $NPJDM$
-date: 2023
-<!-- link: 
+<!-- date: 2023
+ --><!-- link: 
  -->
 thumbnail: /images/pubs/glucose.png
 citation: |
