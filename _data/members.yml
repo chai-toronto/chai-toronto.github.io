@@ -100,6 +100,15 @@
   coadvisor: brudno
   active: true
 
+- id: andrii_lenyshyn
+  name: Andrii Lenyshyn
+  affiliation: CS
+  image: /images/members/andrii_lenyshyn.jpg
+  website: https://www.linkedin.com/in/andrew2k/
+  startyear: 2023
+  degree: PhD
+  active: true
+
 # Current Masters
 
 # Current Undergrads
@@ -118,24 +127,6 @@
   image: /images/members/helen_li.jpg
   website: https://helen-li.github.io/
   startyear: 2021
-  degree: BS
-  active: true
-
-- id: andrii_lenyshyn
-  name: Andrii Lenyshyn
-  affiliation: CS
-  image: /images/members/andrii_lenyshyn.jpg
-  website: https://www.linkedin.com/in/andrew2k/
-  startyear: 2022
-  degree: BS
-  active: true
-
-- id: zixiong_lin
-  name: Zixiong Lin
-  affiliation: CS
-  image: /images/members/zixiong_lin.jpg
-  website: https://www.linkedin.com/in/zixiong-lin/
-  startyear: 2022
   degree: BS
   active: true
 
@@ -158,7 +149,7 @@
   active: true
 
 - id: ofek_gross
-  name: Ofek ofek_gross
+  name: Ofek Gross
   affiliation: CS 
   image: /images/members/ofek_gross.png
   website:
@@ -243,12 +234,13 @@
   degree: BS
   active: false
 
-- id: chloe_zhao
-  name: Chloe Zhao
+- id: zixiong_lin
+  name: Zixiong Lin
   affiliation: CS
-  image: /images/members/chloe_zhao.jpg
-  website: https://www.linkedin.com/in/chloe-yichen-zhao/
+  image: /images/members/zixiong_lin.jpg
+  website: https://www.linkedin.com/in/zixiong-lin/
   startyear: 2022
-  endyear: 2022
+  endyear: 2023
   degree: BS
   active: false
+
