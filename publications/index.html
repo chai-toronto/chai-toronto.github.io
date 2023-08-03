@@ -15,11 +15,17 @@ title: Publications
 
   <div class="row publication-badge">
     <div class="publication-pic col-md-2 col-sm-3 col-xs-12 text-left">
-      {% if pub.thumbnail.size > 0 %}<a href="{{ pub.link }}"><img src="{{ pub.thumbnail }}"/></a>{% endif %}&nbsp;
+      {% if pub.date <= site.time %}<a href="{{ pub.link }}"><img src="{{ pub.thumbnail }}"/></a>
+      {% else %}
+      <img src="{{ pub.thumbnail }}"/>
+      {% endif %}
     </div>
     <div class="publication-info col-md-10 col-sm-9 col-xs-12">
       <!-- Title -->
-      <a href="{{ pub.link }}"><h2><u>{{ pub.title }}</u></h2></a>
+      {% if pub.date <= site.time %}<a href="{{ pub.link }}"><h2><u>{{ pub.title }}</u></h2></a>
+      {% else %}
+      <h2>{{ pub.title }}</h2>
+      {% endif %}
       
       <p>
         <!-- Authors -->
