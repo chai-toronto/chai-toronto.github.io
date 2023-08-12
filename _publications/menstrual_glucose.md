@@ -9,18 +9,19 @@ authors:
 - khai
 - mariakakis
 venue: NPJ Digital Medicine, $NPJDM$
-date: 2023-10-01
-link: 
+date: 2023-08-11
+link: https://www.nature.com/articles/s41746-023-00884-x.pdf
 thumbnail: /images/pubs/glucose.png
 citation: |
-    Georgianna Lin, Rumsha Siddiqui, Zixiong Lin, Joanna M. Blodgett, Shwetak N. Patel, Khai Truong, and Alex Mariakakis. 2023. Blood Glucose Variance Measured by Continuous Glucose Monitors Across the Menstrual Cycle. In NPJ Digital Medicine (2023).
-<!-- bibtex: |
-    @inproceedings{gupta2022machine,
-    title={Machine Learning to Automate the Visual Interpretation of Chemical Agglutination Tests},
-    author={Gupta, Sidharth and Sklavounos, Alexandros A and Dahmer, Joshua and Yong, Anthony KC and Abdullah, Mohammed AA and Camacho, Gilberto and Morton, Keith and Shiu, Matthew and Labrecque, Jean and Veres, Teodor and others},
-    booktitle={2022 IEEE International Conference on Pervasive Computing and Communications Workshops and other Affiliated Events (PerCom Workshops)},
-    pages={230--235},
-    year={2022},
-    organization={IEEE}
-    } -->
+    Lin, G., Siddiqui, R., Lin, Z. et al. Blood glucose variance measured by continuous glucose monitors across the menstrual cycle. npj Digit. Med. 6, 140 (2023). https://doi.org/10.1038/s41746-023-00884-x
+bibtex: |
+    @article{blood_glucose_menstrual_2023, 
+    title={Blood glucose variance measured by continuous glucose monitors across the menstrual cycle}, 
+    volume={6}, 
+    DOI={10.1038/s41746-023-00884-x}, 
+    number={1}, 
+    journal={npj Digital Medicine}, 
+    author={Lin, Georgianna and Siddiqui, Rumsha and Lin, Zixiong and Blodgett, Joanna M. and Patel, Shwetak N. and Truong, Khai N. and Mariakakis, Alex}, 
+    year={2023}
+    }
 ---
