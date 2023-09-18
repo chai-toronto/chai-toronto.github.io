@@ -5,7 +5,7 @@ authors:
 - Tetyana Skoropad
 - Puneet Seth
 - Mohit Jain
-- Khai N. Truong
+- khai
 - mariakakis
 venue: $CHI$
 date: 2023-04-20
