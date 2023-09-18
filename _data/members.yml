@@ -112,15 +112,6 @@
 # Current Masters
 
 # Current Undergrads
-- id: sixuan_wu
-  name: Sixuan Wu
-  affiliation: CS
-  image: /images/members/sixuan_wu.jpeg
-  website: https://www.linkedin.com/in/sixuan-wu-a6b794190/
-  startyear: 2020
-  degree: BS
-  active: true
-
 - id: helen_li
   name: Helen Li
   affiliation: CS
@@ -174,6 +165,16 @@
   active: false
 
 # Undergrad Alumni
+- id: sixuan_wu
+  name: Sixuan Wu
+  affiliation: CS
+  image: /images/members/sixuan_wu.jpeg
+  website: https://www.linkedin.com/in/sixuan-wu-a6b794190/
+  startyear: 2020
+  endyear: 2023
+  degree: BS
+  active: false
+
 - id: chloe_zhao
   name: Chloe Zhao
   affiliation: CS
