@@ -2,11 +2,12 @@
 layout: null
 ---
 [
-{% for publication in site.publications %}
+{% for pub in site.publications %}
     {
-        "id" : "{{ publication.slug }}",
-        "title" : "{{ publication.title }}",
-        "venue": "{{ publication.venue }}"
+        "id": "{{ pub.slug }}",
+        "title": "{{ pub.title }}",
+        "authors": "{{ pub.authors }}",
+        "venue": "{{ pub.venue }}", 
     }{% if forloop.last %}{% else %},{% endif %}
     {% endfor %}
 ]
