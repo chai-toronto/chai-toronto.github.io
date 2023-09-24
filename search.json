@@ -4,8 +4,8 @@ layout: null
 [
 {% for publication in site.publications %}
     {
+        "id" : "{{ publication.slug }}",
         "title" : "{{ publication.title }}",
-        "url" : "{{ publication.url }}",
         "venue": "{{ publication.venue }}"
     }{% if forloop.last %}{% else %},{% endif %}
     {% endfor %}
