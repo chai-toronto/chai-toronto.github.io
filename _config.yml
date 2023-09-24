@@ -83,6 +83,11 @@ plugins:
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
   - jekyll-redirect-from
 
+# Algolia search
+algolia:
+  application_id: 'A9TNM6IH4O'
+  index_name: 'chai_toronto'
+
 # Exclude these files from your production _site
 exclude:
   - Gemfile
