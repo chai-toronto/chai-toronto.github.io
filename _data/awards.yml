@@ -1,9 +1,13 @@
+- award: Google PhD Fellowship
+  url: https://research.google/outreach/phd-fellowship/recipients/
+  winners:
+  - name: blue_lin
+    year: 2023
 - award: Mitacs Globalink Research Award
   url: https://www.mitacs.ca/en/programs/globalink/globalink-research-award
   winners:
   - name: andrii_lenyshyn
     year: 2022
-
 - award: Canada Graduate Scholarship — Doctoral
   url: https://www.nserc-crsng.gc.ca/Students-Etudiants/PG-CS/CGSD-BESCD_eng.asp
   winners:
