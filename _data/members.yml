@@ -148,6 +148,15 @@
   degree: BS 
   active: true
 
+- id: shawn_kong
+  name: Shawn Kong
+  affiliation: CS 
+  image: /images/members/deshang_kong.png
+  website: https://www.linkedin.com/in/shawn-kong-23b8b41a2/
+  startyear: 2023
+  degree: BS 
+  active: true
+
 # Staff
 
 # PhD Alumni
