@@ -158,12 +158,39 @@
   active: true
 
 - id: ofek_gross
-  name: Ofek ofek_gross
+  name: Ofek Gross
   affiliation: CS 
   image: /images/members/ofek_gross.png
   website:
   startyear: 2023
   degree: BS 
+  active: true
+
+- id: anna_kirik
+  name: Anna Kirik 
+  affiliation: CS
+  image: /images/members/anna_kirik.jpg
+  website: https://ca.linkedin.com/in/anna-kirik-a1869820b
+  startyear: 2023
+  degree: BS
+  active: true
+
+- id: liam_bakar
+  name: Liam Bakar 
+  affiliation: CS
+  image: /images/members/liam_bakar.jpg
+  website: https://www.linkedin.com/in/liam-bakar
+  startyear: 2023
+  degree: BS
+  active: true
+
+- id: jiaqi_guo
+  name: Jiaqi Guo
+  affiliation: CS
+  image: /images/members/jiaqi_guo.jpg
+  website: https://www.linkedin.com/in/jiaqi-guo-6b040422b/
+  startyear: 2023
+  degree: BS
   active: true
 
 # Staff
