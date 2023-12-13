@@ -40,5 +40,4 @@ Create a new file in `_publications/`. The file should have the following fields
 | `bibtex` | no | Copy from the ACM DL or equivalent when possible, otherwise use Google Scholar. |
 | `citation` | no | Copy from the ACM DL or equivalent when possible, otherwise use the APA format from Google Scholar. |
 | `news` | no | List of different press releases, which contains <ul><li>`name`: the name of the news entity</li><li>`url`: the url to the article</li><li>`headline`: the headline</li><li>`date`: the date the article was published</li></ul>
-| `video` | no | Link to external video, such as YouTube or Vimeo |
 | `video_embed` | no | HTML embed code for video player |
