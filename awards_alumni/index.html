@@ -45,7 +45,11 @@ title: Awards and Alumni
 {% assign sorted_members = site.data.members | sort: 'id' %}
 {% assign past_members = sorted_members | where:"active",false %}
 {% assign phd_alumni = past_members | where:"degree", "PhD" %}
-{% assign masters_alumni = past_members | where:"degree", "MSc" %}
+
+{% assign msc_alumni = past_members | where: "degree", "MSc" %}
+{% assign mscac_alumni = past_members | where: "degree", "MScAC" %}
+{% assign masters_alumni = msc_alumni | concat: mscac_alumni %}
+
 {% assign ugrad_alumni = past_members | where:"degree", "BS" %}
 
 {% include people_grid.html 
