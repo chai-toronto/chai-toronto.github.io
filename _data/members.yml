@@ -185,6 +185,24 @@
   degree: BS
   active: true
 
+- id: malaikah_hussain
+  name: Malaikah Hussain
+  affiliation: CS
+  image: /images/members/malaikah_hussain.png
+  website: https://www.linkedin.com/in/malaikah-hussain-616697245/
+  startyear: 2024
+  degree: BS
+  active: true
+
+- id: yiteng_zhang
+  name: Yiteng Zhang
+  affiliation: CS
+  image: /images/members/yiteng_zhang.png
+  website: https://github.com/3th4novo
+  startyear: 2024
+  degree: BS
+  active: true
+
 # Staff
 
 # PhD Alumni
