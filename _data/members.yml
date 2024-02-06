@@ -124,7 +124,7 @@
 - id: pierre_lessard
   name: Pierre-William Lessard
   affiliation: CS
-  image: /images/members/pierre_lessard.png
+  image: /images/members/pierre_lessard.jpeg
   website: https://www.linkedin.com/in/pierre-william-lessard/
   startyear: 2023
   degree: BS
@@ -137,16 +137,6 @@
   website: https://www.linkedin.com/in/nm-le/
   startyear: 2023
   degree: BS
-  active: true
-
-- id: ofek_gross
-  name: Ofek Gross
-  name: Ofek Gross
-  affiliation: CS 
-  image: /images/members/ofek_gross.png
-  website:
-  startyear: 2023
-  degree: BS 
   active: true
 
 - id: shawn_kong
@@ -220,6 +210,16 @@
   active: false
 
 # Undergrad Alumni
+- id: ofek_gross
+  name: Ofek Gross
+  name: Ofek Gross
+  affiliation: CS 
+  image: /images/members/ofek_gross.png
+  website:
+  startyear: 2023
+  degree: BS 
+  active: false
+  
 - id: sixuan_wu
   name: Sixuan Wu
   affiliation: CS
