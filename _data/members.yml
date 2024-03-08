@@ -193,6 +193,16 @@
   degree: BS
   active: true
 
+- id: michelle_lin
+  name: Michelle Lin
+  affiliation: CS
+  image: /images/members/michelle_lin.jpg
+  website: https://www.linkedin.com/in/michellelin12/
+  startyear: 2024
+  endyear: 2024
+  degree: BS
+  active: true
+
 # Staff
 
 # PhD Alumni
@@ -300,4 +310,3 @@
   endyear: 2023
   degree: BS
   active: false
-
