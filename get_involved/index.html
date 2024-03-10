@@ -15,31 +15,17 @@ title: Getting Involved
 <div class="row">
   <h1>Undergraduate Students</h1>
   <p>
-    At the start of every session (fall semester, winter semester, summer break), our group identifies projects that would be significantly accelerated with the help of an undergraduate student. These projects can require a variety of skills: building a smartphone app, building machine learning models, conducting interviews, helping run longitudinal studies, etc. Undergraduate students at various experience levels may be suitable for these positions depending on the project's timeline and the skills that are already on hand.
+    Undergraduate research opportunities within our group are largely based on ongoing projects by graduate students.
+    We regularly identify projects that would be significantly accelerated with the help of an undergraduate student, and then we seek out undergraduates to help with those tasks as needs arise.
+    Undergraduate research activities in our group can require a variety of skills: building a smartphone app, building machine learning models, conducting interviews, helping run longitudinal studies, etc. Undergraduate students at various experience levels may be suitable for these positions depending on the project's timeline and the skills that are already on hand.
   </p>
 
-  {% if site.data.ugrad_projects.size > 0%}
-    <p>
-      The list below describes the positions that are available for the current semester, but note that all applicants will be considered for all positions:
-    </p>
-    <dl class="row">
-    {% for project in site.data.ugrad_projects %}
-    <dt class="col-sm-2"><b>{{ project.name }}</b></dt>
-    <dd class="col-sm-9">
-      {% for role in project.roles %}
-        <p>{{ role }}</p>
-      {% endfor %}
-    </dd>
-    {% endfor %}
-    </dl>
-    <br/>
-
-    <p>
-      If you are interested in any of the projects listed above, please fill out this <a href="https://forms.gle/AFSkKoxB1eQUgzvp6" target="_blank">Google form</a>.
-    </p>
-  {% else %}
-    <p>
-      We are not looking for any new undergraduate students at this time. However, if you are interested in working with our group in the future, please fill out this <a href="https://forms.gle/AFSkKoxB1eQUgzvp6" target="_blank">Google form</a>.
-    </p>
-  {% endif %}
+  <p>
+    We typically recruit students who are already at the University of Toronto.
+    If you fall in that category, you can take a look at the <a href="https://usra.cs.toronto.edu/" target="_blank">Undergraduate Research Opportunities Portal</a> to see the projects with potential openings.
+    We look at applications sent through this portal for CSC 494/495, NSERC Undergraduate Student Research Awards (USRA), and University of Toronto Excellence Awards (UTEA).
+  </p>
+  <p>
+    If you are interested in volunteering from within our outside of the university, you may fill out this <a href="https://forms.gle/AFSkKoxB1eQUgzvp6" target="_blank">Google form</a> that we periodically examine for potential recruits.
+  </p>
 </div>
