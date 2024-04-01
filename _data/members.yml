@@ -224,7 +224,7 @@
   name: Nina Huang
   affiliation: CS
   image: /images/members/nina_huang.jpeg
-  website: https://www.linkedin.com/in/nina-huangg/
+  website: https://www.linkedin.com/in/nina-huangg
   startyear: 2024
   degree: BS
   active: true
@@ -233,7 +233,24 @@
   name: Katherine Jelich
   affiliation: CS
   image: /images/members/katherine_jelich.jpeg
-  website: https://www.linkedin.com/in/katherinejelich/
+  website: https://www.linkedin.com/in/katherinejelich
+  startyear: 2024
+  degree: BS
+  active: true
+
+- id: tien_han
+  name: Tien Han
+  affiliation: CS
+  image: /images/members/katherine_jelich.jpeg
+  website: https://www.linkedin.com/in/hantien
+  startyear: 2024
+  degree: BS
+  active: true
+
+- id: kevin_huang
+  name: Kevin Huang
+  affiliation: CS
+  image: /images/members/kevin_huang.jpg
   startyear: 2024
   degree: BS
   active: true
