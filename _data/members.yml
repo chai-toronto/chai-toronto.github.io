@@ -255,6 +255,14 @@
   degree: BS
   active: true
 
+- id: muhammad_brillian
+  name: Muhammad Enrizky Brillian
+  affiliation: CS
+  image: /images/members/muhammad_brillian.jpeg
+  startyear: 2024
+  degree: BS
+  active: true
+
 # Staff
 
 # PhD Alumni
