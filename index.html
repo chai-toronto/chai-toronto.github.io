@@ -46,11 +46,15 @@ title: Home
     {% assign grads = grads | sort: 'id' %}
 
     {% include people_grid.html 
-    people=grads title="Graduate Students" image=true
+    people=grads 
+    title="Graduate Students" 
+    current_or_alum="current"
     %}
     
     {% include people_grid.html 
-    people=ugrads title="Undergraduate Students" image=true
+    people=ugrads 
+    title="Undergraduate Students" 
+    current_or_alum="current"
     %}
   </div>
 

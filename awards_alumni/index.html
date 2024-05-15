@@ -2,12 +2,8 @@
 layout: page
 title: Awards and Alumni
 ---
-
-{% assign sorted_awards = site.data.awards | sort: 'date' %}
-{% assign sorted_fellowships = site.data.fellowships | sort: 'date' %}
-{% assign sorted_pubs = site.publications | sort: 'date' | where_exp:"pub","pub.award.size > 0 " %}
-
 <!-- Awards -->
+{% assign sorted_awards = site.data.awards | sort: 'award' %}
 <div class="row">
   <h1>Awards and Distinctions</h1>
   {% for award in sorted_awards %}
@@ -17,15 +13,19 @@ title: Awards and Alumni
 <br/>
 
 <!-- Fellowships -->
-<!-- <div class="row">
+{% assign sorted_fellowships = site.data.fellowships | sort: 'award' %}
+<hr />
+<div class="row">
   <h1>Student Fellowships</h1>
   {% for award in sorted_fellowships %}
     <b>{{ award.award }}</b>: {% include award_list.html winners=award.winners %} <br/>
   {% endfor %} 
-</div> -->
+</div>
 
 <!-- Best Papers -->
-<!-- <div class="row">
+<!-- {% assign sorted_pubs = site.publications | sort: 'date' | reverse | where_exp:"pub","pub.award.size > 0 " %} -->
+<!-- <hr />
+<div class="row">
   <h1>Best Paper / Honorable Mention Awards</h1>
     {% for pub in sorted_pubs reversed %}
     <div class="row publication-badge">
@@ -41,9 +41,7 @@ title: Awards and Alumni
 </div> -->
 
 <!-- Alumni -->
-<hr />
-{% assign sorted_members = site.data.members | sort: 'id' %}
-{% assign past_members = sorted_members | where:"active",false %}
+{% assign past_members = site.data.members | where:"active",false %}
 {% assign phd_alumni = past_members | where:"degree", "PhD" %}
 
 {% assign msc_alumni = past_members | where: "degree", "MSc" %}
@@ -52,14 +50,23 @@ title: Awards and Alumni
 
 {% assign ugrad_alumni = past_members | where:"degree", "BS" %}
 
+<!-- <hr /> -->
 {% include people_grid.html 
-people=phd_alumni title="PhD Alumni" image=false
+people=phd_alumni 
+title="PhD Alumni" 
+current_or_alum="alum"
 %}
 
+<hr />
 {% include people_grid.html 
-people=masters_alumni title="Masters Alumni" image=false
+people=masters_alumni 
+title="Masters Alumni" 
+current_or_alum="alum"
 %}
 
+<hr />
 {% include people_grid.html 
-people=ugrad_alumni title="Undergraduate Alumni" image=false
+people=ugrad_alumni 
+title="Undergraduate Alumni" 
+current_or_alum="alum"
 %}

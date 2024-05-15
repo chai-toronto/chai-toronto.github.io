@@ -166,15 +166,6 @@
   degree: BS
   active: true
 
-- id: shivesh_prakash
-  name: Shivesh Prakash
-  affiliation: CS
-  image: /images/members/shivesh_prakash.jpeg
-  website: https://shivesh777.github.io/
-  startyear: 2024
-  degree: BS
-  active: true
-
 - id: andrew_qiu
   name: Andrew Qiu
   affiliation: CS
@@ -245,6 +236,16 @@
   active: false
 
 # Undergrad Alumni
+- id: shivesh_prakash
+  name: Shivesh Prakash
+  affiliation: CS
+  image: /images/members/shivesh_prakash.jpeg
+  website: https://shivesh777.github.io/
+  startyear: 2024
+  endyear: 2024
+  degree: BS
+  active: false
+
 - id: yiteng_zhang
   name: Yiteng Zhang
   affiliation: CS

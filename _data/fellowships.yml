@@ -1,4 +1,10 @@
-- award: National Science Foundation Graduate Research Fellowship
+- award: Google PhD Fellowship
+  url: https://research.google/outreach/phd-fellowship/recipients/
   winners:
-  - name: mariakakis
-    year: 2015 – 2018
+  - name: blue_lin
+    year: 2023
+- award: Canada Graduate Scholarship — Doctoral
+  url: https://www.nserc-crsng.gc.ca/Students-Etudiants/PG-CS/CGSD-BESCD_eng.asp
+  winners:
+  - name: brenna_li
+    year: 2022

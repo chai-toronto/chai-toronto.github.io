@@ -1,5 +1,12 @@
-{% assign years = include.people | group_by: "startyear" %}
-{% assign years_sorted = years | sort: "name" %}
+{% if include.current_or_alum == "current" %}
+  {% assign years = include.people | group_by: "startyear" %}
+  {% assign years_sorted = years | sort: "name" %}
+  {% assign use_image = true %}
+{% elsif include.current_or_alum == "alum" %}
+  {% assign years = include.people | group_by: "endyear" %}
+  {% assign years_sorted = years | sort: "name" | reverse %}
+  {% assign use_image = false %}
+{% endif %}
 
 <!-- Generate the grid -->
 {% capture people_grid %}
@@ -14,7 +21,7 @@
   {% for member in members %}
     <div class="member-badge col-xs-6 col-sm-4 col-md-3">
       <!-- Image -->
-      {% if include.image %}
+      {% if use_image %}
         {% if member.website != nil %}<a href="{{ member.website }}">{% endif %}
           <img src="{{ member.image }}" alt="{{ member.id }}"/>
         {% if member.website != nil %}</a>{% endif %}
@@ -30,24 +37,24 @@
           {% endif %}
         </div>
 
-        <!-- Co-advisor -->
-        <div class="member-coadvisor">
-          {% if member.coadvisor != nil %}
-            Co-advisor: <span class="authors">{% include author_list.html authors=member.coadvisor %}</span>
-          {% endif %}
-        </div>
-
         <!-- Degree and Years -->
         <div class="member-year">
           {{ member.degree }},
           {% if member.active == true %}
-            {{ member.startyear }} – present
+            started {{ member.startyear }}
           {% else %}
             {% if member.startyear == member.endyear %}
               {{ member.startyear }}
             {% else %}
               {{ member.startyear }} – {{ member.endyear }}
             {% endif %}
+          {% endif %}
+        </div>
+
+        <!-- Co-advisor -->
+        <div class="member-coadvisor">
+          {% if member.coadvisor != nil %}
+            Co-advisor: <span class="authors">{% include author_list.html authors=member.coadvisor %}</span>
           {% endif %}
         </div>
 
