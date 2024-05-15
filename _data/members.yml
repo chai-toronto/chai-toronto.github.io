@@ -157,42 +157,6 @@
   degree: BS
   active: true
 
-- id: liam_bakar
-  name: Liam Bakar 
-  affiliation: CS
-  image: /images/members/liam_bakar.jpg
-  website: https://www.linkedin.com/in/liam-bakar
-  startyear: 2023
-  degree: BS
-  active: true
-
-- id: jiaqi_guo
-  name: Jiaqi Guo
-  affiliation: CS
-  image: /images/members/jiaqi_guo.jpg
-  website: https://www.linkedin.com/in/jiaqi-guo-6b040422b/
-  startyear: 2023
-  degree: BS
-  active: true
-
-- id: malaikah_hussain
-  name: Malaikah Hussain
-  affiliation: CS
-  image: /images/members/malaikah_hussain.jpg
-  website: https://www.linkedin.com/in/malaikah-hussain-616697245/
-  startyear: 2024
-  degree: BS
-  active: true
-
-- id: yiteng_zhang
-  name: Yiteng Zhang
-  affiliation: CS
-  image: /images/members/yiteng_zhang.png
-  website: https://github.com/3th4novo
-  startyear: 2024
-  degree: BS
-  active: true
-
 - id: michelle_lin
   name: Michelle Lin
   affiliation: CS
@@ -281,6 +245,46 @@
   active: false
 
 # Undergrad Alumni
+- id: yiteng_zhang
+  name: Yiteng Zhang
+  affiliation: CS
+  image: /images/members/yiteng_zhang.png
+  website: https://github.com/3th4novo
+  startyear: 2024
+  endyear: 2024
+  degree: BS
+  active: false
+
+- id: malaikah_hussain
+  name: Malaikah Hussain
+  affiliation: CS
+  image: /images/members/malaikah_hussain.jpg
+  website: https://www.linkedin.com/in/malaikah-hussain-616697245/
+  startyear: 2024
+  endyear: 2024
+  degree: BS
+  active: false
+
+- id: liam_bakar
+  name: Liam Bakar 
+  affiliation: CS
+  image: /images/members/liam_bakar.jpg
+  website: https://www.linkedin.com/in/liam-bakar
+  startyear: 2023
+  endyear: 2024
+  degree: BS
+  active: false
+
+- id: jiaqi_guo
+  name: Jiaqi Guo
+  affiliation: CS
+  image: /images/members/jiaqi_guo.jpg
+  website: https://www.linkedin.com/in/jiaqi-guo-6b040422b/
+  startyear: 2023
+  endyear: 2024
+  degree: BS
+  active: false
+
 - id: ofek_gross
   name: Ofek Gross
   name: Ofek Gross
