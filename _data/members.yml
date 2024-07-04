@@ -220,14 +220,6 @@
   degree: BS
   active: true
 
-- id: kevin_huang
-  name: Kevin Huang
-  affiliation: CS
-  image: /images/members/kevin_huang.jpg
-  startyear: 2024
-  degree: BS
-  active: true
-
 # Staff
 
 # PhD Alumni
@@ -245,6 +237,15 @@
   active: false
 
 # Undergrad Alumni
+- id: kevin_huang
+  name: Kevin Huang
+  affiliation: CS
+  image: /images/members/kevin_huang.jpg
+  startyear: 2024
+  endyear: 2024
+  degree: BS
+  active: false
+  
 - id: shivesh_prakash
   name: Shivesh Prakash
   affiliation: CS
