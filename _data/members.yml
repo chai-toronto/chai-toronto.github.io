@@ -112,11 +112,11 @@
 # Current Masters
 
 # Current Undergrads
-- id: katherine_ma
-  name: Katherine Ma
+- id: olivia_zhou
+  name: Olivia Zhou
   affiliation: CS
-  image: /images/members/katherine_ma.jpg
-  website: https://www.linkedin.com/in/zewen-ma-053964203/
+  image: /images/members/olivia_zhou.jpg
+  website: https://www.linkedin.com/in/olivia-zhou-5a3991208/
   startyear: 2024
   degree: BS
   active: true
@@ -237,6 +237,16 @@
   active: false
 
 # Undergrad Alumni
+- id: katherine_ma
+  name: Katherine Ma
+  affiliation: CS
+  image: /images/members/katherine_ma.jpg
+  website: https://www.linkedin.com/in/zewen-ma-053964203/
+  startyear: 2024
+  endyear: 2024
+  degree: BS
+  active: false
+
 - id: shawn_kong
   name: Shawn Kong
   affiliation: CS 
