@@ -131,7 +131,7 @@
   active: true
 
 - id: helen_li
-  name: Helen Li
+  name: Jin Yi Li
   affiliation: CS
   image: /images/members/helen_li.jpg
   website: https://helen-li.github.io/
@@ -231,7 +231,7 @@
   image: /images/members/filip_miscevic.jpeg
   website: https://www.linkedin.com/in/filip-miscevic-1874498b/
   startyear: 2022
-  endyear: 2022
+  endyear: 2023
   degree: MScAC
   coadvisor: Gerard O'Leary
   active: false

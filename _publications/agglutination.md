@@ -17,15 +17,4 @@ venue: ARDUOUS Workshop, $PERCOM$
 date: 2022-03-21
 link: https://ieeexplore.ieee.org/abstract/document/9767280
 thumbnail: /images/pubs/agglutination.png
-citation: |
-    Gupta S, Sklavounos AA, Dahmer J, Yong AK, Abdullah MA, Camacho G, Morton K, Shiu M, Labrecque J, Veres T, Wheeler AR. Machine Learning to Automate the Visual Interpretation of Chemical Agglutination Tests. In 2022 IEEE International Conference on Pervasive Computing and Communications Workshops and other Affiliated Events (PerCom Workshops) 2022 Mar 21 (pp. 230-235). IEEE.
-bibtex: |
-    @inproceedings{gupta2022machine,
-    title={Machine Learning to Automate the Visual Interpretation of Chemical Agglutination Tests},
-    author={Gupta, Sidharth and Sklavounos, Alexandros A and Dahmer, Joshua and Yong, Anthony KC and Abdullah, Mohammed AA and Camacho, Gilberto and Morton, Keith and Shiu, Matthew and Labrecque, Jean and Veres, Teodor and others},
-    booktitle={2022 IEEE International Conference on Pervasive Computing and Communications Workshops and other Affiliated Events (PerCom Workshops)},
-    pages={230--235},
-    year={2022},
-    organization={IEEE}
-    }
 ---
