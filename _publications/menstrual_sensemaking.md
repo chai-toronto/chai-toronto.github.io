@@ -6,7 +6,6 @@ authors:
 - helen_li
 - chloe_zhao
 - khai
-- Robert Wu
 - mariakakis
 venue: $IMWUT$
 date: 2024-09-09
