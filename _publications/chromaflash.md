@@ -1,5 +1,5 @@
 ---
-title: 'Promoting Engagement in Remote Patient Monitoring Using Asynchronous Messaging'
+title: 'ChromaFlash: Snapshot Hyperspectral Imaging Using Rolling Shutter Cameras'
 authors: 
 - dhruv_verma
 - ian_ruffolo
