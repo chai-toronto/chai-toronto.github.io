@@ -202,15 +202,6 @@
   degree: BS
   active: true
 
-- id: tien_han
-  name: Tien Han
-  affiliation: CS
-  image: /images/members/tien_han.jpeg
-  website: https://www.linkedin.com/in/hantien
-  startyear: 2024
-  degree: BS
-  active: true
-
 - id: kaavya_kalani
   name: Kaavya Kalani
   affiliation: CS
@@ -237,6 +228,16 @@
   active: false
 
 # Undergrad Alumni
+- id: tien_han
+  name: Tien Han
+  affiliation: CS
+  image: /images/members/tien_han.jpeg
+  website: https://www.linkedin.com/in/hantien
+  startyear: 2024
+  endyear: 2024
+  degree: BS
+  active: false
+
 - id: katherine_ma
   name: Katherine Ma
   affiliation: CS
