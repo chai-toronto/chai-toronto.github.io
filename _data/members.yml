@@ -112,39 +112,12 @@
 # Current Masters
 
 # Current Undergrads
-- id: olivia_zhou
-  name: Olivia Zhou
-  affiliation: CS
-  image: /images/members/olivia_zhou.jpg
-  website: https://www.linkedin.com/in/olivia-zhou-5a3991208/
-  startyear: 2024
-  degree: BS
-  active: true
-
-- id: rilong_zhang
-  name: Rilong (Owen) Zhang
-  affiliation: CS
-  image: /images/members/rilong_zhang.png
-  website: http://www.linkedin.com/in/rilong-zhang-0a5493209/
-  startyear: 2024
-  degree: BS
-  active: true
-
 - id: helen_li
   name: Jin Yi Li
   affiliation: CS
   image: /images/members/helen_li.jpg
   website: https://helen-li.github.io/
   startyear: 2021
-  degree: BS
-  active: true
-
-- id: pierre_lessard
-  name: Pierre-William Lessard
-  affiliation: CS
-  image: /images/members/pierre_lessard.jpeg
-  website: https://www.linkedin.com/in/pierre-william-lessard/
-  startyear: 2023
   degree: BS
   active: true
 
@@ -211,6 +184,33 @@
   degree: BS
   active: true
 
+- id: olivia_zhou
+  name: Olivia Zhou
+  affiliation: CS
+  image: /images/members/olivia_zhou.jpg
+  website: https://www.linkedin.com/in/olivia-zhou-5a3991208/
+  startyear: 2024
+  degree: BS
+  active: true
+
+- id: rilong_zhang
+  name: Rilong (Owen) Zhang
+  affiliation: CS
+  image: /images/members/rilong_zhang.png
+  website: http://www.linkedin.com/in/rilong-zhang-0a5493209/
+  startyear: 2024
+  degree: BS
+  active: true
+
+- id: yifang_zhang
+  name: Yifang Zhang
+  affiliation: CS
+  image: /images/members/yifang_zhang.jpg
+  website: https://www.linkedin.com/in/yifang-zhang-04a984241/
+  startyear: 2024
+  degree: BS
+  active: true
+
 # Staff
 
 # PhD Alumni
@@ -228,6 +228,16 @@
   active: false
 
 # Undergrad Alumni
+- id: pierre_lessard
+  name: Pierre-William Lessard
+  affiliation: CS
+  image: /images/members/pierre_lessard.jpeg
+  website: https://www.linkedin.com/in/pierre-william-lessard/
+  startyear: 2023
+  endyear: 2024
+  degree: BS
+  active: false
+
 - id: tien_han
   name: Tien Han
   affiliation: CS
