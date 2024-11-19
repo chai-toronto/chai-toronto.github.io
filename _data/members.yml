@@ -117,7 +117,7 @@
   affiliation: CS
   image: /images/members/helen_li.jpg
   website: https://helen-li.github.io/
-  startyear: 2021
+  startyear: 2022
   degree: BS
   active: true
 
@@ -207,6 +207,15 @@
   affiliation: CS
   image: /images/members/yifang_zhang.jpg
   website: https://www.linkedin.com/in/yifang-zhang-04a984241/
+  startyear: 2024
+  degree: BS
+  active: true
+
+- id: harpuneet_singh
+  name: Harpuneet Singh
+  affiliation: CS
+  image: /images/members/harpuneet_singh.jpg
+  website: https://www.linkedin.com/in/harpuneet2005/
   startyear: 2024
   degree: BS
   active: true
