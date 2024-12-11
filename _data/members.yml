@@ -220,6 +220,15 @@
   degree: BS
   active: true
 
+- id: benson_chou
+  name: Benson Chou
+  affiliation: CS
+  image: /images/members/benson_chou.jpg
+  website: https://www.linkedin.com/in/chiayouchou/
+  startyear: 2024
+  degree: BS
+  active: true
+
 # Staff
 
 # PhD Alumni
