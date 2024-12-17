@@ -229,6 +229,15 @@
   degree: BS
   active: true
 
+- id: maryam_taj
+  name: Maryam Taj
+  affiliation: CS
+  image: /images/members/maryam_taj.jpeg
+  website: http://www.linkedin.com/in/maryamtaj
+  startyear: 2024
+  degree: BS
+  active: true
+
 # Staff
 
 # PhD Alumni
