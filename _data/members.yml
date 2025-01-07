@@ -139,15 +139,6 @@
   degree: BS
   active: true
 
-- id: michelle_lin
-  name: Michelle Lin
-  affiliation: CS
-  image: /images/members/michelle_lin.jpg
-  website: https://www.linkedin.com/in/michellelin12/
-  startyear: 2024
-  degree: BS
-  active: true
-
 - id: andrew_qiu
   name: Andrew Qiu
   affiliation: CS
@@ -180,15 +171,6 @@
   affiliation: CS
   image: /images/members/kaavya_kalani.jpg
   website: https://www.linkedin.com/in/kaavya-kalani/
-  startyear: 2024
-  degree: BS
-  active: true
-
-- id: olivia_zhou
-  name: Olivia Zhou
-  affiliation: CS
-  image: /images/members/olivia_zhou.jpg
-  website: https://www.linkedin.com/in/olivia-zhou-5a3991208/
   startyear: 2024
   degree: BS
   active: true
@@ -255,6 +237,26 @@
   active: false
 
 # Undergrad Alumni
+- id: michelle_lin
+  name: Michelle Lin
+  affiliation: CS
+  image: /images/members/michelle_lin.jpg
+  website: https://www.linkedin.com/in/michellelin12/
+  startyear: 2024
+  endyear: 2024
+  degree: BS
+  active: false
+
+- id: olivia_zhou
+  name: Olivia Zhou
+  affiliation: CS
+  image: /images/members/olivia_zhou.jpg
+  website: https://www.linkedin.com/in/olivia-zhou-5a3991208/
+  startyear: 2024
+  endyear: 2024
+  degree: BS
+  active: false
+
 - id: pierre_lessard
   name: Pierre-William Lessard
   affiliation: CS
