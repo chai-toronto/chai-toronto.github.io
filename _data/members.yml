@@ -220,6 +220,15 @@
   degree: BS
   active: true
 
+- id: jeb_thomas
+  name: Jeb Thomas
+  affiliation: CS
+  image: /images/members/jeb_thomas.jpeg
+  website: https://www.linkedin.com/in/jeb-thomas-877966293/
+  startyear: 2024
+  degree: BS
+  active: true
+
 # Staff
 
 # PhD Alumni
