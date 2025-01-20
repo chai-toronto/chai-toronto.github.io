@@ -35,6 +35,12 @@ title: Publications
         <i>{% if pub.date > site.time %}<span class="to-appear">To appear in </span>{% endif %}{% include conference_extender.html venue=pub.venue %}, {{ this_year }}</i>{% if pub.award %}, <span class="award">{{ pub.award }}</span>{% endif %}<br/>
 
         {% if pub.date <= site.time %}
+          <!-- Abstract -->
+          {% if pub.abstract %}
+            <button type="button" class="btn btn-default btn-xs" aria-label="Abstract" data-toggle="modal" data-target="#{{pub.title | slugify}}_abstract">
+            <span class="glyphicon glyphicon-book" aria-hidden="true"></span> Abstract
+            </button>
+          {% endif %}
           <!-- News -->
           {% if pub.press %}
             <button type="button" class="btn btn-default btn-xs" aria-label="News" data-toggle="modal" data-target="#{{pub.title | slugify}}_press">
@@ -51,6 +57,26 @@ title: Publications
       </p>
     </div>
   </div>
+
+  <!-- Abstract -->
+  {% if pub.abstract %}
+    <div class="modal fade" tabindex="-1" role="dialog" id="{{pub.title | slugify}}_abstract">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">{{ pub.title }}</h4>
+          </div>
+          <div class="modal-body">
+            {{ pub.abstract }}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+  {% endif %}
 
   <!-- Media Coverage -->
   {% if pub.press %}
@@ -85,7 +111,7 @@ title: Publications
             <h4 class="modal-title">{{ pub.title }}</h4>
           </div>
           <div class="modal-body">
-            {{ pub.video_embed }}
+            <iframe width="560" height="315" src="{{ pub.video_embed }}" frameborder="0" allowfullscreen></iframe>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
