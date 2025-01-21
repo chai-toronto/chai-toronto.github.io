@@ -23,7 +23,7 @@ Add an entry to `_data/members.yml` with the following fields:
 | `degree` | yes | The shorthand name of your degree, such as `PhD`, `MSc`, or `BS` |
 | `active` | yes | Put `true` if you are currently working in the lab or `false` if you are now working elsewhere |
 
-## Upload image
+## Upload an Image
 Images should be uploaded to `images/members/`. Images should be square and (ideally) 165x165px. If you upload something else, it will be cropped.
 
 # Adding a Publication
@@ -37,5 +37,6 @@ Create a new file in `_publications/`. The file should have the following fields
 | `link` | yes | External link to the ACM DL or equivalent |
 | `thumbnail` | yes | Must be 16x9 and 300px wide. Add to `images/pubs/`. |
 | `award` | no | The name of the award the paper received (e.g., `'Best Paper Award'` or `'Honorable Mention Award'`) |
+| `abstract` | no | Copy from the ACM DL or equivalent when possible, otherwise use Google Scholar. |
 | `news` | no | List of different press releases, which contains <ul><li>`name`: the name of the news entity</li><li>`url`: the url to the article</li><li>`headline`: the headline</li><li>`date`: the date the article was published</li></ul>
 | `video_embed` | no | HTML embed code for video player |
