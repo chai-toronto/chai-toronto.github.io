@@ -16,7 +16,7 @@ title: Awards and Alumni
 {% assign sorted_fellowships = site.data.fellowships | sort: 'award' %}
 <hr />
 <div class="row">
-  <h1>Student Fellowships</h1>
+  <h1>Student Scholarships and Fellowships</h1>
   {% for award in sorted_fellowships %}
     <b>{{ award.award }}</b>: {% include award_list.html winners=award.winners %} <br/>
   {% endfor %} 
