@@ -8,7 +8,7 @@ authors:
 - delara
 - mariakakis
 venue: $ICASSP$
-date: 2025-04-06
+date: 2025-03-07
 link: https://doi.org/10.1109/ICASSP49660.2025.10888421
 thumbnail: /images/pubs/phoneme_stats.png
 abstract: |
