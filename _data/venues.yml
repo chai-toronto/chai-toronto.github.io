@@ -6,6 +6,8 @@
   full_name: ACM Conference on Designing Interactive Systems (DIS)
 - id: $EMBC$
   full_name: Engineering in Medicine and Biology Conference (EMBC)
+- id: $ICASSP$
+  full_name: IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)
 - id: $ICTD$
   full_name: Conference on Information & Communication Technologies and Development (ICTD)
 - id: $IMWUT$
