@@ -505,7 +505,7 @@
   degree: BS
   active: false
 
-# Cosupervisors
+# Collaborators
 - id: brudno
   name: Michael Brudno
   affiliation: CS

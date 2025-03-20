@@ -3,7 +3,7 @@ title: 'On the Production and Measurement of Cardiac Sounds in the Ear Canal'
 authors: 
 - ken_christofferson
 - sejal_bhalla
-- Joseph Cafazzo
+- cafazzo
 - mariakakis
 venue: EarComp Workshop, $UBICOMP$
 date: 2024-10-05
