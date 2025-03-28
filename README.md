@@ -59,6 +59,3 @@ Create a new file in `_publications/`. The file should have the following fields
 | `health_topic` | no | Relevant health topic. Please refer to options already in the website before creating a new one |
 | `device` | no | Relevant technology being studied. Please refer to options already in the website before creating a new one |
 | `skills` | yes | Relevant skills being used. Please refer to options already in the website before creating a new one |
-
-# Uploading Images
-Images should be uploaded to `images/members/`. Images should be square and (ideally) 165x165px. If you upload something else, it will be cropped.
