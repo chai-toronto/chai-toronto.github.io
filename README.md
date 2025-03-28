@@ -33,7 +33,7 @@ Create a new file in `_projects/`. The file should have the following fields:
 | Field | Required | Details |
 | --- | --- | --- |
 | `title` | yes | Publication title |
-| `lead` | yes | List of student leads according to `id` |
+| `lead` | yes | List of student leads, using `id` when available |
 | `date` | yes | Publication date |
 | `thumbnail` | yes | Path of thumbnail image in `images/projects/`that is ideally 16x9 and 300px wide |
 | `category` | yes | Relevant research themes (`Active Sensing`, `Passive Sensing`, or `Design`) |
@@ -46,7 +46,7 @@ Create a new file in `_publications/`. The file should have the following fields
 | Field | Required | Details |
 | --- | --- | --- |
 | `title` | yes | Publication title |
-| `authors` | yes | This should be a list of full names. If an author is a lab member (or former lab member), use the member's `id` instead of their name to link it to their website. |
+| `authors` | yes | List of student leads, using `id` when available |
 | `venue` | yes | Full name of the publication venue. If it is a common name, look in `_data/venues.yml` to see if a shortcut has been defined. If so, you can use the shorthand name (including the `$` delimiters) and the full name will automatically be used. You can mix shorthand names with other text if you need to specify that it was submitted to a workshop or alternative track. |
 | `date` | yes | Publication date |
 | `link` | yes | External link to the ACM DL or equivalent |
