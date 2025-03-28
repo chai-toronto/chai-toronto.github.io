@@ -11,32 +11,54 @@
 5. Commit any changes and push everything to the master branch of your GitHub user repository. GitHub Pages will then rebuild and serve your website.
 
 # Updating Your Profile
-## Edit Metadata
 Add an entry to `_data/members.yml` with the following fields:
 | Field | Required | Details |
 | --- | --- | --- |
-| `id` | yes | Should usually be formatted as `lastname_firstname`. This is what you'll use throughout the site to refer to yourself and link to your homepage. |
-| `name` | yes | Full name |
-| `affiliation` | yes | Departmental program |
-| `image` | yes | Path to your profile picture. Images should be square and ideally 165x165px. |
-| `website` | yes | Full link to your personal website |
-| `degree` | yes | The shorthand name of your degree, such as `PhD`, `MSc`, or `BS` |
-| `active` | yes | Put `true` if you are currently working in the lab or `false` if you are now working elsewhere |
+| `id` | yes | Should usually be formatted as `firstname_lastname`. This is what you'll use throughout the site to refer to yourself and link to your homepage. |
+| `name` | yes | First and last name | 
+| `affiliation` | yes | Department |
+| `degree` | yes | Degree program (`PhD`, `MSc`, or `BS`) |
+| `image` | yes | Path to your profile picture within the repository. Images should be square and ideally 165x165px. |
+| `website` | no | Link to your personal website |
+| `gscholar` | no | ID associated with your Google Scholar profile (e.g., https://scholar.google.com/citations?user={extract this}) |
+| `linkedin` | no | ID associated with your LinkedIn profile (e.g., https://www.linkedin.com/in/{extract this}/) |
+| `twitter` | no | ID associated with your Twitter/X profile (e.g., https://x.com/{extract this}) |
+| `twitter` | no | ID associated with your BlueSky profile (e.g., https://bsky.app/profile/{extract this}) |
+| `coadvisor` | no | The name or `id` of your cosupervisor |
+| `active` | yes | `true` if you are currently working in the lab or `false` if you are now working elsewhere |
+| `search` | no | Indicates that you are looking for new positions (`industry`, `academia`, `postdoc`, `grad_school`) |
 
-## Upload an Image
-Images should be uploaded to `images/members/`. Images should be square and (ideally) 165x165px. If you upload something else, it will be cropped.
+# Adding a Current Project
+Create a new file in `_projects/`. The file should have the following fields:
+| Field | Required | Details |
+| --- | --- | --- |
+| `title` | yes | Publication title |
+| `lead` | yes | List of student leads according to `id` |
+| `date` | yes | Publication date |
+| `thumbnail` | yes | Path of thumbnail image in `images/projects/`that is ideally 16x9 and 300px wide |
+| `category` | yes | Relevant research themes (`Active Sensing`, `Passive Sensing`, or `Design`) |
+| `health_topic` | no | Relevant health topic. Please refer to options already in the website before creating a new one |
+| `device` | no | Relevant technology being studied. Please refer to options already in the website before creating a new one |
+| `skills` | yes | Relevant skills being used. Please refer to options already in the website before creating a new one |
 
 # Adding a Publication
 Create a new file in `_publications/`. The file should have the following fields:
 | Field | Required | Details |
 | --- | --- | --- |
-| `title` | yes | Verbatim paper title |
+| `title` | yes | Publication title |
 | `authors` | yes | This should be a list of full names. If an author is a lab member (or former lab member), use the member's `id` instead of their name to link it to their website. |
 | `venue` | yes | Full name of the publication venue. If it is a common name, look in `_data/venues.yml` to see if a shortcut has been defined. If so, you can use the shorthand name (including the `$` delimiters) and the full name will automatically be used. You can mix shorthand names with other text if you need to specify that it was submitted to a workshop or alternative track. |
-| `date` | yes | Publication/presentation date |
+| `date` | yes | Publication date |
 | `link` | yes | External link to the ACM DL or equivalent |
-| `thumbnail` | yes | Must be 16x9 and 300px wide. Add to `images/pubs/`. |
-| `award` | no | The name of the award the paper received (e.g., `'Best Paper Award'` or `'Honorable Mention Award'`) |
-| `abstract` | no | Copy from the ACM DL or equivalent when possible, otherwise use Google Scholar. |
-| `news` | no | List of different press releases, which contains <ul><li>`name`: the name of the news entity</li><li>`url`: the url to the article</li><li>`headline`: the headline</li><li>`date`: the date the article was published</li></ul>
+| `thumbnail` | yes | Path of thumbnail image in `images/pubs/`that is ideally 16x9 and 300px wide |
+| `award` | no | Name of the award the paper received (e.g., `'Best Paper Award'`, `'Honorable Mention Award'`) |
+| `abstract` | yes | Copy from the ACM DL or equivalent when possible, otherwise use Google Scholar. |
 | `video_embed` | no | HTML embed code for video player |
+| `news` | no | List of different press releases, which contains <ul><li>`name`: the name of the news entity</li><li>`url`: the url to the article</li><li>`headline`: the headline</li><li>`date`: the date the article was published</li></ul> |
+| `category` | yes | Relevant research themes (`Active Sensing`, `Passive Sensing`, or `Design`) |
+| `health_topic` | no | Relevant health topic. Please refer to options already in the website before creating a new one |
+| `device` | no | Relevant technology being studied. Please refer to options already in the website before creating a new one |
+| `skills` | yes | Relevant skills being used. Please refer to options already in the website before creating a new one |
+
+# Uploading Images
+Images should be uploaded to `images/members/`. Images should be square and (ideally) 165x165px. If you upload something else, it will be cropped.

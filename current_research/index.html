@@ -13,9 +13,9 @@ title: Current Research
 </div>
 
 {% assign sorted_projects = site.projects | sort: 'name' %}
-{% assign active_projects = sorted_projects | where:"category", "active" %}
-{% assign passive_projects = sorted_projects | where:"category", "passive" %}
-{% assign design_projects = sorted_projects | where:"category", "design" %}
+{% assign active_projects = sorted_projects | where:"category", "Active Sensing" %}
+{% assign passive_projects = sorted_projects | where:"category", "Passive Sensing" %}
+{% assign design_projects = sorted_projects | where:"category", "Design" %}
 
 {% include project_grid.html 
 projects=active_projects 
