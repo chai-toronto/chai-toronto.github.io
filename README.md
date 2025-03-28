@@ -20,10 +20,10 @@ Add an entry to `_data/members.yml` with the following fields:
 | `degree` | yes | Degree program (`PhD`, `MSc`, or `BS`) |
 | `image` | yes | Path to your profile picture within the repository. Images should be square and ideally 165x165px. |
 | `website` | no | Link to your personal website |
-| `gscholar` | no | ID associated with your Google Scholar profile (e.g., https://scholar.google.com/citations?user={extract this}) |
-| `linkedin` | no | ID associated with your LinkedIn profile (e.g., https://www.linkedin.com/in/{extract this}/) |
-| `twitter` | no | ID associated with your Twitter/X profile (e.g., https://x.com/{extract this}) |
-| `twitter` | no | ID associated with your BlueSky profile (e.g., https://bsky.app/profile/{extract this}) |
+| `gscholar` | no | ID associated with your Google Scholar profile (`{id}` in `https://scholar.google.com/citations?user={id}`) |
+| `linkedin` | no | ID associated with your LinkedIn profile (`{id}` in `https://www.linkedin.com/in/{id}`) |
+| `twitter` | no | ID associated with your Twitter/X profile (`{id}` in `https://x.com/{id}`) |
+| `twitter` | no | ID associated with your BlueSky profile (`{id}` in `https://bsky.app/profile/{id}`) |
 | `coadvisor` | no | The name or `id` of your cosupervisor |
 | `active` | yes | `true` if you are currently working in the lab or `false` if you are now working elsewhere |
 | `search` | no | Indicates that you are looking for new positions (`industry`, `academia`, `postdoc`, `grad_school`) |
