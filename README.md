@@ -1,6 +1,7 @@
 # Table of Contents
 - **[Local development](#local-development)**
 - **[Updating your profile](#updating-your-profile)**: `_data/members.yml`
+- **[Adding a current project](#adding-a-current-project)**: `_projects/project_name.yml`
 - **[Adding a publication](#adding-a-publication)**: `_publications/paper_name.yml`
 
 # Local Development
