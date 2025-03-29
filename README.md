@@ -32,9 +32,8 @@ Add an entry to `_data/members.yml` with the following fields:
 Create a new file in `_projects/`. The file should have the following fields:
 | Field | Required | Details |
 | --- | --- | --- |
-| `title` | yes | Publication title |
+| `title` | yes | Project title |
 | `lead` | yes | List of student leads, using `id` when available |
-| `date` | yes | Publication date |
 | `thumbnail` | yes | Path of thumbnail image in `images/projects/`that is ideally 16x9 and 300px wide |
 | `category` | yes | Relevant research themes (`Active Sensing`, `Passive Sensing`, or `Design`) |
 | `health_topic` | no | Relevant health topic. Please refer to options already in the website before creating a new one |
