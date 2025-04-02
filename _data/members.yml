@@ -273,6 +273,17 @@
   active: false
 
 # Undergrad Alumni
+- id: jackson_wu
+  name: Jackson Wu
+  affiliation: CS
+  degree: BS
+  image: /images/members/jackson_wu.jpg
+  website: https://www.linkedin.com/in/yulong-wu-647aa62a2/
+  linkedin: yulong-wu-647aa62a2
+  startyear: 2024
+  endyear: 2024
+  active: false
+
 - id: michelle_lin
   name: Michelle Lin
   affiliation: CS
