@@ -273,6 +273,17 @@
   active: false
 
 # Undergrad Alumni
+- id: matthew_parvaneh
+  name: Matthew Parvaneh
+  affiliation: CS
+  degree: BS
+  image: /images/members/matthew_parvaneh.jpeg
+  website: https://www.linkedin.com/in/matthewparvaneh/
+  linkedin: matthewparvaneh
+  startyear: 2024
+  endyear: 2024
+  active: false
+
 - id: jackson_wu
   name: Jackson Wu
   affiliation: CS
