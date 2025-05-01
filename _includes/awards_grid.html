@@ -1,6 +1,6 @@
 <!-- awards_grid.html -->
 {% capture awards_grid %}
-{% assign sorted_by_org = include.awards | sort: 'org' %}
+{% assign sorted_by_org = include.awards %}
 {% assign grouped_awards = sorted_by_org | group_by:'org' %}
 
 <div class="awards-grid-wrapper">
