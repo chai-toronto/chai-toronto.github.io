@@ -2,63 +2,149 @@
 layout: default
 title: Home
 ---
-<div class="row">
-  <div class="tagline">The Computational Health and Interaction (CHAI) Lab uses ubiquitous and emergent technologies to address problems related to people’s health and wellbeing.</div>
-</div>
 
-<!-- PEOPLE -->
-{% assign members = site.data.members %}
-<div class="row">
-  <div class="col-md-8 text-justify">
+<div class="home-page">
 
-    <!-- Faculty -->
-    <div class="row">
-      {% assign faculty = members | where:"id", "mariakakis" %}
-      {% assign alex = faculty | first %}
-      {% assign member = alex %}
-      <h1>Faculty</h1>
-      <div class="row">
-        <div class="member-badge col-md-3 col-sm-4 col-xs-6">
-          <div class="image"><a href="{{ member.website }}"><img src="{{site.url}}{{member.image}}"/></a></div>
+  <!-- Hero / Tagline Section -->
+  <div class="container hero-section">
+    <div class="row align-items-center">
+      <!-- Banner image - will appear on top for mobile -->
+      <div class="col-md-5 text-center order-md-1 order-1">
+        <div class="hero-img-container">
+          <img
+                  src="{{ site.baseurl }}/images/home_banner.png"
+                  alt="Hero image"
+                  class="hero-img"
+          />
         </div>
-        <div class="member-badge col-md-9 col-sm-8 col-xs-6">
-          <div class="member-details">
-            <div class="member-name" style="text-align: left;"><a href="{{ member.website }}">{{ member.name }}</a></div>
-          </div>
-          <p>Alex Mariakakis is an Assistant Professor in the <a href="https://web.cs.toronto.edu">Department of Computer Science</a> at the <a href="https://www.utoronto.ca/">University of Toronto</a> and an Affiliate Scientist at <a href="https://technainstitute.com/">Techna</a>. He received his Ph.D. from the <a href="http://www.cs.washington.edu/">School of Computer Science and Engineering</a> at the <a href="http://www.washington.edu/">University of Washington</a>. Alex's work is published in top-tier venues in his field, including CHI and IMWUT. His work has also been featured by many media outlets (e.g., BBC, National Geographic, and USA Today). Alex is a fellow of the <a href="https://mhti.md2k.org/">mHealth Training Institute</a>. As a student, he was a recipient of the National Science Foundation Graduate Research Fellowship, the Qualcomm Innovation Fellowship, and the Gaetano Borriello Outstanding Student Award at UbiComp 2018.</p>
+      </div>
+
+      <!-- Tagline & text - will appear below image on mobile -->
+      <div class="col-md-7 order-md-2 order-2">
+        <h1 class="home-tagline">
+          Using ubiquitous technologies to foster proactive, scalable healthcare.
+        </h1>
+        <p class="sub-tagline">
+          At the Computational Health and Interaction (CHAI) Lab, we're revolutionizing
+          healthcare by leveraging technologies already in many people's hands. Our team
+          has collective expertise in ubiquitous computing and human-computer interaction.
+        </p>
+
+        <!-- Button Below the sub-tagline -->
+        <div class="button-container">
+          <a href="{{ site.baseurl }}/publications"
+             class="see-work-btn">
+            See our work
+          </a>
         </div>
       </div>
     </div>
-
-    <!-- Get collections, including hack for getting all grads in same collection -->
-    {% assign current_members = members | where:"active",true %}
-    {% assign phds = current_members | where:"degree", "PhD" %}
-    {% assign masters = current_members | where:"degree", "MSc" %}
-    {% assign ugrads = current_members | where:"degree", "BS" %}
-
-    {% assign grads = "" | split:"/" %}
-    {% for phd in phds %}
-      {% assign grads = grads | push: phd %}
-    {% endfor %}
-    {% for master in masters %}
-      {% assign grads = grads | push: master %}
-    {% endfor %}
-    {% assign grads = grads | sort: 'id' %}
-
-    {% include people_grid.html 
-    people=grads 
-    title="Graduate Students" 
-    current_or_alum="current"
-    %}
-    
-    {% include people_grid.html 
-    people=ugrads 
-    title="Undergraduate Students" 
-    current_or_alum="current"
-    %}
   </div>
 
-  <div class="col-md-4" style="padding-left:50px;">
-    <a class="twitter-timeline" data-theme="light" data-height="1000px" href="https://twitter.com/chai_toronto?ref_src=twsrc%5Etfw">Loading tweets from @chai_toronto</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <!-- News / Twitter Section -->
+  <div class="container news-section mt-2 mb-5">
+    <h2>News</h2>
+    <div class="row">
+      <div class="col-12">
+        <!-- bsky‑embed Web Component -->
+        <script
+                type="module"
+                src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js"
+                async>
+        </script>
+
+        <!-- Latest 5 posts from CHAI's Bluesky account -->
+        <bsky-embed
+                username="chai-toronto.bsky.social"
+                limit="5"
+                link-target="_blank">
+        </bsky-embed>
+      </div>
+    </div>
   </div>
+
+  <!-- Funded by Section -->
+  <div class="container funded-by-section mt-5">
+    <h2>Funded By</h2>
+    <div class="logo-scroller">
+      <div class="scroller-inner">
+        <!-- Original logos -->
+        <div class="logo-item">
+          <img src="{{ site.baseurl }}/images/logos/google.png" alt="Google" class="sponsor-logo" />
+        </div>
+        <div class="logo-item">
+          <img src="{{ site.baseurl }}/images/logos/nserc.png" alt="NSERC" class="sponsor-logo" />
+        </div>
+        <div class="logo-item">
+          <img src="{{ site.baseurl }}/images/logos/cra.png" alt="CRA" class="sponsor-logo" />
+        </div>
+        <div class="logo-item">
+          <img src="{{ site.baseurl }}/images/logos/uhn.png" alt="UHN" class="sponsor-logo" />
+        </div>
+        <div class="logo-item">
+          <img src="{{ site.baseurl }}/images/logos/mitacs.png" alt="Mitacs" class="sponsor-logo" />
+        </div>
+        <div class="logo-item">
+          <img src="{{ site.baseurl }}/images/logos/transformhf.png" alt="Transform HF" class="sponsor-logo" />
+        </div>
+        <div class="logo-item">
+          <img src="{{ site.baseurl }}/images/logos/sunnybrook.png" alt="Sunnybrook" class="sponsor-logo" />
+        </div>
+        <!-- The JavaScript below will clone these items for seamless looping -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const scroller = document.querySelector('.scroller-inner');
+      if (!scroller) return;
+
+      // Clone the inner content for seamless looping
+      scroller.innerHTML += scroller.innerHTML;
+
+      let scrollX = 0;
+      const speed = 0.8; // pixels per frame; adjust as needed
+
+      // Adjust speed based on screen size
+      const adjustSpeed = () => {
+        if (window.innerWidth <= 767) {
+          return 0.5; // Slower on mobile
+        } else {
+          return 0.8; // Original speed on desktop
+        }
+      };
+
+      let currentSpeed = adjustSpeed();
+
+      // Update speed on window resize
+      window.addEventListener('resize', () => {
+        currentSpeed = adjustSpeed();
+      });
+
+      function animateScroller() {
+        scrollX -= currentSpeed;
+        // When we've scrolled through one copy (half the total width), reset the scrollX
+        if (Math.abs(scrollX) >= scroller.scrollWidth / 2) {
+          scrollX = 0;
+        }
+        scroller.style.transform = `translateX(${scrollX}px)`;
+        requestAnimationFrame(animateScroller);
+      }
+
+      animateScroller();
+    });
+  </script>
+
+  <!-- Add viewport meta tag if not already present in layout -->
+  <script>
+    // Check if viewport meta tag exists
+    if (!document.querySelector('meta[name="viewport"]')) {
+      // Create and append viewport meta tag
+      const viewportMeta = document.createElement('meta');
+      viewportMeta.name = 'viewport';
+      viewportMeta.content = 'width=device-width, initial-scale=1.0';
+      document.head.appendChild(viewportMeta);
+    }
+  </script>
 </div>

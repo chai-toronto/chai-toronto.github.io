@@ -1,0 +1,204 @@
+{% comment %}
+This partial filters "active: false" from members.yml,
+splits them into "Graduate Alumni" (PhD, MScAC, etc.) and "Undergraduate Alumni" (BS),
+and displays them in a card layout similar to _people_grid.html.
+We avoid where_exp: with OR to prevent syntax errors on older Jekyll versions.
+{% endcomment %}
+
+{% capture alumni_grid %}
+
+{% comment %}
+1) Collect all inactive (active: false) members.
+{% endcomment %}
+{% assign all_alumni = site.data.members | where:"active", false %}
+
+{% comment %}
+2) Build a "graduate" list by union of separate filters for each degree.
+That avoids multi-OR in one line.
+{% endcomment %}
+{% assign grads_phd = all_alumni | where:"degree","PhD" %}
+{% assign grads_mscac = all_alumni | where:"degree","MScAC" %}
+{% assign grads_msc = all_alumni | where:"degree","MSc" %}
+{% assign grads_ma = all_alumni | where:"degree","MA" %}
+{% assign grads_master = all_alumni | where:"degree","Master" %}
+
+{% comment %}
+Concatenate them into a single array.
+{% endcomment %}
+{% assign alumni_grads = grads_phd | concat: grads_mscac | concat: grads_msc | concat: grads_ma | concat: grads_master %}
+
+{% comment %}
+3) Undergraduate alumni: filter for "BS"
+{% endcomment %}
+{% assign alumni_undergrads = all_alumni | where:"degree","BS" %}
+
+<div class="alumni-grid-wrapper">
+
+  {%- comment -%}
+  GRADUATE ALUMNI
+  {%- endcomment -%}
+  {% if alumni_grads.size > 0 %}
+  <div class="alumni-section mb-5">
+    <h2 class="section-heading">Graduate Alumni</h2>
+    <div class="people-grid alumni-grid">
+      <div class="cards-wrapper">
+        {% for member in alumni_grads %}
+        <div class="persona-card">
+          <div class="persona-card-inner">
+            {% if member.search %}
+            <div class="persona-search-label">
+              <div class="search-label-prefix">Looking for</div>
+              <div class="search-label-position">{{ member.search }}</div>
+            </div>
+            {% endif %}
+
+            <div class="persona-info">
+              <div class="persona-name">
+                {{ member.name }}
+              </div>
+              <div class="persona-role">
+                {{ member.degree | default: "Alumni" }}
+                {% if member.coadvisor %}
+                – co-advised by {{ member.coadvisor }}
+                {% endif %}
+              </div>
+              <div class="persona-description">
+                {% if member.startyear and member.endyear %}
+                {{ member.startyear }} – {{ member.endyear }}
+                {% else %}
+                Former CHAI Lab member
+                {% endif %}
+              </div>
+            </div>
+
+            <div class="persona-footer">
+              {% if member.linkedin %}
+              <a href="https://www.linkedin.com/in/{{ member.linkedin }}" target="_blank" aria-label="LinkedIn Profile">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              {% endif %}
+              {% if member.gscholar %}
+              <a href="https://scholar.google.com/citations?user={{ member.gscholar }}" target="_blank" aria-label="Google Scholar Profile">
+                <i class="fas fa-graduation-cap"></i>
+              </a>
+              {% endif %}
+              {% if member.twitter %}
+              <a href="https://x.com/{{ member.twitter }}" target="_blank" aria-label="X/Twitter Profile">
+                <i class="fab fa-twitter"></i>
+              </a>
+              {% endif %}
+              {% if member.bluesky %}
+              <a href="https://bsky.app/profile/{{ member.bluesky }}" target="_blank" aria-label="Bluesky Profile">
+                <i class="fab fa-bluesky"></i>
+              </a>
+              {% endif %}
+              {% if member.website %}
+              {% if member.linkedin %}
+              {% assign linkedin_url = "https://www.linkedin.com/in/" | append: member.linkedin %}
+              {% if member.website != linkedin_url %}
+              <a href="{{ member.website }}" target="_blank" aria-label="Personal Website">
+                <i class="fas fa-globe"></i>
+              </a>
+              {% endif %}
+              {% else %}
+              <a href="{{ member.website }}" target="_blank" aria-label="Personal Website">
+                <i class="fas fa-globe"></i>
+              </a>
+              {% endif %}
+              {% endif %}
+            </div>
+
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  {%- comment -%}
+  UNDERGRADUATE ALUMNI
+  {%- endcomment -%}
+  {% if alumni_undergrads.size > 0 %}
+  <div class="alumni-section mb-5">
+    <h2 class="section-heading">Undergraduate Alumni</h2>
+    <div class="people-grid alumni-grid">
+      <div class="cards-wrapper">
+        {% for member in alumni_undergrads %}
+        <div class="persona-card">
+          <div class="persona-card-inner">
+            {% if member.search %}
+            <div class="persona-search-label">
+              <div class="search-label-prefix">Looking for</div>
+              <div class="search-label-position">{{ member.search }}</div>
+            </div>
+            {% endif %}
+
+            <div class="persona-info">
+              <div class="persona-name">
+                {{ member.name }}
+              </div>
+              <div class="persona-role">
+                {{ member.degree | default: "Alumni" }}
+                {% if member.coadvisor %}
+                – co-advised by {{ member.coadvisor }}
+                {% endif %}
+              </div>
+              <div class="persona-description">
+                {% if member.startyear and member.endyear %}
+                {{ member.startyear }} – {{ member.endyear }}
+                {% else %}
+                Former CHAI Lab member
+                {% endif %}
+              </div>
+            </div>
+
+            <div class="persona-footer">
+              {% if member.linkedin %}
+              <a href="https://www.linkedin.com/in/{{ member.linkedin }}" target="_blank" aria-label="LinkedIn Profile">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              {% endif %}
+              {% if member.gscholar %}
+              <a href="https://scholar.google.com/citations?user={{ member.gscholar }}" target="_blank" aria-label="Google Scholar Profile">
+                <i class="fas fa-graduation-cap"></i>
+              </a>
+              {% endif %}
+              {% if member.twitter %}
+              <a href="https://x.com/{{ member.twitter }}" target="_blank" aria-label="X/Twitter Profile">
+                <i class="fab fa-twitter"></i>
+              </a>
+              {% endif %}
+              {% if member.bluesky %}
+              <a href="https://bsky.app/profile/{{ member.bluesky }}" target="_blank" aria-label="Bluesky Profile">
+                <i class="fab fa-bluesky"></i>
+              </a>
+              {% endif %}
+              {% if member.website %}
+              {% if member.linkedin %}
+              {% assign linkedin_url = "https://www.linkedin.com/in/" | append: member.linkedin %}
+              {% if member.website != linkedin_url %}
+              <a href="{{ member.website }}" target="_blank" aria-label="Personal Website">
+                <i class="fas fa-globe"></i>
+              </a>
+              {% endif %}
+              {% else %}
+              <a href="{{ member.website }}" target="_blank" aria-label="Personal Website">
+                <i class="fas fa-globe"></i>
+              </a>
+              {% endif %}
+              {% endif %}
+            </div>
+
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+</div>
+
+{% endcapture %}
+{{ alumni_grid }}

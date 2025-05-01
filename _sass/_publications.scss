@@ -1,106 +1,596 @@
-.citation {
-  padding: 10px;
-  h4 {
-    margin-top: 0px;
-    margin-bottom: 5px;
+@import "variables";
+
+
+@font-face {
+  font-family: 'Instrument Sans Regular';
+  src: url('fonts/InstrumentSans-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Instrument Sans Medium';
+  src: url('fonts/InstrumentSans-Medium.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Instrument Sans SemiBold';
+  src: url('fonts/InstrumentSans-SemiBold.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@media (min-width: 769px) {
+  .mobile-controls,
+  .filter-overlay {
+    display: none;
   }
-  display: block;
-  small {
-    p {
-      line-height: 1.2;
+}
+
+
+  .mobile-controls {
+    display: none;
+
+    @media (max-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      gap: 10px;
+    }
+
+    .mobile-filter-toggle {
+      flex: 0 0 auto;
+      font-family: 'Instrument Sans Regular', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 12px 20px;
+      background-color: #008F8C;
+      border: none;
+      border-radius: 20px;
+      color: #fff;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: #007974;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      &:focus {
+        background-color: #005F5C;
+        color: #fff;
+        outline: none;
+      }
+    }
+
+    .mobile-search {
+      flex: 1 1 auto;
+      padding: 11px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      font-family: "Instrument Sans Regular", sans-serif;
+
+      &:focus {
+        outline: none;
+        border-color: #008F8C;
+      }
     }
   }
-}
 
-code {
-  font-size: 12px;
-  color: $darkGray;
-  background-color: white;
-}
+  .filter-overlay {
+    display: none;
 
-.publication-badge {
-  font-size: 15px;
-  
-  margin-bottom: 5px;
-  .glyphicon-file {
-    color: #980000;
-  }
+    @media (max-width: 768px) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      z-index: 999;
+    }
 
-  .publication-pic {
-    max-width: 300px;
-    overflow: hidden;
-    position: relative;
-  }
-  .publication-pic img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    object-position: center;
-  }
+    .filter-panel {
+      background: #fff;
+      width: 80%;
+      max-width: 280px;
+      height: 100%;
+      overflow-y: auto;
+      transform: translateX(-100%);
+      transition: transform .3s ease;
 
-  .authors a {
-    color: $darkGray;
-    text-decoration: underline;
-  }
-  h2 {
-    margin-top: 0px;
-    margin-bottom: 2px;
-    font-size: 15px;
-  }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
 
-  .award {
-    color: #c70000;
-  }
-  .to-appear {
-    color: rgb(13, 95, 180);
-  }
+        @media (max-width: 768px) {
+          justify-content: flex-start !important;
+        }
 
-}
+        h2 {
+          @media (max-width: 768px) {
+            margin: 0 0 0 8px;
+            font-size: 18px;
+          }
+        }
+      }
 
-.publication {
+      .close-filters {
+        font-size: 24px;
+        line-height: 1;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
 
-  .glyphicon-file {
-    color: #980000;
-  }
+      .apply-filters {
+        display: block;
+        font-family: 'Instrument Sans Regular', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 1.3rem 2rem;
+        background-color: #008F8C;
+        border: none;
+        border-radius: 20px;
+        color: #fff;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+        width: calc(100% - 32px);
+        margin: 16px;
+        cursor: pointer;
 
-  h1 {
-    margin-bottom: 0px;
-  }
+        &:hover {
+          background-color: #007974;
+          text-decoration: none;
+          color: #fff;
+        }
 
-  .materials {
-    margin-bottom: 10px;
-  }
-  .author_list {
-    margin-bottom: 10px;
-    display: block;
-  }
-  .image-holder {
-    max-height: 300px;
-    img {
-      max-height: inherit;
+        &:focus {
+          background-color: #005F5C;
+          outline: none;
+          color: #fff;
+        }
+      }
+
+      .filter-section {
+        background: #fff;
+        border-radius: 12px;
+        padding: 16px;
+        margin: 16px;
+        font-family: "Instrument Sans Regular", sans-serif;
+
+        h2 {
+          font-family: "Instrument Sans Medium", sans-serif;
+          font-size: 18px;
+          margin-bottom: 12px;
+        }
+
+        h3 {
+          font-family: "Instrument Sans Medium", sans-serif;
+          font-size: 16px;
+          margin-bottom: 8px;
+        }
+
+        br {
+          display: none;
+        }
+
+        label {
+          display: block;
+          font-size: 14px;
+          margin-bottom: 4px;
+          line-height: 1.2;
+        }
+
+        select {
+          width: 100%;
+          font-size: 14px;
+          margin-bottom: 12px;
+          padding: 6px;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+        }
+
+        .filter-group label {
+          margin-bottom: 4px;
+        }
+
+        hr {
+          margin: 10px 0;
+          border: none;
+          border-top: 1px solid #eee;
+        }
+      }
+    }
+
+    &.active {
+      display: block;
+
+      .filter-panel {
+        transform: translateX(0);
+      }
     }
   }
-  .video-holder {
+
+  .publication-content-row {
+    display: flex;
+    gap: 30px;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+
+    .filter-section {
+      flex: 0 0 200px;
+      max-width: 300px;
+      border-radius: 12px;
+      padding-right: 20px;
+
+      @media (max-width: 768px) {
+        display: none !important;
+      }
+
+      h2, h3 {
+        font-family: "Instrument Sans Medium", sans-serif;
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      .filter-section label {
+        font-family: "Instrument Sans Regular", sans-serif;
+        font-weight: 400;
+        display: block;
+        margin-bottom: -10px;
+      }
+
+      select {
+        font-family: "Instrument Sans Regular", sans-serif;
+        font-weight: 400;
+        max-width: 250px;
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+      }
+
+      .filter-group label {
+        margin-bottom: 4px;
+      }
+
+      hr {
+        margin: 10px 0;
+        border: none;
+      }
+
+      input.pub-search {
+        width: 100%;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 14px;
+        font-family: "Instrument Sans Regular", sans-serif;
+      }
+    }
+
+
+    .active-filter-tag {
+      display: inline-block;
+      background: #eee;
+      padding: 5px 10px;
+      border-radius: 15px;
+      margin: 5px 5px 10px 0;
+      font-family: "Instrument Sans Regular", sans-serif;
+
+      @media (max-width: 480px) {
+        padding: 4px 8px;
+        font-size: 12px;
+        margin: 3px 3px 8px 0;
+      }
+    }
+
+    .active-filter-tag .remove-tag {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      margin-left: 5px;
+    }
+
+    .publications-grid {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+
+      #active-filters-panel {
+        height: auto;
+        min-height: 50px;
+        padding: 10px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+
+        @media (max-width: 768px) {
+          padding: 8px;
+          min-height: 30px;
+        }
+      }
+
+      .publication-cards-wrapper {
+        @media (max-width: 768px) {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          gap: 15px;
+        }
+
+        @media (max-width: 480px) {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 10px;
+        }
+      }
+
+      .publication-card {
+        display: flex;
+        gap: 1rem;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background: #fff;
+        align-items: stretch;
+
+        @media (max-width: 768px) {
+          flex-direction: column;
+          gap: 0.5rem;
+          padding: 0;
+          margin-bottom: 1rem;
+        }
+
+        .pub-image {
+          max-width: 300px;
+          height: auto;
+          flex-shrink: 0;
+          margin-left: -1rem;
+          margin-top: -1rem;
+          margin-bottom: -1rem;
+          overflow: hidden;
+
+          @media (max-width: 768px) {
+            max-width: 100%;
+            margin: 0;
+            height: 150px;
+          }
+
+          @media (max-width: 480px) {
+            height: 100px;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+
+            @media (max-width: 768px) {
+              border-radius: 0;
+              border-top-left-radius: 10px;
+              border-top-right-radius: 10px;
+              object-fit: cover;
+            }
+          }
+        }
+
+
+        .pub-buttons {
+          display: flex;
+          gap: 1rem;
+          justify-content: flex-start;
+
+          @media (max-width: 480px) {
+            gap: 0.5rem;
+            flex-wrap: wrap;
+          }
+        }
+
+        .pub-info {
+          flex: 1 1 auto;
+
+          @media (max-width: 768px) {
+            padding: 10px;
+          }
+
+          @media (max-width: 480px) {
+            padding: 8px;
+          }
+
+          h2 {
+            font-family: 'Instrument Sans Medium', sans-serif;
+            font-size: 20px;
+            margin-bottom: 0.5rem;
+
+            @media (max-width: 768px) {
+              font-size: 18px;
+            }
+
+            @media (max-width: 480px) {
+              font-size: 16px;
+              margin-bottom: 0.3rem;
+            }
+          }
+
+          .authors {
+            font-size: 16px;
+            margin-bottom: 0.5rem;
+            color: #666;
+
+            @media (max-width: 768px) {
+              font-size: 14px;
+            }
+
+            @media (max-width: 480px) {
+              font-size: 12px;
+              margin-bottom: 0.3rem;
+            }
+          }
+
+          .venue-year {
+            font-size: 16px;
+            margin-bottom: 1rem;
+
+            @media (max-width: 768px) {
+              font-size: 14px;
+              margin-bottom: 0.8rem;
+            }
+
+            @media (max-width: 480px) {
+              font-size: 12px;
+              margin-bottom: 0.6rem;
+            }
+
+            em {
+              font-style: italic;
+            }
+
+            .award {
+              color: #c70000;
+              font-weight: bold;
+            }
+          }
+
+          .pub-buttons button {
+            font-family: "Instrument Sans Medium", sans-serif;
+            font-weight: 500;
+            padding: 10px 20px;
+            font-size: 14px;
+            color: white;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            @media (max-width: 768px) {
+              padding: 8px 16px;
+              font-size: 13px;
+              border-radius: 8px;
+            }
+
+            @media (max-width: 480px) {
+              padding: 6px 10px;
+              font-size: 12px;
+              gap: 5px;
+            }
+          }
+
+          .btn-abstract {
+            background-color: #008F8C;
+            color: white;
+          }
+
+          .btn-video {
+            background-color: #003479;
+            color: white;
+          }
+
+          .btn-data {
+            background-color: #AE2192;
+            color: white;
+          }
+
+          .btn-abstract:hover {
+            background-color: #3c5d5d;
+          }
+
+          .btn-video:hover {
+            background-color: #00204e;
+          }
+
+          .btn-data:hover {
+            background-color: mediumvioletred;
+            color: white;
+          }
+
+          .btn-abstract i, .btn-video i, .btn-data i {
+            font-size: 16px;
+
+            @media (max-width: 768px) {
+              font-size: 14px;
+            }
+
+            @media (max-width: 480px) {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
   }
-}
-h2 {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  line-height: 1.2;
-}
 
-p {
-  margin-top: 0; padding-top: 0;
-}
+  /* Modal adjustments for mobile */
+  .modal-dialog {
+    @media (max-width: 767px) {
+      width: 95%;
+      margin: 10px auto;
+    }
 
-code {
-  white-space: pre-wrap;
-  word-break: normal;
-  word-wrap: normal;
-}
+    .modal-content {
+      @media (max-width: 767px) {
+        border-radius: 8px;
+      }
 
-.flyer-thumbs {
-  img {
-    max-height: 200px;
+      .modal-header {
+        @media (max-width: 767px) {
+          padding: 10px 15px;
+        }
+
+        h4.modal-title {
+          @media (max-width: 767px) {
+            font-size: 18px;
+          }
+
+          @media (max-width: 480px) {
+            font-size: 16px;
+          }
+        }
+      }
+
+      .modal-body {
+        @media (max-width: 767px) {
+          padding: 10px;
+          font-size: 14px;
+        }
+
+        iframe {
+          @media (max-width: 767px) {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+          }
+        }
+      }
+
+      .modal-footer {
+        @media (max-width: 767px) {
+          padding: 10px;
+        }
+      }
+    }
   }
-}

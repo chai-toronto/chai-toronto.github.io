@@ -1,11 +1,244 @@
-/*********************/
-/* TAGLINE */
-/*********************/
 
-.tagline {
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  margin: 10px 10px 40px 10px;
-  color: black;
+.home-page {
+
+  @media (max-width: 767px) {
+    .container {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    padding-top: 0;
+    margin-top: -60px;
+  }
+
+  .hero-section {
+    padding-top: 2rem;
+
+    @media (max-width: 767px) {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      padding-top: 0;
+    }
+
+    .home-tagline {
+      margin-top: 1rem;
+      font-family: 'Nunito', sans-serif;
+      font-size: 45px;
+      font-weight: 400;
+      line-height: 1.2;
+      color: #000;
+      text-align: left;
+
+      @media (max-width: 991px) {
+        font-size: 36px;
+      }
+
+      @media (max-width: 767px) {
+        font-size: 32px;
+        margin-top: 0.75rem;
+        text-align: center;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 28px;
+        margin-top: 0.5rem;
+      }
+    }
+
+    .sub-tagline {
+      font-family: 'Instrument Sans Regular', sans-serif;
+      font-size: 20px;
+      line-height: 1.4;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      color: #333;
+      text-align: left;
+
+      @media (max-width: 767px) {
+        font-size: 18px;
+        text-align: center;
+        margin-top: 0.5rem;
+        margin-bottom: 0.75rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 16px;
+        margin-top: 0.25rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .button-container {
+      text-align: left;
+      margin-top: 1rem;
+
+      @media (max-width: 767px) {
+        text-align: center;
+        margin-top: 0.5rem;
+      }
+
+      @media (max-width: 480px) {
+        margin-top: 0.25rem;
+      }
+    }
+
+    .see-work-btn {
+      font-family: 'Instrument Sans Regular', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 1.3rem 2rem;
+      background-color: #008F8C;
+      border: none;
+      border-radius: 20px;
+      color: #fff;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+      display: inline-block;
+
+      @media (max-width: 767px) {
+        font-size: 16px;
+        padding: 0.8rem 1.6rem;
+        margin-bottom: 0.75rem;
+      }
+
+      @media (max-width: 480px) {
+        padding: 0.7rem 1.4rem;
+        margin-bottom: 0.5rem;
+      }
+
+      &:hover {
+        background-color: #007974;
+        text-decoration: none;
+        color: #fff;
+      }
+
+      &:focus {
+        background-color: #005F5C;
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+
+    .hero-img-container {
+      width: 100%;
+      text-align: center;
+      padding-top: 0;
+
+      @media (max-width: 767px) {
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+      }
+
+      @media (max-width: 480px) {
+        margin-bottom: 0.25rem;
+      }
+    }
+
+    .hero-img {
+      max-width: 600px;
+      height: auto;
+      width: auto;
+      display: inline-block;
+
+      @media (max-width: 767px) {
+        max-width: 80%;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .news-section {
+
+
+    h2 {
+      font-family: 'Instrument Sans Regular', sans-serif;
+      font-size: 28px;
+      margin-bottom: 1.5rem;
+
+      @media (max-width: 767px) {
+        font-size: 24px;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+
+      }
+    }
+
+    .twitter-tweet {
+      margin-bottom: 2rem;
+
+      @media (max-width: 767px) {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    @media (max-width: 767px) {
+      margin-top: 0 !important;
+      margin-bottom: 1.5rem !important;
+      padding: 10px !important;
+    }
+  }
+
+  .funded-by-section {
+    h2 {
+      font-family: 'Instrument Sans Regular', sans-serif;
+      font-size: 28px;
+      margin-bottom: 1.5rem;
+
+      @media (max-width: 767px) {
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 0.75rem;
+      }
+    }
+
+    .logo-scroller {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .scroller-inner {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .logo-item {
+      flex: 0 0 auto;
+      padding: 0 0.5rem;
+      text-align: center;
+    }
+
+    .sponsor-logo {
+      max-height: 200px;
+      width: auto;
+
+      @media (max-width: 991px) {
+        max-height: 200px;
+      }
+
+      @media (max-width: 767px) {
+        max-height: 150px;
+      }
+
+      @media (max-width: 480px) {
+        max-height: 100px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      margin-top: 1rem !important;
+    }
+  }
+
+  @keyframes scroll-logos {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 }
