@@ -351,13 +351,8 @@
 
 - id: shawn_kong
   name: Shawn Kong
-<<<<<<< HEAD
-  affiliation: CS 
-  degree: BS 
-=======
   affiliation: CS
   degree: BS
->>>>>>> anna-redesign/chai-anna
   image: /images/members/deshang_kong.png
   website: https://www.linkedin.com/in/shawn-kong-23b8b41a2/
   linkedin: shawn-kong-23b8b41a2
