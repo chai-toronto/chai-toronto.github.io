@@ -1,0 +1,206 @@
+@import "variables";
+
+.section-heading {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+
+    @media (max-width: 991px) {
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 767px) {
+      text-align: center;
+      font-size: 24px;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 22px;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .awards-grid-wrapper {
+    .org-section {
+      display: flex;
+      align-items: center;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+
+      @media (max-width: 991px) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .org-logo-wrapper {
+        flex: 0 0 350px;
+        margin-right: 1rem;
+        text-align: center;
+
+        @media (max-width: 991px) {
+          flex: 0 0 auto;
+          margin-right: 0;
+          margin-bottom: 2rem;
+          width: 100%;
+        }
+
+        img.org-logo {
+          max-height: 350px;
+          width: auto;
+          height: auto;
+          display: inline-block;
+
+          @media (max-width: 991px) {
+            max-height: 250px;
+          }
+
+          @media (max-width: 767px) {
+            max-height: 200px;
+          }
+
+          @media (max-width: 480px) {
+            max-height: 150px;
+          }
+        }
+      }
+
+      .award-blocks {
+        flex: 1 1 auto;
+        margin-top: 0;
+
+        @media (max-width: 991px) {
+          width: 100%;
+        }
+
+        .award-block {
+          margin-bottom: 1rem;
+
+          .people-grid.awards-grid {
+            margin-top: 0.5rem;
+            width: 100%;
+            max-width: 1600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+
+            .cards-wrapper {
+              display: grid;
+              grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+              gap: 20px;
+              justify-content: center;
+              justify-items: center;
+              margin: 0 auto;
+
+              @media (max-width: 767px) {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+              }
+
+              @media (max-width: 480px) {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+              }
+            }
+
+            .persona-card {
+              width: 100% !important;
+              max-width: 100%;
+              margin-bottom: 30px;
+
+              @media (max-width: 767px) {
+                margin-bottom: 20px;
+              }
+
+              @media (max-width: 480px) {
+                margin-bottom: 15px;
+              }
+
+              .persona-card-inner {
+                border: 1px solid #ccc;
+                border-radius: 12px;
+                background: #fff;
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                height: 100%;
+                word-wrap: break-word;
+
+                .persona-info {
+                  padding: 12px;
+                  flex-grow: 1;
+
+                  @media (max-width: 480px) {
+                    padding: 10px;
+                  }
+
+                  .persona-name {
+                    font-weight: bold;
+                    font-size: 16px;
+                    margin-bottom: 8px;
+
+                    @media (max-width: 480px) {
+                      font-size: 14px;
+                      margin-bottom: 6px;
+                    }
+                  }
+
+                  .persona-description {
+                    font-size: 14px;
+                    color: #555;
+                    word-break: break-word;
+                    padding-bottom: 10px;
+
+                    @media (max-width: 480px) {
+                      font-size: 12px;
+                    }
+                  }
+                }
+
+                .persona-footer {
+                  padding: 12px 15px;
+                  border-top: 1px solid #eee;
+                  display: flex;
+                  gap: 15px;
+
+                  @media (max-width: 767px) {
+                    padding: 10px 12px;
+                    gap: 12px;
+                  }
+
+                  @media (max-width: 480px) {
+                    padding: 8px 10px;
+                    gap: 10px;
+                  }
+
+                  a {
+                    color: #555;
+                    text-decoration: none;
+                    transition: color 0.2s;
+
+                    &:hover {
+                      color: #008F8C;
+                    }
+
+                    i {
+                      font-size: 16px;
+
+                      @media (max-width: 480px) {
+                        font-size: 14px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .org-section:not(:last-child) {
+      border-bottom: 1px solid #ccc;
+    }
+  }

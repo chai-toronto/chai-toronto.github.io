@@ -1,75 +1,79 @@
-{% if include.current_or_alum == "current" %}
-  {% assign years = include.people | group_by: "startyear" %}
-  {% assign years_sorted = years | sort: "name" %}
-  {% assign use_image = true %}
-{% elsif include.current_or_alum == "alum" %}
-  {% assign years = include.people | group_by: "endyear" %}
-  {% assign years_sorted = years | sort: "name" | reverse %}
-  {% assign use_image = false %}
-{% endif %}
-
-<!-- Generate the grid -->
 {% capture people_grid %}
 {% if include.people.size > 0 %}
-<div class="row">
-<h1>{{ include.title }}</h1>
-</div>
-
-<div class="row flex">
-{% for year in years_sorted %}
-  {% assign members = year.items | sort: "name" %}
-  {% for member in members %}
-    <div class="member-badge col-xs-6 col-sm-4 col-md-3">
-      <!-- Image -->
-      {% if use_image %}
-        {% if member.website != nil %}<a href="{{ member.website }}">{% endif %}
-          <img src="{{ member.image }}" alt="{{ member.id }}"/>
-        {% if member.website != nil %}</a>{% endif %}
-      {% endif %}
-
-      <div class="member-details">
-        <!-- Name -->
-        <div class="member-name">
-          {% if member.website == nil %}
-            {{ member.name }}
-          {% else %}
-            <a href="{{ member.website }}">{{ member.name }}</a>
-          {% endif %}
-        </div>
-
-        <!-- Degree and Years -->
-        <div class="member-year">
-          {{ member.degree }},
-          {% if member.active == true %}
-            started {{ member.startyear }}
-          {% else %}
-            {% if member.startyear == member.endyear %}
-              {{ member.startyear }}
-            {% else %}
-              {{ member.startyear }} – {{ member.endyear }}
-            {% endif %}
-          {% endif %}
-        </div>
-
-        <!-- Co-advisor -->
-        <div class="member-coadvisor">
-          {% if member.coadvisor != nil %}
-            Co-advisor: <span class="authors">{% include author_list.html authors=member.coadvisor %}</span>
-          {% endif %}
-        </div>
-
-        <!-- Alum Destination -->
-        {% if member.active == false and (member.degree == 'PhD' or member.degree == 'MSc') %}
-          <div class="member-place">
-            Current Position: {{ member.newplace }}
-          </div>
+<div class="people-grid">
+  <div class="cards-wrapper">
+    {% for member in include.people %}
+    <div class="persona-card">
+      <div class="persona-card-inner">
+        {% if member.search %}
+        {% assign search_val = member.search | downcase %}
+        {% if search_val == "industry" %}
+        {% assign search_label = "Industry Position" %}
+        {% assign search_bg = "#003479" %}
+        {% elsif search_val == "postdoc" %}
+        {% assign search_label = "Postdoc Position" %}
+        {% assign search_bg = "#007974" %}
+        {% elsif search_val == "intern" %}
+        {% assign search_label = "Internship" %}
+        {% assign search_bg = "#ff9800" %}
+        {% else %}
+        {% assign search_label = member.search %}
+        {% assign search_bg = "#AE2192" %}
         {% endif %}
+        <div class="persona-search-label">
+          <div class="search-label-prefix">Looking for</div>
+          <div class="search-label-position"
+               style="background-color: {{ search_bg }}; border-color: {{ search_bg }};">
+            {{ search_label }}
+          </div>
+        </div>
+        {% endif %}
+        <div class="persona-image">
+          {% if include.current_or_alum == "current" and member.image %}
+          <img src="{{ member.image }}" alt="{{ member.name }}">
+          {% else %}
+          <div class="placeholder-img"></div>
+          {% endif %}
+        </div>
+        <div class="persona-info">
+          <div class="persona-name">{{ member.name }}</div>
+          <div class="persona-role">
+            {{ member.degree }} Student
+            {% if member.coadvisor %}
+            – co-advised by {{ member.coadvisor }}
+            {% endif %}
+          </div>
+          <div class="persona-description">
+            {{ member.shortbio | default: "HCL researcher with a focus on VR" }}
+          </div>
+        </div>
+        <div class="persona-footer">
+          {% if member.website %}
+          <a href="{{ member.website }}" target="_blank" aria-label="Personal Website">
+            <i class="fas fa-globe"></i>
+          </a>
+          {% endif %}
+          {% if member.gscholar %}
+          <a href="https://scholar.google.com/citations?user={{ member.gscholar }}" target="_blank" aria-label="Google Scholar Profile">
+            <i class="fab fa-google"></i>
+          </a>
+          {% endif %}
+          {% if member.linkedin %}
+          <a href="https://www.linkedin.com/in/{{ member.linkedin }}" target="_blank" aria-label="LinkedIn Profile">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          {% endif %}
+          {% if member.twitter %}
+          <a href="https://twitter.com/{{ member.twitter }}" target="_blank" aria-label="Twitter Profile">
+            <i class="fab fa-twitter"></i>
+          </a>
+          {% endif %}
+        </div>
       </div>
     </div>
-  {% endfor %}
-{% endfor %}
+    {% endfor %}
+  </div>
 </div>
 {% endif %}
 {% endcapture %}
-  
 {{ people_grid }}

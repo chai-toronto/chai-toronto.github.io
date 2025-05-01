@@ -1,0 +1,226 @@
+ .top-section {
+    margin-bottom: 3rem;
+
+    @media (max-width: 767px) {
+      margin-bottom: 2rem;
+    }
+
+    &.container {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .top-image-col {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+
+      @media (max-width: 767px) {
+        margin-bottom: 1.5rem;
+      }
+
+      .top-image-container {
+        width: 80%;
+        height: auto;
+        overflow: hidden;
+        border-radius: 20px;
+        margin-left: -60px;
+
+        @media (max-width: 767px) {
+          width: 100%;
+          margin-left: 0;
+          border-radius: 12px;
+        }
+
+        img.top-image {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          display: block;
+        }
+      }
+    }
+
+    .top-text-col {
+      h1 {
+        font-family: "Instrument Sans Medium", sans-serif;
+        font-size: 32px;
+        margin-bottom: 0.5rem;
+        text-align: left;
+      }
+
+      h2 {
+        font-family: "Instrument Sans Medium", sans-serif;
+        font-size: 25px;
+        margin-bottom: 1rem;
+        text-align: left;
+
+        @media (max-width: 767px) {
+          font-size: 22px;
+          text-align: center;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 20px;
+        }
+      }
+
+      p {
+        font-family: "Instrument Sans Regular", sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+        text-align: left;
+
+        @media (max-width: 767px) {
+          text-align: center;
+          font-size: 15px;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .faq-section {
+    margin-top: 3rem;
+
+    @media (max-width: 767px) {
+      margin-top: 2rem;
+    }
+
+    .faq-wrapper {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+      display: flex;
+
+      @media (max-width: 767px) {
+        flex-direction: column;
+        border: none;
+      }
+    }
+
+    .faq-left {
+      padding: 1rem;
+      background-color: #fff;
+
+      @media (max-width: 767px) {
+        padding: 0;
+        margin-bottom: 1.5rem;
+      }
+
+      .faq-panel {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid #ddd;
+        font-family: "Instrument Sans Medium", sans-serif;
+        font-size: 20px;
+        color: #333;
+        cursor: pointer;
+
+        @media (max-width: 767px) {
+          font-size: 16px;
+          padding: 0.75rem 0.75rem;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 14px;
+          padding: 0.6rem 0.6rem;
+        }
+
+        &:last-child {
+          border-bottom: none;
+
+          @media (max-width: 767px) {
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 0;
+          }
+        }
+
+        &::after {
+          content: "\276F";
+          font-size: 16px;
+          color: #999;
+          margin-left: auto;
+
+          @media (max-width: 480px) {
+            font-size: 14px;
+          }
+        }
+
+        &:hover {
+          background-color: #EFEFEF;
+        }
+
+        &.selected {
+          &::before {
+            background-color: #008F8C;
+          }
+
+          &::after {
+            color: #008F8C;
+          }
+
+          @media (max-width: 767px) {
+            background-color: #E9F3F3;
+            border-color: #008F8C;
+          }
+        }
+      }
+    }
+
+    .faq-right {
+      padding: 2rem;
+      background-color: #E9F3F3;
+      color: #333;
+      border-left: 1px solid #ddd;
+
+      @media (max-width: 767px) {
+        padding: 1.5rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        border-color: #008F8C;
+      }
+
+      @media (max-width: 480px) {
+        padding: 1rem;
+      }
+
+      h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-family: "Instrument Sans Medium", sans-serif;
+        font-size: 20px;
+
+        @media (max-width: 767px) {
+          font-size: 18px;
+          text-align: center;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 16px;
+        }
+      }
+
+      p {
+        font-family: "Instrument Sans Regular", sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+
+        @media (max-width: 767px) {
+          font-size: 15px;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 14px;
+        }
+      }
+    }
+  }

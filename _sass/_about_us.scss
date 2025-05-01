@@ -1,0 +1,161 @@
+@import "variables";
+
+@font-face {
+	font-family: 'Instrument Sans Regular';
+	src: url('fonts/InstrumentSans-Regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Instrument Sans Medium';
+	src: url('fonts/InstrumentSans-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@media (max-width: 767px) {
+	.container {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.text-center-mobile {
+		text-align: center;
+	}
+}
+
+.carousel-inner .item img {
+	width: 80% !important;
+	height: 500px !important;
+	border-radius: 20px;
+	object-fit: cover;
+	display: block;
+	margin: 0 auto;
+
+	@media (max-width: 991px) {
+		height: 400px !important;
+	}
+
+	@media (max-width: 767px) {
+		width: 95% !important;
+		height: 350px !important;
+	}
+
+	@media (max-width: 480px) {
+		height: 250px !important;
+	}
+}
+
+.carousel-control.left,
+.carousel-control.right {
+	background-image: none !important;
+	background: none !important;
+	filter: none !important;
+	color: #008F8C !important;
+}
+
+.carousel-control .glyphicon-chevron-left,
+.carousel-control .glyphicon-chevron-right {
+	text-shadow: none !important;
+}
+
+
+	h2 {
+		font-family: 'Instrument Sans Medium', sans-serif;
+		font-size: 25px;
+		margin-bottom: 1rem;
+		font-weight: 300;
+
+		@media (max-width: 767px) {
+			font-size: 22px;
+			text-align: center;
+			margin-top: 1.5rem;
+		}
+
+		@media (max-width: 480px) {
+			font-size: 20px;
+		}
+	}
+
+	.culture-heading {
+		@media (max-width: 767px) {
+			margin-top: 0 !important;
+		}
+	}
+
+	p {
+		font-family: 'Instrument Sans Regular', sans-serif;
+		font-size: 18px;
+		line-height: 1.4;
+		text-align: left;
+
+		@media (max-width: 767px) {
+			font-size: 16px;
+			text-align: center;
+			padding: 0 10px;
+		}
+	}
+
+	img.rounded {
+		border-radius: 8px;
+
+		@media (max-width: 767px) {
+			max-width: 90%;
+			margin: 0 auto;
+		}
+	}
+
+	.row {
+		margin-bottom: 5rem;
+
+		@media (max-width: 767px) {
+			margin-bottom: 3rem;
+		}
+
+		@media (max-width: 480px) {
+			margin-bottom: 2rem;
+		}
+	}
+
+	.row img {
+		margin-top: 2rem;
+
+		@media (max-width: 767px) {
+			margin-top: 0;
+			margin-bottom: 1rem;
+		}
+	}
+
+	.location-row {
+		@media (max-width: 767px) {
+			flex-direction: column-reverse;
+		}
+
+		iframe.map-iframe {
+			margin-top: 2rem;
+
+			@media (max-width: 767px) {
+				height: 300px;
+				margin-top: 1rem;
+				margin-bottom: 1.5rem;
+			}
+
+			@media (max-width: 480px) {
+				height: 250px;
+			}
+		}
+	}
+
+	#cultureCarousel {
+		@media (max-width: 767px) {
+			margin-top: 1rem;
+		}
+	}
+
+	.img-fluid {
+		@media (max-width: 767px) {
+			display: block;
+			margin: 0 auto;
+		}
+	}

@@ -1,36 +1,332 @@
 ---
-layout: page
+layout: default
 title: Current Research
 ---
 
-<div class="row">
-  <h1>Overview</h1>
-  <p>The Computational Health and Interaction (CHAI) lab is led by <a href="https://mariakakis.github.io">Prof. Alex Mariakakis</a> in the <a href="https://cs.toronto.edu/">Department of Computer Science</a> at the <a href="https://www.utoronto.ca/">University of Toronto</a>. We focus on using ubiquitous technologies like smartphones and wearables to address problems related to people’s health. We develop new sensing technologies for measuring physiological, behavioral, and contextual health indicators, and we also take the time to understand the implications of these technologies in people’s hands. We proactively engage relevant stakeholders like clinicians, global health organizations, and industry to ensure that our designs are sensitive to their needs. Our group has expertise in multiple subareas of computer science, particularly machine learning, signal processing, computer vision, and human-computer interaction. We therefore publish our work at various international venues such as <a href="https://dl.acm.org/journal/imwut">IMWUT</a>, <a href="https://dl.acm.org/conference/chi">CHI</a>, and <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?reload=true&punumber=7756">PerCom</a>.</p>
-  <!-- We also publish our work at digital health venues like <a href="https://www.nature.com/npjdigitalmed/">NPJ Digital Medicine</a> and <a href="https://mhealth.jmir.org/">JMIR mHealth & uHealth</a>. -->
+{% assign sorted_projects = site.projects | sort: 'name' %}
 
-  <h1>Examples of Ongoing Projects</h1>
-  <p>Our work can be loosely split into three categories: <a href="#active">active sensing</a>, <a href="#passive">passive sensing</a>, and <a href="#design">design</a>. The projects listed below represent just a subset of our group's ongoing projects. For more information, please reach out to either the project leads or <a href="https://mariakakis.github.io">Prof. Alex Mariakakis</a> to learn more about these projects or any others.</p>
+<div class="current-research-page">
+  <h1>Our Focus</h1>
+
+  <!-- Categories -->
+  <div class="research-categories-row">
+    <div class="category-card">
+      <img src="{{ site.baseurl }}/images/projects/categories/active.png" alt="Active Sensing" />
+      <h2>Active Sensing</h2>
+      <p>These projects involve assessments that require people to perform a particular task in order to learn something about their health.</p>
+    </div>
+    <div class="category-card">
+      <img src="{{ site.baseurl }}/images/projects/categories/passive.png" alt="Passive Sensing" />
+      <h2>Passive Sensing</h2>
+      <p>These projects involve the use of sensors to detect digital health biomarkers without requiring direct involvement from the people being monitored.</p>
+    </div>
+    <div class="category-card">
+      <img src="{{ site.baseurl }}/images/projects/categories/design.png" alt="Design" />
+      <h2>Design</h2>
+      <p>These projects involve studying people's experiences as they interact with health-related technologies.</p>
+    </div>
+  </div>
+
+  <h1>Current Research</h1>
+
+
+  <button class="mobile-filter-toggle btn">Filters</button>
+
+
+  <div class="filter-overlay">
+    <div class="filter-panel">
+      <header>
+        <button class="close-filters">×</button>
+        <h2>Filter by:</h2>
+      </header>
+
+      <div class="filter-section">
+
+        <!-- --- Theme (Categories) --- -->
+        <h3>Theme</h3>
+        {% assign unique_categories = "" | split: "" %}
+        {% for project in site.projects %}
+        {% if project.category %}
+        {% for cat in project.category %}
+        {% unless unique_categories contains cat %}
+        {% assign unique_categories = unique_categories | push: cat %}
+        {% endunless %}
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+        {% assign unique_categories = unique_categories | sort %}
+        {% for cat in unique_categories %}
+        <label>
+          <input type="checkbox" class="filter-category" value="{{ cat }}" /> {{ cat }}
+        </label><br />
+        {% endfor %}
+        <hr />
+
+        <!-- --- Health Topic --- -->
+        <h3>Health Topic</h3>
+        {% assign unique_health_topics = "" | split: "" %}
+        {% for project in site.projects %}
+        {% if project.health_topic %}
+        {% for topic in project.health_topic %}
+        {% unless unique_health_topics contains topic %}
+        {% assign unique_health_topics = unique_health_topics | push: topic %}
+        {% endunless %}
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+        {% assign unique_health_topics = unique_health_topics | sort %}
+        <select id="filter-health-topic">
+          <option value="">All</option>
+          {% for topic in unique_health_topics %}
+          <option value="{{ topic }}">{{ topic }}</option>
+          {% endfor %}
+        </select>
+        <hr />
+
+        <!-- --- Skills --- -->
+        <h3>Skills</h3>
+        {% assign unique_skills = "" | split: "" %}
+        {% for project in site.projects %}
+        {% if project.skills %}
+        {% for skill in project.skills %}
+        {% unless unique_skills contains skill %}
+        {% assign unique_skills = unique_skills | push: skill %}
+        {% endunless %}
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+        {% assign unique_skills = unique_skills | sort %}
+        {% for skill in unique_skills %}
+        <label>
+          <input type="checkbox" class="filter-skill" value="{{ skill }}" /> {{ skill }}
+        </label><br />
+        {% endfor %}
+        <hr />
+
+        <!-- --- Led By --- -->
+        <h3>Led By</h3>
+        {% assign unique_leads = "" | split: "" %}
+        {% for project in site.projects %}
+        {% if project.leads %}
+        {% for lead in project.leads %}
+        {% unless unique_leads contains lead %}
+        {% assign unique_leads = unique_leads | push: lead %}
+        {% endunless %}
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+        {% assign unique_leads = unique_leads | sort %}
+        <select id="filter-led-by">
+          <option value="">Anyone</option>
+          {% for lead in unique_leads %}
+          {% assign found_member = site.data.members | where:"id", lead | first %}
+          {% if found_member %}
+          <option value="{{ found_member.id }}">{{ found_member.name }}</option>
+          {% else %}
+          <option value="{{ lead }}">{{ lead }}</option>
+          {% endif %}
+          {% endfor %}
+        </select>
+        <button class="apply-filters">Apply</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Filter + Projects layout -->
+  <div class="research-content-row">
+    <!-- Left Column: Dynamic Filter Section -->
+    <div class="filter-section">
+      <h2>Filter by:</h2>
+
+      <!-- --- Theme (Categories) --- -->
+      <h3>Theme</h3>
+      {% assign unique_categories = "" | split: "" %}
+      {% for project in site.projects %}
+      {% if project.category %}
+      {% for cat in project.category %}
+      {% unless unique_categories contains cat %}
+      {% assign unique_categories = unique_categories | push: cat %}
+      {% endunless %}
+      {% endfor %}
+      {% endif %}
+      {% endfor %}
+      {% assign unique_categories = unique_categories | sort %}
+      {% for cat in unique_categories %}
+      <label>
+        <input type="checkbox" class="filter-category" value="{{ cat }}" /> {{ cat }}
+      </label><br />
+      {% endfor %}
+      <hr />
+
+      <!-- --- Health Topic --- -->
+      <h3>Health Topic</h3>
+      {% assign unique_health_topics = "" | split: "" %}
+      {% for project in site.projects %}
+      {% if project.health_topic %}
+      {% for topic in project.health_topic %}
+      {% unless unique_health_topics contains topic %}
+      {% assign unique_health_topics = unique_health_topics | push: topic %}
+      {% endunless %}
+      {% endfor %}
+      {% endif %}
+      {% endfor %}
+      {% assign unique_health_topics = unique_health_topics | sort %}
+      <select id="filter-health-topic">
+        <option value="">All</option>
+        {% for topic in unique_health_topics %}
+        <option value="{{ topic }}">{{ topic }}</option>
+        {% endfor %}
+      </select>
+      <hr />
+
+      <!-- --- Skills --- -->
+      <h3>Skills</h3>
+      {% assign unique_skills = "" | split: "" %}
+      {% for project in site.projects %}
+      {% if project.skills %}
+      {% for skill in project.skills %}
+      {% unless unique_skills contains skill %}
+      {% assign unique_skills = unique_skills | push: skill %}
+      {% endunless %}
+      {% endfor %}
+      {% endif %}
+      {% endfor %}
+      {% assign unique_skills = unique_skills | sort %}
+      {% for skill in unique_skills %}
+      <label>
+        <input type="checkbox" class="filter-skill" value="{{ skill }}" /> {{ skill }}
+      </label><br />
+      {% endfor %}
+      <hr />
+
+      <!-- --- Led By --- -->
+      <h3>Led By</h3>
+      {% assign unique_leads = "" | split: "" %}
+      {% for project in site.projects %}
+      {% if project.leads %}
+      {% for lead in project.leads %}
+      {% unless unique_leads contains lead %}
+      {% assign unique_leads = unique_leads | push: lead %}
+      {% endunless %}
+      {% endfor %}
+      {% endif %}
+      {% endfor %}
+      {% assign unique_leads = unique_leads | sort %}
+      <select id="filter-led-by">
+        <option value="">Anyone</option>
+        {% for lead in unique_leads %}
+        {% assign found_member = site.data.members | where:"id", lead | first %}
+        {% if found_member %}
+        <option value="{{ found_member.id }}">{{ found_member.name }}</option>
+        {% else %}
+        <option value="{{ lead }}">{{ lead }}</option>
+        {% endif %}
+        {% endfor %}
+      </select>
+    </div>
+
+    <!-- Right Column: Projects Grid -->
+    <div class="projects-grid">
+      <div id="active-filters-panel"></div>
+      <div class="project-cards-wrapper">
+        {% for project in sorted_projects %}
+        <div class="project-card"
+             data-category="{{ project.category | join: ', ' }}"
+             data-health-topic="{{ project.health_topic | join: ', ' }}"
+             data-skills="{{ project.skills | join: ', ' }}"
+             data-leads="{{ project.leads | join: ', ' }}">
+          <div class="project-image">
+            <img src="{{ project.thumbnail }}" alt="{{ project.title }}" />
+          </div>
+          <div class="project-card-content">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p><strong>Project Lead(s):</strong> {% include author_list.html authors=project.leads %}</p>
+            <p><strong>Goal:</strong> {{ project.description }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+  </div>
+</div>
 </div>
 
-{% assign sorted_projects = site.projects | sort: 'name' %}
-{% assign active_projects = sorted_projects | where:"category", "Active Sensing" %}
-{% assign passive_projects = sorted_projects | where:"category", "Passive Sensing" %}
-{% assign design_projects = sorted_projects | where:"category", "Design" %}
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const overlay       = document.querySelector('.filter-overlay');
+    const openBtn       = document.querySelector('.mobile-filter-toggle');
+    const closeBtn      = document.querySelector('.close-filters');
+    const applyBtn      = document.querySelector('.apply-filters');
+    const projectCards  = Array.from(document.querySelectorAll('.project-card'));
+    const themeFilters  = Array.from(document.querySelectorAll('.filter-category'));
+    const skillFilters  = Array.from(document.querySelectorAll('.filter-skill'));
+    const healthSelect  = document.getElementById('filter-health-topic');
+    const leadSelect    = document.getElementById('filter-led-by');
+    const activePanel   = document.getElementById('active-filters-panel');
 
-{% include project_grid.html 
-projects=active_projects 
-title="Active Sensing" id="active"
-description="These projects involve assessments that require people to perform a particular task in order to learn something about their health."
-%}
+    if (!overlay || !openBtn || !closeBtn || !applyBtn) return;
 
-{% include project_grid.html 
-projects=passive_projects 
-title="Passive Sensing" id="passive"
-description="These projects involve the use of sensors to detect digital health biomarkers without requiring direct involvement from the people being monitored." 
-%}
+    openBtn.addEventListener('click',  () => overlay.classList.add('active'));
+    closeBtn.addEventListener('click', () => overlay.classList.remove('active'));
 
-{% include project_grid.html 
-projects=design_projects 
-title="Design" id="design"
-description="These projects involve studying people's experiences as they interact with health-related technologies."
-%}
+
+    function filterProjects() {
+      const cats  = themeFilters.filter(c=>c.checked).map(c=>c.value);
+      const skills= skillFilters.filter(c=>c.checked).map(c=>c.value);
+      const health= healthSelect.value;
+      const lead  = leadSelect.value;
+
+      projectCards.forEach(card => {
+        let show = true;
+        if (cats.length && !cats.some(c=>card.dataset.category.includes(c))) show = false;
+        if (skills.length && !skills.every(s=>card.dataset.skills.includes(s)))   show = false;
+        if (health && !card.dataset.healthTopic.includes(health))                  show = false;
+        if (lead   && !card.dataset.leads.includes(lead))                          show = false;
+        card.style.display = show ? 'block' : 'none';
+      });
+      updateActiveFilters();
+    }
+
+
+    function updateActiveFilters() {
+      activePanel.innerHTML = '';
+      themeFilters.filter(c=>c.checked).forEach(c => {
+        activePanel.innerHTML += `<span class="active-filter-tag">${c.value} <span class="remove-tag" onclick="removeFilter('category','${c.value}')">×</span></span>`;
+      });
+      if (healthSelect.value) {
+        activePanel.innerHTML += `<span class="active-filter-tag">${healthSelect.selectedOptions[0].text} <span class="remove-tag" onclick="removeFilter('health','')">×</span></span>`;
+      }
+      skillFilters.filter(c=>c.checked).forEach(c => {
+        activePanel.innerHTML += `<span class="active-filter-tag">${c.value} <span class="remove-tag" onclick="removeFilter('skill','${c.value}')">×</span></span>`;
+      });
+      if (leadSelect.value) {
+        const name = leadSelect.selectedOptions[0].text;
+        activePanel.innerHTML += `<span class="active-filter-tag">${name} <span class="remove-tag" onclick="removeFilter('lead','')">×</span></span>`;
+      }
+    }
+
+    window.removeFilter = function(type, val) {
+      if (type === 'category')  themeFilters.find(c=>c.value===val).checked = false;
+      if (type === 'skill')     skillFilters.find(c=>c.value===val).checked = false;
+      if (type === 'health')    healthSelect.value = '';
+      if (type === 'lead')      leadSelect.value   = '';
+      filterProjects();
+    };
+
+    [...themeFilters, ...skillFilters].forEach(c=>c.addEventListener('change', filterProjects));
+    healthSelect.addEventListener('change', filterProjects);
+    leadSelect.addEventListener('change', filterProjects);
+
+    applyBtn.addEventListener('click', () => {
+      filterProjects();
+      overlay.classList.remove('active');
+    });
+
+    const grid = document.querySelector('.projects-grid');
+    if (grid && projectCards.length>1) {
+      const top = projectCards[0].getBoundingClientRect().top;
+      const multi = projectCards.some(c=>c.getBoundingClientRect().top > top+1);
+      grid.classList.toggle('equal-height', multi);
+    }
+  });
+</script>

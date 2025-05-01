@@ -1,0 +1,77 @@
+<!-- awards_grid.html -->
+{% capture awards_grid %}
+{% assign sorted_by_org = include.awards | sort: 'org' %}
+{% assign grouped_awards = sorted_by_org | group_by:'org' %}
+
+<div class="awards-grid-wrapper">
+ {% for group in grouped_awards %}
+ <div class="org-section">
+  <!-- Logo - will display on top for mobile, on left for desktop -->
+  <div class="org-logo-wrapper">
+   <img src="{{ site.baseurl }}/images/logos/{{ group.name | downcase | replace:' ', '_' }}.png"
+        alt="{{ group.name }} logo" class="org-logo" />
+  </div>
+
+  <!-- Award blocks - will display below logo on mobile, on right for desktop -->
+  <div class="award-blocks">
+   {% for award_item in group.items %}
+   <div class="award-block">
+    <div class="people-grid awards-grid">
+     <div class="cards-wrapper">
+      {% for winner in award_item.winners %}
+      {% assign matched = site.data.members | where:"id", winner.name | first %}
+      <div class="persona-card">
+       <div class="persona-card-inner">
+        <div class="persona-info">
+         <div class="persona-name">
+          {% if matched %}
+          {{ matched.name }}
+          {% else %}
+          {{ winner.name }}
+          {% endif %}
+          {% if winner.year %}
+          ({{ winner.year }})
+          {% endif %}
+         </div>
+         <div class="persona-description">
+          {{ award_item.award }}
+         </div>
+        </div>
+        <div class="persona-footer">
+         {% if matched %}
+         {% if matched.linkedin %}
+         <a href="https://www.linkedin.com/in/{{ matched.linkedin }}" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+         </a>
+         {% endif %}
+         {% if matched.gscholar %}
+         <a href="https://scholar.google.com/citations?user={{ matched.gscholar }}" target="_blank" aria-label="Google Scholar">
+          <i class="fas fa-graduation-cap"></i>
+         </a>
+         {% endif %}
+
+         {% if matched.twitter %}
+         <a href="https://twitter.com/{{ matched.twitter }}" target="_blank" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+         </a>
+         {% endif %}
+         {% if matched.website %}
+         <a href="{{ matched.website }}" target="_blank" aria-label="Personal Website">
+          <i class="fas fa-globe"></i>
+         </a>
+         {% endif %}
+         {% endif %}
+        </div>
+       </div>
+      </div>
+      {% endfor %}
+     </div>
+    </div>
+   </div>
+   {% endfor %}
+  </div>
+ </div>
+ {% endfor %}
+</div>
+{% endcapture %}
+{{ awards_grid }}

@@ -1,0 +1,116 @@
+---
+layout: default
+title: Undergraduate Students
+---
+
+<div class="undergrad-page">
+    <h1>Get Involved – Undergraduate Students</h1>
+
+    <div class="row mb-4 align-items-center top-section">
+        <div class="col-md-6 top-image-col">
+            <div class="top-image-container">
+                <img
+                        src="{{ site.baseurl }}/images/get_involved/undergrad.png"
+                        alt="Undergrad image"
+                        class="top-image"
+                />
+            </div>
+        </div>
+        <div class="col-md-6 top-text-col">
+            <h2>Why should I consider doing research?</h2>
+            <p>
+                Taking part in research gives you the chance to work on challenging problems without obvious solutions.
+                <br /><br />
+                If you are interested in pursuing graduate school (thesis-based Master's or PhD), research experience is increasingly important.
+                <br /><br />
+                Getting involved with research is an opportunity for you to flex your critical thinking, independence, and creativity.
+            </p>
+        </div>
+    </div>
+
+    <!-- FAQ Section with common outline -->
+    <div class="faq-section">
+        <div class="faq-wrapper row no-gutters">
+            <!-- Left Half: FAQ Panels -->
+            <div class="col-md-6 faq-left">
+                <div class="faq-panel selected"
+                     data-question="What do undergraduate volunteers typically do in the CHAI lab?"
+                     data-answer="We typically recruit volunteers to work closely with a graduate student on one of their projects. We have had volunteers train machine learning models on sensor data, create new smartphone apps and browser plugins, and analyze transcripts from interviews. We have also had junior volunteers contribute to our research by helping with study coordination and data collection.">
+                    What do undergraduate volunteers typically do in the CHAI lab?
+                </div>
+                <div class="faq-panel"
+                     data-question="What is the expected time commitment for doing research?"
+                     data-answer="We generally do not recommend pursuing research if you have a heavy course load or a concurrent internship. We do not keep track of the amount of time people spend doing research, but the more time you spend doing research, the more likely you are to get something out of it. We use weekly mentor meetings to check that progress is being made at a reasonable rate. Note that in some cases, some volunteers may need to be available at specific times of the day to help with running user studies.">
+                    What is the expected time commitment for doing research?
+                </div>
+                <div class="faq-panel"
+                     data-question="What skills should I have if I am applying to the CHAI lab?"
+                     data-answer="The best ability is availability. Beyond that, the skills that we need at any given moment can vary depending on project openings. We have projects that require expertise in data science, software development, and running user studies. As long as you have experience in one of those topics, or have the time and willingness to build that experience, we encourage you to apply.">
+                    What skills should I have if I am applying to the CHAI lab?
+                </div>
+                <div class="faq-panel"
+                     data-question="What would make my application stand out?"
+                     data-answer="Doing well in your courses is always a great start, but we love to see people who demonstrate a willingness to work on fun projects outside of the classroom. For example, showing that you built a smartphone app for a club or that you took the time to improve upon a course project before publishing it on GitHub are great ways of showing that you are willing to take initiative.">
+                    What would make my application stand out?
+                </div>
+                <div class="faq-panel"
+                     data-question="Can I work in the CHAI lab if I'm not at the University of Toronto?"
+                     data-answer="Because of how we advertise openings, we generally prioritize working with volunteers at the University of Toronto. This is also a necessity for projects that require people to be available on campus to run studies. If you are still interested in applying, you are welcome to express interest by completing this Google Form.">
+                    Can I work in the CHAI lab if I'm not at the University of Toronto?
+                </div>
+                <div class="faq-panel"
+                     data-question="How do I apply to work with the CHAI lab?"
+                     data-answer="We encourage interested students to complete this Google Form. Whenever we are in need of a research volunteer, we interview people who have filled out the form within the past 3-4 months to see if they would be a good fit. If the timing works out, these volunteer positions can be converted into research-for-credit courses (e.g., CSC 494/495). We also occasionally advertise openings through NSERC Undergraduate Student Research Awards (USRA) and University of Toronto Excellence Awards (UTEA), which offer funding support for students to do research over the summer. These positions are typically advertised well before the start of the summer, so keep an eye out for those emails from the Undergraduate Office.">
+                    How do I apply to work with the CHAI lab?
+                </div>
+            </div>
+            <!-- Right Half: Info Box -->
+            <div class="col-md-6 faq-right">
+                <h3>What do undergraduate volunteers typically do in the CHAI lab?</h3>
+                <p>
+                    We typically recruit volunteers to work closely with a graduate student on one of their projects.
+                    <br /><br />
+                    We have had volunteers train machine learning models on sensor data, create new smartphone apps and browser plugins, analyze transcripts from interviews, and help with study coordination and data collection.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        if (!document.querySelector('meta[name="viewport"]')) {
+            const viewportMeta = document.createElement('meta');
+            viewportMeta.name = 'viewport';
+            viewportMeta.content = 'width=device-width, initial-scale=1.0';
+            document.head.appendChild(viewportMeta);
+        }
+    </script>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('.faq-panel').forEach(function(panel) {
+            panel.addEventListener('click', function() {
+                document.querySelectorAll('.faq-panel').forEach(function(p) {
+                    p.classList.remove('selected');
+                });
+                panel.classList.add('selected');
+                var question = panel.getAttribute('data-question');
+                var answer = panel.getAttribute('data-answer');
+                var faqRight = document.querySelector('.faq-right');
+                faqRight.querySelector('h3').textContent = question;
+                faqRight.querySelector('p').innerHTML = answer;
+
+                if (window.innerWidth <= 767) {
+                    const faqRightTop = faqRight.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    const scrollToY = window.pageYOffset + faqRightTop - (windowHeight * 0.25);
+
+                    window.scrollTo({
+                        top: scrollToY,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
+</script>

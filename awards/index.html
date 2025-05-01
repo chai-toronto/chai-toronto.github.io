@@ -1,0 +1,23 @@
+---
+layout: default
+title: Awards
+---
+
+<div class="awards-page">
+  <h1>Awards</h1>
+
+  <h2 class="section-heading">Student Scholarships and Fellowships</h2>
+  {% include awards_grid.html awards=site.data.fellowships %}
+
+  <h2 class="section-heading">External Awards</h2>
+  {% include awards_grid.html awards=site.data.awards %}
+
+  <script>
+    if (!document.querySelector('meta[name="viewport"]')) {
+      const viewportMeta = document.createElement('meta');
+      viewportMeta.name = 'viewport';
+      viewportMeta.content = 'width=device-width, initial-scale=1.0';
+      document.head.appendChild(viewportMeta);
+    }
+  </script>
+</div>

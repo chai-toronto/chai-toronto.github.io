@@ -109,7 +109,6 @@
   affiliation: CS
   degree: PhD
   image: /images/members/andrii_lenyshyn.jpg
-  website: https://www.linkedin.com/in/andrew2k/
   gscholar: OWPpHvwAAAAJ
   linkedin: andrew2k
   startyear: 2023
@@ -142,7 +141,7 @@
   active: true
 
 - id: anna_kirik
-  name: Anna Kirik 
+  name: Anna Kirik
   affiliation: CS
   degree: BS
   image: /images/members/anna_kirik.jpg
@@ -352,8 +351,13 @@
 
 - id: shawn_kong
   name: Shawn Kong
+<<<<<<< HEAD
   affiliation: CS 
   degree: BS 
+=======
+  affiliation: CS
+  degree: BS
+>>>>>>> anna-redesign/chai-anna
   image: /images/members/deshang_kong.png
   website: https://www.linkedin.com/in/shawn-kong-23b8b41a2/
   linkedin: shawn-kong-23b8b41a2
@@ -369,7 +373,7 @@
   startyear: 2024
   endyear: 2024
   active: false
-  
+
 - id: shivesh_prakash
   name: Shivesh Prakash
   affiliation: CS
@@ -405,7 +409,7 @@
   active: false
 
 - id: liam_bakar
-  name: Liam Bakar 
+  name: Liam Bakar
   affiliation: CS
   degree: BS
   image: /images/members/liam_bakar.jpg
@@ -428,15 +432,20 @@
 
 - id: ofek_gross
   name: Ofek Gross
+<<<<<<< HEAD
   affiliation: CS 
   degree: BS 
+=======
+  affiliation: CS
+  degree: BS
+>>>>>>> anna-redesign/chai-anna
   image: /images/members/ofek_gross.png
   gscholar: _7-jnFN9TaYC
   linkedin: ofek-gross
   startyear: 2023
   endyear: 2023
   active: false
-  
+
 - id: sixuan_wu
   name: Sixuan Wu
   affiliation: CS

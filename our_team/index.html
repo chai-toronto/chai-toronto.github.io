@@ -1,0 +1,68 @@
+---
+layout: default
+title: Our Team
+---
+{% assign pi = site.data.members | where:"id","mariakakis" | first %}
+<div class="our-team-page">
+
+  <h1>Our Team</h1>
+  <div class="principal-investigator-section mb-5">
+    <h2 class="pi-heading">The Principal Investigator</h2>
+    <div class="row align-items-center">
+      <div class="col-md-3 text-center pi-image-container">
+        <img
+                src="{{ site.baseurl }}{{ pi.image }}"
+                alt="{{ pi.name }}"
+                class="img-fluid pi-portrait"
+        />
+        <h3 class="pi-name">{{ pi.name }}</h3>
+        <p class="pi-title">Assistant Professor of Computer Science</p>
+        <p class="pi-title">Affiliate Scientist @KITE UHN</p>
+      </div>
+
+      <div class="col-md-8 pi-bio">
+        <p>
+          <span style="display:block; margin-top:1rem;"></span>
+          Alex Mariakakis is an Assistant Professor in the Department of Computer
+          Science at the University of Toronto and an Affiliate Scientist at Techna.
+        </p>
+        <p>
+          <span style="display:block; margin-top:1rem;"></span>
+          He received his Ph.D. from the School of Computer Science and Engineering at
+          the University of Washington. Alex's work is published in top-tier venues in
+          his field, including CHI and IMWUT. His work has also been featured by many
+          media outlets (e.g., BBC, National Geographic, and USA Today).
+        </p>
+        <p>
+          <span style="display:block; margin-top:1rem;"></span>
+          Alex is a fellow of the mHealth Training Institute. As a student, he was a
+          recipient of the National Science Foundation Graduate Research Fellowship,
+          the Qualcomm Innovation Fellowship, and the Gaetano Borriello Outstanding
+          Student Award at UbiComp 2018.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Graduate Students -->
+  <div class="mb-5 students-section">
+    <h2>Graduate Students</h2>
+    {% assign grads = site.data.members | where:"active",true | where:"degree","PhD" %}
+    {% include people_grid.html people=grads current_or_alum="current" %}
+  </div>
+
+  <div class="mb-5 students-section">
+    <h2>Undergraduate Students</h2>
+    {% assign undergrads = site.data.members | where:"active",true | where:"degree","BS" %}
+    {% include people_grid.html people=undergrads current_or_alum="current" %}
+  </div>
+
+  <script>
+    if (!document.querySelector('meta[name="viewport"]')) {
+      const viewportMeta = document.createElement('meta');
+      viewportMeta.name = 'viewport';
+      viewportMeta.content = 'width=device-width, initial-scale=1.0';
+      document.head.appendChild(viewportMeta);
+    }
+  </script>
+</div>

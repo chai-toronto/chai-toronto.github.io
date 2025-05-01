@@ -8,6 +8,29 @@
 @import "reset";
 @import "variables";
 
+@font-face {
+  font-family: 'Instrument Sans Medium';
+  src: url('fonts/InstrumentSans-Medium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Instrument Sans Italic';
+  src: url('fonts/InstrumentSans-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Instrument Sans SemiBold';
+  src: url('fonts/InstrumentSans-SemiBold.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 // Syntax highlighting @import is at the bottom of this file
 
 /**************/
@@ -18,45 +41,89 @@ html {
   font-size: 100%;
 }
 
+.page-content {
+  padding: 2rem;
+
+  h1 {
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 1rem;
+
+    h1 {
+      text-align: center;
+      font-size: 28px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 24px;
+    }
+  }
+}
+
+#main.container {
+  max-width: none !important;
+  width: 100% !important;
+  padding-left: 3rem !important;
+  padding-right: 3rem !important;
+}
+
+#nav.nav-container {
+  max-width: none !important;
+  width: 100% !important;
+  padding-left: 3rem !important;
+  padding-right: 3rem !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-container {
+  max-width: none !important;
+  width: 100% !important;
+  padding-left: 3rem !important;
+  padding-right: 3rem !important;
+}
+
+
 body {
-  background: $white;
+  background: #fcfcfc;
   font: 16px/1.2 $lato;
   color: $darkGray;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: $darkerGray;
-  font-weight: bold;
-
-  line-height: 1.7;
-  margin: 0 0 15px 0;
-  padding: 0;
-
-  @include mobile {
-    line-height: 1.4;
-  }
-}
 
 h1 {
-  font-size: 30px;
+  font-family: 'Instrument Sans Medium', sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+
+  margin-top: -4rem;
+  margin-bottom: 4rem;
 }
 
 h2 {
-  font-size: 24px;
-}
-
-h3 {
-  font-size: 20px;
-}
-
-h4 {
-  font-size: 18px;
+  font-family: 'Instrument Sans Medium', sans-serif;
+  font-size: 25px;
+  margin-bottom: 1rem;
+  font-weight: 300;
 }
 
 p {
-  margin: 15px 0;
-  text-align: justify;
+  font-family: 'Instrument Sans Regular', sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+  text-align: left;
 }
+
 
 a {
   color: $blue;
@@ -100,7 +167,6 @@ img {
   max-width: 100%;
 }
 
-// Fixes images in popup boxes from Google Translate
 .gmnoprint img {
   max-width: none;
 }
@@ -112,7 +178,6 @@ blockquote {
   padding-bottom: 10px;
 }
 
-// Specify the color of the selection
 ::-moz-selection {
   color: $black;
   background: $blue;
@@ -121,6 +186,9 @@ blockquote {
   color: $black;
   background: $blue;
 }
+
+
+
 
 // Nicolas Gallagher's micro clearfix hack
 // http://nicolasgallagher.com/micro-clearfix-hack/
@@ -157,107 +225,553 @@ footer {
   }
 }
 
-// Makes it easier for bootstrap element wrapping
+
 .row.flex {
   display: flex;
   flex-wrap: wrap;
 }
 
 /*********************/
+/* HOME */
+/*********************/
+.hero-section {
+  position: relative;
+
+
+  .hero-img {
+    width: 150%;
+    max-width: none;
+    margin-left: -40%;
+    margin-top: -30%;
+  }
+
+
+  .home-tagline {
+    max-width: 800px;
+    margin-bottom: 1rem;
+  }
+}
+
+.news-section {
+  margin-bottom: 6rem;
+}
+
+
+.funded-by-section {
+  .sponsor-logo {
+    max-width: 300px !important;
+    height: auto !important;
+    margin: 1rem auto;
+  }
+}
+
+
+/*********************/
 /* NAVBAR */
 /*********************/
-
 .navbar {
-  font-size: 18px;
-  background-color: $torontoBlue;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #fcfcfc;
+  margin-top: 10px;
+
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width:100%;
+
+  }
 
   .navbar-brand {
-    height: auto;
-    padding: 0px;
+    padding: 0 !important;
+    margin-right: 10vw !important;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
     img {
-      height: 80px;
+      height: auto !important;
+      max-height: 100px;
+      min-width: 200px;
+      width: auto !important;
     }
+  }
+
+  .navbar-wrapper {
+    width: 100%;
+    padding: 0 3rem;
+    box-sizing: border-box;
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 10vh;
+      width: 100%;
+    }
+  }
+
+  .navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+
+
+    .nav-item.dropdown {
+      position: relative;
+
+
+      &:hover .dropdown-menu {
+        display: block;
+      }
+
+       &:hover .nav-link,
+      &:hover .dropdown-menu {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      }
+
+      .nav-link {
+        font-family: 'Instrument Sans Medium', sans-serif;
+        display: inline-flex;
+        align-items: center;
+        padding: 20px 20px;
+        color: $black !important;
+        text-decoration: none;
+        border-radius: 10px 10px 0 0;
+        transition: box-shadow 0.2s ease;
+        background: #fcfcfc;
+
+        &.dropdown-toggle {
+          &::after {
+            content: "";
+            display: inline-block;
+            width: 0.6em;
+            height: 0.6em;
+            margin-left: 1em;
+            box-sizing: border-box;
+            background: transparent;
+            border: none;
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+            transform: rotate(45deg);
+            position: relative;
+          }
+        }
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 0 !important;
+        width: 100% !important;
+
+        display: none;
+        margin-top: -4px;
+        border-radius: 0 0 10px 10px;
+        background: #fcfcfc;
+        padding: 0;
+        z-index: 999;
+        box-shadow: none;
+      }
+    }
+
+
+    .nav-item:not(.dropdown) {
+      margin-right: 10px;
+
+      .nav-link {
+        font-family: 'Instrument Sans Medium', sans-serif;
+        display: inline-flex;
+        align-items: center;
+        padding: 20px 20px;
+        color: $black !important;
+        text-decoration: none;
+        border-radius: 10px 10px 0 0;
+        transition: box-shadow 0.2s ease;
+        background: #fcfcfc;
+
+        &:hover,
+        &:active {
+          text-decoration: none;
+          border-radius: 10px 10px 0 0;
+          box-shadow: 0 2px 0px rgba(0,0,0,0.1);
+        }
+      }
+    }
+  }
+}
+
+
+
+.dropdown-item {
+  font-family: 'Instrument Sans Medium', sans-serif;
+  font-size: 16px;
+  display: block;
+  padding: 20px 20px;
+  border-radius: 0;
+  color: $black !important;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    text-decoration: none;
+    box-shadow: none;
+    background-color: #F4F4F4;
+    border-radius: 10px 10px 10px 10px;
+  }
+}
+
+.footer {
+  background-color: #fcfcfc;
+  color: #000;
+
+  .row {
+    margin: 0 auto;
+  }
+
+  .first-row {
+    margin-bottom: 2rem;
+  }
+
+  .quick-links ul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    column-gap: 2rem;
+  }
+
+  .quick-links ul li a {
+    white-space: nowrap;
+  }
+
+
+  .quick-links ul li {
+    margin-bottom: 10px;
+  }
+
+  .location-info,
+  .quick-links {
+    margin-left: 1rem;
+  }
+
+
+  .second-row {
+    display: flex;
+    padding-top: 20px;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    .bottom-left {
+      text-align: left;
+    }
+    .bottom-right {
+      text-align: right;
+    }
+  }
+
+  h4 {
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 1rem;
+  }
+
+  p, a {
+    font-size: 14px;
+    font-family: "Instrument Sans Italic";
+  }
+}
+
+
+.location-info, .quick-links {
+  font-family: 'Instrument Sans Regular', sans-serif;
+  text-align: left;
+}
+
+.location-info p, .quick-links a {
+  font-size: 18px;
+  font-family: inherit;
+}
+
+
+@media (min-width: 769px) {
+  .navbar-toggler {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+
+  html {
+    font-size: 14px;
+  }
+  body {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .navbar-toggler {
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+
+  .navbar-toggler i {
+    font-size: 24px;
+    color: #333;
+  }
+
+  #navbarNav {
+    position: absolute;
+    top: 100%;
+    right: 16px;
+    width: 250px;
+    background: #fcfcfc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 10px 10px 10px 10px;
+    z-index: 1000;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  #navbarNav.show {
+    max-height: 500px;
+  }
+
+  #navbarNav .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  #navbarNav .nav-item {
+    width: 100%;
+    margin: 0;
+  }
+
+  #navbarNav .nav-link {
+    padding: 12px 20px;
+    width: 100%;
+    display: block;
+    font-size: 16px;
+    border-radius: 0;
+  }
+
+
+  #navbarNav .dropdown-menu {
+    position: static;
+    float: none;
+    width: 100%;
+    background-color: #f8f8f8;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #navbarNav .dropdown-item {
+    padding: 10px 30px;
+    font-size: 14px;
+  }
+
+  #navbarNav .dropdown-menu.show {
+    display: block;
+  }
+  #navbarNav .nav-item.dropdown:hover .dropdown-menu {
+    display: none;
+  }
+
+  #navbarNav .nav-item.dropdown .dropdown-menu.show {
+    display: block;
+  }
+
+
+
+  h1 {
+    font-size: 24px;
+    margin-top: -32px;
+    margin-bottom: 32px;
+  }
+
+  p {
+    font-size: 16px;
   }
 
   a {
-    color: $white!important;
-    &:hover, &:active {
-      color: $blue!important;
+    font-size: 16px;
+  }
+
+  button,
+  input[type="button"],
+  input[type="submit"],
+  .btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+
+  .hero-section .hero-img {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  footer.footer-container {
+    .first-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .footer-logo-container,
+    .location-info {
+      width: 50%;
+      padding: 0 8px;
+    }
+
+    .footer-logo-container {
+      text-align: left;
+    }
+    .location-info {
+      text-align: right;
+    }
+
+    .quick-links {
+      width: 100%;
+      margin-top: 1.5rem;
     }
   }
-}
 
-.navbar-header {
-  position: relative;
-  z-index: 1;
+    footer.footer-container {
+      padding: 24px 16px !important;
+      margin-top: 2rem !important;
 
-  button {
-    position: absolute;
-    right: 0px;
-    top: 25%;
-    transform: translateY(-25%);
-  }
-}
+      .row.first-row {
+        margin-bottom: 1rem;
+      }
 
-.navbar-collapse {
-  ul {
-    margin-top: 15px;
-  }
-}
+      .first-row > div {
+        margin-bottom: 1.5rem;
+        padding-left: 8px;
+        padding-right: 8px;
 
-// Gets it to collapse early
-@media (max-width: 991px) {
-  .navbar-header {
-      float: none;
-  }
-  .navbar-left,.navbar-right {
-      float: none !important;
-  }
-  .navbar-toggle {
-      display: block;
-  }
-  .navbar-collapse {
-      border-top: 1px solid transparent;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-  }
-  .navbar-fixed-top {
-      top: 0;
-      border-width: 0 0 1px;
-  }
-  .navbar-collapse.collapse {
-      display: none!important;
-  }
-  .navbar-nav {
-      float: none!important;
-      margin-top: 7.5px;
-  }
-  .navbar-nav>li {
-      float: none;
-  }
-  .navbar-nav>li>a {
-      padding-top: 10px;
-      padding-bottom: 10px;
-  }
-  .collapse.in {
-      display:block !important;
-  }
-}
+        /* Logo container */
+        &:first-child {
+          text-align: center;
 
-// Adds padding so that jumping to internal anchors doesn't get covered by the navbar
-:target:before {
-  content: "";
-  display: block;
-  height: 90px;
-  margin: -90px 0 0;
-}
+          img {
+            max-height: 120px !important;
+          }
+
+          .mt-3 {
+            margin-top: 0.75rem !important;
+
+            a i {
+              font-size: 20px !important;
+              margin-right: 12px !important;
+            }
+          }
+        }
+
+        h4 {
+          font-size: 18px;
+          margin-bottom: 0.75rem;
+          text-align: center;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 1.3;
+          margin-bottom: 0.3rem;
+        }
+
+        &.quick-links {
+          margin-left: 0;
+          text-align: left;
+          ul {
+            columns: 3;
+            margin: 8px 0;
+            text-align: left;
+
+            li {
+              margin-bottom: 6px;
+
+              a {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+
+        &.location-info {
+          margin-left: 0;
+          text-align: center;
+
+          p {
+            margin-bottom: 0.3rem;
+          }
+        }
+      }
+
+      .second-row {
+        display: flex;
+        flex-direction: row !important;
+        align-items: center;
+        justify-content: space-between;
+
+        .bottom-left,
+        .bottom-right {
+          width: 50%;
+          text-align: left;
+        }
+
+        .bottom-left p {
+          font-size: 12px;
+          margin-bottom: 12px;
+        }
+
+        .bottom-right {
+          text-align: right;
+        }
+
+        .bottom-right img {
+          height: 30px !important;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
 
 
-// Settled on moving the import of syntax highlighting to the bottom of the CSS
-// ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
+
 @import "highlights";
 @import "svg-icons";
-
 @import "current-research";
 @import "publications";
 @import "members";
 @import "home";
+@import "about_us";
+@import "our_team";
+@import "alumni";
+@import "awards";
+@import "undergrad";
+@import "grad";
+@import "get_involved";
+
+

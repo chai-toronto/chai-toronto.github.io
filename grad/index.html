@@ -1,0 +1,120 @@
+---
+layout: default
+title: Graduate Students
+---
+
+<div class="grad-page">
+    <h1>Get Involved – Graduate Students</h1>
+
+    <div class="row mb-4 align-items-center top-section">
+        <div class="col-md-6 top-image-col">
+            <div class="top-image-container">
+                <img
+                        src="{{ site.baseurl }}/images/get_involved/grad.png"
+                        alt="Graduate image"
+                        class="top-image"
+                />
+            </div>
+        </div>
+        <div class="col-md-6 top-text-col">
+            <h2>Why should I consider doing research?</h2>
+            <p>
+                Getting involved in research provides you the opportunity to work on challenging projects and hone your skills.
+                <br /><br />
+                As a graduate student in a thesis-based Master's or PhD program, hands-on research experience is critical for career advancement.
+                <br /><br />
+                Working closely with faculty and peers will help you develop analytical, technical, and creative problem-solving skills.
+            </p>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+        <div class="faq-wrapper row no-gutters">
+            <div class="col-md-6 faq-left">
+                <div class="faq-panel selected"
+                     data-question="With whom does the CHAI lab collaborate?"
+                     data-answer="Our lab is functionally situated within DGP — the University of Toronto's world-renowned center for all things related to human‐computer interaction and related topics. Since most of our projects require clinical expertise, we also often collaborate with experts based in one of the 15 academic health organizations within the Toronto Academic Health Science Network (TAHSN). These include but are not limited to the University Health Network (UHN), Sunnybrook Health Sciences Centre (Sunnybrook), and the Hospital for Sick Children (SickKids).">
+                    With whom does the CHAI lab collaborate?
+                </div>
+                <div class="faq-panel"
+                     data-question="What does a typical day look like in the CHAI lab?"
+                     data-answer="On a weekly basis, each student has a 1-on-1 meeting with Prof. Mariakakis, and we have a lab meeting as a group. Most lab members also have project-specific meetings with collaborators at various cadences. Beyond these scheduled events, Prof. Mariakakis makes intentional efforts to be reachable over various communication channels throughout the week (e.g., email, Slack, impromptu meetings).">
+                    What does a typical day look like in the CHAI lab?
+                </div>
+                <div class="faq-panel"
+                     data-question="What is the lab culture like?"
+                     data-answer="Lab members are free to arrange their schedules as they please, although everyone is highly encouraged to physically be in the office for at least a couple of days per week to foster a lively and collaborative lab environment. We have periodic lunch meetings and outside social events as a group to celebrate each other's cultures and Toronto's amazing food scene.">
+                    What is the lab culture like?
+                </div>
+                <div class="faq-panel"
+                     data-question="Where does the CHAI lab publish their work?"
+                     data-answer="Our primary publication targets are ACM CHI and ACM IMWUT, the premier international venues for human‐computer interaction and ubiquitous computing. We also publish our work to journals for digital health (e.g., npj Digital Medicine, JMIR mHealth & uHealth) and specialized clinical audiences.">
+                    Where does the CHAI lab publish their work?
+                </div>
+                <div class="faq-panel"
+                     data-question="What would make my application stand out?"
+                     data-answer="Technical proficiency, critical thinking, and previous research experience are all important components that should definitely be highlighted in your application, but something that Prof. Mariakakis also values is academic writing. Research only gets appreciated when it is shared in a format that is easily understood by others, so demonstrating clear and effective writing (or a willingness to improve on such skills) would be beneficial.">
+                    What would make my application stand out?
+                </div>
+                <div class="faq-panel"
+                     data-question="How do I apply to work with the CHAI lab?"
+                     data-answer="Applications are typically due in late November / early December">
+                    How do I apply to work with the CHAI lab?
+                </div>
+                <div class="faq-panel"
+                     data-question="Is there anything I should know about applying to the University of Toronto specifically?"
+                     data-answer="Our department strongly suggests that prospective students without a Master's degree apply to different programs depending on their citizenship status:<br /><br />International students: Because of how the University of Toronto structures student tuition, we are essentially unable to accept students from outside of Canada into our Master's program. International students are strongly encouraged to consider applying to the PhD program.<br /><br />Domestic students: Students within Canada are strongly encouraged to apply to the Master's program even if they are interested in doing a PhD. If everything goes well and you are interested in continuing with the PhD, the transition into the PhD program is fairly seamless.">
+                    Is there anything I should know about applying to the University of Toronto specifically?
+                </div>
+            </div>
+            <div class="col-md-6 faq-right">
+                <h3>With whom does the CHAI lab collaborate?</h3>
+                <p>
+                    Our lab is functionally situated within DGP — the University of Toronto's world-renowned center for all things related to human‐computer interaction and related topics. Since most of our projects require clinical expertise, we also often collaborate with experts based in one of the 15 academic health organizations within the Toronto Academic Health Science Network (TAHSN). These include but are not limited to the University Health Network (UHN), Sunnybrook Health Sciences Centre (Sunnybrook), and the Hospital for Sick Children (SickKids).
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        if (!document.querySelector('meta[name="viewport"]')) {
+            const viewportMeta = document.createElement('meta');
+            viewportMeta.name = 'viewport';
+            viewportMeta.content = 'width=device-width, initial-scale=1.0';
+            document.head.appendChild(viewportMeta);
+        }
+    </script>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('.faq-panel').forEach(function(panel) {
+            panel.addEventListener('click', function() {
+                document.querySelectorAll('.faq-panel').forEach(function(p) {
+                    p.classList.remove('selected');
+                });
+                panel.classList.add('selected');
+
+                var question = panel.getAttribute('data-question');
+                var answer = panel.getAttribute('data-answer');
+                var faqRight = document.querySelector('.faq-right');
+                faqRight.querySelector('h3').textContent = question;
+                faqRight.querySelector('p').innerHTML = answer;
+
+
+                if (window.innerWidth <= 767) {
+                    const faqRightTop = faqRight.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    const scrollToY = window.pageYOffset + faqRightTop - (windowHeight * 0.25);
+
+                    window.scrollTo({
+                        top: scrollToY,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
+</script>

@@ -1,0 +1,19 @@
+---
+layout: default
+title: Alumni
+---
+
+<div class="alumni-page">
+  <h1>Alumni</h1>
+  {% include alumni_grid.html %}
+
+  <script>
+
+    if (!document.querySelector('meta[name="viewport"]')) {
+      const viewportMeta = document.createElement('meta');
+      viewportMeta.name = 'viewport';
+      viewportMeta.content = 'width=device-width, initial-scale=1.0';
+      document.head.appendChild(viewportMeta);
+    }
+  </script>
+</div>

@@ -1,9 +1,11 @@
 - award: Mitacs Globalink Research Award
+  org: Mitacs
   url: https://www.mitacs.ca/en/programs/globalink/globalink-research-award
   winners:
   - name: andrii_lenyshyn
     year: 2022
 - award: CRA Outstanding Undergraduate Researcher Award
+  org: CRA
   url: https://cra.org/about/awards/outstanding-undergraduate-researcher-award/
   winners:
   - name: helen_li
