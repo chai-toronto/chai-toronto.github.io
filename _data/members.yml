@@ -425,21 +425,16 @@
   endyear: 2024
   active: false
 
-- id: ofek_gross
-  name: Ofek Gross
-<<<<<<< HEAD
-  affiliation: CS 
-  degree: BS 
-=======
-  affiliation: CS
-  degree: BS
->>>>>>> anna-redesign/chai-anna
-  image: /images/members/ofek_gross.png
-  gscholar: _7-jnFN9TaYC
-  linkedin: ofek-gross
-  startyear: 2023
-  endyear: 2023
-  active: false
+# - id: ofek_gross
+#   name: Ofek Gross
+#   affiliation: CS
+#   degree: BS
+#   image: /images/members/ofek_gross.png
+#   gscholar: _7-jnFN9TaYC
+#   linkedin: ofek-gross
+#   startyear: 2023
+#   endyear: 2023
+#   active: false
 
 - id: sixuan_wu
   name: Sixuan Wu
