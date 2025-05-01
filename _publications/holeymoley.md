@@ -5,7 +5,8 @@ authors:
 - You Zhi Hu
 - Mark Chignell
 - mariakakis
-venue: Work in Progress Track, Annual Symposium on Computer-Human Interaction in Play (CHI PLAY)
+venue: Annual Symposium on Computer-Human Interaction in Play (CHI PLAY)
+subvenue: Work in Progress Track
 date: 2024-10-14
 link: https://doi.org/10.1145/3665463.3678808
 thumbnail: /images/pubs/holeymoley.png

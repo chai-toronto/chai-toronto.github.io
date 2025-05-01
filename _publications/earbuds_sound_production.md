@@ -5,7 +5,8 @@ authors:
 - sejal_bhalla
 - cafazzo
 - mariakakis
-venue: EarComp Workshop, $UBICOMP$
+venue: $UBICOMP$
+subvenue: EarComp Workshop
 date: 2024-10-05
 link: https://dl.acm.org/doi/abs/10.1145/3675094.3680526
 thumbnail: /images/pubs/earbuds_sound_production.png
