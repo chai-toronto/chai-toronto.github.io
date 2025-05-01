@@ -237,6 +237,9 @@ footer {
 .hero-section {
   position: relative;
 
+  .row {
+    margin-bottom: 0;
+  }
 
   .hero-img {
     width: 150%;
