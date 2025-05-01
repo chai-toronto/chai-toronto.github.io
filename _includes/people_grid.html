@@ -38,13 +38,15 @@
         <div class="persona-info">
           <div class="persona-name">{{ member.name }}</div>
           <div class="persona-role">
-            {{ member.degree }} Student
+            {{ member.degree }}
             {% if member.coadvisor %}
-            – co-advised by {{ member.coadvisor }}
+              (co-advised by {% include author_list.html authors=member.coadvisor %})
             {% endif %}
           </div>
           <div class="persona-description">
-            {{ member.shortbio | default: "HCL researcher with a focus on VR" }}
+            {% if member.shortbio %}
+              {{ member.shortbio }}
+            {% endif %}
           </div>
         </div>
         <div class="persona-footer">

@@ -20,7 +20,7 @@
   linkedin: blue-georgianna-lin
   startyear: 2021
   coadvisor: khai
-  topic: Wearables, HCI, and health informatics
+  shortbio: Wearables, HCI, and health informatics
   active: true
   search: industry
 
@@ -34,7 +34,7 @@
   linkedin: ~dhruvverma
   twitter: dhruvverma_
   startyear: 2021
-  topic: Mobile computing and computational imaging
+  shortbio: Mobile computing and computational imaging
   active: true
 
 - id: ken_christofferson
@@ -47,7 +47,7 @@
   linkedin: kenneth-christofferson
   startyear: 2021
   coadvisor: cafazzo
-  topic: Mobile health and applied machine learning
+  shortbio: Mobile health and applied machine learning
   active: true
 
 - id: sejal_bhalla
@@ -61,7 +61,7 @@
   twitter: sejal_bhalla
   startyear: 2021
   coadvisor: delara
-  topic: Mobile health and applied machine learning
+  shortbio: Mobile health and applied machine learning
   active: true
 
 - id: brenna_li
@@ -75,7 +75,7 @@
   twitter: brennali_
   startyear: 2018
   coadvisor: khai
-  topic: HCI, health informatics, and conversational agents
+  shortbio: HCI, health informatics, and conversational agents
   active: true
   search: postdoc
 
@@ -89,7 +89,7 @@
   linkedin: salaar-liaqat
   startyear: 2018
   coadvisor: delara
-  topic: Ubiquitous computing and wearables
+  shortbio: Ubiquitous computing and wearables
   active: true
 
 - id: ian_ruffolo
@@ -101,7 +101,7 @@
   linkedin: ian-ruffolo-7991471aa
   startyear: 2021
   coadvisor: brudno
-  topic: Clinical alarm systems
+  shortbio: Clinical physiological data science
   active: true
 
 - id: andrii_lenyshyn
@@ -112,7 +112,7 @@
   gscholar: OWPpHvwAAAAJ
   linkedin: andrew2k
   startyear: 2023
-  topic: Virtual reality for healthcare
+  shortbio: Health sensing with virtual reality
   active: true
   search: industry
 
@@ -135,7 +135,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/minh_le.png
-  website: https://www.linkedin.com/in/nm-le/
   linkedin: nm-le
   startyear: 2023
   active: true
@@ -145,7 +144,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/anna_kirik.jpg
-  website: https://www.linkedin.com/in/anna-kirik-a1869820b
   linkedin: anna-kirik-a1869820b
   startyear: 2023
   active: true
@@ -155,7 +153,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/andrew_qiu.jpeg
-  website: https://www.linkedin.com/in/andrew-qiu
   linkedin: andrew-qiu
   startyear: 2024
   active: true
@@ -165,7 +162,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/nina_huang.jpeg
-  website: https://www.linkedin.com/in/nina-huangg
   linkedin: nina-huangg
   startyear: 2024
   active: true
@@ -175,7 +171,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/katherine_jelich.jpeg
-  website: https://www.linkedin.com/in/katherinejelich
   linkedin: katherinejelich
   twitter: KatherineJelich
   startyear: 2024
@@ -186,7 +181,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/kaavya_kalani.jpg
-  website: https://www.linkedin.com/in/kaavya-kalani
   linkedin: kaavya-kalani
   startyear: 2024
   active: true
@@ -196,7 +190,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/rilong_zhang.png
-  website: http://www.linkedin.com/in/rilong-zhang-0a5493209/
   linkedin: rilong-zhang-0a5493209
   startyear: 2024
   active: true
@@ -206,7 +199,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/yifang_zhang.jpg
-  website: https://www.linkedin.com/in/yifang-zhang-04a984241/
   linkedin: yifang-zhang-04a984241
   startyear: 2024
   active: true
@@ -216,7 +208,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/harpuneet_singh.jpg
-  website: https://www.linkedin.com/in/harpuneet2005/
   linkedin: harpuneet2005
   startyear: 2024
   active: true
@@ -226,7 +217,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/benson_chou.jpg
-  website: https://www.linkedin.com/in/chiayouchou/
   linkedin: chiayouchou
   startyear: 2024
   active: true
@@ -236,7 +226,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/maryam_taj.jpeg
-  website: http://www.linkedin.com/in/maryamtaj
   linkedin: maryamtaj
   startyear: 2024
   active: true
@@ -246,7 +235,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/jeb_thomas.jpeg
-  website: https://www.linkedin.com/in/jeb-thomas-877966293/
   linkedin: jeb-thomas-877966293
   startyear: 2024
   active: true
@@ -261,7 +249,6 @@
   affiliation: CS
   degree: MScAC
   image: /images/members/filip_miscevic.jpeg
-  website: https://www.linkedin.com/in/filip-miscevic-1874498b/
   gscholar: g-ONQy8AAAAJ
   linkedin: filip-miscevic-1874498b
   twitter: fil_mischievous
@@ -277,7 +264,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/matthew_parvaneh.jpeg
-  website: https://www.linkedin.com/in/matthewparvaneh/
   linkedin: matthewparvaneh
   startyear: 2024
   endyear: 2024
@@ -288,7 +274,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/jackson_wu.jpg
-  website: https://www.linkedin.com/in/yulong-wu-647aa62a2/
   linkedin: yulong-wu-647aa62a2
   startyear: 2024
   endyear: 2024
@@ -299,7 +284,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/michelle_lin.jpg
-  website: https://www.linkedin.com/in/michellelin12/
   linkedin: michellelin12
   startyear: 2024
   endyear: 2024
@@ -310,7 +294,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/olivia_zhou.jpg
-  website: https://www.linkedin.com/in/olivia-zhou-5a3991208/
   linkedin: olivia-zhou-5a3991208
   startyear: 2024
   endyear: 2024
@@ -321,7 +304,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/pierre_lessard.jpeg
-  website: https://www.linkedin.com/in/pierre-william-lessard/
   linkedin: pierre-william-lessard
   startyear: 2023
   endyear: 2024
@@ -332,7 +314,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/tien_han.jpeg
-  website: https://www.linkedin.com/in/hantien
   linkedin: hantien
   startyear: 2024
   endyear: 2024
@@ -343,7 +324,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/katherine_ma.jpg
-  website: https://www.linkedin.com/in/zewen-ma-053964203/
   linkedin: zewen-ma-053964203
   startyear: 2024
   endyear: 2024
@@ -354,7 +334,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/deshang_kong.png
-  website: https://www.linkedin.com/in/shawn-kong-23b8b41a2/
   linkedin: shawn-kong-23b8b41a2
   startyear: 2023
   endyear: 2024
@@ -397,7 +376,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/malaikah_hussain.jpg
-  website: https://www.linkedin.com/in/malaikah-hussain-616697245/
   linkedin: malaikah-hussain-616697245
   startyear: 2024
   endyear: 2024
@@ -408,7 +386,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/liam_bakar.jpg
-  website: https://www.linkedin.com/in/liam-bakar
   linkedin: liam-bakar
   startyear: 2023
   endyear: 2024
@@ -419,7 +396,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/jiaqi_guo.jpg
-  website: https://www.linkedin.com/in/jiaqi-guo-6b040422b/
   linkedin: jiaqi-guo-6b040422b
   startyear: 2023
   endyear: 2024
@@ -453,7 +429,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/chloe_zhao.jpg
-  website: https://www.linkedin.com/in/chloe-yichen-zhao/
   linkedin: chloe-yichen-zhao
   startyear: 2022
   endyear: 2022
@@ -464,7 +439,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/sannat_bhasin.jpg
-  website: https://www.linkedin.com/in/sannatbhasin/
   linkedin: sannatbhasin
   startyear: 2022
   endyear: 2022
@@ -475,7 +449,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/sid_gupta.jpeg
-  website: https://www.linkedin.com/in/sidgupta-99
   linkedin: sidgupta-99
   startyear: 2020
   endyear: 2021
@@ -497,7 +470,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/tanya_skoropad.jpeg
-  website: https://www.linkedin.com/in/tetyana-skoropad-446725207/
   linkedin: tetyana-skoropad-446725207
   startyear: 2022
   endyear: 2022
@@ -508,7 +480,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/yining_wang.jpg
-  website: https://www.linkedin.com/in/yining-wang-69990a196/
   linkedin: yining-wang-69990a196
   startyear: 2022
   endyear: 2022
@@ -519,7 +490,6 @@
   affiliation: CS
   degree: BS
   image: /images/members/zixiong_lin.jpg
-  website: https://www.linkedin.com/in/zixiong-lin/
   linkedin: zixiong-lin
   startyear: 2022
   endyear: 2023

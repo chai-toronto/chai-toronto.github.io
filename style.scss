@@ -252,10 +252,6 @@ footer {
   }
 }
 
-.news-section {
-  margin-bottom: 6rem;
-}
-
 
 .funded-by-section {
   .sponsor-logo {
@@ -432,6 +428,12 @@ footer {
 .footer {
   background-color: #fcfcfc;
   color: #000;
+
+  .custom-footer-line {
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.15);
+    border: none;
+  }
 
   .row {
     margin: 0 auto;
