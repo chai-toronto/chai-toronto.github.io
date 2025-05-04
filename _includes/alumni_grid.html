@@ -59,7 +59,7 @@ Concatenate them into a single array.
               <div class="persona-role">
                 {{ member.degree | default: "Alumni" }}
                 {% if member.coadvisor %}
-                – co-advised by {{ member.coadvisor }}
+                (co-advised by {% include author_list.html authors=member.coadvisor %})
                 {% endif %}
               </div>
               <div class="persona-description">
@@ -140,9 +140,6 @@ Concatenate them into a single array.
               </div>
               <div class="persona-role">
                 {{ member.degree | default: "Alumni" }}
-                {% if member.coadvisor %}
-                – co-advised by {{ member.coadvisor }}
-                {% endif %}
               </div>
               <div class="persona-description">
                 {% if member.startyear and member.endyear %}

@@ -80,6 +80,29 @@
     }
   }
 
+  .project-card-content {
+    .project-title {
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+
+  }
+
+  @media (max-width: 768px) {
+    .project-card-content {
+      p {
+        margin-bottom: 0.5rem;
+      }
+      p:last-child {
+        margin-top: 0.4rem;
+      }
+    }
+  }
+
   .active-filter-tag {
     display: inline-block;
     background: #eee;
@@ -87,6 +110,36 @@
     border-radius: 15px;
     margin: 5px 5px 10px 0;
     font-family: "Instrument Sans Regular", sans-serif;
+  }
+
+
+
+  .current-research-page {
+    .research-content-row {
+      .projects-grid {
+        #active-filters-panel {
+          height: auto;
+          min-height: 50px;
+          padding: 10px;
+          box-sizing: border-box;
+          margin-bottom: 10px;
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .current-research-page {
+      .research-content-row {
+        .projects-grid {
+          #active-filters-panel {
+            min-height: 20px;
+            padding: 8px;
+          }
+        }
+      }
+    }
   }
 
   .active-filter-tag button.remove-tag {
@@ -254,14 +307,14 @@
     }
   }
 
-  /* two-column layout: filter + projects */
+
   .research-content-row {
     display: grid;
     grid-template-columns: 30% 70%;
     gap: 8px;
   }
 
-  /* mini-sidebar filters */
+
   .filter-section {
     position: sticky;
     top: 20px;
@@ -290,7 +343,9 @@
       margin: 8px 0;
     }
   }
-  /* hide original sidebar on mobile */
+
+
+
   .research-content-row .filter-section { display: none !important; }
 
   .mobile-filter-toggle {
@@ -320,7 +375,7 @@
     }
   }
 
-  /* overlay background */
+
   .filter-overlay {
     display: none;
     position: fixed; top: 0; left: 0;
@@ -329,7 +384,7 @@
     z-index: 999;
   }
 
-  /* slide-in panel */
+
   .filter-panel {
     background: #fff;
     width: 80%;
@@ -340,7 +395,7 @@
     transition: transform .3s ease;
   }
 
-  /* panel header */
+
   .filter-panel header {
     display: flex;
     justify-content: space-between;
@@ -356,7 +411,7 @@
   }
 
 
-  /* apply button */
+
   .filter-overlay .filter-panel .apply-filters {
     display: block;
     font-family: 'Instrument Sans Regular', sans-serif;
@@ -386,7 +441,7 @@
   }
 
 
-  /* style overlay filters like desktop but smaller */
+
   .filter-overlay .filter-panel .filter-section {
     background: #fff;
     border-radius: 12px;
@@ -471,26 +526,26 @@
     }
   }
 
-  /* 1) Bring “Filter by:” closer to the X */
+
   .filter-panel header {
     justify-content: flex-start !important;
   }
   .filter-panel header h2 {
-    margin: 0 0 0 8px;   /* remove bottom margin, add left spacing */
+    margin: 0 0 0 8px;
   }
 
-  /* 2) Tighter spacing on each checkbox line */
+
   .filter-overlay .filter-panel .filter-section label {
-    margin-bottom: 4px;   /* half of what it was */
+    margin-bottom: 4px;
   }
 
-  /* 3) Two columns of smaller cards */
+
   .projects-grid .project-cards-wrapper {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 6px;
   }
 
-  /* 4) Shrink images & card padding */
+
   .project-image img {
     height: 80px !important;
   }
