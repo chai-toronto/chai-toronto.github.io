@@ -117,6 +117,15 @@
   search: industry
 
 # Current Masters
+- id: chengyue_zhang
+  name: ChengYue Zhang
+  affiliation: CS
+  degree: MScAC
+  image: /images/members/chengyue_zhang.jpg
+  gscholar: Sr6djygAAAAJ
+  linkedin: chengyuemscac
+  startyear: 2025
+  active: true
 
 # Current Undergrads
 - id: helen_li
@@ -237,6 +246,15 @@
   image: /images/members/jeb_thomas.jpeg
   linkedin: jeb-thomas-877966293
   startyear: 2024
+  active: true
+
+- id: tanaya_sharma
+  name: Tanaya Sharma
+  affiliation: CS
+  degree: BS
+  image: /images/members/tanaya_sharma.png
+  linkedin: tanayasharma
+  startyear: 2025
   active: true
 
 # Staff
