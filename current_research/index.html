@@ -40,13 +40,13 @@ title: Current Research
         <!-- --- Theme (Categories) --- -->
         <h3>Theme</h3>
         <label>
-          <input type="checkbox" class="filter-category mobile-filter-category" value="Active Sensing" /> Active Sensing
+          <input type="checkbox" class="filter-category" value="Active Sensing" /> Active Sensing
         </label><br />
         <label>
-          <input type="checkbox" class="filter-category mobile-filter-category" value="Passive Sensing" /> Passive Sensing
+          <input type="checkbox" class="filter-category" value="Passive Sensing" /> Passive Sensing
         </label><br />
         <label>
-          <input type="checkbox" class="filter-category mobile-filter-category" value="Design" /> Design
+          <input type="checkbox" class="filter-category" value="Design" /> Design
         </label><br />
         <hr />
 
@@ -63,7 +63,7 @@ title: Current Research
         {% endif %}
         {% endfor %}
         {% assign unique_health_topics = unique_health_topics | sort %}
-        <select id="mobile-filter-health-topic" class="filter-health-topic">
+        <select id="filter-health-topic">
           <option value="">All</option>
           {% for topic in unique_health_topics %}
           <option value="{{ topic }}">{{ topic }}</option>
@@ -86,7 +86,7 @@ title: Current Research
         {% assign unique_skills = unique_skills | sort %}
         {% for skill in unique_skills %}
         <label>
-          <input type="checkbox" class="filter-skill mobile-filter-skill" value="{{ skill }}" /> {{ skill }}
+          <input type="checkbox" class="filter-skill" value="{{ skill }}" /> {{ skill }}
         </label><br />
         {% endfor %}
         <hr />
@@ -104,7 +104,7 @@ title: Current Research
         {% endif %}
         {% endfor %}
         {% assign unique_leads = unique_leads | sort %}
-        <select id="mobile-filter-led-by" class="filter-led-by">
+        <select id="filter-led-by">
           <option value="">Anyone</option>
           {% for lead in unique_leads %}
           {% assign found_member = site.data.members | where:"id", lead | first %}
@@ -128,13 +128,13 @@ title: Current Research
       <!-- --- Theme (Categories) --- -->
       <h3>Theme</h3>
       <label>
-        <input type="checkbox" class="filter-category desktop-filter-category" value="Active Sensing" /> Active Sensing
+        <input type="checkbox" class="filter-category" value="Active Sensing" /> Active Sensing
       </label><br />
       <label>
-        <input type="checkbox" class="filter-category desktop-filter-category" value="Passive Sensing" /> Passive Sensing
+        <input type="checkbox" class="filter-category" value="Passive Sensing" /> Passive Sensing
       </label><br />
       <label>
-        <input type="checkbox" class="filter-category desktop-filter-category" value="Design" /> Design
+        <input type="checkbox" class="filter-category" value="Design" /> Design
       </label><br />
       <hr />
 
@@ -151,7 +151,7 @@ title: Current Research
       {% endif %}
       {% endfor %}
       {% assign unique_health_topics = unique_health_topics | sort %}
-      <select id="desktop-filter-health-topic" class="filter-health-topic">
+      <select id="filter-health-topic">
         <option value="">All</option>
         {% for topic in unique_health_topics %}
         <option value="{{ topic }}">{{ topic }}</option>
@@ -174,7 +174,7 @@ title: Current Research
       {% assign unique_skills = unique_skills | sort %}
       {% for skill in unique_skills %}
       <label>
-        <input type="checkbox" class="filter-skill desktop-filter-skill" value="{{ skill }}" /> {{ skill }}
+        <input type="checkbox" class="filter-skill" value="{{ skill }}" /> {{ skill }}
       </label><br />
       {% endfor %}
       <hr />
@@ -192,7 +192,7 @@ title: Current Research
       {% endif %}
       {% endfor %}
       {% assign unique_leads = unique_leads | sort %}
-      <select id="desktop-filter-led-by" class="filter-led-by">
+      <select id="filter-led-by">
         <option value="">Anyone</option>
         {% for lead in unique_leads %}
         {% assign found_member = site.data.members | where:"id", lead | first %}
@@ -230,197 +230,100 @@ title: Current Research
 </div>
 </div>
 
-<!-- Modified script section for index.html (Current Research page) -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const overlay = document.querySelector('.filter-overlay');
-    const openBtn = document.querySelector('.mobile-filter-toggle');
-    const closeBtn = document.querySelector('.close-filters');
-    const applyBtn = document.querySelector('.apply-filters');
-    const projectCards = Array.from(document.querySelectorAll('.project-card'));
-    const activePanel = document.getElementById('active-filters-panel');
-
-    const desktopThemeFilters = Array.from(document.querySelectorAll('.desktop-filter-category'));
-    const desktopSkillFilters = Array.from(document.querySelectorAll('.desktop-filter-skill'));
-    const desktopHealthSelect = document.getElementById('desktop-filter-health-topic');
-    const desktopLeadSelect = document.getElementById('desktop-filter-led-by');
-
-    const mobileThemeFilters = Array.from(document.querySelectorAll('.mobile-filter-category'));
-    const mobileSkillFilters = Array.from(document.querySelectorAll('.mobile-filter-skill'));
-    const mobileHealthSelect = document.getElementById('mobile-filter-health-topic');
-    const mobileLeadSelect = document.getElementById('mobile-filter-led-by');
+    const overlay       = document.querySelector('.filter-overlay');
+    const openBtn       = document.querySelector('.mobile-filter-toggle');
+    const closeBtn      = document.querySelector('.close-filters');
+    const applyBtn      = document.querySelector('.apply-filters');
+    const projectCards  = Array.from(document.querySelectorAll('.project-card'));
+    const themeFilters  = Array.from(document.querySelectorAll('.filter-category'));
+    const skillFilters  = Array.from(document.querySelectorAll('.filter-skill'));
+    const healthSelect  = document.getElementById('filter-health-topic');
+    const leadSelect    = document.getElementById('filter-led-by');
+    const activePanel   = document.getElementById('active-filters-panel');
 
     if (!overlay || !openBtn || !closeBtn || !applyBtn) return;
 
-    openBtn.addEventListener('click', () => overlay.classList.add('active'));
+    openBtn.addEventListener('click',  () => overlay.classList.add('active'));
     closeBtn.addEventListener('click', () => overlay.classList.remove('active'));
 
 
-    function syncFilters(fromMobile = false) {
-      if (fromMobile) {
-        mobileThemeFilters.forEach((mobileFilter, index) => {
-          if (index < desktopThemeFilters.length) {
-            desktopThemeFilters[index].checked = mobileFilter.checked;
-          }
-        });
-
-        mobileSkillFilters.forEach((mobileFilter, index) => {
-          if (index < desktopSkillFilters.length) {
-            desktopSkillFilters[index].checked = mobileFilter.checked;
-          }
-        });
-
-        desktopHealthSelect.value = mobileHealthSelect.value;
-        desktopLeadSelect.value = mobileLeadSelect.value;
-      } else {
-        desktopThemeFilters.forEach((desktopFilter, index) => {
-          if (index < mobileThemeFilters.length) {
-            mobileThemeFilters[index].checked = desktopFilter.checked;
-          }
-        });
-
-        desktopSkillFilters.forEach((desktopFilter, index) => {
-          if (index < mobileSkillFilters.length) {
-            mobileSkillFilters[index].checked = desktopFilter.checked;
-          }
-        });
-
-        mobileHealthSelect.value = desktopHealthSelect.value;
-        mobileLeadSelect.value = desktopLeadSelect.value;
-      }
-    }
-
     function filterProjects() {
-      const cats = desktopThemeFilters.filter(c => c.checked).map(c => c.value);
-      const skills = desktopSkillFilters.filter(c => c.checked).map(c => c.value);
-      const health = desktopHealthSelect.value;
-      const lead = desktopLeadSelect.value;
+      const cats  = themeFilters.filter(c=>c.checked).map(c=>c.value);
+      const skills= skillFilters.filter(c=>c.checked).map(c=>c.value);
+      const health= healthSelect.value;
+      const lead  = leadSelect.value;
 
       projectCards.forEach(card => {
         let show = true;
-
-        if (cats.length && !cats.some(c => card.dataset.category.includes(c))) {
-          show = false;
-        }
-
-        if (skills.length && !skills.every(s => card.dataset.skills.includes(s))) {
-          show = false;
-        }
-
-        if (health && !card.dataset.healthTopic.includes(health)) {
-          show = false;
-        }
-
-        if (lead && !card.dataset.leads.includes(lead)) {
-          show = false;
-        }
-
+        if (cats.length && !cats.some(c=>card.dataset.category.includes(c))) show = false;
+        if (skills.length && !skills.every(s=>card.dataset.skills.includes(s)))   show = false;
+        if (health && !card.dataset.healthTopic.includes(health))                  show = false;
+        if (lead   && !card.dataset.leads.includes(lead))                          show = false;
         card.style.display = show ? 'block' : 'none';
       });
-
       updateActiveFilters();
     }
 
+
     function updateActiveFilters() {
       activePanel.innerHTML = '';
+      const hasActiveFilters =
+              themeFilters.some(c => c.checked) ||
+              skillFilters.some(c => c.checked) ||
+              healthSelect.value ||
+              leadSelect.value;
 
-      desktopThemeFilters.filter(c => c.checked).forEach(c => {
+      if (!hasActiveFilters) {
+        activePanel.style.display = 'none';
+        return;
+      }
+      activePanel.style.display = 'block';
+
+      themeFilters.filter(c=>c.checked).forEach(c => {
         activePanel.innerHTML += `<span class="active-filter-tag">${c.value} <span class="remove-tag" onclick="removeFilter('category','${c.value}')">×</span></span>`;
       });
 
-      if (desktopHealthSelect.value) {
-        activePanel.innerHTML += `<span class="active-filter-tag">${desktopHealthSelect.selectedOptions[0].text} <span class="remove-tag" onclick="removeFilter('health','')">×</span></span>`;
+      if (healthSelect.value) {
+        activePanel.innerHTML += `<span class="active-filter-tag">${healthSelect.selectedOptions[0].text} <span class="remove-tag" onclick="removeFilter('health','')">×</span></span>`;
       }
 
-      desktopSkillFilters.filter(c => c.checked).forEach(c => {
+      skillFilters.filter(c=>c.checked).forEach(c => {
         activePanel.innerHTML += `<span class="active-filter-tag">${c.value} <span class="remove-tag" onclick="removeFilter('skill','${c.value}')">×</span></span>`;
       });
 
-      if (desktopLeadSelect.value) {
-        const name = desktopLeadSelect.selectedOptions[0].text;
+      if (leadSelect.value) {
+        const name = leadSelect.selectedOptions[0].text;
         activePanel.innerHTML += `<span class="active-filter-tag">${name} <span class="remove-tag" onclick="removeFilter('lead','')">×</span></span>`;
       }
     }
 
     window.removeFilter = function(type, val) {
-      if (type === 'category') {
-        const desktopFilter = desktopThemeFilters.find(c => c.value === val);
-        if (desktopFilter) desktopFilter.checked = false;
-
-        const mobileFilter = mobileThemeFilters.find(c => c.value === val);
-        if (mobileFilter) mobileFilter.checked = false;
-      }
-
-      if (type === 'skill') {
-        const desktopFilter = desktopSkillFilters.find(c => c.value === val);
-        if (desktopFilter) desktopFilter.checked = false;
-
-        const mobileFilter = mobileSkillFilters.find(c => c.value === val);
-        if (mobileFilter) mobileFilter.checked = false;
-      }
-
-      if (type === 'health') {
-        desktopHealthSelect.value = '';
-        mobileHealthSelect.value = '';
-      }
-
-      if (type === 'lead') {
-        desktopLeadSelect.value = '';
-        mobileLeadSelect.value = '';
-      }
-
+      if (type === 'category')  themeFilters.find(c=>c.value===val).checked = false;
+      if (type === 'skill')     skillFilters.find(c=>c.value===val).checked = false;
+      if (type === 'health')    healthSelect.value = '';
+      if (type === 'lead')      leadSelect.value   = '';
       filterProjects();
     };
 
-    desktopThemeFilters.forEach(c => c.addEventListener('change', () => {
-      syncFilters(false);
-      filterProjects();
-    }));
-
-    desktopSkillFilters.forEach(c => c.addEventListener('change', () => {
-      syncFilters(false);
-      filterProjects();
-    }));
-
-    desktopHealthSelect.addEventListener('change', () => {
-      syncFilters(false);
-      filterProjects();
-    });
-
-    desktopLeadSelect.addEventListener('change', () => {
-      syncFilters(false);
-      filterProjects();
-    });
-
-    mobileThemeFilters.forEach(c => c.addEventListener('change', () => {
-      syncFilters(true);
-    }));
-
-    mobileSkillFilters.forEach(c => c.addEventListener('change', () => {
-      syncFilters(true);
-    }));
-
-    mobileHealthSelect.addEventListener('change', () => {
-      syncFilters(true);
-    });
-
-    mobileLeadSelect.addEventListener('change', () => {
-      syncFilters(true);
-    });
-
+    [...themeFilters, ...skillFilters].forEach(c=>c.addEventListener('change', filterProjects));
+    healthSelect.addEventListener('change', filterProjects);
+    leadSelect.addEventListener('change', filterProjects);
 
     applyBtn.addEventListener('click', () => {
-      syncFilters(true);
       filterProjects();
       overlay.classList.remove('active');
     });
 
-
     const grid = document.querySelector('.projects-grid');
-    if (grid && projectCards.length > 1) {
+    if (grid && projectCards.length>1) {
       const top = projectCards[0].getBoundingClientRect().top;
-      const multi = projectCards.some(c => c.getBoundingClientRect().top > top + 1);
+      const multi = projectCards.some(c=>c.getBoundingClientRect().top > top+1);
       grid.classList.toggle('equal-height', multi);
     }
+
+
+    activePanel.style.display = 'none';
   });
 </script>

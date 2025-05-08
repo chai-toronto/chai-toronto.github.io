@@ -232,40 +232,6 @@ footer {
 }
 
 /*********************/
-/* HOME */
-/*********************/
-.hero-section {
-  position: relative;
-
-  .row {
-    margin-bottom: 0;
-  }
-
-  .hero-img {
-    width: 150%;
-    max-width: none;
-    margin-left: -40%;
-    margin-top: -30%;
-  }
-
-
-  .home-tagline {
-    max-width: 800px;
-    margin-bottom: 1rem;
-  }
-}
-
-
-.funded-by-section {
-  .sponsor-logo {
-    max-width: 300px !important;
-    height: auto !important;
-    margin: 1rem auto;
-  }
-}
-
-
-/*********************/
 /* NAVBAR */
 /*********************/
 .navbar {

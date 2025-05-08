@@ -1,5 +1,4 @@
-
-
+.get-involved-page {
   .row {
     margin-bottom: 4rem;
 
@@ -13,7 +12,6 @@
   }
 
   .row img {
-    margin-top: 2rem;
     border-radius: 20px;
 
     @media (max-width: 767px) {
@@ -121,3 +119,4 @@
       flex-direction: column-reverse;
     }
   }
+}
