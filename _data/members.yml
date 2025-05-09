@@ -257,6 +257,15 @@
   startyear: 2025
   active: true
 
+- id: richard_yin
+  name: Richard Yin
+  affiliation: CS
+  degree: BS
+  image: /images/members/richard_yin.png
+  linkedin: yin-richard
+  startyear: 2025
+  active: true
+
 # Staff
 
 # PhD Alumni
