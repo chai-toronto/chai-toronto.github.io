@@ -1,0 +1,104 @@
+<!-- Years -->
+{% assign years = "" | split: "" %}
+{% for pub in site.publications %}
+	{% assign pubYear = pub.date | date: '%Y' %}
+	{% unless years contains pubYear %}
+	{% assign years = years | push: pubYear %}
+	{% endunless %}
+{% endfor %}
+{% assign years = years | sort | reverse %}
+
+<!-- Health Topics -->
+{% assign healthTopics = "" | split: "" %}
+{% for pub in site.publications %}
+	{% if pub.health_topic %}
+	{% for topic in pub.health_topic %}
+	{% unless healthTopics contains topic %}
+	{% assign healthTopics = healthTopics | push: topic %}
+	{% endunless %}
+	{% endfor %}
+	{% endif %}
+{% endfor %}
+{% assign healthTopics = healthTopics | sort %}
+
+<!-- Conferences -->
+{% assign conferences = "" | split: "" %}
+{% for pub in site.publications %}
+	{% if pub.venue %}
+		{% assign confRaw = pub.venue %}
+		{% unless conferences contains confRaw %}
+			{% assign conferences = conferences | push: confRaw %}
+		{% endunless %}
+	{% endif %}
+{% endfor %}
+{% assign conferences = conferences | sort %}
+
+<!-- Contributors -->
+{% assign all_author_ids = "" | split: "" %}
+{% for pub in site.publications %}
+	{% if pub.authors %}
+		{% for author in pub.authors %}
+			{% unless all_author_ids contains author %}
+				{% assign all_author_ids = all_author_ids | push: author %}
+			{% endunless %}
+		{% endfor %}
+	{% endif %}
+{% endfor %}
+{% assign all_author_ids = all_author_ids | sort %}
+
+{% assign all_authors = "" | split: "" %}
+{% for author in all_author_ids %}
+	{% assign found_member = site.data.members | where:"id", author | first %}
+    {% if found_member and (found_member.degree == 'PhD' or found_member.degree == "MSc" or found_member.degree == 'MScAC') %}
+      {% assign all_authors = all_authors | push: found_member.name %}
+    {% endif %}
+{% endfor %}
+
+<!-- Themes -->
+{% assign themes = "" | split: "" %}
+{% assign themes = themes | push: 'Active Sensing' %}
+{% assign themes = themes | push: 'Passive Sensing' %}
+{% assign themes = themes | push: 'Design' %}
+
+<!-- Skills -->
+{% assign skills = "" | split: "" %}
+{% for pub in site.publications %}
+	{% if pub.skills %}
+		{% for skill in pub.skills %}
+			{% unless skills contains skill %}
+				{% assign skills = skills | push: skill %}
+			{% endunless %}
+		{% endfor %}
+	{% endif %}
+{% endfor %}
+{% assign skills = skills | sort %}
+
+<!-- Devices -->
+{% assign devices = "" | split: "" %}
+{% for pub in site.publications %}
+	{% if pub.device %}
+		{% for dev in pub.device %}
+			{% unless devices contains dev %}
+				{% assign devices = devices | push: dev %}
+			{% endunless %}
+			{% endfor %}
+	{% elsif pub.devices %}
+		{% for dev in pub.devices %}
+			{% unless devices contains dev %}
+				{% assign devices = devices | push: dev %}
+			{% endunless %}
+		{% endfor %}
+	{% endif %}
+{% endfor %}
+{% assign devices = devices | sort %}
+
+<!-- Awards -->
+{% assign awards = "" | split: "" %}
+{% for pub in site.publications %}
+	{% if pub.award %}
+		{% unless awards contains pub.award %}
+			{% assign awards = awards | push: pub.award %}
+		{% endunless %}
+	{% endif %}
+{% endfor %}
+{% assign awards = awards | sort %}
