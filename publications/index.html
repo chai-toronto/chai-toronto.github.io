@@ -4,110 +4,7 @@ title: Publications
 ---
 
 {% assign sorted_pubs = site.publications | sort: 'date' | reverse %}
-
-<!-- Years -->
-{% assign years = "" | split: "" %}
-{% for pub in site.publications %}
-{% assign pubYear = pub.date | date: '%Y' %}
-{% unless years contains pubYear %}
-{% assign years = years | push: pubYear %}
-{% endunless %}
-{% endfor %}
-{% assign years = years | sort | reverse %}
-
-<!-- Health Topics -->
-{% assign healthTopics = "" | split: "" %}
-{% for pub in site.publications %}
-{% if pub.health_topic %}
-{% for topic in pub.health_topic %}
-{% unless healthTopics contains topic %}
-{% assign healthTopics = healthTopics | push: topic %}
-{% endunless %}
-{% endfor %}
-{% endif %}
-{% endfor %}
-{% assign healthTopics = healthTopics | sort %}
-
-<!-- Conferences -->
-{% assign conferences = "" | split: "" %}
-{% for pub in site.publications %}
-{% if pub.venue %}
-{% assign confRaw = pub.venue %}
-{% unless conferences contains confRaw %}
-{% assign conferences = conferences | push: confRaw %}
-{% endunless %}
-{% endif %}
-{% endfor %}
-{% assign conferences = conferences | sort %}
-
-<!-- Contributors -->
-{% assign all_authors = "" | split: "" %}
-{% for pub in site.publications %}
-{% if pub.authors %}
-{% for author in pub.authors %}
-{% unless all_authors contains author %}
-{% assign all_authors = all_authors | push: author %}
-{% endunless %}
-{% endfor %}
-{% endif %}
-{% endfor %}
-{% assign all_authors = all_authors | sort %}
-
-<!-- Themes -->
-{% assign themes = "" | split: "" %}
-{% for pub in site.publications %}
-{% if pub.category %}
-{% for cat in pub.category %}
-{% unless themes contains cat %}
-{% assign themes = themes | push: cat %}
-{% endunless %}
-{% endfor %}
-{% endif %}
-{% endfor %}
-{% assign themes = themes | sort %}
-
-<!-- Skills -->
-{% assign skills = "" | split: "" %}
-{% for pub in site.publications %}
-{% if pub.skills %}
-{% for skill in pub.skills %}
-{% unless skills contains skill %}
-{% assign skills = skills | push: skill %}
-{% endunless %}
-{% endfor %}
-{% endif %}
-{% endfor %}
-{% assign skills = skills | sort %}
-
-<!-- Devices -->
-{% assign devices = "" | split: "" %}
-{% for pub in site.publications %}
-{% if pub.device %}
-{% for dev in pub.device %}
-{% unless devices contains dev %}
-{% assign devices = devices | push: dev %}
-{% endunless %}
-{% endfor %}
-{% elsif pub.devices %}
-{% for dev in pub.devices %}
-{% unless devices contains dev %}
-{% assign devices = devices | push: dev %}
-{% endunless %}
-{% endfor %}
-{% endif %}
-{% endfor %}
-{% assign devices = devices | sort %}
-
-<!-- Awards -->
-{% assign awards = "" | split: "" %}
-{% for pub in site.publications %}
-{% if pub.award %}
-{% unless awards contains pub.award %}
-{% assign awards = awards | push: pub.award %}
-{% endunless %}
-{% endif %}
-{% endfor %}
-{% assign awards = awards | sort %}
+{% include populate_filters.html %}
 
 <div class="publications-page">
   <h1>Publications</h1>
@@ -131,7 +28,7 @@ title: Publications
         <select id="mobile-yearSelect">
           <option value="">All</option>
           {% for y in years %}
-          <option value="{{ y }}">{{ y }}</option>
+            <option value="{{ y }}">{{ y }}</option>
           {% endfor %}
         </select>
 
@@ -140,7 +37,7 @@ title: Publications
         <select id="mobile-healthTopicSelect">
           <option value="">All</option>
           {% for topic in healthTopics %}
-          <option value="{{ topic }}">{{ topic }}</option>
+            <option value="{{ topic }}">{{ topic }}</option>
           {% endfor %}
         </select>
 
@@ -149,6 +46,122 @@ title: Publications
         <select id="mobile-conferenceSelect">
           <option value="">All</option>
           {% for conf in conferences %}
+            {% assign conf_parts = conf | split: "," %}
+            {% assign conf_transformed = "" %}
+            {% for cp in conf_parts %}
+            {% assign cp = cp | strip %}
+            {% if cp contains "$" %}
+            {% assign venue_item = site.data.venues | where:"id", cp | first %}
+            {% if venue_item %}
+            {% assign cp_trans = venue_item.full_name %}
+            {% else %}
+            {% assign cp_trans = cp %}
+            {% endif %}
+            {% else %}
+            {% assign cp_trans = cp %}
+            {% endif %}
+            {% if forloop.first %}
+            {% assign conf_transformed = cp_trans %}
+            {% else %}
+            {% assign conf_transformed = conf_transformed | append: ", " | append: cp_trans %}
+            {% endif %}
+          {% endfor %}
+          <option value="{{ conf | downcase }}">{{ conf_transformed }}</option>
+          {% endfor %}
+        </select>
+
+        <!-- Contributors -->
+        <h3>Graduate Student Contributors</h3>
+        <select id="mobile-contributorsSelect">
+          <option value="">Anyone</option>
+          {% for author in all_authors %}
+            <option value="{{ author.id }}">{{ author }}</option>
+          {% endfor %}
+        </select>
+
+        <hr />
+
+        <!-- Checkbox Filters -->
+        <!-- Theme -->
+        <div class="filter-group theme">
+          <h3>Theme</h3>
+          {% for theme in themes %}
+            <label>
+              <input type="checkbox" class="mobile-theme-checkbox" value="{{ theme | downcase }}" /> {{ theme }}
+            </label><br />
+          {% endfor %}
+        </div>
+
+        <hr />
+
+        <!-- Skills -->
+        <div class="filter-group skills">
+          <h3>Skills</h3>
+          {% for skill in skills %}
+            <label>
+              <input type="checkbox" class="mobile-skill-checkbox" value="{{ skill | downcase }}" /> {{ skill }}
+            </label><br />
+          {% endfor %}
+        </div>
+
+        <hr />
+
+        <!-- Most Relevant Device -->
+        <div class="filter-group device">
+          <h3>Most Relevant Device</h3>
+          {% for dev in devices %}
+            <label>
+              <input type="checkbox" class="mobile-device-checkbox" value="{{ dev | downcase }}" /> {{ dev }}
+            </label><br />
+          {% endfor %}
+        </div>
+
+        <hr />
+
+        <!-- Awards -->
+        <div class="filter-group awards">
+          <h3>Awards</h3>
+          {% for award in awards %}
+            <label>
+              <input type="checkbox" class="mobile-award-checkbox" value="{{ award | downcase }}" /> {{ award }}
+            </label><br />
+          {% endfor %}
+        </div>
+
+        <button class="apply-filters">Apply</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="publication-content-row">
+    <!-- Left Column: Filter Panel (desktop version) -->
+    <div class="filter-section">
+      <!-- Search bar -->
+      <input type="text" class="pub-search desktop-search" placeholder="Search" />
+
+      <!-- Year Published -->
+      <h3 for="yearSelect">Year Published</h3>
+      <select id="yearSelect">
+        <option value="">All</option>
+        {% for y in years %}
+          <option value="{{ y }}">{{ y }}</option>
+        {% endfor %}
+      </select>
+
+      <!-- Health Topic -->
+      <h3 for="healthTopicSelect">Health Topic</h3>
+      <select id="healthTopicSelect">
+        <option value="">All</option>
+        {% for topic in healthTopics %}
+          <option value="{{ topic | downcase }}">{{ topic }}</option>
+        {% endfor %}
+      </select>
+
+      <!-- Conference -->
+      <h3 for="conferenceSelect">Conference</h3>
+      <select id="conferenceSelect">
+        <option value="">All</option>
+        {% for conf in conferences %}
           {% assign conf_parts = conf | split: "," %}
           {% assign conf_transformed = "" %}
           {% for cp in conf_parts %}
@@ -170,142 +183,15 @@ title: Publications
           {% endif %}
           {% endfor %}
           <option value="{{ conf | downcase }}">{{ conf_transformed }}</option>
-          {% endfor %}
-        </select>
-
-        <!-- Contributors -->
-        <h3>Contributors</h3>
-        <select id="mobile-contributorsSelect">
-          <option value="">Anyone</option>
-          {% for author in all_authors %}
-          {% assign found_member = site.data.members | where:"id", author | first %}
-          {% if found_member %}
-          <option value="{{ found_member.id }}">{{ found_member.name }}</option>
-          {% endif %}
-          {% endfor %}
-        </select>
-
-        <hr />
-
-        <!-- Checkbox Filters -->
-        <!-- Theme -->
-        <div class="filter-group theme">
-          <h3>Theme</h3>
-          <label>
-            <input type="checkbox" class="mobile-theme-checkbox" value="Active Sensing" /> Active Sensing
-          </label><br />
-          <label>
-            <input type="checkbox" class="mobile-theme-checkbox" value="Passive Sensing" /> Passive Sensing
-          </label><br />
-          <label>
-            <input type="checkbox" class="mobile-theme-checkbox" value="Design" /> Design
-          </label><br />
-        </div>
-
-        <hr />
-
-        <!-- Skills -->
-        <div class="filter-group skills">
-          <h3>Skills</h3>
-          {% for skill in skills %}
-          <label>
-            <input type="checkbox" class="mobile-skill-checkbox" value="{{ skill | downcase }}" /> {{ skill }}
-          </label><br />
-          {% endfor %}
-        </div>
-
-        <hr />
-
-        <!-- Most Relevant Device -->
-        <div class="filter-group device">
-          <h3>Most Relevant Device</h3>
-          {% for dev in devices %}
-          <label>
-            <input type="checkbox" class="mobile-device-checkbox" value="{{ dev | downcase }}" /> {{ dev }}
-          </label><br />
-          {% endfor %}
-        </div>
-
-        <hr />
-
-        <!-- Awards -->
-        <div class="filter-group awards">
-          <h3>Awards</h3>
-          {% for award in awards %}
-          <label>
-            <input type="checkbox" class="mobile-award-checkbox" value="{{ award | downcase }}" /> {{ award }}
-          </label><br />
-          {% endfor %}
-        </div>
-
-        <button class="apply-filters">Apply</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="publication-content-row">
-    <!-- Left Column: Filter Panel (desktop version) -->
-    <div class="filter-section">
-      <!-- Search bar -->
-      <input type="text" class="pub-search desktop-search" placeholder="Search" />
-
-      <!-- Year Published -->
-      <h3 for="yearSelect">Year Published</h3>
-      <select id="yearSelect">
-        <option value="">All</option>
-        {% for y in years %}
-        <option value="{{ y }}">{{ y }}</option>
-        {% endfor %}
-      </select>
-
-      <!-- Health Topic -->
-      <h3 for="healthTopicSelect">Health Topic</h3>
-      <select id="healthTopicSelect">
-        <option value="">All</option>
-        {% for topic in healthTopics %}
-        <option value="{{ topic | downcase }}">{{ topic }}</option>
-        {% endfor %}
-      </select>
-
-      <!-- Conference -->
-      <h3 for="conferenceSelect">Conference</h3>
-      <select id="conferenceSelect">
-        <option value="">All</option>
-        {% for conf in conferences %}
-        {% assign conf_parts = conf | split: "," %}
-        {% assign conf_transformed = "" %}
-        {% for cp in conf_parts %}
-        {% assign cp = cp | strip %}
-        {% if cp contains "$" %}
-        {% assign venue_item = site.data.venues | where:"id", cp | first %}
-        {% if venue_item %}
-        {% assign cp_trans = venue_item.full_name %}
-        {% else %}
-        {% assign cp_trans = cp %}
-        {% endif %}
-        {% else %}
-        {% assign cp_trans = cp %}
-        {% endif %}
-        {% if forloop.first %}
-        {% assign conf_transformed = cp_trans %}
-        {% else %}
-        {% assign conf_transformed = conf_transformed | append: ", " | append: cp_trans %}
-        {% endif %}
-        {% endfor %}
-        <option value="{{ conf | downcase }}">{{ conf_transformed }}</option>
         {% endfor %}
       </select>
 
       <!-- Contributors -->
-      <!-- TODO: fix this to remove -->
-      <h3 for="contributorsSelect">Contributors</h3>
+      <h3 for="contributorsSelect">Graduate Student Contributors</h3>
       <select id="contributorsSelect">
         <option value="">Anyone</option>
         {% for author in all_authors %}
-        {% assign found_member = site.data.members | where:"id", author | first %}
-        {% if found_member %}
-        <option value="{{ found_member.id }}">{{ found_member.name }}</option>
-        {% endif %}
+          <option value="{{ author.id }}">{{ author }}</option>
         {% endfor %}
       </select>
 
@@ -315,15 +201,11 @@ title: Publications
       <!-- Theme (Publication Category) -->
       <div class="filter-group theme">
         <h3>Theme</h3>
-        <label>
-          <input type="checkbox" class="filter-theme-checkbox" value="Active Sensing" /> Active Sensing
-        </label><br />
-        <label>
-          <input type="checkbox" class="filter-theme-checkbox" value="Passive Sensing" /> Passive Sensing
-        </label><br />
-        <label>
-          <input type="checkbox" class="filter-theme-checkbox" value="Design" /> Design
-        </label><br />
+        {% for theme in themes %}
+          <label>
+            <input type="checkbox" class="filter-theme-checkbox" value="{{ theme | downcase }}" /> {{ theme }}
+          </label><br />
+        {% endfor %}
       </div>
 
       <hr />
@@ -332,9 +214,9 @@ title: Publications
       <div class="filter-group skills">
         <h3>Skills</h3>
         {% for skill in skills %}
-        <label>
-          <input type="checkbox" class="filter-skill-checkbox" value="{{ skill | downcase }}" /> {{ skill }}
-        </label><br />
+          <label>
+            <input type="checkbox" class="filter-skill-checkbox" value="{{ skill | downcase }}" /> {{ skill }}
+          </label><br />
         {% endfor %}
       </div>
 
@@ -344,9 +226,9 @@ title: Publications
       <div class="filter-group device">
         <h3>Most Relevant Device</h3>
         {% for dev in devices %}
-        <label>
-          <input type="checkbox" class="filter-device-checkbox" value="{{ dev | downcase }}" /> {{ dev }}
-        </label><br />
+          <label>
+            <input type="checkbox" class="filter-device-checkbox" value="{{ dev | downcase }}" /> {{ dev }}
+          </label><br />
         {% endfor %}
       </div>
 
@@ -356,9 +238,9 @@ title: Publications
       <div class="filter-group awards">
         <h3>Awards</h3>
         {% for award in awards %}
-        <label>
-          <input type="checkbox" class="filter-award-checkbox" value="{{ award | downcase }}" /> {{ award }}
-        </label><br />
+          <label>
+            <input type="checkbox" class="filter-award-checkbox" value="{{ award | downcase }}" /> {{ award }}
+          </label><br />
         {% endfor %}
       </div>
     </div>
