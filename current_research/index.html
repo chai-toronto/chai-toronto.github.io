@@ -4,6 +4,7 @@ title: Current Research
 ---
 
 {% assign sorted_projects = site.projects | sort: 'name' %}
+{% include populate_filters.html %}
 
 <div class="current-research-page">
   <h1>Current Research</h1>
@@ -39,52 +40,26 @@ title: Current Research
 
         <!-- --- Theme (Categories) --- -->
         <h3>Theme</h3>
-        <label>
-          <input type="checkbox" class="filter-category" value="Active Sensing" /> Active Sensing
-        </label><br />
-        <label>
-          <input type="checkbox" class="filter-category" value="Passive Sensing" /> Passive Sensing
-        </label><br />
-        <label>
-          <input type="checkbox" class="filter-category" value="Design" /> Design
-        </label><br />
+        {% for theme in themes %}
+          <label>
+            <input type="checkbox" class="filter-category" value="{{ theme }}" /> {{ theme }}
+          </label><br />
+        {% endfor %}
         <hr />
 
         <!-- --- Health Topic --- -->
         <h3>Health Topic</h3>
-        {% assign unique_health_topics = "" | split: "" %}
-        {% for project in site.projects %}
-        {% if project.health_topic %}
-        {% for topic in project.health_topic %}
-        {% unless unique_health_topics contains topic %}
-        {% assign unique_health_topics = unique_health_topics | push: topic %}
-        {% endunless %}
-        {% endfor %}
-        {% endif %}
-        {% endfor %}
-        {% assign unique_health_topics = unique_health_topics | sort %}
         <select id="filter-health-topic">
           <option value="">All</option>
-          {% for topic in unique_health_topics %}
-          <option value="{{ topic }}">{{ topic }}</option>
+          {% for topic in healthTopics %}
+            <option value="{{ topic }}">{{ topic }}</option>
           {% endfor %}
         </select>
         <hr />
 
         <!-- --- Skills --- -->
         <h3>Skills</h3>
-        {% assign unique_skills = "" | split: "" %}
-        {% for project in site.projects %}
-        {% if project.skills %}
-        {% for skill in project.skills %}
-        {% unless unique_skills contains skill %}
-        {% assign unique_skills = unique_skills | push: skill %}
-        {% endunless %}
-        {% endfor %}
-        {% endif %}
-        {% endfor %}
-        {% assign unique_skills = unique_skills | sort %}
-        {% for skill in unique_skills %}
+        {% for skill in skills %}
         <label>
           <input type="checkbox" class="filter-skill" value="{{ skill }}" /> {{ skill }}
         </label><br />
@@ -93,26 +68,15 @@ title: Current Research
 
         <!-- --- Led By --- -->
         <h3>Led By</h3>
-        {% assign unique_leads = "" | split: "" %}
-        {% for project in site.projects %}
-        {% if project.leads %}
-        {% for lead in project.leads %}
-        {% unless unique_leads contains lead %}
-        {% assign unique_leads = unique_leads | push: lead %}
-        {% endunless %}
-        {% endfor %}
-        {% endif %}
-        {% endfor %}
-        {% assign unique_leads = unique_leads | sort %}
         <select id="filter-led-by">
           <option value="">Anyone</option>
-          {% for lead in unique_leads %}
-          {% assign found_member = site.data.members | where:"id", lead | first %}
-          {% if found_member %}
-          <option value="{{ found_member.id }}">{{ found_member.name }}</option>
-          {% else %}
-          <option value="{{ lead }}">{{ lead }}</option>
-          {% endif %}
+          {% for lead in all_lead_ids %}
+            {% assign found_member = site.data.members | where:"id", lead | first %}
+            {% if found_member %}
+              {% if found_member.degree == 'PhD' or found_member.degree == "MSc" or found_member.degree == 'MScAC' %}
+                <option value="{{ found_member.id }}">{{ found_member.name }}</option>
+              {% endif %}
+            {% endif %}
           {% endfor %}
         </select>
         <button class="apply-filters">Apply</button>
@@ -127,52 +91,26 @@ title: Current Research
     <div class="filter-section">
       <!-- --- Theme (Categories) --- -->
       <h3>Theme</h3>
-      <label>
-        <input type="checkbox" class="filter-category" value="Active Sensing" /> Active Sensing
-      </label><br />
-      <label>
-        <input type="checkbox" class="filter-category" value="Passive Sensing" /> Passive Sensing
-      </label><br />
-      <label>
-        <input type="checkbox" class="filter-category" value="Design" /> Design
-      </label><br />
+      {% for theme in themes %}
+        <label>
+          <input type="checkbox" class="filter-category" value="{{ theme }}" /> {{ theme }}
+        </label><br />
+      {% endfor %}
       <hr />
 
       <!-- --- Health Topic --- -->
       <h3>Health Topic</h3>
-      {% assign unique_health_topics = "" | split: "" %}
-      {% for project in site.projects %}
-      {% if project.health_topic %}
-      {% for topic in project.health_topic %}
-      {% unless unique_health_topics contains topic %}
-      {% assign unique_health_topics = unique_health_topics | push: topic %}
-      {% endunless %}
-      {% endfor %}
-      {% endif %}
-      {% endfor %}
-      {% assign unique_health_topics = unique_health_topics | sort %}
       <select id="filter-health-topic">
         <option value="">All</option>
-        {% for topic in unique_health_topics %}
-        <option value="{{ topic }}">{{ topic }}</option>
+        {% for topic in healthTopics %}
+          <option value="{{ topic }}">{{ topic }}</option>
         {% endfor %}
       </select>
       <hr />
 
       <!-- --- Skills --- -->
       <h3>Skills</h3>
-      {% assign unique_skills = "" | split: "" %}
-      {% for project in site.projects %}
-      {% if project.skills %}
-      {% for skill in project.skills %}
-      {% unless unique_skills contains skill %}
-      {% assign unique_skills = unique_skills | push: skill %}
-      {% endunless %}
-      {% endfor %}
-      {% endif %}
-      {% endfor %}
-      {% assign unique_skills = unique_skills | sort %}
-      {% for skill in unique_skills %}
+      {% for skill in skills %}
       <label>
         <input type="checkbox" class="filter-skill" value="{{ skill }}" /> {{ skill }}
       </label><br />
@@ -181,26 +119,15 @@ title: Current Research
 
       <!-- --- Led By --- -->
       <h3>Led By</h3>
-      {% assign unique_leads = "" | split: "" %}
-      {% for project in site.projects %}
-      {% if project.leads %}
-      {% for lead in project.leads %}
-      {% unless unique_leads contains lead %}
-      {% assign unique_leads = unique_leads | push: lead %}
-      {% endunless %}
-      {% endfor %}
-      {% endif %}
-      {% endfor %}
-      {% assign unique_leads = unique_leads | sort %}
       <select id="filter-led-by">
         <option value="">Anyone</option>
-        {% for lead in unique_leads %}
-        {% assign found_member = site.data.members | where:"id", lead | first %}
-        {% if found_member %}
-        <option value="{{ found_member.id }}">{{ found_member.name }}</option>
-        {% else %}
-        <option value="{{ lead }}">{{ lead }}</option>
-        {% endif %}
+        {% for lead in all_lead_ids %}
+          {% assign found_member = site.data.members | where:"id", lead | first %}
+          {% if found_member %}
+            {% if found_member.degree == 'PhD' or found_member.degree == "MSc" or found_member.degree == 'MScAC' %}
+              <option value="{{ found_member.id }}">{{ found_member.name }}</option>
+            {% endif %}
+          {% endif %}
         {% endfor %}
       </select>
     </div>

@@ -33,6 +33,21 @@
 {% endfor %}
 {% assign conferences = conferences | sort %}
 
+
+
+<!-- Leads -->
+{% assign all_lead_ids = "" | split: "" %}
+{% for project in site.projects %}
+	{% if project.leads %}
+		{% for lead in project.leads %}
+			{% unless all_lead_ids contains lead %}
+				{% assign all_lead_ids = all_lead_ids | push: lead %}
+			{% endunless %}
+		{% endfor %}
+	{% endif %}
+{% endfor %}
+{% assign all_lead_ids = all_lead_ids | sort %}
+
 <!-- Contributors -->
 {% assign all_author_ids = "" | split: "" %}
 {% for pub in site.publications %}
@@ -45,14 +60,6 @@
 	{% endif %}
 {% endfor %}
 {% assign all_author_ids = all_author_ids | sort %}
-
-{% assign all_authors = "" | split: "" %}
-{% for author in all_author_ids %}
-	{% assign found_member = site.data.members | where:"id", author | first %}
-    {% if found_member and (found_member.degree == 'PhD' or found_member.degree == "MSc" or found_member.degree == 'MScAC') %}
-      {% assign all_authors = all_authors | push: found_member.name %}
-    {% endif %}
-{% endfor %}
 
 <!-- Themes -->
 {% assign themes = "" | split: "" %}

@@ -74,8 +74,13 @@ title: Publications
         <h3>Graduate Student Contributors</h3>
         <select id="mobile-contributorsSelect">
           <option value="">Anyone</option>
-          {% for author in all_authors %}
-            <option value="{{ author.id }}">{{ author }}</option>
+          {% for author in all_author_ids %}
+            {% assign found_member = site.data.members | where:"id", author | first %}
+            {% if found_member %}
+              {% if found_member.degree == 'PhD' or found_member.degree == "MSc" or found_member.degree == 'MScAC' %}
+                <option value="{{ found_member.id }}">{{ found_member.name }}</option>
+              {% endif %}
+            {% endif %}
           {% endfor %}
         </select>
 
@@ -190,8 +195,13 @@ title: Publications
       <h3 for="contributorsSelect">Graduate Student Contributors</h3>
       <select id="contributorsSelect">
         <option value="">Anyone</option>
-        {% for author in all_authors %}
-          <option value="{{ author.id }}">{{ author }}</option>
+        {% for author in all_author_ids %}
+          {% assign found_member = site.data.members | where:"id", author | first %}
+          {% if found_member %}
+            {% if found_member.degree == 'PhD' or found_member.degree == "MSc" or found_member.degree == 'MScAC' %}
+              <option value="{{ found_member.id }}">{{ found_member.name }}</option>
+            {% endif %}
+          {% endif %}
         {% endfor %}
       </select>
 
