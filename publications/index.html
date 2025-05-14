@@ -66,7 +66,7 @@ title: Publications
             {% assign conf_transformed = conf_transformed | append: ", " | append: cp_trans %}
             {% endif %}
           {% endfor %}
-          <option value="{{ conf | downcase }}">{{ conf_transformed }}</option>
+          <option value="{{ conf }}">{{ conf_transformed }}</option>
           {% endfor %}
         </select>
 
@@ -92,7 +92,7 @@ title: Publications
           <h3>Theme</h3>
           {% for theme in themes %}
             <label>
-              <input type="checkbox" class="mobile-theme-checkbox" value="{{ theme | downcase }}" /> {{ theme }}
+              <input type="checkbox" class="mobile-theme-checkbox" value="{{ theme }}" /> {{ theme }}
             </label><br />
           {% endfor %}
         </div>
@@ -104,7 +104,7 @@ title: Publications
           <h3>Skills</h3>
           {% for skill in skills %}
             <label>
-              <input type="checkbox" class="mobile-skill-checkbox" value="{{ skill | downcase }}" /> {{ skill }}
+              <input type="checkbox" class="mobile-skill-checkbox" value="{{ skill }}" /> {{ skill }}
             </label><br />
           {% endfor %}
         </div>
@@ -116,7 +116,7 @@ title: Publications
           <h3>Most Relevant Device</h3>
           {% for dev in devices %}
             <label>
-              <input type="checkbox" class="mobile-device-checkbox" value="{{ dev | downcase }}" /> {{ dev }}
+              <input type="checkbox" class="mobile-device-checkbox" value="{{ dev }}" /> {{ dev }}
             </label><br />
           {% endfor %}
         </div>
@@ -128,7 +128,7 @@ title: Publications
           <h3>Awards</h3>
           {% for award in awards %}
             <label>
-              <input type="checkbox" class="mobile-award-checkbox" value="{{ award | downcase }}" /> {{ award }}
+              <input type="checkbox" class="mobile-award-checkbox" value="{{ award }}" /> {{ award }}
             </label><br />
           {% endfor %}
         </div>
@@ -158,7 +158,7 @@ title: Publications
       <select id="healthTopicSelect">
         <option value="">All</option>
         {% for topic in healthTopics %}
-          <option value="{{ topic | downcase }}">{{ topic }}</option>
+          <option value="{{ topic }}">{{ topic }}</option>
         {% endfor %}
       </select>
 
@@ -187,7 +187,7 @@ title: Publications
           {% assign conf_transformed = conf_transformed | append: ", " | append: cp_trans %}
           {% endif %}
           {% endfor %}
-          <option value="{{ conf | downcase }}">{{ conf_transformed }}</option>
+          <option value="{{ conf }}">{{ conf_transformed }}</option>
         {% endfor %}
       </select>
 
@@ -213,7 +213,7 @@ title: Publications
         <h3>Theme</h3>
         {% for theme in themes %}
           <label>
-            <input type="checkbox" class="filter-theme-checkbox" value="{{ theme | downcase }}" /> {{ theme }}
+            <input type="checkbox" class="filter-theme-checkbox" value="{{ theme }}" /> {{ theme }}
           </label><br />
         {% endfor %}
       </div>
@@ -225,7 +225,7 @@ title: Publications
         <h3>Skills</h3>
         {% for skill in skills %}
           <label>
-            <input type="checkbox" class="filter-skill-checkbox" value="{{ skill | downcase }}" /> {{ skill }}
+            <input type="checkbox" class="filter-skill-checkbox" value="{{ skill }}" /> {{ skill }}
           </label><br />
         {% endfor %}
       </div>
@@ -237,7 +237,7 @@ title: Publications
         <h3>Most Relevant Device</h3>
         {% for dev in devices %}
           <label>
-            <input type="checkbox" class="filter-device-checkbox" value="{{ dev | downcase }}" /> {{ dev }}
+            <input type="checkbox" class="filter-device-checkbox" value="{{ dev }}" /> {{ dev }}
           </label><br />
         {% endfor %}
       </div>
@@ -249,7 +249,7 @@ title: Publications
         <h3>Awards</h3>
         {% for award in awards %}
           <label>
-            <input type="checkbox" class="filter-award-checkbox" value="{{ award | downcase }}" /> {{ award }}
+            <input type="checkbox" class="filter-award-checkbox" value="{{ award }}" /> {{ award }}
           </label><br />
         {% endfor %}
       </div>
@@ -262,14 +262,14 @@ title: Publications
       {% for pub in sorted_pubs %}
       <div class="publication-card"
            data-year="{{ pub.date | date: '%Y' }}"
-           data-health-topic="{{ pub.health_topic | join: ',' | downcase }}"
-           data-conference="{{ pub.venue | downcase }}"
-           data-contributors="{{ pub.authors | join: ',' | downcase }}"
-           data-theme="{{ pub.category | join: ',' | downcase }}"
-           data-skills="{{ pub.skills | join: ',' | downcase }}"
-           data-device="{% if pub.device %}{{ pub.device | join: ',' | downcase }}{% elsif pub.devices %}{{ pub.devices | join: ',' | downcase }}{% endif %}"
-           data-dataset="{{ pub.dataset_available | downcase }}"
-           data-award="{{ pub.award | downcase }}">
+           data-health-topic="{{ pub.health_topic | join: ',' }}"
+           data-conference="{{ pub.venue }}"
+           data-contributors="{{ pub.authors | join: ',' }}"
+           data-theme="{{ pub.category | join: ',' }}"
+           data-skills="{{ pub.skills | join: ',' }}"
+           data-device="{% if pub.device %}{{ pub.device | join: ',' }}{% elsif pub.devices %}{{ pub.devices | join: ',' }}{% endif %}"
+           data-dataset="{{ pub.dataset_available }}"
+           data-award="{{ pub.award }}">
         <div class="pub-image">
           {% if pub.date <= site.time %}
           <a href="{{ pub.link }}">
@@ -522,18 +522,18 @@ title: Publications
       let values = [];
       checkboxes.forEach(cb => {
         if(cb.checked) {
-          values.push(cb.value.toLowerCase());
+          values.push(cb.value);
         }
       });
       return values;
     }
 
     function filterPublications() {
-      const query = searchInput.value.toLowerCase();
+      const query = searchInput.value;
       const selectedYear = yearSelect.value;
-      const selectedHealthTopic = healthTopicSelect.value.toLowerCase();
-      const selectedConference = conferenceSelect.value.toLowerCase();
-      const selectedContributors = contributorsSelect.value.toLowerCase();
+      const selectedHealthTopic = healthTopicSelect.value;
+      const selectedConference = conferenceSelect.value;
+      const selectedContributors = contributorsSelect.value;
       const selectedThemes = getCheckedValues(themeCheckboxes);
       const selectedSkills = getCheckedValues(skillCheckboxes);
       const selectedDevices = getCheckedValues(deviceCheckboxes);
