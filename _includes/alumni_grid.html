@@ -1,43 +1,19 @@
-{% comment %}
-This partial filters "active: false" from members.yml,
-splits them into "Graduate Alumni" (PhD, MScAC, etc.) and "Undergraduate Alumni" (BS),
-and displays them in a card layout similar to _people_grid.html.
-We avoid where_exp: with OR to prevent syntax errors on older Jekyll versions.
-{% endcomment %}
-
 {% capture alumni_grid %}
 
-{% comment %}
-1) Collect all inactive (active: false) members.
-{% endcomment %}
 {% assign all_alumni = site.data.members | where:"active", false %}
 
-{% comment %}
-2) Build a "graduate" list by union of separate filters for each degree.
-That avoids multi-OR in one line.
-{% endcomment %}
 {% assign grads_phd = all_alumni | where:"degree","PhD" %}
 {% assign grads_mscac = all_alumni | where:"degree","MScAC" %}
 {% assign grads_msc = all_alumni | where:"degree","MSc" %}
 {% assign grads_ma = all_alumni | where:"degree","MA" %}
 {% assign grads_master = all_alumni | where:"degree","Master" %}
 
-{% comment %}
-Concatenate them into a single array.
-{% endcomment %}
-{% assign alumni_grads = grads_phd | concat: grads_mscac | concat: grads_msc | concat: grads_ma | concat: grads_master %}
-
-{% comment %}
-3) Undergraduate alumni: filter for "BS"
-{% endcomment %}
-{% assign alumni_undergrads = all_alumni | where:"degree","BS" %}
+{% assign alumni_grads = grads_phd | concat: grads_mscac | concat: grads_msc | concat: grads_ma | concat: grads_master | sort: 'startyear' %}
+{% assign alumni_undergrads = all_alumni | where:"degree","BS" | sort: 'startyear' | reverse %}
 
 <div class="alumni-grid-wrapper">
 
-  {%- comment -%}
-  GRADUATE ALUMNI
-  {%- endcomment -%}
-  {% if alumni_grads.size > 0 %}
+  <!-- GRADUATE ALUMNI -->
   <div class="alumni-section mb-5">
     <h2 class="section-heading">Graduate Alumni</h2>
     <div class="people-grid alumni-grid">
@@ -114,12 +90,8 @@ Concatenate them into a single array.
       </div>
     </div>
   </div>
-  {% endif %}
 
-  {%- comment -%}
-  UNDERGRADUATE ALUMNI
-  {%- endcomment -%}
-  {% if alumni_undergrads.size > 0 %}
+  <!-- UNDERGRADUATE ALUMNI -->
   <div class="alumni-section mb-5">
     <h2 class="section-heading">Undergraduate Alumni</h2>
     <div class="people-grid alumni-grid">
@@ -193,7 +165,6 @@ Concatenate them into a single array.
       </div>
     </div>
   </div>
-  {% endif %}
 
 </div>
 

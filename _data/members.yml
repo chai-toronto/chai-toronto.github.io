@@ -10,60 +10,6 @@
   twitter: alex_mariakakis
 
 # Current PhDs
-- id: blue_lin
-  name: Blue Lin
-  affiliation: CS
-  degree: PhD
-  image: /images/members/blue_lin.jpeg
-  website: https://www.bluelin.me/
-  gscholar: rgcuaxcAAAAJ
-  linkedin: blue-georgianna-lin
-  startyear: 2021
-  coadvisor: khai
-  shortbio: Wearables, HCI, and health informatics
-  active: true
-  search: industry
-
-- id: dhruv_verma
-  name: Dhruv Verma
-  affiliation: CS
-  degree: PhD
-  image: /images/members/dhruv_verma.jpeg
-  website: https://dhruv-verma.com/
-  gscholar: KJgi6GMAAAAJ
-  linkedin: ~dhruvverma
-  twitter: dhruvverma_
-  startyear: 2021
-  shortbio: Mobile computing and computational imaging
-  active: true
-
-- id: ken_christofferson
-  name: Ken Christofferson
-  affiliation: CS
-  degree: PhD
-  image: /images/members/ken_christofferson.jpeg
-  website: https://ken-chris.github.io/
-  gscholar: 0o9DeCAAAAAJ
-  linkedin: kenneth-christofferson
-  startyear: 2021
-  coadvisor: cafazzo
-  shortbio: Mobile health and applied machine learning
-  active: true
-
-- id: sejal_bhalla
-  name: Sejal Bhalla
-  affiliation: CS
-  degree: PhD
-  image: /images/members/sejal_bhalla.jpeg
-  website: https://www.sejalbhalla.com/
-  gscholar: SwDlgvoAAAAJ
-  linkedin: sejal-bhalla
-  twitter: sejal_bhalla
-  startyear: 2021
-  coadvisor: delara
-  shortbio: Mobile health and applied machine learning
-  active: true
-
 - id: brenna_li
   name: Brenna Li
   affiliation: CS
@@ -90,6 +36,60 @@
   startyear: 2018
   coadvisor: delara
   shortbio: Ubiquitous computing and wearables
+  active: true
+
+- id: blue_lin
+  name: Blue Lin
+  affiliation: CS
+  degree: PhD
+  image: /images/members/blue_lin.jpeg
+  website: https://www.bluelin.me/
+  gscholar: rgcuaxcAAAAJ
+  linkedin: blue-georgianna-lin
+  startyear: 2021
+  coadvisor: khai
+  shortbio: Wearables, HCI, and health informatics
+  active: true
+  search: industry
+
+- id: sejal_bhalla
+  name: Sejal Bhalla
+  affiliation: CS
+  degree: PhD
+  image: /images/members/sejal_bhalla.jpeg
+  website: https://www.sejalbhalla.com/
+  gscholar: SwDlgvoAAAAJ
+  linkedin: sejal-bhalla
+  twitter: sejal_bhalla
+  startyear: 2021
+  coadvisor: delara
+  shortbio: Mobile health and applied machine learning
+  active: true
+
+- id: ken_christofferson
+  name: Ken Christofferson
+  affiliation: CS
+  degree: PhD
+  image: /images/members/ken_christofferson.jpeg
+  website: https://ken-chris.github.io/
+  gscholar: 0o9DeCAAAAAJ
+  linkedin: kenneth-christofferson
+  startyear: 2021
+  coadvisor: cafazzo
+  shortbio: Mobile health and applied machine learning
+  active: true
+
+- id: dhruv_verma
+  name: Dhruv Verma
+  affiliation: CS
+  degree: PhD
+  image: /images/members/dhruv_verma.jpeg
+  website: https://dhruv-verma.com/
+  gscholar: KJgi6GMAAAAJ
+  linkedin: ~dhruvverma
+  twitter: dhruvverma_
+  startyear: 2021
+  shortbio: Mobile computing and computational imaging
   active: true
 
 - id: ian_ruffolo
@@ -128,41 +128,12 @@
   active: true
 
 # Current Undergrads
-- id: helen_li
-  name: Jin Yi Li
+- id: benson_chou
+  name: Benson Chou
   affiliation: CS
   degree: BS
-  image: /images/members/helen_li.jpg
-  website: https://helen-li.github.io/
-  gscholar: Sr6djygAAAAJ
-  linkedin: helenli28
-  startyear: 2022
-  active: true
-
-- id: minh_le
-  name: Minh Le
-  affiliation: CS
-  degree: BS
-  image: /images/members/minh_le.png
-  linkedin: nm-le
-  startyear: 2023
-  active: true
-
-- id: anna_kirik
-  name: Anna Kirik
-  affiliation: CS
-  degree: BS
-  image: /images/members/anna_kirik.jpg
-  linkedin: anna-kirik-a1869820b
-  startyear: 2023
-  active: true
-
-- id: andrew_qiu
-  name: Andrew Qiu
-  affiliation: CS
-  degree: BS
-  image: /images/members/andrew_qiu.jpeg
-  linkedin: andrew-qiu
+  image: /images/members/benson_chou.jpg
+  linkedin: chiayouchou
   startyear: 2024
   active: true
 
@@ -194,21 +165,32 @@
   startyear: 2024
   active: true
 
-- id: rilong_zhang
-  name: Rilong (Owen) Zhang
+- id: minh_le
+  name: Minh Le
   affiliation: CS
   degree: BS
-  image: /images/members/rilong_zhang.png
-  linkedin: rilong-zhang-0a5493209
-  startyear: 2024
+  image: /images/members/minh_le.png
+  linkedin: nm-le
+  startyear: 2023
   active: true
 
-- id: yifang_zhang
-  name: Yifang Zhang
+- id: helen_li
+  name: Jin Yi Li
   affiliation: CS
   degree: BS
-  image: /images/members/yifang_zhang.jpg
-  linkedin: yifang-zhang-04a984241
+  image: /images/members/helen_li.jpg
+  website: https://helen-li.github.io/
+  gscholar: Sr6djygAAAAJ
+  linkedin: helenli28
+  startyear: 2022
+  active: true
+
+- id: andrew_qiu
+  name: Andrew Qiu
+  affiliation: CS
+  degree: BS
+  image: /images/members/andrew_qiu.jpeg
+  linkedin: andrew-qiu
   startyear: 2024
   active: true
 
@@ -221,13 +203,13 @@
   startyear: 2024
   active: true
 
-- id: benson_chou
-  name: Benson Chou
+- id: tanaya_sharma
+  name: Tanaya Sharma
   affiliation: CS
   degree: BS
-  image: /images/members/benson_chou.jpg
-  linkedin: chiayouchou
-  startyear: 2024
+  image: /images/members/tanaya_sharma.png
+  linkedin: tanayasharma
+  startyear: 2025
   active: true
 
 - id: maryam_taj
@@ -248,15 +230,6 @@
   startyear: 2024
   active: true
 
-- id: tanaya_sharma
-  name: Tanaya Sharma
-  affiliation: CS
-  degree: BS
-  image: /images/members/tanaya_sharma.png
-  linkedin: tanayasharma
-  startyear: 2025
-  active: true
-
 - id: richard_yin
   name: Richard Yin
   affiliation: CS
@@ -264,6 +237,24 @@
   image: /images/members/richard_yin.png
   linkedin: yin-richard
   startyear: 2025
+  active: true
+
+- id: yifang_zhang
+  name: Yifang Zhang
+  affiliation: CS
+  degree: BS
+  image: /images/members/yifang_zhang.jpg
+  linkedin: yifang-zhang-04a984241
+  startyear: 2024
+  active: true
+
+- id: rilong_zhang
+  name: Rilong (Owen) Zhang
+  affiliation: CS
+  degree: BS
+  image: /images/members/rilong_zhang.png
+  linkedin: rilong-zhang-0a5493209
+  startyear: 2024
   active: true
 
 # Staff
@@ -286,6 +277,16 @@
   active: false
 
 # Undergrad Alumni
+- id: anna_kirik
+  name: Anna Kirik
+  affiliation: CS
+  degree: BS
+  image: /images/members/anna_kirik.jpg
+  linkedin: anna-kirik-a1869820b
+  startyear: 2023
+  endyear: 2025
+  active: false
+
 - id: matthew_parvaneh
   name: Matthew Parvaneh
   affiliation: CS
