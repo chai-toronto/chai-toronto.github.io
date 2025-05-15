@@ -156,35 +156,6 @@
   startyear: 2024
   active: true
 
-- id: kaavya_kalani
-  name: Kaavya Kalani
-  affiliation: CS
-  degree: BS
-  image: /images/members/kaavya_kalani.jpg
-  linkedin: kaavya-kalani
-  startyear: 2024
-  active: true
-
-- id: minh_le
-  name: Minh Le
-  affiliation: CS
-  degree: BS
-  image: /images/members/minh_le.png
-  linkedin: nm-le
-  startyear: 2023
-  active: true
-
-- id: helen_li
-  name: Jin Yi Li
-  affiliation: CS
-  degree: BS
-  image: /images/members/helen_li.jpg
-  website: https://helen-li.github.io/
-  gscholar: Sr6djygAAAAJ
-  linkedin: helenli28
-  startyear: 2022
-  active: true
-
 - id: andrew_qiu
   name: Andrew Qiu
   affiliation: CS
@@ -293,8 +264,8 @@
   degree: BS
   image: /images/members/matthew_parvaneh.jpeg
   linkedin: matthewparvaneh
-  startyear: 2024
-  endyear: 2024
+  startyear: 2025
+  endyear: 2025
   active: false
 
 - id: jackson_wu
@@ -303,8 +274,18 @@
   degree: BS
   image: /images/members/jackson_wu.jpg
   linkedin: yulong-wu-647aa62a2
+  startyear: 2025
+  endyear: 2025
+  active: false
+
+- id: kaavya_kalani
+  name: Kaavya Kalani
+  affiliation: CS
+  degree: BS
+  image: /images/members/kaavya_kalani.jpg
+  linkedin: kaavya-kalani
   startyear: 2024
-  endyear: 2024
+  endyear: 2025
   active: false
 
 - id: michelle_lin
@@ -335,6 +316,16 @@
   linkedin: pierre-william-lessard
   startyear: 2023
   endyear: 2024
+  active: false
+
+- id: minh_le
+  name: Minh Le
+  affiliation: CS
+  degree: BS
+  image: /images/members/minh_le.png
+  linkedin: nm-le
+  startyear: 2023
+  endyear: 2025
   active: false
 
 - id: tien_han
@@ -472,6 +463,18 @@
   endyear: 2022
   active: false
 
+- id: helen_li
+  name: Jin Yi Li
+  affiliation: CS
+  degree: BS
+  image: /images/members/helen_li.jpg
+  website: https://helen-li.github.io/
+  gscholar: Sr6djygAAAAJ
+  linkedin: helenli28
+  startyear: 2022
+  endyear: 2025
+  active: false
+
 - id: sid_gupta
   name: Sidharth Gupta
   affiliation: CS
@@ -480,17 +483,6 @@
   linkedin: sidgupta-99
   startyear: 2020
   endyear: 2021
-  active: false
-
-- id: kaartik_issar
-  name: Kaartik Issar
-  affiliation: CS
-  degree: BS
-  image: /images/members/kaartik_issar.jpeg
-  website: https://kaartik7.github.io/
-  linkedin: kaartik-issar-2492201a4
-  startyear: 2021
-  endyear: 2022
   active: false
 
 - id: tanya_skoropad
