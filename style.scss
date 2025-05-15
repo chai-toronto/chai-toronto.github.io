@@ -45,7 +45,6 @@ html {
   padding: 2rem;
 
   h1 {
-    margin-bottom: 1.5rem;
     text-align: left;
   }
 
@@ -107,7 +106,7 @@ h1 {
   font-weight: 300;
 
   margin-top: -4rem;
-  margin-bottom: 4rem;
+  margin-bottom: 1.5rem;
 }
 
 h2 {
@@ -573,14 +572,6 @@ footer {
     font-size: 24px;
     margin-top: -32px;
     margin-bottom: 32px;
-  }
-
-  p {
-    font-size: 16px;
-  }
-
-  a {
-    font-size: 16px;
   }
 
   button,

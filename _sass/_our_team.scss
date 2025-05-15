@@ -31,7 +31,6 @@
 .our-team-page h2 {
   font-family: 'Instrument Sans Medium', sans-serif;
   font-size: 30px;
-  padding: 2rem;
   text-align: center;
 
   @media (max-width: 767px) {
@@ -90,33 +89,30 @@
   .pi-heading {
     text-align: center;
     font-size: 30px;
-    margin-bottom: 2rem;
     font-family: 'Instrument Sans Medium', sans-serif;
 
     @media (max-width: 767px) {
       font-size: 24px;
-      margin-bottom: 1.5rem;
     }
 
     @media (max-width: 480px) {
       font-size: 22px;
-      margin-bottom: 1rem;
     }
   }
 
   .pi-portrait {
-    max-width: 300px;
+    max-width: 220px;
     border-radius: 20px !important;
     display: block;
     margin: 0 auto 1rem;
 
     @media (max-width: 767px) {
-      max-width: 180px;
+      max-width: 150px;
       border-radius: 15px !important;
     }
 
     @media (max-width: 480px) {
-      max-width: 150px;
+      max-width: 120px;
       border-radius: 12px !important;
     }
   }
