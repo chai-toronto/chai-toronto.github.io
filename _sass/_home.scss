@@ -191,6 +191,7 @@
   }
 
   .funded-by-section {
+    margin-bottom: -2.5rem;
     h2 {
       font-family: 'Instrument Sans Regular', sans-serif;
       font-size: 28px;
@@ -222,27 +223,22 @@
     }
 
     .sponsor-logo {
-      max-height: 200px;
-      max-width: 300px !important;
+      max-height: 75px;
       height: auto !important;
-      margin: 0rem;
+      margin: 0rem 2rem;
       width: auto;
 
       @media (max-width: 991px) {
-        max-height: 200px;
+        max-height: 75px;
       }
 
       @media (max-width: 767px) {
-        max-height: 150px;
+        max-height: 50px;
       }
 
       @media (max-width: 480px) {
-        max-height: 100px;
+        max-height: 30px;
       }
-    }
-
-    @media (max-width: 767px) {
-      margin-top: 1rem !important;
     }
   }
 

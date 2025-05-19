@@ -36,8 +36,7 @@
         }
 
         .org-logo-wrapper {
-          flex: 0 0 350px;
-          margin-right: 1rem;
+          flex: 0 0 250px;
           text-align: center;
 
           @media (max-width: 991px) {
@@ -48,22 +47,10 @@
           }
 
           img.org-logo {
-            max-height: 350px;
+            max-height: 100px;
             width: auto;
             height: auto;
             display: inline-block;
-
-            @media (max-width: 991px) {
-              max-height: 250px;
-            }
-
-            @media (max-width: 767px) {
-              max-height: 200px;
-            }
-
-            @media (max-width: 480px) {
-              max-height: 150px;
-            }
           }
         }
 
