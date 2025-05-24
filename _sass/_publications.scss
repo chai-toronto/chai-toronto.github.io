@@ -29,7 +29,7 @@
   }
 }
 
-
+.publications-page {
   .mobile-controls {
     display: none;
 
@@ -53,6 +53,7 @@
       color: #fff;
       text-decoration: none;
       transition: background-color 0.2s ease;
+      margin: 0px;
 
       &:hover {
         background-color: #007974;
@@ -594,3 +595,4 @@
       }
     }
   }
+}

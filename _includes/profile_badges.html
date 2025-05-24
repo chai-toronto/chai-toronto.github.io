@@ -1,0 +1,22 @@
+
+
+{% if include.member.website %}
+	<a href="{{ include.member.website }}" target="_blank" aria-label="Personal Website">
+	  <i class="fas fa-globe"></i>
+	</a>
+{% endif %}
+{% if include.member.gscholar %}
+	<a href="https://scholar.google.com/citations?user={{ include.member.gscholar }}" target="_blank" aria-label="Google Scholar Profile">
+	  <i class="fab fa-google"></i>
+	</a>
+{% endif %}
+{% if include.member.linkedin %}
+	<a href="https://www.linkedin.com/in/{{ include.member.linkedin }}" target="_blank" aria-label="LinkedIn Profile">
+	  <i class="fab fa-linkedin"></i>
+	</a>
+{% endif %}
+{% if include.member.twitter %}
+	<a href="https://twitter.com/{{ include.member.twitter }}" target="_blank" aria-label="Twitter Profile">
+	  <i class="fab fa-twitter"></i>
+	</a>
+{% endif %}

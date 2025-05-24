@@ -25,12 +25,12 @@
         <div class="persona-info">
          <div class="persona-name">
           {% if matched %}
-          {{ matched.name }}
+            {{ matched.name }}
           {% else %}
-          {{ winner.name }}
+            {{ winner.name }}
           {% endif %}
           {% if winner.year %}
-          ({{ winner.year }})
+            ({{ winner.year }})
           {% endif %}
          </div>
          <div class="persona-description">
@@ -38,29 +38,9 @@
          </div>
         </div>
         <div class="persona-footer">
-         {% if matched %}
-         {% if matched.linkedin %}
-         <a href="https://www.linkedin.com/in/{{ matched.linkedin }}" target="_blank" aria-label="LinkedIn">
-          <i class="fab fa-linkedin"></i>
-         </a>
-         {% endif %}
-         {% if matched.gscholar %}
-         <a href="https://scholar.google.com/citations?user={{ matched.gscholar }}" target="_blank" aria-label="Google Scholar">
-          <i class="fas fa-graduation-cap"></i>
-         </a>
-         {% endif %}
-
-         {% if matched.twitter %}
-         <a href="https://twitter.com/{{ matched.twitter }}" target="_blank" aria-label="Twitter">
-          <i class="fab fa-twitter"></i>
-         </a>
-         {% endif %}
-         {% if matched.website %}
-         <a href="{{ matched.website }}" target="_blank" aria-label="Personal Website">
-          <i class="fas fa-globe"></i>
-         </a>
-         {% endif %}
-         {% endif %}
+        {% if matched %}
+          {% include profile_badges.html member=matched %}
+        {% endif %}
         </div>
        </div>
       </div>

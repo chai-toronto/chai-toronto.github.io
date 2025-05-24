@@ -5,7 +5,30 @@ title: Alumni
 
 <div class="alumni-page">
   <h1>Alumni</h1>
-  {% include alumni_grid.html %}
+  {% assign all_alumni = site.data.members | where:"active", false %}
+
+  {% assign grads_phd = all_alumni | where:"degree","PhD" %}
+  {% assign grads_mscac = all_alumni | where:"degree","MScAC" %}
+  {% assign grads_msc = all_alumni | where:"degree","MSc" %}
+
+  {% assign alumni_grads = grads_phd | concat: grads_mscac | concat: grads_msc | sort: 'startyear' %}
+  {% assign alumni_undergrads = all_alumni | where:"degree","BS" | sort: 'startyear' | reverse %}
+
+  <div class="alumni-grid-wrapper">
+
+    <!-- GRADUATE ALUMNI -->
+    <div class="alumni-section mb-5">
+      <h2 class="section-heading">Graduate Alumni</h2>
+      {% include alumni_grid.html alumni=alumni_grads is_grad="True" %}
+    </div>
+
+    <!-- UNDERGRADUATE ALUMNI -->
+    <div class="alumni-section mb-5">
+      <h2 class="section-heading">Undergraduate Alumni</h2>
+      {% include alumni_grid.html alumni=alumni_undergrads is_grad="False" %}
+    </div>
+
+  </div>
 
   <script>
 

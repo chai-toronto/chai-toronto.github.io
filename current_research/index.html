@@ -159,18 +159,27 @@ title: Current Research
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
+    // Desktop filters
+    const themeCheckboxes  = Array.from(document.querySelectorAll('.filter-category'));
+    const skillCheckboxes  = Array.from(document.querySelectorAll('.filter-skill'));
+    const healthSelect  = document.getElementById('filter-health-topic');
+    const leadSelect    = document.getElementById('filter-led-by');
+
+    // Mobile filters???
+    const mobileThemeCheckboxes = document.querySelectorAll('.mobile-filter-category')
+    const mobileSkillCheckboxes = document.querySelectorAll('.mobile-filter-skill');
+    const mobileHealthSelect = document.getElementById('mobile-filter-health-topic');
+    const mobileLeadSelect = document.getElementById('mobile-filter-led-by');
+
+    // Common elements
+    const projectCards  = Array.from(document.querySelectorAll('.project-card'));
+    const activePanel   = document.getElementById('active-filters-panel');
+
+    // Mobile filter overlay controls
     const overlay       = document.querySelector('.filter-overlay');
     const openBtn       = document.querySelector('.mobile-filter-toggle');
     const closeBtn      = document.querySelector('.close-filters');
     const applyBtn      = document.querySelector('.apply-filters');
-    const projectCards  = Array.from(document.querySelectorAll('.project-card'));
-    const themeFilters  = Array.from(document.querySelectorAll('.filter-category'));
-    const skillFilters  = Array.from(document.querySelectorAll('.filter-skill'));
-    const healthSelect  = document.getElementById('filter-health-topic');
-    const leadSelect    = document.getElementById('filter-led-by');
-    const mobileHealthSelect = document.getElementById('mobile-filter-health-topic');
-    const mobileLeadSelect = document.getElementById('mobile-filter-led-by');
-    const activePanel   = document.getElementById('active-filters-panel');
 
     if (!overlay || !openBtn || !closeBtn || !applyBtn) return;
 
@@ -183,18 +192,15 @@ title: Current Research
         healthSelect.value = mobileHealthSelect.value;
         leadSelect.value = mobileLeadSelect.value;
 
-        const mobileThemeFilters = Array.from(document.querySelectorAll('.filter-overlay .filter-category'));
-        const mobileSkillFilters = Array.from(document.querySelectorAll('.filter-overlay .filter-skill'));
-
-        mobileThemeFilters.forEach((checkbox, index) => {
-          if (index < themeFilters.length) {
-            themeFilters[index].checked = checkbox.checked;
+        mobileThemeCheckboxes.forEach((checkbox, index) => {
+          if (index < themeCheckboxes.length) {
+            themeCheckboxes[index].checked = checkbox.checked;
           }
         });
 
-        mobileSkillFilters.forEach((checkbox, index) => {
-          if (index < skillFilters.length) {
-            skillFilters[index].checked = checkbox.checked;
+        mobileSkillCheckboxes.forEach((checkbox, index) => {
+          if (index < skillCheckboxes.length) {
+            skillCheckboxes[index].checked = checkbox.checked;
           }
         });
       } else {
@@ -203,26 +209,23 @@ title: Current Research
         mobileLeadSelect.value = leadSelect.value;
 
         // Sync checkboxes
-        const mobileThemeFilters = Array.from(document.querySelectorAll('.filter-overlay .filter-category'));
-        const mobileSkillFilters = Array.from(document.querySelectorAll('.filter-overlay .filter-skill'));
-
-        themeFilters.forEach((checkbox, index) => {
-          if (index < mobileThemeFilters.length) {
-            mobileThemeFilters[index].checked = checkbox.checked;
+        themeCheckboxes.forEach((checkbox, index) => {
+          if (index < mobileThemeCheckboxes.length) {
+            mobileThemeCheckboxes[index].checked = checkbox.checked;
           }
         });
 
-        skillFilters.forEach((checkbox, index) => {
-          if (index < mobileSkillFilters.length) {
-            mobileSkillFilters[index].checked = checkbox.checked;
+        skillCheckboxes.forEach((checkbox, index) => {
+          if (index < mobileSkillCheckboxes.length) {
+            mobileSkillCheckboxes[index].checked = checkbox.checked;
           }
         });
       }
     }
 
     function filterProjects() {
-      const cats  = themeFilters.filter(c=>c.checked).map(c=>c.value);
-      const skills= skillFilters.filter(c=>c.checked).map(c=>c.value);
+      const cats  = themeCheckboxes.filter(c=>c.checked).map(c=>c.value);
+      const skills= skillCheckboxes.filter(c=>c.checked).map(c=>c.value);
       const health= healthSelect.value;
       const lead  = leadSelect.value;
 
@@ -240,8 +243,8 @@ title: Current Research
     function updateActiveFilters() {
       activePanel.innerHTML = '';
       const hasActiveFilters =
-              themeFilters.some(c => c.checked) ||
-              skillFilters.some(c => c.checked) ||
+              themeCheckboxes.some(c => c.checked) ||
+              skillCheckboxes.some(c => c.checked) ||
               healthSelect.value ||
               leadSelect.value;
 
@@ -251,7 +254,7 @@ title: Current Research
       }
       activePanel.style.display = 'block';
 
-      themeFilters.filter(c=>c.checked).forEach(c => {
+      themeCheckboxes.filter(c=>c.checked).forEach(c => {
         activePanel.innerHTML += `<span class="active-filter-tag">Theme: ${c.value} <span class="remove-tag" data-type="category" data-value="${c.value}">×</span></span>`;
       });
 
@@ -259,7 +262,7 @@ title: Current Research
         activePanel.innerHTML += `<span class="active-filter-tag">Health Topic: ${healthSelect.selectedOptions[0].text} <span class="remove-tag" data-type="health" data-value="">×</span></span>`;
       }
 
-      skillFilters.filter(c=>c.checked).forEach(c => {
+      skillCheckboxes.filter(c=>c.checked).forEach(c => {
         activePanel.innerHTML += `<span class="active-filter-tag">Skill: ${c.value} <span class="remove-tag" data-type="skill" data-value="${c.value}">×</span></span>`;
       });
 
@@ -279,9 +282,9 @@ title: Current Research
 
     function removeFilter(type, value) {
       if (type === 'category') {
-        themeFilters.find(c=>c.value===value).checked = false;
+        themeCheckboxes.find(c=>c.value===value).checked = false;
       } else if (type === 'skill') {
-        skillFilters.find(c=>c.value===value).checked = false;
+        skillCheckboxes.find(c=>c.value===value).checked = false;
       } else if (type === 'health') {
         healthSelect.value = '';
       } else if (type === 'lead') {
@@ -293,7 +296,7 @@ title: Current Research
 
     window.removeFilter = removeFilter;
 
-    [...themeFilters, ...skillFilters].forEach(c=>c.addEventListener('change', () => {
+    [...themeCheckboxes, ...skillCheckboxes].forEach(c=>c.addEventListener('change', () => {
       syncFilters();
       filterProjects();
     }));

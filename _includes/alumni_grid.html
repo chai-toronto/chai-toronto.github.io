@@ -1,172 +1,39 @@
-{% capture alumni_grid %}
+<div class="people-grid alumni-grid">
+	<div class="cards-wrapper">
+	  {% for member in include.alumni %}
+	  <div class="persona-card">
+	    <div class="persona-card-inner">
 
-{% assign all_alumni = site.data.members | where:"active", false %}
-
-{% assign grads_phd = all_alumni | where:"degree","PhD" %}
-{% assign grads_mscac = all_alumni | where:"degree","MScAC" %}
-{% assign grads_msc = all_alumni | where:"degree","MSc" %}
-{% assign grads_ma = all_alumni | where:"degree","MA" %}
-{% assign grads_master = all_alumni | where:"degree","Master" %}
-
-{% assign alumni_grads = grads_phd | concat: grads_mscac | concat: grads_msc | concat: grads_ma | concat: grads_master | sort: 'startyear' %}
-{% assign alumni_undergrads = all_alumni | where:"degree","BS" | sort: 'startyear' | reverse %}
-
-<div class="alumni-grid-wrapper">
-
-  <!-- GRADUATE ALUMNI -->
-  <div class="alumni-section mb-5">
-    <h2 class="section-heading">Graduate Alumni</h2>
-    <div class="people-grid alumni-grid">
-      <div class="cards-wrapper">
-        {% for member in alumni_grads %}
-        <div class="persona-card">
-          <div class="persona-card-inner">
-            {% if member.search %}
-            <div class="persona-search-label">
-              <div class="search-label-prefix">Looking for</div>
-              <div class="search-label-position">{{ member.search }}</div>
-            </div>
-            {% endif %}
-
-            <div class="persona-info">
-              <div class="persona-name">
-                {{ member.name }}
-              </div>
-              <div class="persona-role">
-                {{ member.degree | default: "Alumni" }}
-                {% if member.coadvisor %}
+	      <div class="persona-info">
+	        <div class="persona-name">
+	          {{ member.name }}
+	        </div>
+	        <div class="persona-degree">
+	          {{ member.degree }}
+	          {% if member.coadvisor and include.is_grad == 'True' %}
                 (co-advised by {% include author_list.html authors=member.coadvisor %})
-                {% endif %}
-              </div>
-              <div class="persona-description">
-                {% if member.startyear and member.endyear %}
-                {{ member.startyear }} – {{ member.endyear }}
-                {% else %}
-                Former CHAI Lab member
-                {% endif %}
-              </div>
-            </div>
+              {% endif %}
+	        </div>
+	        <div class="persona-description">
+	          {% if member.startyear != member.endyear %}
+	            {{ member.startyear }} – {{ member.endyear }}
+	          {% else %}
+	            {{ member.startyear }}
+	          {% endif %}
+	        </div>
+	        {% if member.new_job and include.is_grad == 'True' %}
+	        	<div class="persona-description">
+	          		Now at {{ member.new_job }}
+	          	</div>
+	        {% endif %}
+	      </div>
 
-            <div class="persona-footer">
-              {% if member.linkedin %}
-              <a href="https://www.linkedin.com/in/{{ member.linkedin }}" target="_blank" aria-label="LinkedIn Profile">
-                <i class="fab fa-linkedin"></i>
-              </a>
-              {% endif %}
-              {% if member.gscholar %}
-              <a href="https://scholar.google.com/citations?user={{ member.gscholar }}" target="_blank" aria-label="Google Scholar Profile">
-                <i class="fas fa-graduation-cap"></i>
-              </a>
-              {% endif %}
-              {% if member.twitter %}
-              <a href="https://x.com/{{ member.twitter }}" target="_blank" aria-label="X/Twitter Profile">
-                <i class="fab fa-twitter"></i>
-              </a>
-              {% endif %}
-              {% if member.bluesky %}
-              <a href="https://bsky.app/profile/{{ member.bluesky }}" target="_blank" aria-label="Bluesky Profile">
-                <i class="fab fa-bluesky"></i>
-              </a>
-              {% endif %}
-              {% if member.website %}
-              {% if member.linkedin %}
-              {% assign linkedin_url = "https://www.linkedin.com/in/" | append: member.linkedin %}
-              {% if member.website != linkedin_url %}
-              <a href="{{ member.website }}" target="_blank" aria-label="Personal Website">
-                <i class="fas fa-globe"></i>
-              </a>
-              {% endif %}
-              {% else %}
-              <a href="{{ member.website }}" target="_blank" aria-label="Personal Website">
-                <i class="fas fa-globe"></i>
-              </a>
-              {% endif %}
-              {% endif %}
-            </div>
+	      <div class="persona-footer">
+	        {% include profile_badges.html member=member %}
+	      </div>
 
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-
-  <!-- UNDERGRADUATE ALUMNI -->
-  <div class="alumni-section mb-5">
-    <h2 class="section-heading">Undergraduate Alumni</h2>
-    <div class="people-grid alumni-grid">
-      <div class="cards-wrapper">
-        {% for member in alumni_undergrads %}
-        <div class="persona-card">
-          <div class="persona-card-inner">
-            {% if member.search %}
-            <div class="persona-search-label">
-              <div class="search-label-prefix">Looking for</div>
-              <div class="search-label-position">{{ member.search }}</div>
-            </div>
-            {% endif %}
-
-            <div class="persona-info">
-              <div class="persona-name">
-                {{ member.name }}
-              </div>
-              <div class="persona-role">
-                {{ member.degree | default: "Alumni" }}
-              </div>
-              <div class="persona-description">
-                {% if member.startyear and member.endyear %}
-                {{ member.startyear }} – {{ member.endyear }}
-                {% else %}
-                Former CHAI Lab member
-                {% endif %}
-              </div>
-            </div>
-
-            <div class="persona-footer">
-              {% if member.linkedin %}
-              <a href="https://www.linkedin.com/in/{{ member.linkedin }}" target="_blank" aria-label="LinkedIn Profile">
-                <i class="fab fa-linkedin"></i>
-              </a>
-              {% endif %}
-              {% if member.gscholar %}
-              <a href="https://scholar.google.com/citations?user={{ member.gscholar }}" target="_blank" aria-label="Google Scholar Profile">
-                <i class="fas fa-graduation-cap"></i>
-              </a>
-              {% endif %}
-              {% if member.twitter %}
-              <a href="https://x.com/{{ member.twitter }}" target="_blank" aria-label="X/Twitter Profile">
-                <i class="fab fa-twitter"></i>
-              </a>
-              {% endif %}
-              {% if member.bluesky %}
-              <a href="https://bsky.app/profile/{{ member.bluesky }}" target="_blank" aria-label="Bluesky Profile">
-                <i class="fab fa-bluesky"></i>
-              </a>
-              {% endif %}
-              {% if member.website %}
-              {% if member.linkedin %}
-              {% assign linkedin_url = "https://www.linkedin.com/in/" | append: member.linkedin %}
-              {% if member.website != linkedin_url %}
-              <a href="{{ member.website }}" target="_blank" aria-label="Personal Website">
-                <i class="fas fa-globe"></i>
-              </a>
-              {% endif %}
-              {% else %}
-              <a href="{{ member.website }}" target="_blank" aria-label="Personal Website">
-                <i class="fas fa-globe"></i>
-              </a>
-              {% endif %}
-              {% endif %}
-            </div>
-
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-
+	    </div>
+	  </div>
+	  {% endfor %}
+	</div>
 </div>
-
-{% endcapture %}
-{{ alumni_grid }}

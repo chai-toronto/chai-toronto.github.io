@@ -116,7 +116,7 @@
             }
           }
 
-          .persona-role {
+          .persona-degree {
             font-family: 'Instrument Sans Medium', sans-serif;
             font-size: 14px;
             margin-bottom: 0.5rem;
@@ -170,75 +170,6 @@
               @media (max-width: 480px) {
                 font-size: 14px;
               }
-            }
-          }
-        }
-      }
-    }
-
-    .alumni-card {
-      width: 300px;
-
-      @media (max-width: 767px) {
-        width: 50%;
-      }
-
-      .alumni-card-inner {
-        border: 1px solid #ccc;
-        border-radius: 12px;
-        background: #fff;
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-        padding: 20px;
-
-        @media (max-width: 767px) {
-          padding: 15px;
-        }
-
-        @media (max-width: 480px) {
-          padding: 12px;
-        }
-
-        .alumni-info {
-          .alumni-name {
-            font-family: 'Instrument Sans Medium', sans-serif;
-            font-size: 18px;
-            margin-bottom: 0.5rem;
-
-            @media (max-width: 767px) {
-              font-size: 16px;
-            }
-
-            @media (max-width: 480px) {
-              font-size: 14px;
-            }
-
-            a {
-              color: #000;
-              text-decoration: none;
-
-            }
-          }
-
-          .alumni-role {
-            font-family: 'Instrument Sans Medium', sans-serif;
-            font-size: 14px;
-            margin-bottom: 0.5rem;
-
-            @media (max-width: 480px) {
-              font-size: 12px;
-            }
-          }
-
-          .alumni-description {
-            font-family: 'Instrument Sans Regular', sans-serif;
-            font-size: 14px;
-            color: #666;
-
-            @media (max-width: 480px) {
-              font-size: 12px;
-
             }
           }
         }

@@ -6,30 +6,30 @@
     <div class="persona-card">
       <div class="persona-card-inner">
         {% if member.search %}
-        {% assign search_val = member.search | downcase %}
-        {% if search_val == "industry" %}
-        {% assign search_label = "Industry Position" %}
-        {% assign search_bg = "#003479" %}
-        {% elsif search_val == "postdoc" %}
-        {% assign search_label = "Postdoc Position" %}
-        {% assign search_bg = "#007974" %}
-        {% elsif search_val == "intern" %}
-        {% assign search_label = "Internship" %}
-        {% assign search_bg = "#ff9800" %}
-        {% else %}
-        {% assign search_label = member.search %}
-        {% assign search_bg = "#AE2192" %}
-        {% endif %}
-        <div class="persona-search-label">
-          <div class="search-label-prefix">Looking for</div>
-          <div class="search-label-position"
-               style="background-color: {{ search_bg }}; border-color: {{ search_bg }};">
-            {{ search_label }}
+          {% assign search_val = member.search | downcase %}
+          {% if search_val == "industry" %}
+            {% assign search_label = "Industry Position" %}
+            {% assign search_bg = "#003479" %}
+          {% elsif search_val == "postdoc" %}
+            {% assign search_label = "Postdoc Position" %}
+            {% assign search_bg = "#007974" %}
+          {% elsif search_val == "intern" %}
+            {% assign search_label = "Internship" %}
+            {% assign search_bg = "#ff9800" %}
+          {% else %}
+            {% assign search_label = member.search %}
+            {% assign search_bg = "#AE2192" %}
+          {% endif %}
+          <div class="persona-search-label">
+            <div class="search-label-prefix">Looking for</div>
+            <div class="search-label-position"
+                 style="background-color: {{ search_bg }}; border-color: {{ search_bg }};">
+              {{ search_label }}
+            </div>
           </div>
-        </div>
         {% endif %}
         <div class="persona-image">
-          {% if include.current_or_alum == "current" and member.image %}
+          {% if member.image %}
           <img src="{{ member.image }}" alt="{{ member.name }}">
           {% else %}
           <div class="placeholder-img"></div>
@@ -37,7 +37,7 @@
         </div>
         <div class="persona-info">
           <div class="persona-name">{{ member.name }}</div>
-          <div class="persona-role">
+          <div class="persona-degree">
             {{ member.degree }}
             {% if member.coadvisor %}
               (co-advised by {% include author_list.html authors=member.coadvisor %})
@@ -50,26 +50,7 @@
           </div>
         </div>
         <div class="persona-footer">
-          {% if member.website %}
-          <a href="{{ member.website }}" target="_blank" aria-label="Personal Website">
-            <i class="fas fa-globe"></i>
-          </a>
-          {% endif %}
-          {% if member.gscholar %}
-          <a href="https://scholar.google.com/citations?user={{ member.gscholar }}" target="_blank" aria-label="Google Scholar Profile">
-            <i class="fab fa-google"></i>
-          </a>
-          {% endif %}
-          {% if member.linkedin %}
-          <a href="https://www.linkedin.com/in/{{ member.linkedin }}" target="_blank" aria-label="LinkedIn Profile">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          {% endif %}
-          {% if member.twitter %}
-          <a href="https://twitter.com/{{ member.twitter }}" target="_blank" aria-label="Twitter Profile">
-            <i class="fab fa-twitter"></i>
-          </a>
-          {% endif %}
+          {% include profile_badges.html member=member%}
         </div>
       </div>
     </div>
