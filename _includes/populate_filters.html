@@ -21,19 +21,14 @@
 {% endfor %}
 {% assign healthTopics = healthTopics | sort %}
 
-<!-- Conferences -->
-{% assign conferences = "" | split: "" %}
-{% for pub in site.publications %}
-	{% if pub.venue %}
-		{% assign confRaw = pub.venue %}
-		{% unless conferences contains confRaw %}
-			{% assign conferences = conferences | push: confRaw %}
-		{% endunless %}
-	{% endif %}
+<!-- Venues -->
+{% assign venues = "" | split: "" %}
+{% for conf in site.data.venues %}
+	{% assign venue_split = conf | split: "(" %}
+	{% assign venue_split = venue_split[1] | split: ")" %}
+	{% assign venues = venues | push: venue_split[0] %}
 {% endfor %}
-{% assign conferences = conferences | sort %}
-
-
+{% assign venues = venues | sort %}
 
 <!-- Leads -->
 {% assign all_lead_ids = "" | split: "" %}

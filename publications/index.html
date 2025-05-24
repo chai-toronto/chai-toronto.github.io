@@ -41,32 +41,13 @@ title: Publications
           {% endfor %}
         </select>
 
-        <!-- Conference -->
-        <h3>Conference</h3>
-        <select id="mobile-conferenceSelect">
+        <!-- Venue -->
+        <h3>Publication Venue</h3>
+        <select id="mobile-venueSelect">
           <option value="">All</option>
-          {% for conf in conferences %}
-            {% assign conf_parts = conf | split: "," %}
-            {% assign conf_transformed = "" %}
-            {% for cp in conf_parts %}
-            {% assign cp = cp | strip %}
-            {% if cp contains "$" %}
-            {% assign venue_item = site.data.venues | where:"id", cp | first %}
-            {% if venue_item %}
-            {% assign cp_trans = venue_item.full_name %}
-            {% else %}
-            {% assign cp_trans = cp %}
-            {% endif %}
-            {% else %}
-            {% assign cp_trans = cp %}
-            {% endif %}
-            {% if forloop.first %}
-            {% assign conf_transformed = cp_trans %}
-            {% else %}
-            {% assign conf_transformed = conf_transformed | append: ", " | append: cp_trans %}
-            {% endif %}
-          {% endfor %}
-          <option value="{{ conf }}">{{ conf_transformed }}</option>
+          {% for venue in venues %}
+            {% include venue_name.html venue=venue %}
+            <option value="{{ venue }}">{{ venue_transformed }}</option>
           {% endfor %}
         </select>
 
@@ -111,9 +92,9 @@ title: Publications
 
         <hr />
 
-        <!-- Most Relevant Device -->
+        <!-- Relevant Device -->
         <div class="filter-group device">
-          <h3>Most Relevant Device</h3>
+          <h3>Relevant Devices</h3>
           {% for dev in devices %}
             <label>
               <input type="checkbox" class="mobile-device-checkbox" value="{{ dev }}" /> {{ dev }}
@@ -162,32 +143,13 @@ title: Publications
         {% endfor %}
       </select>
 
-      <!-- Conference -->
-      <h3 for="conferenceSelect">Conference</h3>
-      <select id="conferenceSelect">
+      <!-- Venue -->
+      <h3 for="venueSelect">Publication Venue</h3>
+      <select id="venueSelect">
         <option value="">All</option>
-        {% for conf in conferences %}
-          {% assign conf_parts = conf | split: "," %}
-          {% assign conf_transformed = "" %}
-          {% for cp in conf_parts %}
-          {% assign cp = cp | strip %}
-          {% if cp contains "$" %}
-          {% assign venue_item = site.data.venues | where:"id", cp | first %}
-          {% if venue_item %}
-          {% assign cp_trans = venue_item.full_name %}
-          {% else %}
-          {% assign cp_trans = cp %}
-          {% endif %}
-          {% else %}
-          {% assign cp_trans = cp %}
-          {% endif %}
-          {% if forloop.first %}
-          {% assign conf_transformed = cp_trans %}
-          {% else %}
-          {% assign conf_transformed = conf_transformed | append: ", " | append: cp_trans %}
-          {% endif %}
-          {% endfor %}
-          <option value="{{ conf }}">{{ conf_transformed }}</option>
+        {% for venue in venues %}
+          {% include venue_name.html venue=venue %}
+          <option value="{{ venue }}">{{ venue_transformed }}</option>
         {% endfor %}
       </select>
 
@@ -232,9 +194,9 @@ title: Publications
 
       <hr />
 
-      <!-- Most Relevant Device -->
+      <!-- Relevant Device -->
       <div class="filter-group device">
-        <h3>Most Relevant Device</h3>
+        <h3>Relevant Devices</h3>
         {% for dev in devices %}
           <label>
             <input type="checkbox" class="filter-device-checkbox" value="{{ dev }}" /> {{ dev }}
@@ -260,139 +222,123 @@ title: Publications
       <div id="active-filters-panel"></div>
 
       {% for pub in sorted_pubs %}
-      <div class="publication-card"
-           data-year="{{ pub.date | date: '%Y' }}"
-           data-health-topic="{{ pub.health_topic | join: ',' }}"
-           data-conference="{{ pub.venue }}"
-           data-contributors="{{ pub.authors | join: ',' }}"
-           data-theme="{{ pub.category | join: ',' }}"
-           data-skills="{{ pub.skills | join: ',' }}"
-           data-device="{% if pub.device %}{{ pub.device | join: ',' }}{% elsif pub.devices %}{{ pub.devices | join: ',' }}{% endif %}"
-           data-dataset="{{ pub.dataset_available }}"
-           data-award="{{ pub.award }}">
-        <div class="pub-image">
-          {% if pub.date <= site.time %}
-          <a href="{{ pub.link }}">
+        <!-- Get the full venue name -->
+        {% include venue_name.html venue=pub.venue %}
+
+        <div class="publication-card"
+            data-year="{{ pub.date | date: '%Y' }}"
+            data-health-topic="{{ pub.health_topic | join: ',' }}"
+            data-venue="{{ venue_transformed }}"
+            data-contributors="{{ pub.authors | join: ',' }}"
+            data-theme="{{ pub.category | join: ',' }}"
+            data-skills="{{ pub.skills | join: ',' }}"
+            data-device="{% if pub.device %}{{ pub.device | join: ',' }}{% elsif pub.devices %}{{ pub.devices | join: ',' }}{% endif %}"
+            data-dataset="{{ pub.dataset_available }}"
+            data-award="{{ pub.award }}">
+          <div class="pub-image">
+            {% if pub.date <= site.time %}
+            <a href="{{ pub.link }}">
+              <img src="{{ pub.thumbnail }}" alt="{{ pub.title }}">
+            </a>
+            {% else %}
             <img src="{{ pub.thumbnail }}" alt="{{ pub.title }}">
-          </a>
-          {% else %}
-          <img src="{{ pub.thumbnail }}" alt="{{ pub.title }}">
-          {% endif %}
-        </div>
-        <div class="pub-info">
-          {% if pub.date <= site.time %}
-          <a href="{{ pub.link }}">
-            <h2>{{ pub.title }}</h2>
-          </a>
-          {% else %}
-          <h2>{{ pub.title }}</h2>
-          {% endif %}
-          <p class="authors">
-            {% include author_list.html authors=pub.authors %}
-          </p>
-          <p class="venue-year">
-            <em>
-              {% if pub.date > site.time %}
-              <span class="to-appear">To appear in </span>
-              {% endif %}
-              {% if pub.subvenue %}
-              {{ pub.subvenue }},
-              {% endif %}
-              {% assign venue_raw = pub.venue %}
-              {% assign venue_transformed = "" %}
-              {% if venue_raw contains "$" %}
-              {% assign venue_parts = venue_raw | split: "," %}
-              {% for part in venue_parts %}
-              {% assign part = part | strip %}
-              {% assign venue_item = site.data.venues | where:"id", part | first %}
-              {% if venue_item %}
-              {% assign venue_transformed = venue_transformed | append: venue_item.full_name %}
-              {% else %}
-              {% assign venue_transformed = venue_transformed | append: part %}
-              {% endif %}
-              {% if forloop.last == false %}
-              {% assign venue_transformed = venue_transformed | append: ", " %}
-              {% endif %}
-              {% endfor %}
-              {% else %}
-              {% assign venue_transformed = venue_raw %}
-              {% endif %}
-              {{ venue_transformed }}, {{ pub.date | date: "%Y" }}
-            </em>
-            {% if pub.award %}
-            <span class="award"> – {{ pub.award }}</span>
-            {% endif %}
-          </p>
-
-          <!-- Abstract and Video Buttons -->
-          <div class="pub-buttons">
-            {% if pub.abstract %}
-            <button type="button" class="btn btn-abstract" aria-label="Abstract" data-toggle="modal" data-target="#{{ pub.title | slugify }}_abstract">
-              <i class="fas fa-book"></i> Abstract
-            </button>
-            {% endif %}
-
-            {% if pub.video_embed %}
-            <button type="button" class="btn btn-video" aria-label="Video" data-toggle="modal" data-target="#{{ pub.title | slugify }}_video">
-              <i class="fas fa-play"></i> Video
-            </button>
-            {% endif %}
-
-            {% if pub.data_embed %}
-            <button type="button" class="btn btn-data" aria-label="Dataset" data-toggle="modal" data-target="#{{ pub.title | slugify }}_data">
-              <i class="fas fa-database"></i> Dataset
-            </button>
             {% endif %}
           </div>
-        </div>
-      </div>
+          <div class="pub-info">
+            {% if pub.date <= site.time %}
+              <a href="{{ pub.link }}">
+                <h2>{{ pub.title }}</h2>
+              </a>
+            {% else %}
+              <h2>{{ pub.title }}</h2>
+            {% endif %}
+            <p class="authors">
+              {% include author_list.html authors=pub.authors %}
+            </p>
+            <p class="venue-year">
+              <em>
+                {% if pub.date > site.time %}
+                  <span class="to-appear">To appear in </span>
+                {% endif %}
+                {% if pub.subvenue %}
+                  {{ pub.subvenue }},
+                {% endif %}
+                {{ venue_transformed }}, {{ pub.date | date: "%Y" }}
+              </em>
+              {% if pub.award %}
+                <span class="award"> – {{ pub.award }}</span>
+              {% endif %}
+            </p>
 
-      <!-- Abstract Modal -->
-      {% if pub.abstract %}
-      <div class="modal fade" tabindex="-1" role="dialog" id="{{ pub.title | slugify }}_abstract">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title">{{ pub.title }}</h4>
-            </div>
-            <div class="modal-body">
-              {{ pub.abstract }}
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <!-- Abstract and Video Buttons -->
+            <div class="pub-buttons">
+              {% if pub.abstract %}
+              <button type="button" class="btn btn-abstract" aria-label="Abstract" data-toggle="modal" data-target="#{{ pub.title | slugify }}_abstract">
+                <i class="fas fa-book"></i> Abstract
+              </button>
+              {% endif %}
+
+              {% if pub.video_embed %}
+              <button type="button" class="btn btn-video" aria-label="Video" data-toggle="modal" data-target="#{{ pub.title | slugify }}_video">
+                <i class="fas fa-play"></i> Video
+              </button>
+              {% endif %}
+
+              {% if pub.data_embed %}
+              <button type="button" class="btn btn-data" aria-label="Dataset" data-toggle="modal" data-target="#{{ pub.title | slugify }}_data">
+                <i class="fas fa-database"></i> Dataset
+              </button>
+              {% endif %}
             </div>
           </div>
         </div>
-      </div>
-      {% endif %}
 
-      <!-- Video Modal -->
-      {% if pub.video_embed %}
-      <div class="modal fade" tabindex="-1" role="dialog" id="{{ pub.title | slugify }}_video">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title">{{ pub.title }}</h4>
-            </div>
-            <div class="modal-body">
-              <iframe width="560" height="315" src="{{ pub.video_embed }}" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <!-- Abstract Modal -->
+        {% if pub.abstract %}
+        <div class="modal fade" tabindex="-1" role="dialog" id="{{ pub.title | slugify }}_abstract">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">{{ pub.title }}</h4>
+              </div>
+              <div class="modal-body">
+                {{ pub.abstract }}
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+        {% endif %}
 
-      <!-- Close video when window closes -->
-      <script>
-        $('#{{pub.title | slugify}}_video').on('hidden.bs.modal', function () {
-          $("#{{pub.title | slugify}}_video iframe").attr("src", $("#{{pub.title | slugify}}_video iframe").attr("src"));
-        });
-      </script>
-      {% endif %}
+        <!-- Video Modal -->
+        {% if pub.video_embed %}
+        <div class="modal fade" tabindex="-1" role="dialog" id="{{ pub.title | slugify }}_video">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">{{ pub.title }}</h4>
+              </div>
+              <div class="modal-body">
+                <iframe width="560" height="315" src="{{ pub.video_embed }}" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Close video when window closes -->
+        <script>
+          $('#{{pub.title | slugify}}_video').on('hidden.bs.modal', function () {
+            $("#{{pub.title | slugify}}_video iframe").attr("src", $("#{{pub.title | slugify}}_video iframe").attr("src"));
+          });
+        </script>
+        {% endif %}
 
       {% endfor %}
     </div>
@@ -417,7 +363,7 @@ title: Publications
     const searchInput = document.querySelector('.desktop-search');
     const yearSelect = document.getElementById('yearSelect');
     const healthTopicSelect = document.getElementById('healthTopicSelect');
-    const conferenceSelect = document.getElementById('conferenceSelect');
+    const venueSelect = document.getElementById('venueSelect');
     const contributorsSelect = document.getElementById('contributorsSelect');
     const themeCheckboxes = document.querySelectorAll('.filter-theme-checkbox');
     const skillCheckboxes = document.querySelectorAll('.filter-skill-checkbox');
@@ -428,7 +374,7 @@ title: Publications
     const mobileSearchInput = document.querySelector('.mobile-search');
     const mobileYearSelect = document.getElementById('mobile-yearSelect');
     const mobileHealthTopicSelect = document.getElementById('mobile-healthTopicSelect');
-    const mobileConferenceSelect = document.getElementById('mobile-conferenceSelect');
+    const mobileVenueSelect = document.getElementById('mobile-venueSelect');
     const mobileContributorsSelect = document.getElementById('mobile-contributorsSelect');
     const mobileThemeCheckboxes = document.querySelectorAll('.mobile-theme-checkbox');
     const mobileSkillCheckboxes = document.querySelectorAll('.mobile-skill-checkbox');
@@ -458,7 +404,7 @@ title: Publications
         searchInput.value = mobileSearchInput.value;
         yearSelect.value = mobileYearSelect.value;
         healthTopicSelect.value = mobileHealthTopicSelect.value;
-        conferenceSelect.value = mobileConferenceSelect.value;
+        venueSelect.value = mobileVenueSelect.value;
         contributorsSelect.value = mobileContributorsSelect.value;
 
         mobileThemeCheckboxes.forEach((checkbox, index) => {
@@ -489,7 +435,7 @@ title: Publications
         mobileSearchInput.value = searchInput.value;
         mobileYearSelect.value = yearSelect.value;
         mobileHealthTopicSelect.value = healthTopicSelect.value;
-        mobileConferenceSelect.value = conferenceSelect.value;
+        mobileVenueSelect.value = venueSelect.value;
         mobileContributorsSelect.value = contributorsSelect.value;
 
         themeCheckboxes.forEach((checkbox, index) => {
@@ -532,7 +478,7 @@ title: Publications
       const query = searchInput.value;
       const selectedYear = yearSelect.value;
       const selectedHealthTopic = healthTopicSelect.value;
-      const selectedConference = conferenceSelect.value;
+      const selectedVenue = venueSelect.value;
       const selectedContributors = contributorsSelect.value;
       const selectedThemes = getCheckedValues(themeCheckboxes);
       const selectedSkills = getCheckedValues(skillCheckboxes);
@@ -553,7 +499,7 @@ title: Publications
           card.style.display = 'none';
           return;
         }
-        if(selectedConference && !card.dataset.conference.includes(selectedConference)) {
+        if(selectedVenue && !card.dataset.venue.includes(selectedVenue)) {
           card.style.display = 'none';
           return;
         }
@@ -621,12 +567,12 @@ title: Publications
         tag.innerHTML = 'Health Topic: ' + text + ' <span class="remove-tag" data-type="health">×</span>';
         activeFiltersPanel.appendChild(tag);
       }
-      if (conferenceSelect.value) {
+      if (venueSelect.value) {
         hasActive = true;
         const tag = document.createElement('span');
         tag.className = 'active-filter-tag';
-        const text = conferenceSelect.options[conferenceSelect.selectedIndex].text;
-        tag.innerHTML = 'Conference: ' + text + ' <span class="remove-tag" data-type="conference">×</span>';
+        const text = venueSelect.options[venueSelect.selectedIndex].text;
+        tag.innerHTML = 'Publication Venue: ' + text + ' <span class="remove-tag" data-type="venue">×</span>';
         activeFiltersPanel.appendChild(tag);
       }
       if (contributorsSelect.value) {
@@ -688,9 +634,9 @@ title: Publications
       } else if (type === 'health') {
         healthTopicSelect.value = '';
         mobileHealthTopicSelect.value = '';
-      } else if (type === 'conference') {
-        conferenceSelect.value = '';
-        mobileConferenceSelect.value = '';
+      } else if (type === 'venue') {
+        venueSelect.value = '';
+        mobileVenueSelect.value = '';
       } else if (type === 'contributors') {
         contributorsSelect.value = '';
         mobileContributorsSelect.value = '';
@@ -748,7 +694,7 @@ title: Publications
       filterPublications();
     });
 
-    if (conferenceSelect) conferenceSelect.addEventListener('change', function() {
+    if (venueSelect) venueSelect.addEventListener('change', function() {
       syncFilters();
       filterPublications();
     });
