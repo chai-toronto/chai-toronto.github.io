@@ -4,7 +4,7 @@ leads:
 - dhruv_verma
 thumbnail: /images/projects/retinal_hypoxia.jpeg
 description: To transform the smartphone into a hyperspectral ophthalmoscope for screening cases of retinal hypoxia.
-category: 
+theme: 
 - Active Sensing
 health_topic: 
 - Ophthalmology

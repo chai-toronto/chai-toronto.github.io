@@ -10,19 +10,19 @@ title: Current Research
   <h1>Current Research</h1>
 
   <!-- Categories -->
-  <div class="research-categories-row">
-    <div class="category-card">
-      <img src="{{ site.baseurl }}/images/projects/categories/active.png" alt="Active Sensing" />
+  <div class="research-themes-row">
+    <div class="theme-card">
+      <img src="{{ site.baseurl }}/images/projects/themes/active.png" alt="Active Sensing" />
       <h2>Active Sensing</h2>
       <p>These projects involve assessments that require people to perform a particular task in order to learn something about their health.</p>
     </div>
-    <div class="category-card">
-      <img src="{{ site.baseurl }}/images/projects/categories/passive.png" alt="Passive Sensing" />
+    <div class="theme-card">
+      <img src="{{ site.baseurl }}/images/projects/themes/passive.png" alt="Passive Sensing" />
       <h2>Passive Sensing</h2>
       <p>These projects involve the use of sensors to detect digital health biomarkers without requiring direct involvement from the people being monitored.</p>
     </div>
-    <div class="category-card">
-      <img src="{{ site.baseurl }}/images/projects/categories/design.png" alt="Design" />
+    <div class="theme-card">
+      <img src="{{ site.baseurl }}/images/projects/themes/design.png" alt="Design" />
       <h2>Design</h2>
       <p>These projects involve studying people's experiences as they interact with health-related technologies.</p>
     </div>
@@ -42,7 +42,7 @@ title: Current Research
         <h3>Theme</h3>
         {% for theme in themes %}
           <label>
-            <input type="checkbox" class="filter-category" value="{{ theme }}" /> {{ theme }}
+            <input type="checkbox" class="filter-theme" value="{{ theme }}" /> {{ theme }}
           </label><br />
         {% endfor %}
         <hr />
@@ -93,7 +93,7 @@ title: Current Research
       <h3>Theme</h3>
       {% for theme in themes %}
         <label>
-          <input type="checkbox" class="filter-category" value="{{ theme }}" /> {{ theme }}
+          <input type="checkbox" class="filter-theme" value="{{ theme }}" /> {{ theme }}
         </label><br />
       {% endfor %}
       <hr />
@@ -138,7 +138,7 @@ title: Current Research
       <div class="project-cards-wrapper">
         {% for project in sorted_projects %}
         <div class="project-card"
-             data-category="{{ project.category | join: ', ' }}"
+             data-theme="{{ project.theme | join: ', ' }}"
              data-health-topic="{{ project.health_topic | join: ', ' }}"
              data-skills="{{ project.skills | join: ', ' }}"
              data-leads="{{ project.leads | join: ', ' }}">
@@ -160,13 +160,13 @@ title: Current Research
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     // Desktop filters
-    const themeCheckboxes  = Array.from(document.querySelectorAll('.filter-category'));
+    const themeCheckboxes  = Array.from(document.querySelectorAll('.filter-theme'));
     const skillCheckboxes  = Array.from(document.querySelectorAll('.filter-skill'));
     const healthSelect  = document.getElementById('filter-health-topic');
     const leadSelect    = document.getElementById('filter-led-by');
 
-    // Mobile filters???
-    const mobileThemeCheckboxes = document.querySelectorAll('.mobile-filter-category')
+    // Mobile filters
+    const mobileThemeCheckboxes = document.querySelectorAll('.mobile-filter-theme')
     const mobileSkillCheckboxes = document.querySelectorAll('.mobile-filter-skill');
     const mobileHealthSelect = document.getElementById('mobile-filter-health-topic');
     const mobileLeadSelect = document.getElementById('mobile-filter-led-by');
@@ -223,18 +223,28 @@ title: Current Research
       }
     }
 
+    function getCheckedValues(checkboxes) {
+      let values = [];
+      checkboxes.forEach(cb => {
+        if(cb.checked) {
+          values.push(cb.value);
+        }
+      });
+      return values;
+    }
+
     function filterProjects() {
-      const cats  = themeCheckboxes.filter(c=>c.checked).map(c=>c.value);
-      const skills= skillCheckboxes.filter(c=>c.checked).map(c=>c.value);
-      const health= healthSelect.value;
-      const lead  = leadSelect.value;
+      const selectedHealthTopic = healthSelect.value;
+      const selectedLead = leadSelect.value;
+      const selectedThemes = getCheckedValues(themeCheckboxes);
+      const selectedSkills = getCheckedValues(skillCheckboxes);
 
       projectCards.forEach(card => {
         let show = true;
-        if (cats.length && !cats.some(c=>card.dataset.category.includes(c))) show = false;
-        if (skills.length && !skills.every(s=>card.dataset.skills.includes(s)))   show = false;
-        if (health && !card.dataset.healthTopic.includes(health))                  show = false;
-        if (lead   && !card.dataset.leads.includes(lead))                          show = false;
+        if (selectedThemes.length && !selectedThemes.some(t=>card.dataset.theme.includes(t))) show = false;
+        if (selectedSkills.length && !selectedSkills.every(s=>card.dataset.skills.includes(s)))   show = false;
+        if (selectedHealthTopic && !card.dataset.healthTopic.includes(selectedHealthTopic))                  show = false;
+        if (selectedLead  && !card.dataset.leads.includes(selectedLead))                          show = false;
         card.style.display = show ? 'block' : 'none';
       });
       updateActiveFilters();
@@ -255,7 +265,7 @@ title: Current Research
       activePanel.style.display = 'block';
 
       themeCheckboxes.filter(c=>c.checked).forEach(c => {
-        activePanel.innerHTML += `<span class="active-filter-tag">Theme: ${c.value} <span class="remove-tag" data-type="category" data-value="${c.value}">×</span></span>`;
+        activePanel.innerHTML += `<span class="active-filter-tag">Theme: ${c.value} <span class="remove-tag" data-type="theme" data-value="${c.value}">×</span></span>`;
       });
 
       if (healthSelect.value) {
@@ -281,7 +291,7 @@ title: Current Research
     }
 
     function removeFilter(type, value) {
-      if (type === 'category') {
+      if (type === 'theme') {
         themeCheckboxes.find(c=>c.value===value).checked = false;
       } else if (type === 'skill') {
         skillCheckboxes.find(c=>c.value===value).checked = false;

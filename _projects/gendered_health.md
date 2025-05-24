@@ -4,7 +4,7 @@ leads:
 - blue_lin
 thumbnail: /images/projects/gendered_health.png
 description: To create accurate, inclusive, and accessible menstrual trackers through passive physiological monitoring and user-centered design.
-category: 
+theme: 
 - Passive Sensing
 - Design
 health_topic: 

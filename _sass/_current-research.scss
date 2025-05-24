@@ -30,14 +30,14 @@
 
 .current-research-page {
 
-  .research-categories-row {
+  .research-themes-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     padding-bottom: 50px;
 
-    .category-card {
+    .theme-card {
       width: 400px;
       box-sizing: border-box;
       border: 1px solid #ccc;
@@ -68,12 +68,12 @@
     }
 
     @media (max-width: 1200px) {
-      .category-card {
+      .theme-card {
         width: 400px;
       }
     }
     @media (max-width: 768px) {
-      .category-card {
+      .theme-card {
         width: 100%;
         height: auto;
       }
@@ -279,14 +279,14 @@
     }
   }
 
-  /* stack category cards full-width */
-  .research-categories-row {
+  /* stack theme cards full-width */
+  .research-themes-row {
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
     margin-bottom: 40px;
 
-    .category-card {
+    .theme-card {
       width: 100%;
       padding: 16px;
 

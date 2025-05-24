@@ -19,7 +19,7 @@ press:
    headline: "U of T researchers leverage AI to decipher lung health from speech"
    date: 2023-11-03
 video_embed: https://www.youtube.com/embed/WLT4_tkH-5c
-category:
+theme:
 - Passive Sensing
 health_topic:
 - Respirology

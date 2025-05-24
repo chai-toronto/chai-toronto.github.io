@@ -230,7 +230,7 @@ title: Publications
             data-health-topic="{{ pub.health_topic | join: ',' }}"
             data-venue="{{ venue_transformed }}"
             data-contributors="{{ pub.authors | join: ',' }}"
-            data-theme="{{ pub.category | join: ',' }}"
+            data-theme="{{ pub.theme | join: ',' }}"
             data-skills="{{ pub.skills | join: ',' }}"
             data-device="{% if pub.device %}{{ pub.device | join: ',' }}{% elsif pub.devices %}{{ pub.devices | join: ',' }}{% endif %}"
             data-dataset="{{ pub.dataset_available }}"

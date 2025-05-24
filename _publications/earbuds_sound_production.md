@@ -13,7 +13,7 @@ thumbnail: /images/pubs/earbuds_sound_production.png
 award: 'Best Workshop Paper'
 abstract: |
   Over the past several years, a growing body of literature has proposed systems that use earable-based acoustic sensing to assess cardiac function. These works have offered various explanations of how in-ear cardiac audio is produced. Most claim that the sounds are caused by compressive waves that travel directly from the chest, while others claim that the sounds are caused by the pulse wave producing arterial expansion near the ear canal. Although these explanations are not mutually exclusive, the lack of consensus raises questions about the working principles and possibilities in this growing research area. We present a series of experiments using a multimodal dataset of cardiac signals to test various hypotheses related to the production of heart sounds in the ear canal. Our results suggest that in-ear cardiac audio contains components produced by both compressive waves and pulse waves.
-category:
+theme:
 - Active Sensing
 health_topic:
 - Cardiology

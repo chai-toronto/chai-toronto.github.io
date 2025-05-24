@@ -4,7 +4,7 @@ leads:
 - ken_christofferson
 thumbnail: /images/projects/earbuds.jpeg
 description: To assess heart health using audio transduced in the ear canal.
-category: 
+theme: 
 - Active Sensing
 health_topic: 
 - Cardiology
