@@ -1,0 +1,19 @@
+{% assign venue_raw = include.venue %}
+{% assign venue_transformed = "" %}
+{% if venue_raw contains "$" %}
+  {% assign venue_parts = venue_raw | split: "," %}
+  {% for part in venue_parts %}
+    {% assign part = part | strip %}
+    {% assign venue_item = site.data.venues | where:"id", part | first %}
+    {% if venue_item %}
+      {% assign venue_transformed = venue_transformed | append: venue_item.full_name %}
+    {% else %}
+      {% assign venue_transformed = venue_transformed | append: part %}
+    {% endif %}
+    {% if forloop.last == false %}
+      {% assign venue_transformed = venue_transformed | append: ", " %}
+    {% endif %}
+  {% endfor %}
+{% else %}
+  {% assign venue_transformed = venue_raw %}
+{% endif %}
