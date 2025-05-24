@@ -36,7 +36,7 @@ Create a new file in `_projects/`. The file should have the following fields:
 | `title` | yes | Project title |
 | `lead` | yes | List of student leads, using `id` when available |
 | `thumbnail` | yes | Path of thumbnail image in `images/projects/`that is ideally 16x9 and 300px wide |
-| `category` | yes | Relevant research themes (`Active Sensing`, `Passive Sensing`, or `Design`) |
+| `theme` | yes | Relevant research themes (`Active Sensing`, `Passive Sensing`, or `Design`) |
 | `health_topic` | no | Relevant health topic. Please refer to options already in the website before creating a new one |
 | `device` | no | Relevant technology being studied. Please refer to options already in the website before creating a new one |
 | `skills` | yes | Relevant skills being used. Please refer to options already in the website before creating a new one |
@@ -55,7 +55,7 @@ Create a new file in `_publications/`. The file should have the following fields
 | `abstract` | yes | Copy from the ACM DL or equivalent when possible, otherwise use Google Scholar. |
 | `video_embed` | no | HTML embed code for video player |
 | `news` | no | List of different press releases, which contains <ul><li>`name`: the name of the news entity</li><li>`url`: the url to the article</li><li>`headline`: the headline</li><li>`date`: the date the article was published</li></ul> |
-| `category` | yes | Relevant research themes (`Active Sensing`, `Passive Sensing`, or `Design`) |
+| `theme` | yes | Relevant research themes (`Active Sensing`, `Passive Sensing`, or `Design`) |
 | `health_topic` | no | Relevant health topic. Please refer to options already in the website before creating a new one |
 | `device` | no | Relevant technology being studied. Please refer to options already in the website before creating a new one |
 | `skills` | yes | Relevant skills being used. Please refer to options already in the website before creating a new one |
