@@ -160,36 +160,38 @@ title: Current Research
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     // Desktop filters
-    const themeCheckboxes  = Array.from(document.querySelectorAll('.filter-theme'));
-    const skillCheckboxes  = Array.from(document.querySelectorAll('.filter-skill'));
-    const healthSelect  = document.getElementById('filter-health-topic');
-    const leadSelect    = document.getElementById('filter-led-by');
+    const healthTopicSelect = document.getElementById('filter-health-topic');
+    const leadSelect = document.getElementById('filter-led-by');
+    const themeCheckboxes = Array.from(document.querySelectorAll('.filter-theme'));
+    const skillCheckboxes = Array.from(document.querySelectorAll('.filter-skill'));
 
     // Mobile filters
-    const mobileThemeCheckboxes = document.querySelectorAll('.mobile-filter-theme')
-    const mobileSkillCheckboxes = document.querySelectorAll('.mobile-filter-skill');
-    const mobileHealthSelect = document.getElementById('mobile-filter-health-topic');
+    const mobileHealthTopicSelect = document.getElementById('mobile-filter-health-topic');
     const mobileLeadSelect = document.getElementById('mobile-filter-led-by');
+    const mobileThemeCheckboxes = Array.from(document.querySelectorAll('.mobile-filter-theme'));
+    const mobileSkillCheckboxes = Array.from(document.querySelectorAll('.mobile-filter-skill'));
 
     // Common elements
-    const projectCards  = Array.from(document.querySelectorAll('.project-card'));
-    const activePanel   = document.getElementById('active-filters-panel');
+    const projectCards = Array.from(document.querySelectorAll('.project-card'));
+    const activeFiltersPanel = document.getElementById('active-filters-panel');
 
     // Mobile filter overlay controls
-    const overlay       = document.querySelector('.filter-overlay');
-    const openBtn       = document.querySelector('.mobile-filter-toggle');
-    const closeBtn      = document.querySelector('.close-filters');
-    const applyBtn      = document.querySelector('.apply-filters');
+    const overlay = document.querySelector('.filter-overlay');
+    const openBtn = document.querySelector('.mobile-filter-toggle');
+    const closeBtn = document.querySelector('.close-filters');
+    const applyBtn = document.querySelector('.apply-filters');
 
-    if (!overlay || !openBtn || !closeBtn || !applyBtn) return;
+    // Toggle mobile filter overlay
+    if (overlay && openBtn && closeBtn) {
+      openBtn.addEventListener('click',  () => overlay.classList.add('active'));
+      closeBtn.addEventListener('click', () => overlay.classList.remove('active'));
+    }
 
-    openBtn.addEventListener('click',  () => overlay.classList.add('active'));
-    closeBtn.addEventListener('click', () => overlay.classList.remove('active'));
-
+    // Sync filters between desktop and mobile
     function syncFilters(fromMobile = false) {
       if (fromMobile) {
         // Copy from mobile to desktop
-        healthSelect.value = mobileHealthSelect.value;
+        healthTopicSelect.value = mobileHealthTopicSelect.value;
         leadSelect.value = mobileLeadSelect.value;
 
         mobileThemeCheckboxes.forEach((checkbox, index) => {
@@ -203,9 +205,10 @@ title: Current Research
             skillCheckboxes[index].checked = checkbox.checked;
           }
         });
-      } else {
+      } 
+      else {
         // Copy from desktop to mobile
-        mobileHealthSelect.value = healthSelect.value;
+        mobileHealthTopicSelect.value = healthTopicSelect.value;
         mobileLeadSelect.value = leadSelect.value;
 
         // Sync checkboxes
@@ -234,54 +237,73 @@ title: Current Research
     }
 
     function filterProjects() {
-      const selectedHealthTopic = healthSelect.value;
+      const selectedHealthTopic = healthTopicSelect.value;
       const selectedLead = leadSelect.value;
       const selectedThemes = getCheckedValues(themeCheckboxes);
       const selectedSkills = getCheckedValues(skillCheckboxes);
 
       projectCards.forEach(card => {
-        let show = true;
-        if (selectedThemes.length && !selectedThemes.some(t=>card.dataset.theme.includes(t))) show = false;
-        if (selectedSkills.length && !selectedSkills.every(s=>card.dataset.skills.includes(s)))   show = false;
-        if (selectedHealthTopic && !card.dataset.healthTopic.includes(selectedHealthTopic))                  show = false;
-        if (selectedLead  && !card.dataset.leads.includes(selectedLead))                          show = false;
-        card.style.display = show ? 'block' : 'none';
+        // Dropdowns
+        if (selectedHealthTopic && !card.dataset.healthTopic.includes(selectedHealthTopic)) {
+          card.style.display = 'none';
+          return;
+        }
+        if (selectedLead && !card.dataset.leads.includes(selectedLead)) {
+          card.style.display = 'none';
+          return;
+        }
+        // Checkboxes
+        if (selectedThemes.length > 0) {
+          const cardThemes = card.dataset.theme.split(',').map(t => t.trim());
+          if (!selectedThemes.some(theme => cardThemes.includes(theme))) {
+            card.style.display = 'none';
+            return;
+          }
+        }
+        if (selectedSkills.length > 0) {
+          const cardSkills = card.dataset.skills.split(',').map(s => s.trim());
+          if (!selectedSkills.some(skill => cardSkills.includes(skill))) {
+            card.style.display = 'none';
+            return;
+          }
+        }
+        card.style.display = 'block';
       });
       updateActiveFilters();
     }
 
     function updateActiveFilters() {
-      activePanel.innerHTML = '';
+      // Skip early if no filters are active
+      activeFiltersPanel.innerHTML = '';
       const hasActiveFilters =
               themeCheckboxes.some(c => c.checked) ||
               skillCheckboxes.some(c => c.checked) ||
-              healthSelect.value ||
+              healthTopicSelect.value ||
               leadSelect.value;
 
       if (!hasActiveFilters) {
-        activePanel.style.display = 'none';
+        activeFiltersPanel.style.display = 'none';
         return;
       }
-      activePanel.style.display = 'block';
+      activeFiltersPanel.style.display = 'block';
 
-      themeCheckboxes.filter(c=>c.checked).forEach(c => {
-        activePanel.innerHTML += `<span class="active-filter-tag">Theme: ${c.value} <span class="remove-tag" data-type="theme" data-value="${c.value}">×</span></span>`;
-      });
-
-      if (healthSelect.value) {
-        activePanel.innerHTML += `<span class="active-filter-tag">Health Topic: ${healthSelect.selectedOptions[0].text} <span class="remove-tag" data-type="health" data-value="">×</span></span>`;
+      // Dropdowns
+      if (healthTopicSelect.value) {
+        activeFiltersPanel.innerHTML += `<span class="active-filter-tag">Health Topic: ${healthTopicSelect.selectedOptions[0].text} <span class="remove-tag" data-type="health" data-value="">×</span></span>`;
       }
-
-      skillCheckboxes.filter(c=>c.checked).forEach(c => {
-        activePanel.innerHTML += `<span class="active-filter-tag">Skill: ${c.value} <span class="remove-tag" data-type="skill" data-value="${c.value}">×</span></span>`;
-      });
-
       if (leadSelect.value) {
         const name = leadSelect.selectedOptions[0].text;
-        activePanel.innerHTML += `<span class="active-filter-tag">Led by: ${name} <span class="remove-tag" data-type="lead" data-value="">×</span></span>`;
+        activeFiltersPanel.innerHTML += `<span class="active-filter-tag">Led by: ${name} <span class="remove-tag" data-type="lead" data-value="">×</span></span>`;
       }
+      // Checkboxes
+      themeCheckboxes.filter(c=>c.checked).forEach(c => {
+        activeFiltersPanel.innerHTML += `<span class="active-filter-tag">Theme: ${c.value} <span class="remove-tag" data-type="theme" data-value="${c.value}">×</span></span>`;
+      });
+      skillCheckboxes.filter(c=>c.checked).forEach(c => {
+        activeFiltersPanel.innerHTML += `<span class="active-filter-tag">Skill: ${c.value} <span class="remove-tag" data-type="skill" data-value="${c.value}">×</span></span>`;
+      });
 
-      activePanel.querySelectorAll('.remove-tag').forEach(el => {
+      activeFiltersPanel.querySelectorAll('.remove-tag').forEach(el => {
         el.addEventListener('click', function() {
           const type = this.dataset.type;
           const value = this.dataset.value;
@@ -291,36 +313,51 @@ title: Current Research
     }
 
     function removeFilter(type, value) {
-      if (type === 'theme') {
-        themeCheckboxes.find(c=>c.value===value).checked = false;
-      } else if (type === 'skill') {
-        skillCheckboxes.find(c=>c.value===value).checked = false;
-      } else if (type === 'health') {
-        healthSelect.value = '';
-      } else if (type === 'lead') {
+      // Dropdowns
+      if (type === 'health') {
+        healthTopicSelect.value = '';
+        mobileHealthTopicSelect.value = '';
+      } 
+      else if (type === 'lead') {
         leadSelect.value = '';
+        mobileLeadSelect.value = '';
       }
+      // Checkboxes
+      else if (type === 'theme') {
+        themeCheckboxes.forEach(cb => {
+          if (cb.value === value) cb.checked = false;
+        });
+        mobileThemeCheckboxes.forEach(cb => {
+          if (cb.value === value) cb.checked = false;
+        });
+      } 
+      else if (type === 'skill') {
+        skillCheckboxes.forEach(cb => {
+          if (cb.value === value) cb.checked = false;
+        });
+        mobileSkillCheckboxes.forEach(cb => {
+          if (cb.value === value) cb.checked = false;
+        });
+      } 
       syncFilters();
       filterProjects();
     }
 
-    window.removeFilter = removeFilter;
+    // Dropdown filter event listeners
+    [healthTopicSelect, leadSelect].forEach(select => {
+      select.addEventListener('change', () => {
+        syncFilters();
+        filterProjects();
+      });
+    });
 
+    // Checkbox filter event listeners
     [...themeCheckboxes, ...skillCheckboxes].forEach(c=>c.addEventListener('change', () => {
       syncFilters();
       filterProjects();
     }));
 
-    healthSelect.addEventListener('change', () => {
-      syncFilters();
-      filterProjects();
-    });
-
-    leadSelect.addEventListener('change', () => {
-      syncFilters();
-      filterProjects();
-    });
-
+    // Apply button event listener
     applyBtn.addEventListener('click', () => {
       syncFilters(true);
       filterProjects();

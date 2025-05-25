@@ -51,9 +51,9 @@ title: Publications
           {% endfor %}
         </select>
 
-        <!-- Contributors -->
-        <h3>Graduate Student Contributors</h3>
-        <select id="mobile-contributorsSelect">
+        <!-- Author -->
+        <h3>Graduate Student Author</h3>
+        <select id="mobile-authorSelect">
           <option value="">Anyone</option>
           {% for author in all_author_ids %}
             {% assign found_member = site.data.members | where:"id", author | first %}
@@ -153,9 +153,9 @@ title: Publications
         {% endfor %}
       </select>
 
-      <!-- Contributors -->
-      <h3 for="contributorsSelect">Graduate Student Contributors</h3>
-      <select id="contributorsSelect">
+      <!-- Author -->
+      <h3 for="authorSelect">Graduate Student Author</h3>
+      <select id="authorSelect">
         <option value="">Anyone</option>
         {% for author in all_author_ids %}
           {% assign found_member = site.data.members | where:"id", author | first %}
@@ -229,7 +229,7 @@ title: Publications
             data-year="{{ pub.date | date: '%Y' }}"
             data-health-topic="{{ pub.health_topic | join: ',' }}"
             data-venue="{{ venue_transformed }}"
-            data-contributors="{{ pub.authors | join: ',' }}"
+            data-author="{{ pub.authors | join: ',' }}"
             data-theme="{{ pub.theme | join: ',' }}"
             data-skills="{{ pub.skills | join: ',' }}"
             data-device="{% if pub.device %}{{ pub.device | join: ',' }}{% elsif pub.devices %}{{ pub.devices | join: ',' }}{% endif %}"
@@ -364,25 +364,25 @@ title: Publications
     const yearSelect = document.getElementById('yearSelect');
     const healthTopicSelect = document.getElementById('healthTopicSelect');
     const venueSelect = document.getElementById('venueSelect');
-    const contributorsSelect = document.getElementById('contributorsSelect');
-    const themeCheckboxes = document.querySelectorAll('.filter-theme-checkbox');
-    const skillCheckboxes = document.querySelectorAll('.filter-skill-checkbox');
-    const deviceCheckboxes = document.querySelectorAll('.filter-device-checkbox');
-    const awardCheckboxes = document.querySelectorAll('.filter-award-checkbox');
+    const authorSelect = document.getElementById('authorSelect');
+    const themeCheckboxes = Array.from(document.querySelectorAll('.filter-theme-checkbox'));
+    const skillCheckboxes = Array.from(document.querySelectorAll('.filter-skill-checkbox'));
+    const deviceCheckboxes = Array.from(document.querySelectorAll('.filter-device-checkbox'));
+    const awardCheckboxes = Array.from(document.querySelectorAll('.filter-award-checkbox'));
 
     // Mobile filters
     const mobileSearchInput = document.querySelector('.mobile-search');
     const mobileYearSelect = document.getElementById('mobile-yearSelect');
     const mobileHealthTopicSelect = document.getElementById('mobile-healthTopicSelect');
     const mobileVenueSelect = document.getElementById('mobile-venueSelect');
-    const mobileContributorsSelect = document.getElementById('mobile-contributorsSelect');
-    const mobileThemeCheckboxes = document.querySelectorAll('.mobile-theme-checkbox');
-    const mobileSkillCheckboxes = document.querySelectorAll('.mobile-skill-checkbox');
-    const mobileDeviceCheckboxes = document.querySelectorAll('.mobile-device-checkbox');
-    const mobileAwardCheckboxes = document.querySelectorAll('.mobile-award-checkbox');
+    const mobileAuthorSelect = document.getElementById('mobile-authorSelect');
+    const mobileThemeCheckboxes = Array.from(document.querySelectorAll('.mobile-theme-checkbox'));
+    const mobileSkillCheckboxes = Array.from(document.querySelectorAll('.mobile-skill-checkbox'));
+    const mobileDeviceCheckboxes = Array.from(document.querySelectorAll('.mobile-device-checkbox'));
+    const mobileAwardCheckboxes = Array.from(document.querySelectorAll('.mobile-award-checkbox'));
 
     // Common elements
-    const publicationCards = document.querySelectorAll('.publication-card');
+    const publicationCards = Array.from(document.querySelectorAll('.publication-card'));
     const activeFiltersPanel = document.getElementById('active-filters-panel');
 
     // Mobile filter overlay controls
@@ -392,7 +392,7 @@ title: Publications
     const applyBtn = document.querySelector('.apply-filters');
 
     // Toggle mobile filter overlay
-    if (openBtn && closeBtn && overlay) {
+    if (overlay && openBtn && closeBtn) {
       openBtn.addEventListener('click', () => overlay.classList.add('active'));
       closeBtn.addEventListener('click', () => overlay.classList.remove('active'));
     }
@@ -405,7 +405,7 @@ title: Publications
         yearSelect.value = mobileYearSelect.value;
         healthTopicSelect.value = mobileHealthTopicSelect.value;
         venueSelect.value = mobileVenueSelect.value;
-        contributorsSelect.value = mobileContributorsSelect.value;
+        authorSelect.value = mobileAuthorSelect.value;
 
         mobileThemeCheckboxes.forEach((checkbox, index) => {
           if (index < themeCheckboxes.length) {
@@ -430,13 +430,14 @@ title: Publications
             awardCheckboxes[index].checked = checkbox.checked;
           }
         });
-      } else {
+      } 
+      else {
         // Copy from desktop to mobile
         mobileSearchInput.value = searchInput.value;
         mobileYearSelect.value = yearSelect.value;
         mobileHealthTopicSelect.value = healthTopicSelect.value;
         mobileVenueSelect.value = venueSelect.value;
-        mobileContributorsSelect.value = contributorsSelect.value;
+        mobileAuthorSelect.value = authorSelect.value;
 
         themeCheckboxes.forEach((checkbox, index) => {
           if (index < mobileThemeCheckboxes.length) {
@@ -479,56 +480,59 @@ title: Publications
       const selectedYear = yearSelect.value;
       const selectedHealthTopic = healthTopicSelect.value;
       const selectedVenue = venueSelect.value;
-      const selectedContributors = contributorsSelect.value;
+      const selectedAuthor = authorSelect.value;
       const selectedThemes = getCheckedValues(themeCheckboxes);
       const selectedSkills = getCheckedValues(skillCheckboxes);
       const selectedDevices = getCheckedValues(deviceCheckboxes);
       const selectedAwards = getCheckedValues(awardCheckboxes);
 
       publicationCards.forEach(card => {
+        // Search
         let text = card.textContent.toLowerCase();
-        if(query && !text.includes(query)) {
+        if (query && !text.includes(query)) {
           card.style.display = 'none';
           return;
         }
-        if(selectedYear && card.dataset.year !== selectedYear) {
+        // Dropdowns
+        if (selectedYear && card.dataset.year !== selectedYear) {
           card.style.display = 'none';
           return;
         }
-        if(selectedHealthTopic && !card.dataset.healthTopic.includes(selectedHealthTopic)) {
+        if (selectedHealthTopic && !card.dataset.healthTopic.includes(selectedHealthTopic)) {
           card.style.display = 'none';
           return;
         }
-        if(selectedVenue && !card.dataset.venue.includes(selectedVenue)) {
+        if (selectedVenue && !card.dataset.venue.includes(selectedVenue)) {
           card.style.display = 'none';
           return;
         }
-        if(selectedContributors && !card.dataset.contributors.includes(selectedContributors)) {
+        if (selectedAuthor && !card.dataset.author.includes(selectedAuthor)) {
           card.style.display = 'none';
           return;
         }
-        if(selectedThemes.length > 0) {
+        // Checkboxes
+        if (selectedThemes.length > 0) {
           const cardThemes = card.dataset.theme.split(',').map(t => t.trim());
           if (!selectedThemes.some(theme => cardThemes.includes(theme))) {
             card.style.display = 'none';
             return;
           }
         }
-        if(selectedSkills.length > 0) {
+        if (selectedSkills.length > 0) {
           const cardSkills = card.dataset.skills.split(',').map(s => s.trim());
           if (!selectedSkills.some(skill => cardSkills.includes(skill))) {
             card.style.display = 'none';
             return;
           }
         }
-        if(selectedDevices.length > 0) {
+        if (selectedDevices.length > 0) {
           const cardDevice = card.dataset.device;
           if (!selectedDevices.some(device => cardDevice.includes(device))) {
             card.style.display = 'none';
             return;
           }
         }
-        if(selectedAwards.length > 0) {
+        if (selectedAwards.length > 0) {
           const cardAward = card.dataset.award;
           if (!selectedAwards.some(award => cardAward.includes(award))) {
             card.style.display = 'none';
@@ -541,9 +545,26 @@ title: Publications
     }
 
     function updateActiveFilters() {
+      // Skip early if no filters are active
       activeFiltersPanel.innerHTML = '';
-      let hasActive = false;
+      const hasActiveFilters =
+              searchInput.value ||
+              yearSelect.value ||
+              healthTopicSelect.value ||
+              venueSelect.value ||
+              authorSelect.value ||
+              themeCheckboxes.some(c => c.checked) ||
+              skillCheckboxes.some(c => c.checked) ||
+              deviceCheckboxes.some(c => c.checked) ||
+              awardCheckboxes.some(c => c.checked);
 
+      if (!hasActiveFilters) {
+        activeFiltersPanel.style.display = 'none';
+        return;
+      }
+      activeFiltersPanel.style.display = 'block';
+
+      // Search
       if (searchInput.value.trim() !== "") {
         hasActive = true;
         const tag = document.createElement('span');
@@ -551,68 +572,32 @@ title: Publications
         tag.innerHTML = 'Search: ' + searchInput.value + ' <span class="remove-tag" data-type="search">×</span>';
         activeFiltersPanel.appendChild(tag);
       }
+      // Dropdowns
       if (yearSelect.value) {
-        hasActive = true;
-        const tag = document.createElement('span');
-        tag.className = 'active-filter-tag';
-        const text = yearSelect.options[yearSelect.selectedIndex].text;
-        tag.innerHTML = 'Year: ' + text + ' <span class="remove-tag" data-type="year">×</span>';
-        activeFiltersPanel.appendChild(tag);
+        activeFiltersPanel.innerHTML += `<span class="active-filter-tag">Year: ${yearSelect.selectedOptions[0].text} <span class="remove-tag" data-type="year" data-value="">×</span></span>`;
       }
       if (healthTopicSelect.value) {
-        hasActive = true;
-        const tag = document.createElement('span');
-        tag.className = 'active-filter-tag';
-        const text = healthTopicSelect.options[healthTopicSelect.selectedIndex].text;
-        tag.innerHTML = 'Health Topic: ' + text + ' <span class="remove-tag" data-type="health">×</span>';
-        activeFiltersPanel.appendChild(tag);
+        activeFiltersPanel.innerHTML += `<span class="active-filter-tag">Health Topic: ${healthTopicSelect.selectedOptions[0].text} <span class="remove-tag" data-type="health" data-value="">×</span></span>`;
       }
       if (venueSelect.value) {
-        hasActive = true;
-        const tag = document.createElement('span');
-        tag.className = 'active-filter-tag';
-        const text = venueSelect.options[venueSelect.selectedIndex].text;
-        tag.innerHTML = 'Publication Venue: ' + text + ' <span class="remove-tag" data-type="venue">×</span>';
-        activeFiltersPanel.appendChild(tag);
+        activeFiltersPanel.innerHTML += `<span class="active-filter-tag">Venue: ${venueSelect.selectedOptions[0].text} <span class="remove-tag" data-type="venue" data-value="">×</span></span>`;
       }
-      if (contributorsSelect.value) {
-        hasActive = true;
-        const tag = document.createElement('span');
-        tag.className = 'active-filter-tag';
-        const text = contributorsSelect.options[contributorsSelect.selectedIndex].text;
-        tag.innerHTML = 'Contributors: ' + text + ' <span class="remove-tag" data-type="contributors">×</span>';
-        activeFiltersPanel.appendChild(tag);
+      if (authorSelect.value) {
+        activeFiltersPanel.innerHTML += `<span class="active-filter-tag">Author: ${authorSelect.selectedOptions[0].text} <span class="remove-tag" data-type="author" data-value="">×</span></span>`;
       }
-      Array.from(themeCheckboxes).filter(cb => cb.checked).forEach(cb => {
-        hasActive = true;
-        const tag = document.createElement('span');
-        tag.className = 'active-filter-tag';
-        tag.innerHTML = 'Theme: ' + cb.value + ' <span class="remove-tag" data-type="theme" data-value="' + cb.value + '">×</span>';
-        activeFiltersPanel.appendChild(tag);
+      // Checkboxes
+      themeCheckboxes.filter(c=>c.checked).forEach(c => {
+        activeFiltersPanel.innerHTML += `<span class="active-filter-tag">Theme: ${c.value} <span class="remove-tag" data-type="theme" data-value="${c.value}">×</span></span>`;
       });
-      Array.from(skillCheckboxes).filter(cb => cb.checked).forEach(cb => {
-        hasActive = true;
-        const tag = document.createElement('span');
-        tag.className = 'active-filter-tag';
-        tag.innerHTML = 'Skill: ' + cb.value + ' <span class="remove-tag" data-type="skill" data-value="' + cb.value + '">×</span>';
-        activeFiltersPanel.appendChild(tag);
+      skillCheckboxes.filter(c=>c.checked).forEach(c => {
+        activeFiltersPanel.innerHTML += `<span class="active-filter-tag">Skill: ${c.value} <span class="remove-tag" data-type="skill" data-value="${c.value}">×</span></span>`;
       });
-      Array.from(deviceCheckboxes).filter(cb => cb.checked).forEach(cb => {
-        hasActive = true;
-        const tag = document.createElement('span');
-        tag.className = 'active-filter-tag';
-        tag.innerHTML = 'Device: ' + cb.value + ' <span class="remove-tag" data-type="device" data-value="' + cb.value + '">×</span>';
-        activeFiltersPanel.appendChild(tag);
+      deviceCheckboxes.filter(c=>c.checked).forEach(c => {
+        activeFiltersPanel.innerHTML += `<span class="active-filter-tag">Device: ${c.value} <span class="remove-tag" data-type="device" data-value="${c.value}">×</span></span>`;
       });
-      Array.from(awardCheckboxes).filter(cb => cb.checked).forEach(cb => {
-        hasActive = true;
-        const tag = document.createElement('span');
-        tag.className = 'active-filter-tag';
-        tag.innerHTML = 'Award: ' + cb.value + ' <span class="remove-tag" data-type="award" data-value="' + cb.value + '">×</span>';
-        activeFiltersPanel.appendChild(tag);
+      awardCheckboxes.filter(c=>c.checked).forEach(c => {
+        activeFiltersPanel.innerHTML += `<span class="active-filter-tag">Award: ${c.value} <span class="remove-tag" data-type="award" data-value="${c.value}">×</span></span>`;
       });
-
-      activeFiltersPanel.style.display = hasActive ? 'block' : 'none';
 
       // Add event listeners to removal tags
       activeFiltersPanel.querySelectorAll('.remove-tag').forEach(el => {
@@ -625,115 +610,97 @@ title: Publications
     }
 
     function removeFilter(type, value) {
-      if(type === 'search') {
+      // Search
+      if (type === 'search') {
         searchInput.value = '';
         mobileSearchInput.value = '';
-      } else if (type === 'year') {
+      } 
+      // Dropdowns
+      else if (type === 'year') {
         yearSelect.value = '';
         mobileYearSelect.value = '';
-      } else if (type === 'health') {
+      } 
+      else if (type === 'health') {
         healthTopicSelect.value = '';
         mobileHealthTopicSelect.value = '';
-      } else if (type === 'venue') {
+      } 
+      else if (type === 'venue') {
         venueSelect.value = '';
         mobileVenueSelect.value = '';
-      } else if (type === 'contributors') {
-        contributorsSelect.value = '';
-        mobileContributorsSelect.value = '';
-      } else if (type === 'theme') {
+      } 
+      else if (type === 'author') {
+        authorSelect.value = '';
+        mobileAuthorSelect.value = '';
+      } 
+      // Checkboxes
+      else if (type === 'theme') {
         themeCheckboxes.forEach(cb => {
-          if(cb.value === value) cb.checked = false;
+          if (cb.value === value) cb.checked = false;
         });
         mobileThemeCheckboxes.forEach(cb => {
-          if(cb.value === value) cb.checked = false;
+          if (cb.value === value) cb.checked = false;
         });
-      } else if (type === 'skill') {
+      } 
+      else if (type === 'skill') {
         skillCheckboxes.forEach(cb => {
-          if(cb.value === value) cb.checked = false;
+          if (cb.value === value) cb.checked = false;
         });
         mobileSkillCheckboxes.forEach(cb => {
-          if(cb.value === value) cb.checked = false;
+          if (cb.value === value) cb.checked = false;
         });
-      } else if (type === 'device') {
+      } 
+      else if (type === 'device') {
         deviceCheckboxes.forEach(cb => {
-          if(cb.value === value) cb.checked = false;
+          if (cb.value === value) cb.checked = false;
         });
         mobileDeviceCheckboxes.forEach(cb => {
-          if(cb.value === value) cb.checked = false;
+          if (cb.value === value) cb.checked = false;
         });
-      } else if (type === 'award') {
+      } 
+      else if (type === 'award') {
         awardCheckboxes.forEach(cb => {
-          if(cb.value === value) cb.checked = false;
+          if (cb.value === value) cb.checked = false;
         });
         mobileAwardCheckboxes.forEach(cb => {
-          if(cb.value === value) cb.checked = false;
+          if (cb.value === value) cb.checked = false;
         });
       }
+      syncFilters();
       filterPublications();
     }
 
-    // Desktop filter event listeners
+    // Search filter event listeners
     if (searchInput) searchInput.addEventListener('input', function() {
       syncFilters();
       filterPublications();
     });
-
-    // Mobile search event listener
     if (mobileSearchInput) mobileSearchInput.addEventListener('input', function() {
       searchInput.value = mobileSearchInput.value;
       filterPublications();
     });
 
-    if (yearSelect) yearSelect.addEventListener('change', function() {
-      syncFilters();
-      filterPublications();
-    });
-
-    if (healthTopicSelect) healthTopicSelect.addEventListener('change', function() {
-      syncFilters();
-      filterPublications();
-    });
-
-    if (venueSelect) venueSelect.addEventListener('change', function() {
-      syncFilters();
-      filterPublications();
-    });
-
-    if (contributorsSelect) contributorsSelect.addEventListener('change', function() {
-      syncFilters();
-      filterPublications();
-    });
-
-    themeCheckboxes.forEach(cb => cb.addEventListener('change', function() {
-      syncFilters();
-      filterPublications();
-    }));
-
-    skillCheckboxes.forEach(cb => cb.addEventListener('change', function() {
-      syncFilters();
-      filterPublications();
-    }));
-
-    deviceCheckboxes.forEach(cb => cb.addEventListener('change', function() {
-      syncFilters();
-      filterPublications();
-    }));
-
-    awardCheckboxes.forEach(cb => cb.addEventListener('change', function() {
-      syncFilters();
-      filterPublications();
-    }));
-
-    // Apply mobile filters
-    if (applyBtn) {
-      applyBtn.addEventListener('click', function() {
-        syncFilters(true);
+    // Dropdown filter event listeners
+    [yearSelect, healthTopicSelect, venueSelect, authorSelect].forEach(select => {
+      select.addEventListener('change', () => {
+        syncFilters();
         filterPublications();
-        overlay.classList.remove('active');
       });
-    }
+    });
 
-    // Initial filtering
+    // Checkbox filter event listeners
+    [...themeCheckboxes, ...skillCheckboxes, ...deviceCheckboxes, ...awardCheckboxes].forEach(c=>c.addEventListener('change', () => {
+      syncFilters();
+      filterPublications();
+    }));
+
+    // Apply button event listener
+    applyBtn.addEventListener('click', () => {
+      syncFilters(true);
+      filterPublications();
+      overlay.classList.remove('active');
+    });
+
+    // Initialize active filters panel
     updateActiveFilters();
   });
 </script>
