@@ -11,8 +11,8 @@ title: Alumni
   {% assign grads_mscac = all_alumni | where:"degree","MScAC" %}
   {% assign grads_msc = all_alumni | where:"degree","MSc" %}
 
-  {% assign alumni_grads = grads_phd | concat: grads_mscac | concat: grads_msc | sort: 'startyear' %}
-  {% assign alumni_undergrads = all_alumni | where:"degree","BS" | sort: 'startyear' | reverse %}
+  {% assign alumni_grads = grads_phd | concat: grads_mscac | concat: grads_msc %}
+  {% assign alumni_undergrads = all_alumni | where:"degree","BS" %}
 
   <div class="alumni-grid-wrapper">
 

@@ -249,16 +249,6 @@
   new_job: University of Toronto (Biomedical Engineering PhD Student)
 
 # Undergrad Alumni
-- id: anna_kirik
-  name: Anna Kirik
-  affiliation: CS
-  degree: BS
-  image: /images/members/anna_kirik.jpg
-  linkedin: anna-kirik-a1869820b
-  startyear: 2023
-  endyear: 2025
-  active: false
-
 - id: matthew_parvaneh
   name: Matthew Parvaneh
   affiliation: CS
@@ -277,6 +267,35 @@
   linkedin: yulong-wu-647aa62a2
   startyear: 2025
   endyear: 2025
+  active: false
+
+- id: tien_han
+  name: Tien Han
+  affiliation: CS
+  degree: BS
+  image: /images/members/tien_han.jpeg
+  linkedin: hantien
+  startyear: 2024
+  endyear: 2024
+  active: false
+
+- id: kevin_huang
+  name: Kevin Huang
+  affiliation: CS
+  degree: BS
+  image: /images/members/kevin_huang.jpg
+  startyear: 2024
+  endyear: 2024
+  active: false
+  
+- id: malaikah_hussain
+  name: Malaikah Hussain
+  affiliation: CS
+  degree: BS
+  image: /images/members/malaikah_hussain.jpg
+  linkedin: malaikah-hussain-616697245
+  startyear: 2024
+  endyear: 2024
   active: false
 
 - id: kaavya_kalani
@@ -299,71 +318,12 @@
   endyear: 2024
   active: false
 
-- id: olivia_zhou
-  name: Olivia Zhou
-  affiliation: CS
-  degree: BS
-  image: /images/members/olivia_zhou.jpg
-  linkedin: olivia-zhou-5a3991208
-  startyear: 2024
-  endyear: 2024
-  active: false
-
-- id: pierre_lessard
-  name: Pierre-William Lessard
-  affiliation: CS
-  degree: BS
-  image: /images/members/pierre_lessard.jpeg
-  linkedin: pierre-william-lessard
-  startyear: 2023
-  endyear: 2024
-  active: false
-
-- id: minh_le
-  name: Minh Le
-  affiliation: CS
-  degree: BS
-  image: /images/members/minh_le.png
-  linkedin: nm-le
-  startyear: 2023
-  endyear: 2025
-  active: false
-
-- id: tien_han
-  name: Tien Han
-  affiliation: CS
-  degree: BS
-  image: /images/members/tien_han.jpeg
-  linkedin: hantien
-  startyear: 2024
-  endyear: 2024
-  active: false
-
 - id: katherine_ma
   name: Katherine Ma
   affiliation: CS
   degree: BS
   image: /images/members/katherine_ma.jpg
   linkedin: zewen-ma-053964203
-  startyear: 2024
-  endyear: 2024
-  active: false
-
-- id: shawn_kong
-  name: Shawn Kong
-  affiliation: CS
-  degree: BS
-  image: /images/members/deshang_kong.png
-  linkedin: shawn-kong-23b8b41a2
-  startyear: 2023
-  endyear: 2024
-  active: false
-
-- id: kevin_huang
-  name: Kevin Huang
-  affiliation: CS
-  degree: BS
-  image: /images/members/kevin_huang.jpg
   startyear: 2024
   endyear: 2024
   active: false
@@ -391,12 +351,12 @@
   endyear: 2024
   active: false
 
-- id: malaikah_hussain
-  name: Malaikah Hussain
+- id: olivia_zhou
+  name: Olivia Zhou
   affiliation: CS
   degree: BS
-  image: /images/members/malaikah_hussain.jpg
-  linkedin: malaikah-hussain-616697245
+  image: /images/members/olivia_zhou.jpg
+  linkedin: olivia-zhou-5a3991208
   startyear: 2024
   endyear: 2024
   active: false
@@ -407,16 +367,6 @@
   degree: BS
   image: /images/members/liam_bakar.jpg
   linkedin: liam-bakar
-  startyear: 2023
-  endyear: 2024
-  active: false
-
-- id: jiaqi_guo
-  name: Jiaqi Guo
-  affiliation: CS
-  degree: BS
-  image: /images/members/jiaqi_guo.jpg
-  linkedin: jiaqi-guo-6b040422b
   startyear: 2023
   endyear: 2024
   active: false
@@ -432,26 +382,54 @@
   endyear: 2023
   active: false
 
-- id: sixuan_wu
-  name: Sixuan Wu
+- id: jiaqi_guo
+  name: Jiaqi Guo
   affiliation: CS
   degree: BS
-  image: /images/members/sixuan_wu.jpeg
-  website: https://sites.google.com/view/sixuan-wu/
-  gscholar: 3DEXZOQAAAAJ
-  linkedin: sixuan-wu-a6b794190
-  startyear: 2020
-  endyear: 2023
+  image: /images/members/jiaqi_guo.jpg
+  linkedin: jiaqi-guo-6b040422b
+  startyear: 2023
+  endyear: 2024
   active: false
 
-- id: chloe_zhao
-  name: Chloe Zhao
+- id: anna_kirik
+  name: Anna Kirik
   affiliation: CS
   degree: BS
-  image: /images/members/chloe_zhao.jpg
-  linkedin: chloe-yichen-zhao
-  startyear: 2022
-  endyear: 2022
+  image: /images/members/anna_kirik.jpg
+  linkedin: anna-kirik-a1869820b
+  startyear: 2023
+  endyear: 2025
+  active: false
+
+- id: shawn_kong
+  name: Shawn Kong
+  affiliation: CS
+  degree: BS
+  image: /images/members/deshang_kong.png
+  linkedin: shawn-kong-23b8b41a2
+  startyear: 2023
+  endyear: 2024
+  active: false
+
+- id: minh_le
+  name: Minh Le
+  affiliation: CS
+  degree: BS
+  image: /images/members/minh_le.png
+  linkedin: nm-le
+  startyear: 2023
+  endyear: 2025
+  active: false
+
+- id: pierre_lessard
+  name: Pierre-William Lessard
+  affiliation: CS
+  degree: BS
+  image: /images/members/pierre_lessard.jpeg
+  linkedin: pierre-william-lessard
+  startyear: 2023
+  endyear: 2024
   active: false
 
 - id: sannat_bhasin
@@ -476,14 +454,14 @@
   endyear: 2025
   active: false
 
-- id: sid_gupta
-  name: Sidharth Gupta
+- id: zixiong_lin
+  name: Zixiong Lin
   affiliation: CS
   degree: BS
-  image: /images/members/sid_gupta.jpeg
-  linkedin: sidgupta-99
-  startyear: 2020
-  endyear: 2021
+  image: /images/members/zixiong_lin.jpg
+  linkedin: zixiong-lin
+  startyear: 2022
+  endyear: 2023
   active: false
 
 - id: tanya_skoropad
@@ -506,13 +484,35 @@
   endyear: 2022
   active: false
 
-- id: zixiong_lin
-  name: Zixiong Lin
+- id: chloe_zhao
+  name: Chloe Zhao
   affiliation: CS
   degree: BS
-  image: /images/members/zixiong_lin.jpg
-  linkedin: zixiong-lin
+  image: /images/members/chloe_zhao.jpg
+  linkedin: chloe-yichen-zhao
   startyear: 2022
+  endyear: 2022
+  active: false
+
+- id: sid_gupta
+  name: Sidharth Gupta
+  affiliation: CS
+  degree: BS
+  image: /images/members/sid_gupta.jpeg
+  linkedin: sidgupta-99
+  startyear: 2020
+  endyear: 2021
+  active: false
+
+- id: sixuan_wu
+  name: Sixuan Wu
+  affiliation: CS
+  degree: BS
+  image: /images/members/sixuan_wu.jpeg
+  website: https://sites.google.com/view/sixuan-wu/
+  gscholar: 3DEXZOQAAAAJ
+  linkedin: sixuan-wu-a6b794190
+  startyear: 2020
   endyear: 2023
   active: false
 
