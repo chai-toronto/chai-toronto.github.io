@@ -476,7 +476,7 @@ title: Publications
     }
 
     function filterPublications() {
-      const query = searchInput.value;
+      const query = searchInput.value.toLowerCase();
       const selectedYear = yearSelect.value;
       const selectedHealthTopic = healthTopicSelect.value;
       const selectedVenue = venueSelect.value;
