@@ -7,7 +7,7 @@ authors:
 - Shwetak N. Patel
 - khai
 - mariakakis
-venue: Nature Partner Journal Women's Health
+venue: $NPJWH$
 date: 2024-10-09
 link: https://www.nature.com/articles/s44294-024-00037-9
 thumbnail: /images/pubs/menstrual_temperature.jpg
