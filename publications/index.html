@@ -566,11 +566,7 @@ title: Publications
 
       // Search
       if (searchInput.value.trim() !== "") {
-        hasActive = true;
-        const tag = document.createElement('span');
-        tag.className = 'active-filter-tag';
-        tag.innerHTML = 'Search: ' + searchInput.value + ' <span class="remove-tag" data-type="search">×</span>';
-        activeFiltersPanel.appendChild(tag);
+        activeFiltersPanel.innerHTML += `<span class="active-filter-tag">Seartch: ${searchInput.value} <span class="remove-tag" data-type="search" data-value="">×</span></span>`;
       }
       // Dropdowns
       if (yearSelect.value) {
