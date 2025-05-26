@@ -1,5 +1,5 @@
 ---
-title: "Beyond the Waiting Room: Patient's Perspectives on the Conversational Nuances of Pre-Consultation Chatbots"
+title: "Beyond the Waiting Room: Patients' Perspectives on the Conversational Nuances of Pre-Consultation Chatbots"
 authors: 
 - brenna_li
 - ofek_gross
