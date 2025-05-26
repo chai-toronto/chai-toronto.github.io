@@ -35,7 +35,6 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    padding-bottom: 50px;
 
     .theme-card {
       width: 400px;
@@ -105,6 +104,12 @@
         margin-top: 0.4rem;
       }
     }
+  }
+
+  .custom-divider-line {
+    height: 1.5px;
+    background-color: rgba(0, 0, 0, 0.15);
+    border: none;
   }
 
   .active-filter-tag {
