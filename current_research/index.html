@@ -66,21 +66,6 @@ title: Current Research
             <input type="checkbox" class="mobile-filter-skill" value="{{ skill }}" /> {{ skill }}
           </label><br />
         {% endfor %}
-        <hr />
-
-        <!-- --- Led By --- -->
-        <h3>Graduate Student Lead</h3>
-        <select id="mobile-filter-led-by">
-          <option value="">Anyone</option>
-          {% for lead in all_lead_ids %}
-            {% assign found_member = site.data.members | where:"id", lead | first %}
-            {% if found_member %}
-              <option value="{{ found_member.id }}">{{ found_member.name }}</option>
-            {% else %}
-              <option value="{{ lead }}">{{ lead }}</option>
-            {% endif %}
-          {% endfor %}
-        </select>
         <button class="apply-filters btn">Apply</button>
       </div>
     </div>
@@ -117,21 +102,6 @@ title: Current Research
         <input type="checkbox" class="filter-skill" value="{{ skill }}" /> {{ skill }}
       </label><br />
       {% endfor %}
-      <hr />
-
-      <!-- --- Led By --- -->
-      <h3>Graduate Student Lead</h3>
-      <select id="filter-led-by">
-        <option value="">Anyone</option>
-        {% for lead in all_lead_ids %}
-          {% assign found_member = site.data.members | where:"id", lead | first %}
-          {% if found_member %}
-            <option value="{{ found_member.id }}">{{ found_member.name }}</option>
-          {% else %}
-            <option value="{{ lead }}">{{ lead }}</option>
-          {% endif %}
-        {% endfor %}
-      </select>
     </div>
 
     <!-- Right Column: Projects Grid -->
@@ -142,8 +112,7 @@ title: Current Research
         <div class="project-card"
              data-theme="{{ project.theme | join: ', ' }}"
              data-health-topic="{{ project.health_topic | join: ', ' }}"
-             data-skills="{{ project.skills | join: ', ' }}"
-             data-leads="{{ project.leads | join: ', ' }}">
+             data-skills="{{ project.skills | join: ', ' }}">
           <div class="project-image">
             <img src="{{ project.thumbnail }}" alt="{{ project.title }}" />
           </div>
@@ -163,13 +132,11 @@ title: Current Research
   document.addEventListener("DOMContentLoaded", () => {
     // Desktop filters
     const healthTopicSelect = document.getElementById('filter-health-topic');
-    const leadSelect = document.getElementById('filter-led-by');
     const themeCheckboxes = Array.from(document.querySelectorAll('.filter-theme'));
     const skillCheckboxes = Array.from(document.querySelectorAll('.filter-skill'));
 
     // Mobile filters
     const mobileHealthTopicSelect = document.getElementById('mobile-filter-health-topic');
-    const mobileLeadSelect = document.getElementById('mobile-filter-led-by');
     const mobileThemeCheckboxes = Array.from(document.querySelectorAll('.mobile-filter-theme'));
     const mobileSkillCheckboxes = Array.from(document.querySelectorAll('.mobile-filter-skill'));
 
@@ -194,7 +161,6 @@ title: Current Research
       if (fromMobile) {
         // Copy from mobile to desktop
         healthTopicSelect.value = mobileHealthTopicSelect.value;
-        leadSelect.value = mobileLeadSelect.value;
 
         mobileThemeCheckboxes.forEach((checkbox, index) => {
           if (index < themeCheckboxes.length) {
@@ -211,7 +177,6 @@ title: Current Research
       else {
         // Copy from desktop to mobile
         mobileHealthTopicSelect.value = healthTopicSelect.value;
-        mobileLeadSelect.value = leadSelect.value;
 
         // Sync checkboxes
         themeCheckboxes.forEach((checkbox, index) => {
@@ -240,17 +205,12 @@ title: Current Research
 
     function filterProjects() {
       const selectedHealthTopic = healthTopicSelect.value;
-      const selectedLead = leadSelect.value;
       const selectedThemes = getCheckedValues(themeCheckboxes);
       const selectedSkills = getCheckedValues(skillCheckboxes);
 
       projectCards.forEach(card => {
         // Dropdowns
         if (selectedHealthTopic && !card.dataset.healthTopic.includes(selectedHealthTopic)) {
-          card.style.display = 'none';
-          return;
-        }
-        if (selectedLead && !card.dataset.leads.includes(selectedLead)) {
           card.style.display = 'none';
           return;
         }
@@ -279,7 +239,6 @@ title: Current Research
       activeFiltersPanel.innerHTML = '';
       const hasActiveFilters =
               healthTopicSelect.value ||
-              leadSelect.value ||
               themeCheckboxes.some(c => c.checked) ||
               skillCheckboxes.some(c => c.checked);
 
@@ -292,10 +251,6 @@ title: Current Research
       // Dropdowns
       if (healthTopicSelect.value) {
         activeFiltersPanel.innerHTML += `<span class="active-filter-tag">Health Topic: ${healthTopicSelect.selectedOptions[0].text} <span class="remove-tag" data-type="health" data-value="">×</span></span>`;
-      }
-      if (leadSelect.value) {
-        const name = leadSelect.selectedOptions[0].text;
-        activeFiltersPanel.innerHTML += `<span class="active-filter-tag">Led by: ${name} <span class="remove-tag" data-type="lead" data-value="">×</span></span>`;
       }
       // Checkboxes
       themeCheckboxes.filter(c=>c.checked).forEach(c => {
@@ -320,10 +275,6 @@ title: Current Research
         healthTopicSelect.value = '';
         mobileHealthTopicSelect.value = '';
       } 
-      else if (type === 'lead') {
-        leadSelect.value = '';
-        mobileLeadSelect.value = '';
-      }
       // Checkboxes
       else if (type === 'theme') {
         themeCheckboxes.forEach(cb => {
@@ -346,7 +297,7 @@ title: Current Research
     }
 
     // Dropdown filter event listeners
-    [healthTopicSelect, leadSelect].forEach(select => {
+    [healthTopicSelect].forEach(select => {
       select.addEventListener('change', () => {
         syncFilters();
         filterProjects();
