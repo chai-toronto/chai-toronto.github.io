@@ -201,6 +201,15 @@
   startyear: 2024
   active: true
 
+- id: tianmen_wang
+  name: Tianmen (Tim) Wang
+  affiliation: CS
+  degree: BS
+  image: /images/members/tianmen_wang.png
+  linkedin: tim-tianmen-wang-8864a9197
+  startyear: 2025
+  active: true
+
 - id: richard_yin
   name: Richard Yin
   affiliation: CS
@@ -443,7 +452,7 @@
   active: false
 
 - id: helen_li
-  name: Jin Yi Li
+  name: Jin Yi (Helen) Li
   affiliation: CS
   degree: BS
   image: /images/members/helen_li.jpg
