@@ -255,7 +255,9 @@
   topic: Wearables for animal health
   coadvisor: Gerard O'Leary
   active: false
-  new_job: University of Toronto (Biomedical Engineering PhD Student)
+  thesis: "Mobile Seizure Detection: Towards Data-Driven, Personalized Seizure Treatment"
+  nowat: University of Toronto (Biomedical Engineering PhD Student)
+
 
 # Undergrad Alumni
 - id: matthew_parvaneh

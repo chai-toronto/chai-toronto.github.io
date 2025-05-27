@@ -9,21 +9,23 @@
 	          {{ member.name }}
 	        </div>
 	        <div class="persona-degree">
-	          {{ member.degree }}
-	          {% if member.coadvisor and include.is_grad == 'True' %}
-                (co-advised by {% include author_list.html authors=member.coadvisor %})
-              {% endif %}
-	        </div>
-	        <div class="persona-description">
+	          {{ member.degree }},
 	          {% if member.startyear != member.endyear %}
 	            {{ member.startyear }} – {{ member.endyear }}
 	          {% else %}
 	            {{ member.startyear }}
 	          {% endif %}
+	          <br/>
+	          {% if member.coadvisor and include.is_grad == 'True' %}
+                (co-advised by {% include author_list.html authors=member.coadvisor %})
+              {% endif %}
 	        </div>
-	        {% if member.new_job and include.is_grad == 'True' %}
+	        {% if include.is_grad == 'True' %}
+	        	<div class="persona-description" style="padding: 0 0 10px 0">
+	          		<b>Thesis Title:</b> {{ member.thesis }}
+	          	</div>
 	        	<div class="persona-description">
-	          		Now at {{ member.new_job }}
+	          		<b>Current Position:</b> {{ member.nowat }}
 	          	</div>
 	        {% endif %}
 	      </div>
