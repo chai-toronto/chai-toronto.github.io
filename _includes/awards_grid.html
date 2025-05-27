@@ -1,57 +1,48 @@
 <!-- awards_grid.html -->
 {% capture awards_grid %}
-{% assign sorted_by_org = include.awards %}
-{% assign grouped_awards = sorted_by_org | group_by:'org' %}
 
 <div class="awards-grid-wrapper">
- {% for group in grouped_awards %}
- <div class="org-section">
-  <!-- Logo - will display on top for mobile, on left for desktop -->
-  <div class="org-logo-wrapper">
-   <img src="{{ site.baseurl }}/images/logos/{{ group.name | downcase | replace:' ', '_' }}.png"
-        alt="{{ group.name }} logo" class="org-logo" />
-  </div>
-
-  <!-- Award blocks - will display below logo on mobile, on right for desktop -->
-  <div class="award-blocks">
-   {% for award_item in group.items %}
-   <div class="award-block">
-    <div class="people-grid awards-grid">
-     <div class="cards-wrapper">
-      {% for winner in award_item.winners %}
-      {% assign matched = site.data.members | where:"id", winner.name | first %}
-      <div class="persona-card">
-       <div class="persona-card-inner">
-        <div class="persona-info">
-         <div class="persona-name">
-          {% if matched %}
-            {{ matched.name }}
-          {% else %}
-            {{ winner.name }}
-          {% endif %}
-          {% if winner.year %}
-            ({{ winner.year }})
-          {% endif %}
-         </div>
-         <div class="persona-description">
-          {{ award_item.award }}
-         </div>
-        </div>
-        <div class="persona-footer">
-        {% if matched %}
-          {% include profile_badges.html member=matched %}
-        {% endif %}
-        </div>
-       </div>
+  {% for org in include.awards %}
+    <div class="org-section">
+      <!-- Logo - will display on top for mobile, on left for desktop -->
+      <div class="org-logo-wrapper">
+        <img src="{{ site.baseurl }}/images/logos/{{ org.org | downcase | replace:' ', '_' }}.png"
+        alt="{{ org.org }} logo" class="org-logo" />
       </div>
-      {% endfor %}
-     </div>
+
+      <!-- Award blocks - will display below logo on mobile, on right for desktop -->
+      <div class="award-blocks">
+        <div class="award-block">
+          <div class="people-grid awards-grid">
+            <div class="cards-wrapper">
+            {% for award in org.awards %}
+              <div class="persona-card">
+                <div class="persona-card-inner">
+                  <div class="persona-info">
+                    <div class="persona-name">
+                      {{ award.award }}
+                    </div>
+                    <div class="persona-description">
+                      {% for winner in award.winners %}
+                        {% assign matched = site.data.members | where:"id", winner.name | first %}
+                        {% if matched %}
+                          {{ matched.name }}
+                        {% else %}
+                          {{ winner.name }}
+                        {% endif %}
+                        ({{ winner.year }}){% if forloop.last %}{% else %}<br/> {% endif %}
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-   </div>
-   {% endfor %}
-  </div>
- </div>
- {% endfor %}
+  {% endfor %}
 </div>
 {% endcapture %}
 {{ awards_grid }}

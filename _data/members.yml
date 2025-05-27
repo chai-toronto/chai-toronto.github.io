@@ -29,13 +29,13 @@
   name: Salaar Liaqat
   affiliation: CS
   degree: PhD
-  image: /images/members/salaar_liaqat.png
+  image: /images/members/salaar_liaqat.jpeg
   website: https://www.cs.toronto.edu/~sliaqat/
   gscholar: 8e4FcXIAAAAJ
   linkedin: salaar-liaqat
   startyear: 2018
   coadvisor: delara
-  shortbio: Ubiquitous computing and wearables
+  shortbio: Wearables, mobile health, and applied machine learning
   active: true
 
 - id: blue_lin
