@@ -12,6 +12,8 @@
     winners:
       - name: brenna_li
         year: 2022
+      - name: salaar_liaqat
+        year: 2022
 - org: UofT
   awards:
   - award: Wolfond Scholarship in Wireless Information Technology
@@ -34,8 +36,3 @@
     winners:
     - name: salaar_liaqat
       year: 2022, 2023
-  - award: Bell Graduate Scholarship
-    org: UofT
-    winners:
-    - name: salaar_liaqat
-      year: 2022

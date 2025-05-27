@@ -284,8 +284,14 @@ title: Publications
               </button>
               {% endif %}
 
-              {% if pub.data_embed %}
-              <button type="button" class="btn btn-data" aria-label="Dataset" data-toggle="modal" data-target="#{{ pub.title | slugify }}_data">
+              {% if pub.press %}
+              <button type="button" class="btn btn-press" aria-label="Press" data-toggle="modal" data-target="#{{ pub.title | slugify }}_press">
+                <i class="fas fa-bullhorn"></i> Press Releases
+              </button>
+              {% endif %}
+
+              {% if pub.dataset %}
+              <button type="button" class="btn btn-data" aria-label="Dataset" onclick="window.location.href='https://google.com'";>
                 <i class="fas fa-database"></i> Dataset
               </button>
               {% endif %}
@@ -331,6 +337,29 @@ title: Publications
             </div>
           </div>
         </div>
+
+        <!-- Press Modal -->
+        {% if pub.press %}
+        <div class="modal fade" tabindex="-1" role="dialog" id="{{ pub.title | slugify }}_press">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">{{ pub.title }}</h4>
+              </div>
+              <div class="modal-body">
+                {% assign sorted_articles = pub.press | sort: 'name' %}
+                {% for article in sorted_articles %}
+                  <u><a href="{{article.url}}">{{ article.name }}</a></u> ({{ article.date | date: '%b %-d, %Y'}}): {{ article.headline }}<br/>
+                {% endfor %}
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
 
         <!-- Close video when window closes -->
         <script>

@@ -506,9 +506,26 @@
             color: white;
           }
 
+          .btn-abstract:hover {
+            background-color: #003332;
+          }
+
           .btn-video {
             background-color: #003479;
             color: white;
+          }
+
+          .btn-video:hover {
+            background-color: #000000;
+          }
+
+          .btn-press {
+            background-color: #13b6ec;
+            color: white;
+          }
+
+          .btn-press:hover {
+            background-color: #0b6d8e;
           }
 
           .btn-data {
@@ -516,20 +533,12 @@
             color: white;
           }
 
-          .btn-abstract:hover {
-            background-color: #3c5d5d;
-          }
-
-          .btn-video:hover {
-            background-color: #00204e;
-          }
-
           .btn-data:hover {
-            background-color: mediumvioletred;
+            background-color: #81186c;
             color: white;
           }
 
-          .btn-abstract i, .btn-video i, .btn-data i {
+          .btn-abstract i, .btn-video i, .btn-press i, .btn-data i {
             font-size: 16px;
 
             @media (max-width: 768px) {
