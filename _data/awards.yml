@@ -1,21 +1,18 @@
 - org: CRA
   awards:
     - award: Outstanding Undergraduate Researcher Award
-      url: https://cra.org/about/awards/outstanding-undergraduate-researcher-award/
       winners:
       - name: helen_li
         year: Honorable Mention, 2024 
 - org: Mitacs
   awards:
   - award: Globalink Research Award
-    url: https://www.mitacs.ca/en/programs/globalink/globalink-research-award
     winners:
     - name: andrii_lenyshyn
       year: 2022
 - org: Laidlaw
   awards: 
   - award: Scholars Programme
-    url: https://laidlawfoundation.com/the-laidlaw-scholars-leadership-research-programme/about-the-programme/
     winners:
     - name: harpuneet_singh
       year: 2025

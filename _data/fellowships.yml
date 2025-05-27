@@ -1,14 +1,12 @@
 - org: google
   awards:
   - award: PhD Fellowship
-    url: https://research.google/outreach/phd-fellowship/recipients/
     winners:
     - name: blue_lin
       year: 2023
 - org: nserc
   awards:
   - award: Canada Graduate Scholarship — Doctoral
-    url: https://www.nserc-crsng.gc.ca/Students-Etudiants/PG-CS/CGSD-BESCD_eng.asp
     winners:
       - name: brenna_li
         year: 2022
