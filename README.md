@@ -24,10 +24,14 @@ Add an entry to `_data/members.yml` with the following fields:
 | `gscholar` | no | ID associated with your Google Scholar profile (`{id}` in `https://scholar.google.com/citations?user={id}`) |
 | `linkedin` | no | ID associated with your LinkedIn profile (`{id}` in `https://www.linkedin.com/in/{id}`) |
 | `twitter` | no | ID associated with your Twitter/X profile (`{id}` in `https://x.com/{id}`) |
-| `twitter` | no | ID associated with your BlueSky profile (`{id}` in `https://bsky.app/profile/{id}`) |
+| `bluesky` | no | ID associated with your BlueSky profile (`{id}` in `https://bsky.app/profile/{id}`) |
 | `coadvisor` | no | The name or `id` of your cosupervisor |
+| `startyear` | yes | The year that you joined the lab |
+| `endyear` | yes (if you leave the lab) | The year that you left the lab |
 | `active` | yes | `true` if you are currently working in the lab or `false` if you are now working elsewhere |
 | `search` | no | Indicates that you are looking for new positions (`industry`, `academia`, `postdoc`, `grad_school`) |
+| `thesis` | yes (if you leave the lab) | The title of your thesis, preferably in quotes |
+| `now_at` | yes (if you leave the lab) | Your current position outside of the university |
 
 # Adding a Current Project
 Create a new file in `_projects/`. The file should have the following fields:
@@ -54,6 +58,7 @@ Create a new file in `_publications/`. The file should have the following fields
 | `award` | no | Name of the award the paper received (e.g., `'Best Paper Award'`, `'Honorable Mention Award'`) |
 | `abstract` | yes | Copy from the ACM DL or equivalent when possible, otherwise use Google Scholar. |
 | `video_embed` | no | HTML embed code for video player |
+| `dataset` | no | External link to the dataset |
 | `news` | no | List of different press releases, which contains <ul><li>`name`: the name of the news entity</li><li>`url`: the url to the article</li><li>`headline`: the headline</li><li>`date`: the date the article was published</li></ul> |
 | `theme` | yes | Relevant research themes (`Active Sensing`, `Passive Sensing`, or `Design`) |
 | `health_topic` | no | Relevant health topic. Please refer to options already in the website before creating a new one |
