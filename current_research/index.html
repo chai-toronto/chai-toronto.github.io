@@ -30,26 +30,22 @@ title: Current Research
   <hr class="custom-divider-line">
 
   <!-- Projects layout -->
-  <div class="research-content-row">
-    <h1>Ongoing Projects</h1>
+  <h1 style="margin-top: 0; margin-bottom: 1.5rem;">Ongoing Projects</h1>
+  <div class="research-content-grid">
     <!-- Right Column: Projects Grid -->
-    <div class="projects-grid">
-      <div class="project-cards-wrapper">
-        {% for project in sorted_projects %}
-        <div class="project-card">
-          <div class="project-image">
-            <img src="{{ project.thumbnail }}" alt="{{ project.title }}" />
-          </div>
-          <div class="project-card-content">
-            <h3 class="project-title">{{ project.title }}</h3>
-            <p><strong>Project Lead(s):</strong> {% include author_list.html authors=project.leads %}</p>
-            <p><strong>Goal:</strong> {{ project.description }}</p>
-            <p><strong>Theme(s):</strong> {{ project.theme | join: ', ' }}</p>
-            <p><strong>Skill(s) Involved:</strong> {{ project.skills | join: ', ' }}</p>
-          </div>
-        </div>
-        {% endfor %}
+    {% for project in sorted_projects %}
+    <div class="project-card">
+      <div class="project-image">
+        <img src="{{ project.thumbnail }}" alt="{{ project.title }}" />
+      </div>
+      <div class="project-card-content">
+        <h3 class="project-title">{{ project.title }}</h3>
+        <p><strong>Project Lead(s):</strong> {% include author_list.html authors=project.leads %}</p>
+        <p><strong>Goal:</strong> {{ project.description }}</p>
+        <p><strong>Theme(s):</strong> {{ project.theme | join: ', ' }}</p>
+        <p><strong>Skill(s) Involved:</strong> {{ project.skills | join: ', ' }}</p>
       </div>
     </div>
+    {% endfor %}
   </div>
 </div>
