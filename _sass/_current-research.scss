@@ -96,14 +96,13 @@
       height: fit-content;
       display: center;
       flex-direction: column;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 20px;
       align-items: stretch;
 
       /* New wrapper as grid for project cards */
       .project-cards-wrapper {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
         gap: 20px;
         align-items: stretch;
 
@@ -159,6 +158,14 @@
         }
       }
 
+      .project-cards-wrapper {
+        @media (max-width: 768px) {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+          gap: 15px;
+        }
+      }
+
       &.equal-height {
         .project-card {
           height: 100%;
@@ -172,7 +179,7 @@
   }
 }
 
-/* mobile-only overrides */
+/* DON'T KNOW IF THIS IS WORKING: mobile-only overrides */
 @media (max-width: 768px) {
 
   /* overall page */
@@ -180,7 +187,6 @@
     padding: 20px !important;
 
     h1 {
-      font-size: 24px;
       margin-bottom: 24px;
     }
   }
@@ -202,12 +208,10 @@
       }
 
       h2 {
-        font-size: 18px;
         margin-bottom: 8px;
       }
 
       p {
-        font-size: 14px;
         line-height: 1.4;
       }
     }
@@ -218,29 +222,29 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-  }
 
-  .project-card {
-    border-radius: 8px;
-    overflow: hidden;
+    .project-card {
+      border-radius: 8px;
+      overflow: hidden;
 
-    .project-image img {
-      height: 80px !important;
-      object-fit: cover;
-    }
-
-    .project-card-content {
-      padding: 8px;
-
-      .project-title {
-        font-size: 16px;
-        margin-bottom: 4px;
+      .project-image img {
+        height: 80px !important;
+        object-fit: cover;
       }
 
-      p a {
-        font-size: 14px;
-        margin: 0;
-        line-height: 1.4;
+      .project-card-content {
+        padding: 8px;
+
+        .project-title {
+          //font-size: 16px;
+          margin-bottom: 4px;
+        }
+
+        p a {
+          //font-size: 14px;
+          margin: 0;
+          line-height: 1.4;
+        }
       }
     }
   }
