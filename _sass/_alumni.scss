@@ -32,11 +32,9 @@
       @media (max-width: 991px) {
         margin: 3rem auto;
       }
-
       @media (max-width: 767px) {
         margin: 2rem auto;
       }
-
       @media (max-width: 480px) {
         margin: 1.5rem auto;
       }
@@ -54,12 +52,10 @@
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 25px;
       }
-
       @media (max-width: 767px) {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         gap: 20px;
       }
-
       @media (max-width: 480px) {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 15px;
