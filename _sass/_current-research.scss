@@ -119,14 +119,14 @@
       height: fit-content;
       display: center;
       flex-direction: column;
-      grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 20px;
       align-items: stretch;
 
       /* New wrapper as grid for project cards */
       .project-cards-wrapper {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 20px;
         align-items: stretch;
       }
