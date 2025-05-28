@@ -74,12 +74,8 @@
         text-align: left;
 
         @media (max-width: 767px) {
-          text-align: center;
+          text-align: justify;
           font-size: 15px;
-        }
-
-        @media (max-width: 480px) {
-          font-size: 14px;
         }
       }
     }
@@ -218,11 +214,8 @@
         line-height: 1.5;
 
         @media (max-width: 767px) {
+          text-align: justify;
           font-size: 15px;
-        }
-
-        @media (max-width: 480px) {
-          font-size: 14px;
         }
       }
     }

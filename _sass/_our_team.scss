@@ -72,16 +72,9 @@
 
   .pi-bio {
     @media (max-width: 767px) {
-      text-align: center;
-
       p {
+        text-align: justify;
         font-size: 16px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      p {
-        font-size: 14px;
       }
     }
   }
