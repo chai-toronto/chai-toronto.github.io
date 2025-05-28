@@ -3,10 +3,12 @@
 {% assign author_match = site.data.members | where: "id",author_id %}
 {% if author_match.size >= 1 %}
 {% assign author = author_match | first %}
-{% if author.website == nil %}
-{{ author.name }}
-{% else %}
+{% if author.website %}
 <a href="{{author.website}}">{{ author.name }}</a>
+{% elsif author.linkedin %}
+<a href="https://www.linkedin.com/in/{{author.linkedin}}">{{ author.name }}</a>
+{% else %}
+{{ author.name }}
 {% endif %}
 {% else %}
 {{ author_id }}
