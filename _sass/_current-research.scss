@@ -191,8 +191,8 @@
 
   /* stack theme cards full-width */
   .research-themes-row {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 16px;
     margin-bottom: 40px;
 
@@ -219,7 +219,9 @@
 
   /* project grid & cards */
   .projects-grid .project-cards-wrapper {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     gap: 8px;
   }
 
@@ -247,12 +249,6 @@
       }
     }
   }
-
-  .projects-grid .project-cards-wrapper {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 6px;
-  }
-
 
   .project-image img {
     height: 80px !important;
