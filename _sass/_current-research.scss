@@ -217,17 +217,7 @@
     }
   }
 
-  .research-content-row {
-    display: grid;
-    grid-template-columns: 30% 70%;
-    gap: 8px;
-  }
-
   /* project grid & cards */
-  .projects-grid .project-cards-wrapper {
-    gap: 8px;
-  }
-
   .project-card {
     border-radius: 8px;
     overflow: hidden;
@@ -251,11 +241,6 @@
         line-height: 1.4;
       }
     }
-  }
-
-  .projects-grid .project-cards-wrapper {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 6px;
   }
 
 
