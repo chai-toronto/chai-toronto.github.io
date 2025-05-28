@@ -2,7 +2,7 @@
 .home-page {
   margin-top: -3rem;
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     .container {
       padding-left: 15px;
       padding-right: 15px;
@@ -18,7 +18,7 @@
       margin-bottom: 3rem;
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
       text-align: center;
       margin-top: 0;
       margin-bottom: 1.5rem;
@@ -40,7 +40,7 @@
         font-size: 36px;
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         font-size: 32px;
         margin-top: 0.75rem;
         text-align: center;
@@ -61,7 +61,7 @@
       color: #333;
       text-align: left;
 
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         font-size: 18px;
         text-align: justify;
         margin-top: 0.5rem;
@@ -79,7 +79,7 @@
       text-align: left;
       margin-top: 1rem;
 
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         text-align: center;
         margin-top: 0.5rem;
       }
@@ -102,7 +102,7 @@
       transition: background-color 0.2s ease;
       display: inline-block;
 
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         font-size: 16px;
         padding: 0.8rem 1.6rem;
         margin-bottom: 0.75rem;
@@ -131,7 +131,7 @@
       text-align: center;
       padding-top: 0;
 
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         text-align: center;
         margin-top: 0;
         margin-bottom: 0.5rem;
@@ -149,7 +149,7 @@
       width: auto;
       display: inline-block;
 
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         max-width: 60%;
         margin: 0 auto;
       }
@@ -168,7 +168,7 @@
         height: 400px !important;
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         width: 95% !important;
         height: 350px !important;
       }
@@ -202,7 +202,7 @@
       font-size: 28px;
       margin-bottom: 1.5rem;
 
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         font-size: 24px;
         text-align: center;
         margin-top: 0;
@@ -214,12 +214,12 @@
     .twitter-tweet {
       margin-bottom: 2rem;
 
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         margin-bottom: 1.5rem;
       }
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
       margin-top: 0 !important;
       margin-bottom: 1.5rem !important;
       padding: 10px !important;
@@ -233,7 +233,7 @@
       font-size: 28px;
       margin-bottom: 1.5rem;
 
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         font-size: 24px;
         text-align: center;
         margin-bottom: 0.75rem;
@@ -263,18 +263,6 @@
       height: auto !important;
       margin: 0rem 2rem;
       width: auto;
-
-      @media (max-width: 991px) {
-        max-height: 75px;
-      }
-
-      @media (max-width: 767px) {
-        max-height: 50px;
-      }
-
-      @media (max-width: 480px) {
-        max-height: 30px;
-      }
     }
   }
 
