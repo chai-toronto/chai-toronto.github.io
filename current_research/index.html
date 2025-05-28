@@ -41,7 +41,7 @@ title: Current Research
         <img src="{{ project.thumbnail }}" alt="{{ project.title }}" />
       </div>
       <div class="project-card-content">
-        <h3 class="project-title">{{ project.title }}</h3>
+        <h3>{{ project.title }}</h3>
         <p><strong>Project Lead(s):</strong> {% include author_list.html authors=project.leads %}</p>
         <p><strong>Goal:</strong> {{ project.description }}</p>
         <p><strong>Theme(s):</strong> {{ project.theme | join: ', ' }}</p>
