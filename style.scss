@@ -512,9 +512,11 @@ blockquote {
 
     h4 {
       font-size: 24px;
+      margin-top: 1rem;
       margin-bottom: 1rem;
 
       @media (max-width: 991px) {
+        margin-top: 0rem;
         margin-bottom: 0.75rem;
         text-align: center;
       }
@@ -569,9 +571,6 @@ blockquote {
       p {
         margin-bottom: 0;
         font-size: 18px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
 
         @media (max-width: 991px) {
           text-align: center;
