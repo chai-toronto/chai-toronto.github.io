@@ -72,10 +72,6 @@
 		margin-bottom: 1rem;
 
 		@media (max-width: 767px) {
-			margin-bottom: 3rem;
-		}
-
-		@media (max-width: 480px) {
 			margin-bottom: 2rem;
 		}
 	}
@@ -92,9 +88,7 @@
 			flex-direction: column-reverse;
 		}
 
-		iframe.map-iframe {
-			margin-top: 2rem;
-
+		map-frame {
 			@media (max-width: 767px) {
 				height: 300px;
 				margin-top: 1rem;

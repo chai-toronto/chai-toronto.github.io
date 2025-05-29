@@ -2,6 +2,14 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    if (!document.querySelector('meta[name="viewport"]')) {
+      const viewportMeta = document.createElement('meta');
+      viewportMeta.name = 'viewport';
+      viewportMeta.content = 'width=device-width, initial-scale=1.0';
+      document.head.appendChild(viewportMeta);
+    }
+  </script>
 
   <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
 
@@ -121,8 +129,6 @@
     </script>
 
 
-
-
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
@@ -192,9 +198,9 @@
     <!-- Location Info -->
     <div class="col-md-4 offset-md-2 col-sm-6 col-6 mb-3 location-info text-right-mobile">
       <h4>Location</h4>
-      <p style="margin-bottom: 0;">University of Toronto – St. George Campus</p>
-      <p style="margin-bottom: 0;">Bahen Centre for Information Technology</p>
-      <p style="margin-bottom: 0;">40 St George St, Toronto, ON</p>
+      <p>University of Toronto – St. George Campus</p>
+      <p>Bahen Centre for Information Technology</p>
+      <p>40 St George St, Toronto, ON</p>
       <p>M5S 2E4</p>
     </div>
 

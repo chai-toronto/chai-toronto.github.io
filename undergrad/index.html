@@ -74,41 +74,6 @@ title: Undergraduate Students
     </div>
   </div>
 
-  <script>
-    if (!document.querySelector('meta[name="viewport"]')) {
-      const viewportMeta = document.createElement('meta');
-      viewportMeta.name = 'viewport';
-      viewportMeta.content = 'width=device-width, initial-scale=1.0';
-      document.head.appendChild(viewportMeta);
-    }
-  </script>
 </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('.faq-panel').forEach(function(panel) {
-      panel.addEventListener('click', function() {
-        document.querySelectorAll('.faq-panel').forEach(function(p) {
-          p.classList.remove('selected');
-        });
-        panel.classList.add('selected');
-        var question = panel.getAttribute('data-question');
-        var answer = panel.getAttribute('data-answer');
-        var faqRight = document.querySelector('.faq-right');
-        faqRight.querySelector('h3').textContent = question;
-        faqRight.querySelector('p').innerHTML = answer;
-
-        if (window.innerWidth <= 767) {
-          const faqRightTop = faqRight.getBoundingClientRect().top;
-          const windowHeight = window.innerHeight;
-          const scrollToY = window.pageYOffset + faqRightTop - (windowHeight * 0.25);
-
-          window.scrollTo({
-            top: scrollToY,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-  });
-</script>
+{% include faq_panel.html %}

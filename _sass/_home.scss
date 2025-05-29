@@ -13,21 +13,22 @@
 
   .hero-section {
     position: relative;
+    margin-bottom: 2rem;
 
-    .row {
-      margin-bottom: 3rem;
+    @media (max-width: 991px) {
+      margin-bottom: 1rem;
     }
 
     @media (max-width: 768px) {
       text-align: center;
       margin-top: 0;
-      margin-bottom: 1.5rem;
       padding-top: 0;
+      margin-bottom: 0rem;
     }
 
     .home-tagline {
       max-width: 800px;
-      margin-top: 1rem;
+      margin-top: 0rem;
       margin-bottom: 1rem;
       font-family: 'Nunito', sans-serif;
       font-size: 45px;
@@ -38,10 +39,6 @@
 
       @media (max-width: 991px) {
         font-size: 36px;
-      }
-
-      @media (max-width: 768px) {
-        font-size: 32px;
         margin-top: 0.75rem;
         text-align: center;
       }
@@ -61,7 +58,7 @@
       color: #333;
       text-align: left;
 
-      @media (max-width: 768px) {
+      @media (max-width: 991px) {
         font-size: 18px;
         text-align: justify;
         margin-top: 0.5rem;
@@ -79,7 +76,7 @@
       text-align: left;
       margin-top: 1rem;
 
-      @media (max-width: 768px) {
+      @media (max-width: 991px) {
         text-align: center;
         margin-top: 0.5rem;
       }
@@ -193,8 +190,12 @@
   }
 
   .news-section {
-    .row {
-      margin-bottom: 2rem;
+    
+    margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+      margin-top: 0 !important;
+      padding: 10px !important;
     }
 
     h2 {
@@ -207,22 +208,7 @@
         text-align: center;
         margin-top: 0;
         margin-bottom: 0.75rem;
-
       }
-    }
-
-    .twitter-tweet {
-      margin-bottom: 2rem;
-
-      @media (max-width: 768px) {
-        margin-bottom: 1.5rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      margin-top: 0 !important;
-      margin-bottom: 1.5rem !important;
-      padding: 10px !important;
     }
   }
 

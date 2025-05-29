@@ -1,16 +1,12 @@
-.undergrad-page {
- .top-section {
-    margin-bottom: 3rem;
+.grad-page, .undergrad-page {
+  .top-section {
+    margin-bottom: 1rem;
 
     @media (max-width: 767px) {
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
 
-    &.container {
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-    }
-
+    /* Override container padding if needed */
     .top-image-col {
       padding-left: 0 !important;
       padding-right: 0 !important;
@@ -20,7 +16,7 @@
       }
 
       .top-image-container {
-        width: 80%;
+        width: 90%;
         height: auto;
         overflow: hidden;
         border-radius: 20px;
@@ -55,6 +51,10 @@
         margin-bottom: 1rem;
         text-align: left;
 
+        @media (max-width: 991px) {
+          margin-top: 1rem;
+        }
+
         @media (max-width: 767px) {
           font-size: 22px;
           text-align: center;
@@ -81,10 +81,10 @@
   }
 
   .faq-section {
-    margin-top: 3rem;
+    margin-top: 1rem;
 
     @media (max-width: 767px) {
-      margin-top: 2rem;
+      margin-top: 1rem;
     }
 
     .faq-wrapper {
@@ -141,6 +141,7 @@
           }
         }
 
+        /* Right arrow */
         &::after {
           content: "\276F";
           font-size: 16px;

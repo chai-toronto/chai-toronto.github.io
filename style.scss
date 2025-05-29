@@ -343,6 +343,40 @@ blockquote {
         padding: 0;
         z-index: 999;
         box-shadow: none;
+
+        @media (max-width: 768px) {
+          position: static;
+          float: none;
+          width: 100%;
+          background-color: #f8f8f8;
+          border: none;
+          box-shadow: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .dropdown-item {
+          font-family: 'Instrument Sans Medium', sans-serif;
+          font-size: 16px;
+          display: block;
+          padding: 20px 20px;
+          border-radius: 0;
+          color: $black !important;
+          text-decoration: none;
+          transition: box-shadow 0.2s ease;
+
+          @media (max-width: 768px) {
+            padding: 10px 30px;
+            font-size: 14px;
+          }
+
+          &:hover {
+            text-decoration: none;
+            box-shadow: none;
+            background-color: #F4F4F4;
+            border-radius: 10px 10px 10px 10px;
+          }
+        }
       }
     }
 
@@ -372,26 +406,27 @@ blockquote {
   }
 }
 
-@media (min-width: 769px) {
-  .navbar-toggler {
+.navbar-toggler {
+  @media (min-width: 769px) {
     display: none !important;
   }
-}
 
-@media (max-width: 768px) {
-
-  body {
-    font-size: 14px;
-    line-height: 1.4;
-  }
-
-  .navbar-toggler {
+  @media (max-width: 768px) {
     cursor: pointer;
     display: block;
     padding: 10px;
     background: transparent;
     border: none;
     outline: none;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  body {
+    font-size: 14px;
+    line-height: 1.4;
   }
 
   .navbar-toggler i {
@@ -436,23 +471,6 @@ blockquote {
     border-radius: 0;
   }
 
-
-  #navbarNav .dropdown-menu {
-    position: static;
-    float: none;
-    width: 100%;
-    background-color: #f8f8f8;
-    border: none;
-    box-shadow: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  #navbarNav .dropdown-item {
-    padding: 10px 30px;
-    font-size: 14px;
-  }
-
   #navbarNav .dropdown-menu.show {
     display: block;
   }
@@ -472,31 +490,6 @@ blockquote {
     padding: 8px 12px;
   }
 
-
-  .hero-section .hero-img {
-    width: 100%;
-    margin-left: 0;
-    margin-top: 0;
-  }
-
-}
-
-.dropdown-item {
-  font-family: 'Instrument Sans Medium', sans-serif;
-  font-size: 16px;
-  display: block;
-  padding: 20px 20px;
-  border-radius: 0;
-  color: $black !important;
-  text-decoration: none;
-  transition: box-shadow 0.2s ease;
-
-  &:hover {
-    text-decoration: none;
-    box-shadow: none;
-    background-color: #F4F4F4;
-    border-radius: 10px 10px 10px 10px;
-  }
 }
 
 .wrapper-footer {
@@ -505,40 +498,19 @@ blockquote {
   border-bottom: 1px solid #ddd;
 }
 
+/*********************/
+/* FOOTER */
+/*********************/
+
 .footer-container {
   background-color: #fcfcfc;
   color: #000;
   padding: 20px 0;
   text-align: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     padding: 24px 16px !important;
     margin-top: 2rem !important;
-    
-    .footer-logo-container,
-    .location-info {
-      width: 50%;
-      padding: 0 8px;
-    }
-
-    .first-row > div {
-      margin-bottom: 1.5rem;
-      padding-left: 8px;
-      padding-right: 8px;
-
-      &.location-info {
-        margin-left: 0;
-        text-align: center;
-
-        p {
-          margin-bottom: 0.3rem;
-        }
-      }
-    }
-  }
-
-  img {
-    max-height: 50px;
   }
 
   .custom-footer-line {
@@ -547,14 +519,10 @@ blockquote {
     border: none;
   }
 
-  .row {
-    margin: 0 auto;
-  }
-
   .first-row {
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem 0;
 
-    @media (max-width: 768px) {
+    @media (max-width: 991px) {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -562,8 +530,10 @@ blockquote {
     }
 
     footer-logo-container {
-      @media (max-width: 768px) {
+      @media (max-width: 991px) {
         text-align: center;
+        width: 50%;
+        padding: 0 8px;
 
         img {
           max-height: 120px !important;
@@ -581,25 +551,56 @@ blockquote {
     }
 
     h4 {
-      @media (max-width: 768px) {
-        font-size: 18px;
+      font-size: 24px;
+      margin-bottom: 1rem;
+
+      @media (max-width: 991px) {
         margin-bottom: 0.75rem;
         text-align: center;
       }
     }
 
+    a {
+      font-size: 14px;
+      font-family: "Instrument Sans Italic";
+    }
+
     p {
-      @media (max-width: 768px) {
+      font-size: 14px;
+      font-family: "Instrument Sans Italic";
+      @media (max-width: 991px) {
         font-size: 14px;
         line-height: 1.3;
         margin-bottom: 0.3rem;
       }
     }
 
+    div {
+      @media (max-width: 991px) {
+        margin-bottom: 1.5rem;
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+    }
+
+    .location-info {
+      @media (max-width: 991px) {
+        width: 50%;
+        padding: 0 8px;
+      }
+
+      p {
+        margin-bottom: 0;
+        @media (max-width: 991px) {
+          text-align: center;
+        }
+      }
+    }
+
     .quick-links {
-      @media (max-width: 768px) {
+      @media (max-width: 991px) {
         width: 100%;
-        margin-top: 1.5rem;
+        margin-top: 0rem;
       }
 
       ul {
@@ -618,9 +619,11 @@ blockquote {
     }
 
     .location-info, .quick-links {
-      font-family: 'Instrument Sans Regular', sans-serif;
-      margin-left: 1rem;
       text-align: left;
+
+      @media (max-width: 991px) {
+        text-align: center;
+      }
     }
 
     .location-info p, .quick-links a {
@@ -630,12 +633,13 @@ blockquote {
   }
 
   .second-row {
+    margin: 0 auto;
     display: flex;
     padding-top: 20px;
     align-items: flex-end;
     justify-content: space-between;
 
-    @media (max-width: 768px) {
+    @media (max-width: 991px) {
       flex-direction: row !important;
       align-items: center;
       justify-content: space-between;
@@ -644,7 +648,7 @@ blockquote {
     .bottom-left {
       text-align: left;
       
-      @media (max-width: 768px) {
+      @media (max-width: 991px) {
         width: 50%;
 
         p {
@@ -657,7 +661,7 @@ blockquote {
     .bottom-right {
       text-align: right;
 
-      @media (max-width: 768px) {
+      @media (max-width: 991px) {
         width: 50%;
 
         img {
@@ -667,33 +671,16 @@ blockquote {
       }
     }
   }
-
-  h4 {
-    font-weight: 600;
-    font-size: 24px;
-    margin-bottom: 1rem;
-  }
-
-  p, a {
-    font-size: 14px;
-    font-family: "Instrument Sans Italic";
-  }
 }
-
-
 
 @import "highlights";
 @import "svg-icons";
-@import "current-research";
-@import "publications";
-@import "members";
 @import "home";
 @import "about_us";
-@import "our_team";
 @import "alumni";
 @import "awards";
-@import "undergrad";
-@import "grad";
+@import "our_team";
+@import "current-research";
+@import "publications";
+@import "undergrad-grad";
 @import "get_involved";
-
-
