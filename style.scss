@@ -569,6 +569,9 @@ blockquote {
       p {
         margin-bottom: 0;
         font-size: 18px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
 
         @media (max-width: 991px) {
           text-align: center;
@@ -577,7 +580,7 @@ blockquote {
           font-size: 16px;
         }
         @media (max-width: 768px) {
-          font-size: 14px;
+          font-size: 12px;
         }
       }
     }
