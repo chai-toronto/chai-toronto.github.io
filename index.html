@@ -8,7 +8,7 @@ title: Home
   <!-- Hero / Tagline Section -->
   <div class="container hero-section">
     <!-- Banner image - will appear on top for mobile -->
-    <div class="col-md-5 text-center order-md-1 order-1">
+    <div class="col-md-5 text-center order-md-1 order-1 carousel-holder">
       <div id="cultureCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#cultureCarousel" data-slide-to="0" class="active"></li>
@@ -177,17 +177,5 @@ title: Home
 
       animateScroller();
     });
-  </script>
-
-  <!-- Add viewport meta tag if not already present in layout -->
-  <script>
-    // Check if viewport meta tag exists
-    if (!document.querySelector('meta[name="viewport"]')) {
-      // Create and append viewport meta tag
-      const viewportMeta = document.createElement('meta');
-      viewportMeta.name = 'viewport';
-      viewportMeta.content = 'width=device-width, initial-scale=1.0';
-      document.head.appendChild(viewportMeta);
-    }
   </script>
 </div>

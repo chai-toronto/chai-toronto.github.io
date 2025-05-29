@@ -22,6 +22,11 @@
 }
 
 .about-us-page {
+	h1 {
+		@media (max-width: 767px) {
+			margin-bottom: 0.5rem;
+		}
+	}
 
 	h2 {
 		font-family: 'Instrument Sans Medium', sans-serif;
@@ -59,27 +64,18 @@
 		}
 	}
 
-	img.rounded {
-		border-radius: 8px;
-
-		@media (max-width: 767px) {
-			max-width: 90%;
-			margin: 0 auto;
-		}
-	}
-
 	.row {
 		margin-bottom: 1rem;
 
 		@media (max-width: 767px) {
 			margin-bottom: 2rem;
 		}
-	}
 
-	.row img {
-		@media (max-width: 767px) {
-			margin-top: 0;
-			margin-bottom: 1rem;
+		img {
+			@media (max-width: 767px) {
+				margin-top: 0;
+				margin-bottom: 1rem;
+			}
 		}
 	}
 
@@ -101,9 +97,12 @@
 		}
 	}
 
-	#cultureCarousel {
+	img.rounded {
+		border-radius: 8px;
+
 		@media (max-width: 767px) {
-			margin-top: 1rem;
+			max-width: 90%;
+			margin: 0 auto;
 		}
 	}
 

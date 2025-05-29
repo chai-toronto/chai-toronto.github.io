@@ -4,11 +4,11 @@
 
   @media (max-width: 768px) {
     .container {
-      padding-left: 15px;
-      padding-right: 15px;
+      padding-left: 10px;
+      padding-right: 10px;
     }
     padding-top: 0;
-    margin-top: -1.5rem;
+    margin-top: 0;
   }
 
   .hero-section {
@@ -24,6 +24,49 @@
       margin-top: 0;
       padding-top: 0;
       margin-bottom: 0rem;
+    }
+
+    .carousel-holder {
+      padding-right: 3rem;
+      @media (max-width: 991px) {
+        padding-right: 0rem;
+      }
+    }
+
+    .carousel-inner .item img {
+      margin-left: -15%;
+      height: 400px !important;
+      width: 100%;
+      border-radius: 20px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+
+      @media (max-width: 991px) {
+        height: 400px !important;
+      }
+
+      @media (max-width: 768px) {
+        width: 95% !important;
+        height: 350px !important;
+      }
+
+      @media (max-width: 480px) {
+        height: 250px !important;
+      }
+    }
+
+    .carousel-control.left,
+    .carousel-control.right {
+      background-image: none !important;
+      background: none !important;
+      filter: none !important;
+      color: #008F8C !important;
+    }
+
+    .carousel-control .glyphicon-chevron-left,
+    .carousel-control .glyphicon-chevron-right {
+      text-shadow: none !important;
     }
 
     .home-tagline {
@@ -121,71 +164,6 @@
         text-decoration: none;
         color: #fff;
       }
-    }
-
-    .hero-img-container {
-      width: 100%;
-      text-align: center;
-      padding-top: 0;
-
-      @media (max-width: 768px) {
-        text-align: center;
-        margin-top: 0;
-        margin-bottom: 0.5rem;
-      }
-
-      @media (max-width: 480px) {
-        margin-bottom: 0.25rem;
-      }
-    }
-
-    .hero-img {
-      max-width: 400px;
-      margin-left: -15%;
-      height: auto;
-      width: auto;
-      display: inline-block;
-
-      @media (max-width: 768px) {
-        max-width: 60%;
-        margin: 0 auto;
-      }
-    }
-
-    .carousel-inner .item img {
-      margin-left: -15%;
-      height: 400px !important;
-      width: 100%;
-      border-radius: 20px;
-      object-fit: cover;
-      display: block;
-      margin: 0 auto;
-
-      @media (max-width: 991px) {
-        height: 400px !important;
-      }
-
-      @media (max-width: 768px) {
-        width: 95% !important;
-        height: 350px !important;
-      }
-
-      @media (max-width: 480px) {
-        height: 250px !important;
-      }
-    }
-
-    .carousel-control.left,
-    .carousel-control.right {
-      background-image: none !important;
-      background: none !important;
-      filter: none !important;
-      color: #008F8C !important;
-    }
-
-    .carousel-control .glyphicon-chevron-left,
-    .carousel-control .glyphicon-chevron-right {
-      text-shadow: none !important;
     }
   }
 
