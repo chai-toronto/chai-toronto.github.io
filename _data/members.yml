@@ -137,22 +137,13 @@
   startyear: 2024
   active: true
 
-- id: andrew_qiu
-  name: Andrew Qiu
+- id: larry_kieu
+  name: Larry Kieu
   affiliation: CS
   degree: BS
-  image: /images/members/andrew_qiu.jpeg
-  linkedin: andrew-qiu
-  startyear: 2024
-  active: true
-
-- id: harpuneet_singh
-  name: Harpuneet Singh
-  affiliation: CS
-  degree: BS
-  image: /images/members/harpuneet_singh.jpg
-  linkedin: harpuneet2005
-  startyear: 2024
+  image: /images/members/larry_kieu.jpg
+  linkedin: dqieu
+  startyear: 2025
   active: true
 
 - id: tanaya_sharma
@@ -162,6 +153,15 @@
   image: /images/members/tanaya_sharma.png
   linkedin: tanayasharma
   startyear: 2025
+  active: true
+
+- id: harpuneet_singh
+  name: Harpuneet Singh
+  affiliation: CS
+  degree: BS
+  image: /images/members/harpuneet_singh.jpg
+  linkedin: harpuneet2005
+  startyear: 2024
   active: true
 
 - id: maryam_taj
@@ -230,8 +230,8 @@
   thesis: "Mobile Seizure Detection: Towards Data-Driven, Personalized Seizure Treatment"
   now_at: University of Toronto (Biomedical Engineering PhD Student)
 
-
 # Undergrad Alumni
+# Sort by start year, then last name
 - id: matthew_parvaneh
   name: Matthew Parvaneh
   affiliation: CS
@@ -343,6 +343,16 @@
   twitter: shivesh_108
   startyear: 2024
   endyear: 2024
+  active: false
+
+- id: andrew_qiu
+  name: Andrew Qiu
+  affiliation: CS
+  degree: BS
+  image: /images/members/andrew_qiu.jpeg
+  linkedin: andrew-qiu
+  startyear: 2024
+  endyear: 2025
   active: false
 
 - id: rilong_zhang
