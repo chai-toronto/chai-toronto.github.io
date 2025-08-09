@@ -116,6 +116,28 @@
   active: true
   search: industry
 
+- id: thomas_kleinknecht
+  name: Thomas Kleinknecht
+  affiliation: CS
+  degree: MSc
+  image: /images/members/thomas_kleinknecht.jpg
+  website: http://thomaskleinknecht.com/
+  linkedin: thomaskleinknecht
+  startyear: 2025
+  shortbio: TBD
+  active: true
+
+- id: katherine_jelich
+  name: Katherine Jelich
+  affiliation: CS
+  degree: MSc
+  image: /images/members/katherine_jelich.jpeg
+  linkedin: katherinejelich
+  twitter: KatherineJelich
+  startyear: 2025
+  shortbio: TBD
+  active: true
+
 # Current Masters
 - id: chengyue_zhang
   name: ChengYue Zhang
@@ -291,7 +313,7 @@
   endyear: 2024
   active: false
 
-- id: katherine_jelich
+- id: katherine_jelich_ugrad
   name: Katherine Jelich
   affiliation: CS
   degree: BS

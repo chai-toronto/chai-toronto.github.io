@@ -80,7 +80,7 @@
   .pi-name {
     font-size: 20px;
     font-family: 'Instrument Sans Medium', sans-serif;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     text-align: center;
 
     @media (max-width: 767px) {
@@ -372,46 +372,46 @@
           }
         }
       }
+    }
+  }
+}
 
-      .persona-footer {
-        padding: 10px 20px;
-        margin-top: -15px;
+.persona-footer {
+  padding: 10px 20px;
+  margin-top: -15px;
 
-        @media (max-width: 767px) {
-          padding: 6px 8px;
-          margin-top: -8px;
-        }
+  @media (max-width: 767px) {
+    padding: 6px 8px;
+    margin-top: -8px;
+  }
 
-        @media (max-width: 480px) {
-          padding: 5px 6px;
-          margin-top: -6px;
-        }
+  @media (max-width: 480px) {
+    padding: 5px 6px;
+    margin-top: -6px;
+  }
 
-        a {
-          text-decoration: none;
-          &:hover {
-            text-decoration: none;
-            i {
-              color: #007974;
-            }
-          }
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+      i {
+        color: #007974;
+      }
+    }
 
-          i {
-            font-size: 20px;
-            color: #444;
-            margin-right: 10px;
+    i {
+      font-size: 20px;
+      color: #444;
+      margin-right: 10px;
 
-            @media (max-width: 767px) {
-              font-size: 14px;
-              margin-right: 5px;
-            }
+      @media (max-width: 767px) {
+        font-size: 14px;
+        margin-right: 5px;
+      }
 
-            @media (max-width: 480px) {
-              font-size: 12px;
-              margin-right: 4px;
-            }
-          }
-        }
+      @media (max-width: 480px) {
+        font-size: 12px;
+        margin-right: 4px;
       }
     }
   }

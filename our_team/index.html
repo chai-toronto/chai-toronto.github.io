@@ -22,7 +22,9 @@ title: Our Team
           class="img-fluid pi-portrait"
         />
         <h3 class="pi-name">{{ pi.name }}</h3>
-        <p class="pi-title">Assistant Professor of Computer&nbsp;Science</p>
+        <div class="persona-footer">
+          {% include profile_badges.html member=pi%}
+        </div>
       </div>
 
       <div class="col-md-9 pi-bio">
