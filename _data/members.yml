@@ -168,6 +168,15 @@
   startyear: 2025
   active: true
 
+- id: minh_le
+  name: Minh Le
+  affiliation: CS
+  degree: BS
+  image: /images/members/minh_le.png
+  linkedin: nm-le
+  startyear: 2023
+  active: true
+
 - id: tanaya_sharma
   name: Tanaya Sharma
   affiliation: CS
@@ -456,16 +465,6 @@
   linkedin: shawn-kong-23b8b41a2
   startyear: 2023
   endyear: 2024
-  active: false
-
-- id: minh_le
-  name: Minh Le
-  affiliation: CS
-  degree: BS
-  image: /images/members/minh_le.png
-  linkedin: nm-le
-  startyear: 2023
-  endyear: 2025
   active: false
 
 - id: pierre_lessard
