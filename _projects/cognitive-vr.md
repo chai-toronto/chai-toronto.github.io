@@ -6,8 +6,6 @@ thumbnail: /images/projects/cognitive_vr.jpeg
 description: To improve upon traditional paper-based cognitive assessments like the Flanker test with virtual reality.
 theme: 
 - Active Sensing
-health_topic: 
-- Cognition
 device:
 - Virtual Reality (VR)
 skills:

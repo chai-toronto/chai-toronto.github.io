@@ -6,8 +6,6 @@ thumbnail: /images/projects/earbuds.jpeg
 description: To assess heart health using audio transduced in the ear canal.
 theme: 
 - Active Sensing
-health_topic: 
-- Cardiology
 device:
 - Earbuds
 skills:

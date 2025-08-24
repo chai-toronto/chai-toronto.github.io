@@ -6,8 +6,6 @@ thumbnail: /images/projects/chatbot.jpeg
 description: To leverage chatbots as a way of gathering background information before face-to-face interactions between doctors and patients.
 theme: 
 - Design
-health_topic: 
-- General Medicine
 skills:
 - Interface Design
 - Qualitative Methods

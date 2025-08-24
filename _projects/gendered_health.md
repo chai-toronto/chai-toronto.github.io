@@ -7,8 +7,6 @@ description: To create accurate, inclusive, and accessible menstrual trackers th
 theme: 
 - Passive Sensing
 - Design
-health_topic: 
-- Women's Health
 healthtopic:
 - Smartphone
 - Smartwatch

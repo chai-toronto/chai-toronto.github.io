@@ -7,8 +7,6 @@ thumbnail: /images/projects/copd_audio.jpeg
 description: To identify symptoms related to chronic obstructive pulmonary disease (COPD) in speech extracted from continuously recorded smartwatch audio.
 theme: 
 - Passive Sensing
-health_topic: 
-- Respirology
 device:
 - Smartphone
 - Smartwatch
