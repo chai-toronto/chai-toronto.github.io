@@ -201,16 +201,7 @@
   degree: BS
   image: /images/members/maryam_taj.jpeg
   linkedin: maryamtaj
-  startyear: 2024
-  active: true
-
-- id: jeb_thomas
-  name: Jeb Thomas
-  affiliation: CS
-  degree: BS
-  image: /images/members/jeb_thomas.jpeg
-  linkedin: jeb-thomas-877966293
-  startyear: 2024
+  startyear: 2025
   active: true
 
 - id: tianmen_wang
@@ -386,6 +377,16 @@
   endyear: 2025
   active: false
 
+- id: jeb_thomas
+  name: Jeb Thomas
+  affiliation: CS
+  degree: BS
+  image: /images/members/jeb_thomas.jpeg
+  linkedin: jeb-thomas-877966293
+  startyear: 2024
+  endyear: 2025
+  active: false
+
 - id: rilong_zhang
   name: Rilong (Owen) Zhang
   affiliation: CS
@@ -423,7 +424,7 @@
   image: /images/members/liam_bakar.jpg
   linkedin: liam-bakar
   startyear: 2023
-  endyear: 2024
+  endyear: 2023
   active: false
 
 - id: ofek_gross
@@ -444,7 +445,7 @@
   image: /images/members/jiaqi_guo.jpg
   linkedin: jiaqi-guo-6b040422b
   startyear: 2023
-  endyear: 2024
+  endyear: 2023
   active: false
 
 - id: anna_kirik
@@ -544,7 +545,7 @@
   degree: BS
   image: /images/members/sid_gupta.jpeg
   linkedin: sidgupta-99
-  startyear: 2020
+  startyear: 2021
   endyear: 2021
   active: false
 
