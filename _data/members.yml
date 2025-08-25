@@ -222,15 +222,6 @@
   startyear: 2025
   active: true
 
-- id: yifang_zhang
-  name: Yifang Zhang
-  affiliation: CS
-  degree: BS
-  image: /images/members/yifang_zhang.jpg
-  linkedin: yifang-zhang-04a984241
-  startyear: 2024
-  active: true
-
 # Staff
 
 # PhD Alumni
@@ -395,6 +386,16 @@
   linkedin: rilong-zhang-0a5493209
   startyear: 2024
   endyear: 2025
+  active: false
+
+- id: yifang_zhang
+  name: Yifang Zhang
+  affiliation: CS
+  degree: BS
+  image: /images/members/yifang_zhang.jpg
+  linkedin: yifang-zhang-04a984241
+  startyear: 2024
+  endyear: 2024
   active: false
 
 - id: yiteng_zhang
