@@ -150,15 +150,6 @@
   active: true
 
 # Current Undergrads
-- id: benson_chou
-  name: Benson Chou
-  affiliation: CS
-  degree: BS
-  image: /images/members/benson_chou.jpg
-  linkedin: chiayouchou
-  startyear: 2024
-  active: true
-
 - id: larry_kieu
   name: Larry Kieu
   affiliation: CS
@@ -241,7 +232,7 @@
   coadvisor: Gerard O'Leary
   active: false
   thesis: "Mobile Seizure Detection: Towards Data-Driven, Personalized Seizure Treatment"
-  now_at: University of Toronto (Biomedical Engineering PhD Student)
+  now_at: PhD Student, Biomedical Engineering, University of Toronto
 
 # Undergrad Alumni
 # Sort by start year, then last name
@@ -262,6 +253,16 @@
   image: /images/members/jackson_wu.jpg
   linkedin: yulong-wu-647aa62a2
   startyear: 2025
+  endyear: 2025
+  active: false
+
+- id: benson_chou
+  name: Benson Chou
+  affiliation: CS
+  degree: BS
+  image: /images/members/benson_chou.jpg
+  linkedin: chiayouchou
+  startyear: 2024
   endyear: 2025
   active: false
 
