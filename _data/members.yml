@@ -116,6 +116,18 @@
   active: true
   search: industry
 
+- id: zahra_hassanzadeh
+  name: Zahra Hassanzadeh
+  affiliation: CS
+  degree: PhD
+  image: /images/members/zahra_hassanzadeh.jpg
+  website: https://sites.google.com/view/zahrahassanzadeh/home
+  linkedin: zahra-hassanzadeh-7749b5105
+  gscholar: m9h_9TYAAAAJ
+  startyear: 2024
+  shortbio: Human-computer interaction, adaptive experimentation
+  active: true
+
 - id: thomas_kleinknecht
   name: Thomas Kleinknecht
   affiliation: CS
