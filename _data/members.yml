@@ -125,6 +125,7 @@
   linkedin: zahra-hassanzadeh-7749b5105
   gscholar: m9h_9TYAAAAJ
   startyear: 2024
+  coadvisor: williams
   shortbio: Human-computer interaction and adaptive experimentation
   active: true
 
@@ -599,3 +600,9 @@
   affiliation: CS
   degree: prof
   website: https://www.cs.toronto.edu/~khai/
+
+- id: williams
+  name: Joseph Jay Williams
+  affiliation: CS
+  degree: prof
+  website: https://www.josephjaywilliams.com/
