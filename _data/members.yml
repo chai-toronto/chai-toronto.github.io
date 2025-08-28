@@ -37,20 +37,6 @@
   shortbio: Wearables, mobile health, and applied machine learning
   active: true
 
-- id: blue_lin
-  name: Blue Lin
-  affiliation: CS
-  degree: PhD
-  image: /images/members/blue_lin.jpeg
-  website: https://www.bluelin.me/
-  gscholar: rgcuaxcAAAAJ
-  linkedin: blue-georgianna-lin
-  startyear: 2021
-  coadvisor: khai
-  shortbio: Wearables, HCI, and health informatics
-  active: true
-  search: industry
-
 - id: sejal_bhalla
   name: Sejal Bhalla
   affiliation: CS
@@ -228,6 +214,20 @@
 # Staff
 
 # PhD Alumni
+- id: blue_lin
+  name: Blue Lin
+  affiliation: CS
+  degree: PhD
+  image: /images/members/blue_lin.jpeg
+  website: https://www.bluelin.me/
+  gscholar: rgcuaxcAAAAJ
+  linkedin: blue-georgianna-lin
+  startyear: 2021
+  endyear: 2025
+  coadvisor: khai
+  active: false
+  thesis: "Multimodal Tracking with Ubiquitous Devices to Foster Holistic Menstrual Health Sensemaking"
+  now_at: Interviewing for industry positions
 
 # Masters Alumni
 - id: filip_miscevic
