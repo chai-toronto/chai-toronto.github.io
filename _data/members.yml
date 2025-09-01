@@ -136,6 +136,17 @@
   shortbio: TBD
   active: true
 
+- id: kelsey_stemmler
+  name: Kelsey Stemmler
+  affiliation: CS
+  degree: MSc
+  image: /images/members/kelsey_stemmler.jpg
+  website: https://www.stemmler.tech/about
+  linkedin: kstemmler
+  startyear: 2025
+  shortbio: TBD
+  active: true
+
 # Current Masters
 - id: chengyue_zhang
   name: ChengYue Zhang
