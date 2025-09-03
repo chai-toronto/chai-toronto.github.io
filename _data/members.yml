@@ -127,6 +127,7 @@
   shortbio: Health sensing and machine learning
   active: true
 
+# Current Masters
 - id: thomas_kleinknecht
   name: Thomas Kleinknecht
   affiliation: CS
@@ -161,7 +162,16 @@
   shortbio: TBD
   active: true
 
-# Current Masters
+- id: samanvay_vajpayee
+  name: Samanvay Vajpayee
+  affiliation: CS
+  degree: MScAC
+  image: /images/members/samanvay_vajpayee.jpg
+  linkedin: samvaj
+  startyear: 2025
+  shortbio: LLMs, algorithmic fairness
+  active: true
+
 - id: chengyue_zhang
   name: ChengYue Zhang
   affiliation: CS
