@@ -115,6 +115,18 @@
   shortbio: Human-computer interaction and adaptive experimentation
   active: true
 
+- id: vaibhav_ganatra
+  name: Vaibhav Ganatra
+  affiliation: CS
+  degree: PhD
+  image: /images/members/vaibhav_ganatra.jpg
+  website: https://ganatra-v.github.io/
+  linkedin: vaibhav-ganatra-78a634193
+  gscholar: vcX0u8AAAAAJ
+  startyear: 2025
+  shortbio: Health sensing and machine learning
+  active: true
+
 - id: thomas_kleinknecht
   name: Thomas Kleinknecht
   affiliation: CS
