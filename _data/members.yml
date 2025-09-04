@@ -183,15 +183,6 @@
   active: true
 
 # Current Undergrads
-- id: zulaa_lkhagvajav
-  name: Zulaa Lkhagvajav
-  affiliation: CS
-  degree: BS
-  image: /images/members/zulaa_lkhagvajav.png
-  linkedin: lk-zul
-  startyear: 2025
-  active: true
-
 - id: larry_kieu
   name: Larry Kieu
   affiliation: CS
@@ -208,6 +199,15 @@
   image: /images/members/minh_le.png
   linkedin: nm-le
   startyear: 2023
+  active: true
+  
+- id: zulaa_lkhagvajav
+  name: Zulaa Lkhagvajav
+  affiliation: CS
+  degree: BS
+  image: /images/members/zulaa_lkhagvajav.jpg
+  linkedin: lk-zul
+  startyear: 2025
   active: true
 
 - id: tanaya_sharma
