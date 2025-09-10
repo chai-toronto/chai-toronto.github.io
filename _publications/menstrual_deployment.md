@@ -16,6 +16,10 @@ theme:
 - Design
 health_topic:
 - Women's Health
+device:
+- Smartphone
+- Smartwatch
+- Other Devices
 skills:
 - Interface Design
 - Qualitative Methods
