@@ -24,12 +24,7 @@
                     </div>
                     <div class="persona-description">
                       {% for winner in award.winners %}
-                        {% assign matched = site.data.members | where:"id", winner.name | first %}
-                        {% if matched %}
-                          {{ matched.name }}
-                        {% else %}
-                          {{ winner.name }}
-                        {% endif %}
+                        {% include author_list.html authors=winner.name %}
                         ({{ winner.year }}){% if forloop.last %}{% else %}<br/> {% endif %}
                       {% endfor %}
                     </div>
