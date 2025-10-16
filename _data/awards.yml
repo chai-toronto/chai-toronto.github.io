@@ -22,3 +22,9 @@
     winners:
     - name: helen_li
       year: 2025
+- org: Ubicomp
+  awards:
+    - award: Doctoral Consortium Contribution Award 
+      winners:
+      - name: sejal_bhalla
+        year: 2025
