@@ -10,20 +10,6 @@
   twitter: alex_mariakakis
 
 # Current PhDs
-- id: brenna_li
-  name: Brenna Li
-  affiliation: CS
-  degree: PhD
-  image: /images/members/brenna_li.jpeg
-  website: https://brennal.github.io/
-  gscholar: wBRnwCoAAAAJ
-  linkedin: brenna-li
-  twitter: brennali_
-  startyear: 2018
-  coadvisor: khai
-  shortbio: HCI, health informatics, and conversational agents
-  active: true
-
 - id: salaar_liaqat
   name: Salaar Liaqat
   affiliation: CS
@@ -258,6 +244,23 @@
 # Staff
 
 # PhD Alumni
+- id: brenna_li
+  name: Brenna Li
+  affiliation: CS
+  degree: PhD
+  image: /images/members/brenna_li.jpeg
+  website: https://brennal.github.io/
+  gscholar: wBRnwCoAAAAJ
+  linkedin: brenna-li
+  twitter: brennali_
+  startyear: 2018
+  endyear: 2025
+  coadvisor: khai
+  shortbio: HCI, health informatics, and conversational agents
+  active: false
+  thesis: "Enhancing Patient-Centered Care: Examining the Design and Evaluation of Conversational Agents for Clinical Pre-Consultation"
+  now_at: Postdoc, Medicine, Stanford University
+
 - id: blue_lin
   name: Blue Lin
   affiliation: CS
