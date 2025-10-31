@@ -554,6 +554,12 @@ blockquote {
 
         a:hover {
           text-decoration: none;
+          i {
+            color: #007974;
+          }
+          svg {
+            fill: #007974;
+          }
         }
       }
     }
