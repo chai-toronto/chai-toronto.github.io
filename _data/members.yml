@@ -295,6 +295,16 @@
 
 # Undergrad Alumni
 # Sort by start year, then last name
+- id: samraj_aneja
+  name: Samraj Aneja
+  affiliation: CS
+  degree: BS
+  image: /images/members/samraj_aneja.jpeg
+  linkedin: samraj-aneja-208bb6223
+  startyear: 2025
+  endyear: 2025
+  active: false
+
 - id: matthew_parvaneh
   name: Matthew Parvaneh
   affiliation: CS
@@ -505,6 +515,16 @@
   degree: BS
   image: /images/members/jiaqi_guo.jpg
   linkedin: jiaqi-guo-6b040422b
+  startyear: 2023
+  endyear: 2023
+  active: false
+
+- id: kaartik_issar
+  name: Kaartik Issar
+  affiliation: CS
+  degree: BS
+  image: /images/members/kaartik_issar.png
+  linkedin: kaartik-issar-2492201a4
   startyear: 2023
   endyear: 2023
   active: false
