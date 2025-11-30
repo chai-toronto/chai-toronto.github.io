@@ -155,14 +155,6 @@
   active: true
 
 # Current Undergrads
-- id: yibin_wang
-  name: Yibin Wang
-  degree: BS
-  image: /images/members/yibin_wang.jpeg
-  linkedin: yibin-wang-516a46336
-  startyear: 2025
-  active: true
-
 - id: irmak_aytekin
   name: Irmak Aytekin
   degree: BS
@@ -232,6 +224,14 @@
   degree: BS
   image: /images/members/richard_yin.png
   linkedin: yin-richard
+  startyear: 2025
+  active: true
+
+- id: yibin_wang
+  name: Yibin Wang
+  degree: BS
+  image: /images/members/yibin_wang.jpeg
+  linkedin: yibin-wang-516a46336
   startyear: 2025
   active: true
 
