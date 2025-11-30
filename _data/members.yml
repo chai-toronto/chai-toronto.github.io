@@ -1,7 +1,6 @@
 # Alex
 - id: mariakakis
   name: Alex Mariakakis
-  affiliation: CS
   degree: prof
   image: /images/members/alex_mariakakis.jpeg
   website: https://mariakakis.github.io
@@ -12,7 +11,6 @@
 # Current PhDs
 - id: salaar_liaqat
   name: Salaar Liaqat
-  affiliation: CS
   degree: PhD
   image: /images/members/salaar_liaqat.jpeg
   website: https://www.cs.toronto.edu/~sliaqat/
@@ -25,7 +23,6 @@
 
 - id: sejal_bhalla
   name: Sejal Bhalla
-  affiliation: CS
   degree: PhD
   image: /images/members/sejal_bhalla.jpeg
   website: https://www.sejalbhalla.com/
@@ -39,7 +36,6 @@
 
 - id: ken_christofferson
   name: Ken Christofferson
-  affiliation: CS
   degree: PhD
   image: /images/members/ken_christofferson.jpeg
   website: https://ken-chris.github.io/
@@ -52,7 +48,6 @@
 
 - id: dhruv_verma
   name: Dhruv Verma
-  affiliation: CS
   degree: PhD
   image: /images/members/dhruv_verma.jpeg
   website: https://dhruv-verma.com/
@@ -65,7 +60,6 @@
 
 - id: ian_ruffolo
   name: Ian Ruffolo
-  affiliation: CS
   degree: PhD
   image: /images/members/ian_ruffolo.jpeg
   website: https://ian.ruffolo.me
@@ -77,7 +71,6 @@
 
 - id: andrii_lenyshyn
   name: Andrii Lenyshyn
-  affiliation: CS
   degree: PhD
   image: /images/members/andrii_lenyshyn.jpg
   website: https://andreeew2k.github.io/
@@ -90,7 +83,6 @@
 
 - id: zahra_hassanzadeh
   name: Zahra Hassanzadeh
-  affiliation: CS
   degree: PhD
   image: /images/members/zahra_hassanzadeh.jpg
   website: https://sites.google.com/view/zahrahassanzadeh/home
@@ -103,7 +95,6 @@
 
 - id: vaibhav_ganatra
   name: Vaibhav Ganatra
-  affiliation: CS
   degree: PhD
   image: /images/members/vaibhav_ganatra.jpg
   website: https://ganatra-v.github.io/
@@ -116,7 +107,6 @@
 # Current Masters
 - id: thomas_kleinknecht
   name: Thomas Kleinknecht
-  affiliation: CS
   degree: MSc
   image: /images/members/thomas_kleinknecht.jpg
   website: http://thomaskleinknecht.com/
@@ -127,7 +117,6 @@
 
 - id: katherine_jelich
   name: Katherine Jelich
-  affiliation: CS
   degree: MSc
   image: /images/members/katherine_jelich.jpeg
   linkedin: katherinejelich
@@ -138,7 +127,6 @@
 
 - id: kelsey_stemmler
   name: Kelsey Stemmler
-  affiliation: CS
   degree: MSc
   image: /images/members/kelsey_stemmler.jpg
   website: https://www.stemmler.tech/about
@@ -150,7 +138,6 @@
 
 - id: samanvay_vajpayee
   name: Samanvay Vajpayee
-  affiliation: CS
   degree: MScAC
   image: /images/members/samanvay_vajpayee.jpg
   linkedin: samvaj
@@ -160,7 +147,6 @@
 
 - id: chengyue_zhang
   name: ChengYue Zhang
-  affiliation: CS
   degree: MScAC
   image: /images/members/chengyue_zhang.jpg
   linkedin: chengyuemscac
@@ -169,9 +155,24 @@
   active: true
 
 # Current Undergrads
+- id: yibin_wang
+  name: Yibin Wang
+  degree: BS
+  image: /images/members/yibin_wang.jpeg
+  linkedin: yibin-wang-516a46336
+  startyear: 2025
+  active: true
+
+- id: irmak_aytekin
+  name: Irmak Aytekin
+  degree: BS
+  image: /images/members/irmak_aytekin.jpeg
+  linkedin: irmak-aytekin
+  startyear: 2025
+  active: true
+
 - id: larry_kieu
   name: Larry Kieu
-  affiliation: CS
   degree: BS
   image: /images/members/larry_kieu.jpg
   linkedin: dqieu
@@ -180,7 +181,6 @@
 
 - id: minh_le
   name: Minh Le
-  affiliation: CS
   degree: BS
   image: /images/members/minh_le.png
   linkedin: nm-le
@@ -189,7 +189,6 @@
   
 - id: zulaa_lkhagvajav
   name: Zulaa Lkhagvajav
-  affiliation: CS
   degree: BS
   image: /images/members/zulaa_lkhagvajav.jpg
   linkedin: lk-zul
@@ -198,7 +197,6 @@
 
 - id: tanaya_sharma
   name: Tanaya Sharma
-  affiliation: CS
   degree: BS
   image: /images/members/tanaya_sharma.png
   linkedin: tanayasharma
@@ -207,7 +205,6 @@
 
 - id: harpuneet_singh
   name: Harpuneet Singh
-  affiliation: CS
   degree: BS
   image: /images/members/harpuneet_singh.jpg
   linkedin: harpuneet2005
@@ -216,7 +213,6 @@
 
 - id: maryam_taj
   name: Maryam Taj
-  affiliation: CS
   degree: BS
   image: /images/members/maryam_taj.jpeg
   linkedin: maryamtaj
@@ -225,7 +221,6 @@
 
 - id: tianmen_wang
   name: Tianmen (Tim) Wang
-  affiliation: CS
   degree: BS
   image: /images/members/tianmen_wang.png
   linkedin: tim-tianmen-wang-8864a9197
@@ -234,7 +229,6 @@
 
 - id: richard_yin
   name: Richard Yin
-  affiliation: CS
   degree: BS
   image: /images/members/richard_yin.png
   linkedin: yin-richard
@@ -246,7 +240,6 @@
 # PhD Alumni
 - id: brenna_li
   name: Brenna Li
-  affiliation: CS
   degree: PhD
   image: /images/members/brenna_li.jpeg
   website: https://brennal.github.io/
@@ -263,7 +256,6 @@
 
 - id: blue_lin
   name: Blue Lin
-  affiliation: CS
   degree: PhD
   image: /images/members/blue_lin.jpeg
   website: https://www.bluelin.me/
@@ -279,7 +271,6 @@
 # Masters Alumni
 - id: filip_miscevic
   name: Filip Miscevic
-  affiliation: CS
   degree: MScAC
   image: /images/members/filip_miscevic.jpeg
   gscholar: g-ONQy8AAAAJ
@@ -297,7 +288,6 @@
 # Sort by start year, then last name
 - id: samraj_aneja
   name: Samraj Aneja
-  affiliation: CS
   degree: BS
   image: /images/members/samraj_aneja.jpeg
   linkedin: samraj-aneja-208bb6223
@@ -307,7 +297,6 @@
 
 - id: matthew_parvaneh
   name: Matthew Parvaneh
-  affiliation: CS
   degree: BS
   image: /images/members/matthew_parvaneh.jpeg
   linkedin: matthewparvaneh
@@ -317,7 +306,6 @@
 
 - id: jackson_wu
   name: Jackson Wu
-  affiliation: CS
   degree: BS
   image: /images/members/jackson_wu.jpg
   linkedin: yulong-wu-647aa62a2
@@ -327,7 +315,6 @@
 
 - id: benson_chou
   name: Benson Chou
-  affiliation: CS
   degree: BS
   image: /images/members/benson_chou.jpg
   linkedin: chiayouchou
@@ -337,7 +324,6 @@
 
 - id: tien_han
   name: Tien Han
-  affiliation: CS
   degree: BS
   image: /images/members/tien_han.jpeg
   linkedin: hantien
@@ -347,7 +333,6 @@
 
 - id: kevin_huang
   name: Kevin Huang
-  affiliation: CS
   degree: BS
   image: /images/members/kevin_huang.jpg
   startyear: 2024
@@ -356,7 +341,6 @@
 
 - id: nina_huang
   name: Nina Huang
-  affiliation: CS
   degree: BS
   image: /images/members/nina_huang.jpeg
   linkedin: nina-huangg
@@ -366,7 +350,6 @@
   
 - id: malaikah_hussain
   name: Malaikah Hussain
-  affiliation: CS
   degree: BS
   image: /images/members/malaikah_hussain.jpg
   linkedin: malaikah-hussain-616697245
@@ -376,7 +359,6 @@
 
 - id: katherine_jelich_ugrad
   name: Katherine Jelich
-  affiliation: CS
   degree: BS
   image: /images/members/katherine_jelich.jpeg
   linkedin: katherinejelich
@@ -387,7 +369,6 @@
 
 - id: kaavya_kalani
   name: Kaavya Kalani
-  affiliation: CS
   degree: BS
   image: /images/members/kaavya_kalani.jpg
   linkedin: kaavya-kalani
@@ -397,7 +378,6 @@
 
 - id: michelle_lin
   name: Michelle Lin
-  affiliation: CS
   degree: BS
   image: /images/members/michelle_lin.jpg
   linkedin: michellelin12
@@ -407,7 +387,6 @@
 
 - id: katherine_ma
   name: Katherine Ma
-  affiliation: CS
   degree: BS
   image: /images/members/katherine_ma.jpg
   linkedin: zewen-ma-053964203
@@ -417,7 +396,6 @@
 
 - id: shivesh_prakash
   name: Shivesh Prakash
-  affiliation: CS
   degree: BS
   image: /images/members/shivesh_prakash.jpeg
   website: https://shivesh777.github.io/
@@ -430,7 +408,6 @@
 
 - id: andrew_qiu
   name: Andrew Qiu
-  affiliation: CS
   degree: BS
   image: /images/members/andrew_qiu.jpeg
   linkedin: andrew-qiu
@@ -440,7 +417,6 @@
 
 - id: jeb_thomas
   name: Jeb Thomas
-  affiliation: CS
   degree: BS
   image: /images/members/jeb_thomas.jpeg
   linkedin: jeb-thomas-877966293
@@ -450,7 +426,6 @@
 
 - id: rilong_zhang
   name: Rilong (Owen) Zhang
-  affiliation: CS
   degree: BS
   image: /images/members/rilong_zhang.png
   linkedin: rilong-zhang-0a5493209
@@ -460,7 +435,6 @@
 
 - id: yifang_zhang
   name: Yifang Zhang
-  affiliation: CS
   degree: BS
   image: /images/members/yifang_zhang.jpg
   linkedin: yifang-zhang-04a984241
@@ -470,7 +444,6 @@
 
 - id: yiteng_zhang
   name: Yiteng Zhang
-  affiliation: CS
   degree: BS
   image: /images/members/yiteng_zhang.png
   website: https://github.com/3th4novo
@@ -480,7 +453,6 @@
 
 - id: olivia_zhou
   name: Olivia Zhou
-  affiliation: CS
   degree: BS
   image: /images/members/olivia_zhou.jpg
   linkedin: olivia-zhou-5a3991208
@@ -490,7 +462,6 @@
 
 - id: liam_bakar
   name: Liam Bakar
-  affiliation: CS
   degree: BS
   image: /images/members/liam_bakar.jpg
   linkedin: liam-bakar
@@ -500,7 +471,6 @@
 
 - id: ofek_gross
   name: Ofek Gross
-  affiliation: CS
   degree: BS
   image: /images/members/ofek_gross.png
   gscholar: _7-jnFN9TaYC
@@ -511,7 +481,6 @@
 
 - id: jiaqi_guo
   name: Jiaqi Guo
-  affiliation: CS
   degree: BS
   image: /images/members/jiaqi_guo.jpg
   linkedin: jiaqi-guo-6b040422b
@@ -521,7 +490,6 @@
 
 - id: kaartik_issar
   name: Kaartik Issar
-  affiliation: CS
   degree: BS
   image: /images/members/kaartik_issar.png
   linkedin: kaartik-issar-2492201a4
@@ -531,7 +499,6 @@
 
 - id: anna_kirik
   name: Anna Kirik
-  affiliation: CS
   degree: BS
   image: /images/members/anna_kirik.jpg
   linkedin: anna-kirik-a1869820b
@@ -541,7 +508,6 @@
 
 - id: shawn_kong
   name: Shawn Kong
-  affiliation: CS
   degree: BS
   image: /images/members/deshang_kong.png
   linkedin: shawn-kong-23b8b41a2
@@ -551,7 +517,6 @@
 
 - id: pierre_lessard
   name: Pierre-William Lessard
-  affiliation: CS
   degree: BS
   image: /images/members/pierre_lessard.jpeg
   linkedin: pierre-william-lessard
@@ -561,7 +526,6 @@
 
 - id: sannat_bhasin
   name: Sannat Bhasin
-  affiliation: CS
   degree: BS
   image: /images/members/sannat_bhasin.jpg
   linkedin: sannatbhasin
@@ -571,7 +535,6 @@
 
 - id: helen_li
   name: Jin Yi (Helen) Li
-  affiliation: CS
   degree: BS
   image: /images/members/helen_li.jpg
   website: https://helen-li.github.io/
@@ -583,7 +546,6 @@
 
 - id: zixiong_lin
   name: Zixiong Lin
-  affiliation: CS
   degree: BS
   image: /images/members/zixiong_lin.jpg
   linkedin: zixiong-lin
@@ -593,7 +555,6 @@
 
 - id: tanya_skoropad
   name: Tanya Skoropad
-  affiliation: CS
   degree: BS
   image: /images/members/tanya_skoropad.jpeg
   linkedin: tetiana-skoropad-446725207
@@ -603,7 +564,6 @@
 
 - id: yining_wang
   name: Yining Wang
-  affiliation: CS
   degree: BS
   image: /images/members/yining_wang.jpg
   linkedin: yining-wang-69990a196
@@ -613,7 +573,6 @@
 
 - id: chloe_zhao
   name: Chloe Zhao
-  affiliation: CS
   degree: BS
   image: /images/members/chloe_zhao.jpg
   startyear: 2022
@@ -622,7 +581,6 @@
 
 - id: sid_gupta
   name: Sidharth Gupta
-  affiliation: CS
   degree: BS
   image: /images/members/sid_gupta.jpeg
   linkedin: sidgupta-99
@@ -632,7 +590,6 @@
 
 - id: sixuan_wu
   name: Sixuan Wu
-  affiliation: CS
   degree: BS
   image: /images/members/sixuan_wu.jpeg
   website: https://sites.google.com/view/sixuan-wu/
@@ -645,30 +602,25 @@
 # Collaborators
 - id: brudno
   name: Michael Brudno
-  affiliation: CS
   degree: prof
   website: https://brudno.uhndata.io/
 
 - id: cafazzo
   name: Joseph Cafazzo
-  affiliation: UHN
   degree: prof
   website: https://www.uhnresearch.ca/researcher/joseph-cafazzo
 
 - id: delara
   name: Eyal de Lara
-  affiliation: CS
   degree: prof
   website: https://www.cs.toronto.edu/~delara/
 
 - id: khai
   name: Khai Truong
-  affiliation: CS
   degree: prof
   website: https://www.cs.toronto.edu/~khai/
 
 - id: williams
   name: Joseph Jay Williams
-  affiliation: CS
   degree: prof
   website: https://www.josephjaywilliams.com/
