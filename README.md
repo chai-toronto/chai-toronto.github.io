@@ -29,7 +29,8 @@ Add an entry to `_data/members.yml` with the following fields:
 | `startyear` | yes | The year that you joined the lab |
 | `endyear` | yes (if you leave the lab) | The year that you left the lab |
 | `active` | yes | `true` if you are currently working in the lab or `false` if you are now working elsewhere |
-| `search` | no | Indicates that you are looking for new positions (`industry`, `academia`, `postdoc`, `grad_school`) |
+| `search` | no | Indicates that you are looking for new positions (`industry`, `academia`, `postdoc`, `grad_phd`, `grad_msc`, `grad`) |
+| `topic` | yes (if you are in the lab) | A brief tagline for your research |
 | `thesis` | yes (if you leave the lab) | The title of your thesis, preferably in quotes |
 | `now_at` | yes (if you leave the lab) | Your current position outside of the university |
 

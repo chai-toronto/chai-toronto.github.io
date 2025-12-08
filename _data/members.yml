@@ -18,7 +18,7 @@
   linkedin: salaar-liaqat
   startyear: 2018
   coadvisor: delara
-  shortbio: Wearables, mobile health, and applied machine learning
+  topic: Remote patient monitoring for respiratory diseases
   active: true
 
 - id: sejal_bhalla
@@ -31,8 +31,9 @@
   twitter: sejal_bhalla
   startyear: 2021
   coadvisor: delara
-  shortbio: Mobile health and applied machine learning
+  topic: Speech analysis and multimodal health sensing
   active: true
+  search: industry
 
 - id: ken_christofferson
   name: Ken Christofferson
@@ -43,8 +44,9 @@
   linkedin: kenneth-christofferson
   startyear: 2021
   coadvisor: cafazzo
-  shortbio: Mobile health and applied machine learning
+  topic: Applied machine learning with earbuds
   active: true
+  search: industry
 
 - id: dhruv_verma
   name: Dhruv Verma
@@ -55,8 +57,9 @@
   linkedin: ~dhruvverma
   twitter: dhruvverma_
   startyear: 2021
-  shortbio: Mobile computing and computational imaging
+  topic: Computational imaging with mobile devices
   active: true
+  search: industry
 
 - id: ian_ruffolo
   name: Ian Ruffolo
@@ -66,7 +69,7 @@
   linkedin: ian-ruffolo-7991471aa
   startyear: 2021
   coadvisor: brudno
-  shortbio: Clinical physiological data science
+  topic: Bedside physiological monitoring
   active: true
 
 - id: andrii_lenyshyn
@@ -77,7 +80,7 @@
   gscholar: OWPpHvwAAAAJ
   linkedin: andrew2k
   startyear: 2023
-  shortbio: Health sensing with virtual reality
+  topic: Health monitoring with virtual reality
   active: true
   search: industry
 
@@ -90,7 +93,7 @@
   gscholar: m9h_9TYAAAAJ
   startyear: 2024
   coadvisor: williams
-  shortbio: Human-computer interaction and adaptive experimentation
+  topic: Adaptive interventions with conversational agents
   active: true
 
 - id: vaibhav_ganatra
@@ -101,20 +104,10 @@
   linkedin: vaibhav-ganatra-78a634193
   gscholar: vcX0u8AAAAAJ
   startyear: 2025
-  shortbio: Health sensing and machine learning
+  topic: Novel machine learning for healthcare
   active: true
 
 # Current Masters
-- id: thomas_kleinknecht
-  name: Thomas Kleinknecht
-  degree: MSc
-  image: /images/members/thomas_kleinknecht.jpg
-  website: http://thomaskleinknecht.com/
-  linkedin: thomaskleinknecht
-  startyear: 2025
-  shortbio: TBD
-  active: true
-
 - id: katherine_jelich
   name: Katherine Jelich
   degree: MSc
@@ -122,7 +115,17 @@
   linkedin: katherinejelich
   twitter: KatherineJelich
   startyear: 2025
-  shortbio: TBD
+  topic: Conversational health AI
+  active: true
+
+- id: thomas_kleinknecht
+  name: Thomas Kleinknecht
+  degree: MSc
+  image: /images/members/thomas_kleinknecht.jpg
+  website: http://thomaskleinknecht.com/
+  linkedin: thomaskleinknecht
+  startyear: 2025
+  topic: Multimodal blood pressure estimation
   active: true
 
 - id: kelsey_stemmler
@@ -133,7 +136,7 @@
   scholar: MGuOc9kAAAAJ
   linkedin: kstemmler
   startyear: 2025
-  shortbio: TBD
+  topic: Health informatics with wearables
   active: true
 
 - id: samanvay_vajpayee
@@ -142,17 +145,9 @@
   image: /images/members/samanvay_vajpayee.jpg
   linkedin: samvaj
   startyear: 2025
-  shortbio: LLMs, algorithmic fairness
+  topic: Medical LLM applications
   active: true
-
-- id: chengyue_zhang
-  name: ChengYue Zhang
-  degree: MScAC
-  image: /images/members/chengyue_zhang.jpg
-  linkedin: chengyuemscac
-  startyear: 2025
-  shortbio: Human activity recognition
-  active: true
+  search: PhD Position
 
 # Current Undergrads
 - id: irmak_aytekin
@@ -170,6 +165,7 @@
   linkedin: dqieu
   startyear: 2025
   active: true
+  search: Grad School Position
 
 - id: minh_le
   name: Minh Le
@@ -178,6 +174,7 @@
   linkedin: nm-le
   startyear: 2023
   active: true
+  search: Grad School Position
   
 - id: zulaa_lkhagvajav
   name: Zulaa Lkhagvajav
@@ -186,6 +183,7 @@
   linkedin: lk-zul
   startyear: 2025
   active: true
+  search: Grad School Position
 
 - id: tanaya_sharma
   name: Tanaya Sharma
@@ -218,6 +216,7 @@
   linkedin: tim-tianmen-wang-8864a9197
   startyear: 2025
   active: true
+  search: Grad School Position
 
 - id: richard_yin
   name: Richard Yin
@@ -249,7 +248,6 @@
   startyear: 2018
   endyear: 2025
   coadvisor: khai
-  shortbio: HCI, health informatics, and conversational agents
   active: false
   thesis: "Enhancing Patient-Centered Care: Examining the Design and Evaluation of Conversational Agents for Clinical Pre-Consultation"
   now_at: Postdoc, Medicine, Stanford University
@@ -269,6 +267,17 @@
   now_at: Postdoc, Biomedical Informatics, Columbia University
 
 # Masters Alumni
+- id: chengyue_zhang
+  name: ChengYue Zhang
+  degree: MScAC
+  image: /images/members/chengyue_zhang.jpg
+  linkedin: chengyuemscac
+  startyear: 2025
+  endyear: 2025
+  active: false
+  thesis: "Structuring Biomechanical Waveforms"
+  now_at: TBD
+
 - id: filip_miscevic
   name: Filip Miscevic
   degree: MScAC
@@ -278,7 +287,6 @@
   twitter: fil_mischievous
   startyear: 2022
   endyear: 2023
-  topic: Wearables for animal health
   coadvisor: Gerard O'Leary
   active: false
   thesis: "Mobile Seizure Detection: Towards Data-Driven, Personalized Seizure Treatment"

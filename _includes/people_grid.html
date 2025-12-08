@@ -16,6 +16,15 @@
           {% elsif search_val == "intern" %}
             {% assign search_label = "Internship" %}
             {% assign search_bg = "#ff9800" %}
+          {% elsif search_val == "grad_phd" %}
+            {% assign search_label = "PhD Position" %}
+            {% assign search_bg = "#ff9800" %}
+          {% elsif search_val == "grad_msc" %}
+            {% assign search_label = "Master's Position" %}
+            {% assign search_bg = "#ff9800" %}
+          {% elsif search_val == "grad" %}
+            {% assign search_label = "Grad School Position" %}
+            {% assign search_bg = "#ff9800" %}
           {% else %}
             {% assign search_label = member.search %}
             {% assign search_bg = "#AE2192" %}
@@ -44,8 +53,8 @@
             {% endif %}
           </div>
           <div class="persona-description">
-            {% if member.shortbio %}
-              {{ member.shortbio }}
+            {% if member.topic %}
+              {{ member.topic }}
             {% endif %}
           </div>
         </div>
