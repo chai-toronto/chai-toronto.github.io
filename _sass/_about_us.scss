@@ -14,7 +14,7 @@
 	font-style: normal;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
 	.container {
 		padding-left: 15px;
 		padding-right: 15px;
@@ -23,7 +23,7 @@
 
 .about-us-page {
 	h1 {
-		@media (max-width: 767px) {
+		@media (max-width: 1024px) {
 			margin-bottom: 0.5rem;
 		}
 	}
@@ -34,7 +34,7 @@
 		margin-bottom: 1rem;
 		font-weight: 300;
 
-		@media (max-width: 767px) {
+		@media (max-width: 1024px) {
 			font-size: 22px;
 			text-align: center;
 			margin-top: 1.5rem;
@@ -46,7 +46,7 @@
 	}
 
 	.culture-heading {
-		@media (max-width: 767px) {
+		@media (max-width: 1024px) {
 			margin-top: 0 !important;
 		}
 	}
@@ -57,7 +57,7 @@
 		line-height: 1.4;
 		text-align: left;
 
-		@media (max-width: 767px) {
+		@media (max-width: 1024px) {
 			font-size: 16px;
 			text-align: justify;
 			padding: 0 10px;
@@ -65,14 +65,14 @@
 	}
 
 	.row {
-		margin-bottom: 1rem;
+		margin-bottom: 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
-		@media (max-width: 767px) {
-			margin-bottom: 2rem;
-		}
-
-		img {
-			@media (max-width: 767px) {
+		@media (max-width: 1024px) {
+			display: block;
+			img {
 				margin-top: 0;
 				margin-bottom: 1rem;
 			}
@@ -80,12 +80,12 @@
 	}
 
 	.location-row {
-		@media (max-width: 767px) {
+		@media (max-width: 1024px) {
 			flex-direction: column-reverse;
 		}
 
 		map-frame {
-			@media (max-width: 767px) {
+			@media (max-width: 1024px) {
 				height: 300px;
 				margin-top: 1rem;
 				margin-bottom: 1.5rem;
@@ -100,14 +100,14 @@
 	img.rounded {
 		border-radius: 8px;
 
-		@media (max-width: 767px) {
+		@media (max-width: 1024px) {
 			max-width: 90%;
 			margin: 0 auto;
 		}
 	}
 
 	.img-fluid {
-		@media (max-width: 767px) {
+		@media (max-width: 1024px) {
 			display: block;
 			margin: 0 auto;
 		}
