@@ -132,6 +132,11 @@
     // Common elements
     const publicationCards = Array.from(document.querySelectorAll('.publication-card'));
     const activeFiltersPanel = document.getElementById('active-filters-panel');
+    const publicationsGrid = document.querySelector('.publications-grid');
+    
+    // Pagination state
+    let currentPage = 1;
+    const itemsPerPage = 10;
 
     // Mobile filter overlay controls
     const overlay = document.querySelector('.filter-overlay');
@@ -223,7 +228,7 @@
       return values;
     }
 
-    function filterPublications() {
+    function filterPublications(resetPage = true) {
       const query = searchInput.value.toLowerCase();
       const selectedYear = yearSelect.value;
       const selectedHealthTopic = healthTopicSelect.value;
@@ -234,62 +239,142 @@
       const selectedDevices = getCheckedValues(deviceCheckboxes);
       const selectedAwards = getCheckedValues(awardCheckboxes);
 
+      // Reset to page 1 when filters change (but not when just changing pages)
+      if (resetPage) {
+        currentPage = 1;
+      }
+
+      // First, filter the cards and mark which ones are visible
+      const visibleCards = [];
       publicationCards.forEach(card => {
+        let isVisible = true;
+        
         // Search
         let text = card.textContent.toLowerCase();
         if (query && !text.includes(query)) {
-          card.style.display = 'none';
-          return;
+          isVisible = false;
         }
         // Dropdowns
-        if (selectedYear && card.dataset.year !== selectedYear) {
-          card.style.display = 'none';
-          return;
+        else if (selectedYear && card.dataset.year !== selectedYear) {
+          isVisible = false;
         }
-        if (selectedHealthTopic && !card.dataset.healthTopic.includes(selectedHealthTopic)) {
-          card.style.display = 'none';
-          return;
+        else if (selectedHealthTopic && !card.dataset.healthTopic.includes(selectedHealthTopic)) {
+          isVisible = false;
         }
-        if (selectedVenue && !card.dataset.venue.includes(selectedVenue)) {
-          card.style.display = 'none';
-          return;
+        else if (selectedVenue && !card.dataset.venue.includes(selectedVenue)) {
+          isVisible = false;
         }
-        if (selectedAuthor && !card.dataset.author.includes(selectedAuthor)) {
-          card.style.display = 'none';
-          return;
+        else if (selectedAuthor && !card.dataset.author.includes(selectedAuthor)) {
+          isVisible = false;
         }
         // Checkboxes
-        if (selectedThemes.length > 0) {
+        else if (selectedThemes.length > 0) {
           const cardThemes = card.dataset.theme.split(',').map(t => t.trim());
           if (!selectedThemes.some(theme => cardThemes.includes(theme))) {
-            card.style.display = 'none';
-            return;
+            isVisible = false;
           }
         }
-        if (selectedSkills.length > 0) {
+        else if (selectedSkills.length > 0) {
           const cardSkills = card.dataset.skills.split(',').map(s => s.trim());
           if (!selectedSkills.some(skill => cardSkills.includes(skill))) {
-            card.style.display = 'none';
-            return;
+            isVisible = false;
           }
         }
-        if (selectedDevices.length > 0) {
+        else if (selectedDevices.length > 0) {
           const cardDevice = card.dataset.device;
           if (!selectedDevices.some(device => cardDevice.includes(device))) {
-            card.style.display = 'none';
-            return;
+            isVisible = false;
           }
         }
-        if (selectedAwards.length > 0) {
+        else if (selectedAwards.length > 0) {
           const cardAward = card.dataset.award;
           if (!selectedAwards.some(award => cardAward.includes(award))) {
-            card.style.display = 'none';
-            return;
+            isVisible = false;
           }
         }
+
+        if (isVisible) {
+          visibleCards.push(card);
+        }
+      });
+
+      // Hide all cards first
+      publicationCards.forEach(card => {
+        card.style.display = 'none';
+      });
+
+      // Calculate pagination
+      const totalPages = Math.ceil(visibleCards.length / itemsPerPage);
+      // Ensure currentPage doesn't exceed totalPages
+      if (currentPage > totalPages && totalPages > 0) {
+        currentPage = totalPages;
+      }
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+
+      // Show only cards for current page
+      visibleCards.slice(startIndex, endIndex).forEach(card => {
         card.style.display = '';
       });
+
+      // Update pagination controls
+      updatePagination(visibleCards.length, totalPages);
       updateActiveFilters();
+    }
+
+    function updatePagination(totalItems, totalPages) {
+      // Remove existing pagination if it exists
+      const existingPagination = document.getElementById('publications-pagination');
+      if (existingPagination) {
+        existingPagination.remove();
+      }
+
+      // Don't show pagination if there are no items or only one page
+      if (totalItems === 0 || totalPages <= 1) {
+        return;
+      }
+
+      // Create pagination container
+      const pagination = document.createElement('div');
+      pagination.id = 'publications-pagination';
+      pagination.className = 'publications-pagination';
+
+      // Previous button
+      const prevBtn = document.createElement('button');
+      prevBtn.className = 'pagination-btn';
+      prevBtn.textContent = 'Previous';
+      prevBtn.disabled = currentPage === 1;
+      prevBtn.addEventListener('click', () => {
+        if (currentPage > 1) {
+          currentPage--;
+          filterPublications(false);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+      pagination.appendChild(prevBtn);
+
+      // Page info
+      const pageInfo = document.createElement('span');
+      pageInfo.className = 'pagination-info';
+      pageInfo.textContent = `Page ${currentPage} of ${totalPages} (${totalItems} total)`;
+      pagination.appendChild(pageInfo);
+
+      // Next button
+      const nextBtn = document.createElement('button');
+      nextBtn.className = 'pagination-btn';
+      nextBtn.textContent = 'Next';
+      nextBtn.disabled = currentPage === totalPages;
+      nextBtn.addEventListener('click', () => {
+        if (currentPage < totalPages) {
+          currentPage++;
+          filterPublications(false);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+      pagination.appendChild(nextBtn);
+
+      // Insert pagination at the bottom of the publications grid
+      publicationsGrid.appendChild(pagination);
     }
 
     function updateActiveFilters() {
@@ -444,7 +529,8 @@
       overlay.classList.remove('active');
     });
 
-    // Initialize active filters panel
+    // Initialize active filters panel and pagination
+    filterPublications();
     updateActiveFilters();
   });
 </script>
