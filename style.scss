@@ -501,13 +501,11 @@ blockquote {
   }
 
   .first-row {
-    margin: 0 auto 2rem 0;
 
     @media (max-width: 991px) {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      margin-bottom: 1rem;
     }
 
     h4 {
