@@ -6,7 +6,7 @@
 }
 
 .our-team-page h2 {
-  font-family: 'Instrument Sans Medium', sans-serif;
+  font-family: $instrumentMedium;
   font-size: 30px;
   text-align: center;
 
@@ -46,7 +46,7 @@
   .pi-heading {
     text-align: center;
     font-size: 30px;
-    font-family: 'Instrument Sans Medium', sans-serif;
+    font-family: $instrumentMedium;
 
     @include breakpoint-sm-down {
       font-size: 24px;
@@ -78,7 +78,7 @@
 
   .pi-name {
     font-size: 20px;
-    font-family: 'Instrument Sans Medium', sans-serif;
+    font-family: $instrumentMedium;
     margin-bottom: 1rem;
     text-align: center;
 
@@ -88,7 +88,7 @@
   }
 
   .pi-title {
-    font-family: 'Instrument Sans Regular', sans-serif;
+    font-family: $instrumentRegular;
     font-size: 16px;
     text-align: center;
     margin: 0;
@@ -100,7 +100,7 @@
 
   .pi-affiliation {
     font-size: 16px;
-    font-family: 'Instrument Sans Regular', sans-serif;
+    font-family: $instrumentRegular;
 
     @include breakpoint-sm-down {
       font-size: 14px;
@@ -328,7 +328,7 @@
         }
 
         .persona-name {
-          font-family: 'Instrument Sans Medium', sans-serif;
+          font-family: $instrumentMedium;
           font-size: 18px;
           margin-bottom: 0.5rem;
 
@@ -343,7 +343,7 @@
         }
 
         .persona-degree {
-          font-family: 'Instrument Sans Medium', sans-serif;
+          font-family: $instrumentMedium;
           font-size: 16px;
           margin-bottom: 0.5rem;
 
@@ -358,7 +358,7 @@
         }
 
         .persona-description {
-          font-family: 'Instrument Sans Regular', sans-serif;
+          font-family: $instrumentRegular;
           font-size: 16px;
           color: black;
 

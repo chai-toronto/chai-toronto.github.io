@@ -97,7 +97,7 @@
           }
 
           .persona-name {
-            font-family: 'Instrument Sans Medium', sans-serif;
+            font-family: $instrumentMedium;
             font-size: 18px;
             margin-bottom: 0.5rem;
 
@@ -112,7 +112,7 @@
           }
 
           .persona-degree {
-            font-family: 'Instrument Sans Medium', sans-serif;
+            font-family: $instrumentMedium;
             font-size: 14px;
             margin-bottom: 0.5rem;
 
@@ -123,7 +123,7 @@
           }
 
           .persona-description {
-            font-family: 'Instrument Sans Regular', sans-serif;
+            font-family: $instrumentRegular;
             font-size: 14px;
             color: $gray;
             padding-bottom: 10px;

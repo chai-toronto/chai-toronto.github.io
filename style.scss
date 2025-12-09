@@ -8,28 +8,6 @@
 @import "reset";
 @import "variables";
 
-@font-face {
-  font-family: 'Instrument Sans Medium';
-  src: url('fonts/InstrumentSans-Medium.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Instrument Sans Italic';
-  src: url('fonts/InstrumentSans-Italic.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'Instrument Sans SemiBold';
-  src: url('fonts/InstrumentSans-SemiBold.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-}
-
 
 // Syntax highlighting @import is at the bottom of this file
 
@@ -57,7 +35,7 @@ body {
 }
 
 h1 {
-  font-family: 'Instrument Sans Medium', sans-serif;
+  font-family: $instrumentMedium;
   font-size: 32px;
   font-weight: 300;
 
@@ -71,14 +49,14 @@ h1 {
 }
 
 h2 {
-  font-family: 'Instrument Sans Medium', sans-serif;
+  font-family: $instrumentMedium;
   font-size: 25px;
   margin-bottom: 1rem;
   font-weight: 300;
 }
 
 p {
-  font-family: 'Instrument Sans Regular', sans-serif;
+  font-family: $instrumentRegular;
   font-size: 18px;
   line-height: 1.4;
   text-align: left;
@@ -140,11 +118,11 @@ blockquote {
 
 ::-moz-selection {
   color: $black;
-  background: $primaryBlue;
+  background: $linkBlue;
 }
 ::selection {
   color: $black;
-  background: $primaryBlue;
+  background: $linkBlue;
 }
 
 // Nicolas Gallagher's micro clearfix hack
@@ -314,7 +292,7 @@ blockquote {
       }
 
       .nav-link {
-        font-family: 'Instrument Sans Medium', sans-serif;
+        font-family: $instrumentMedium;
         display: inline-flex;
         align-items: center;
         padding: 20px 20px;
@@ -369,7 +347,7 @@ blockquote {
         }
 
         .dropdown-item {
-          font-family: 'Instrument Sans Medium', sans-serif;
+          font-family: $instrumentMedium;
           font-size: 16px;
           display: block;
           padding: 20px 20px;
@@ -398,7 +376,7 @@ blockquote {
       margin-right: 10px;
 
       .nav-link {
-        font-family: 'Instrument Sans Medium', sans-serif;
+        font-family: $instrumentMedium;
         display: inline-flex;
         align-items: center;
         padding: 20px 20px;

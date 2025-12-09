@@ -1,6 +1,13 @@
 .get-involved-page {
   .row {
     margin-bottom: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include breakpoint-md-down {
+      display: block;
+    }
 
     @include breakpoint-sm-down {
       margin-bottom: 3rem;
@@ -37,7 +44,7 @@
   }
 
   h2 {
-    font-family: 'Instrument Sans Medium', sans-serif;
+    font-family: $instrumentMedium;
     font-size: 28px;
     margin-bottom: 1rem;
 
@@ -53,7 +60,7 @@
   }
 
   p {
-    font-family: 'Instrument Sans Regular', sans-serif;
+    font-family: $instrumentRegular;
     font-size: 18px;
     line-height: 1.4;
     margin-bottom: 1.5rem;

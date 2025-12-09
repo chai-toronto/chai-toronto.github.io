@@ -93,7 +93,7 @@
     }
 
     .sub-tagline {
-      font-family: 'Instrument Sans Regular', sans-serif;
+      font-family: $instrumentRegular;
       font-size: 20px;
       line-height: 1.4;
       margin-top: 1rem;
@@ -130,7 +130,7 @@
     }
 
     .see-work-btn {
-      font-family: 'Instrument Sans Regular', sans-serif;
+      font-family: $instrumentRegular;
       font-size: 18px;
       font-weight: 600;
       padding: 1.3rem 2rem;
@@ -172,7 +172,7 @@
     }
 
     h2 {
-      font-family: 'Instrument Sans Regular', sans-serif;
+      font-family: $instrumentRegular;
       font-size: 28px;
       margin-bottom: 1.5rem;
 
@@ -188,7 +188,7 @@
   .funded-by-section {
     margin-bottom: -2.5rem;
     h2 {
-      font-family: 'Instrument Sans Regular', sans-serif;
+      font-family: $instrumentRegular;
       font-size: 28px;
       margin-bottom: 1.5rem;
 

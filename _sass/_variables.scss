@@ -39,8 +39,21 @@ $blackTransparent40: rgba(0, 0, 0, 0.4);
 // FONTS
 //
 
-// Stacks
 $lato: 'Lato', sans-serif;
+@font-face {
+  font-family: 'Instrument Sans Regular';
+  src: url('fonts/InstrumentSans-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+$instrumentRegular: 'Instrument Sans Regular', sans-serif;
+@font-face {
+  font-family: 'Instrument Sans Medium';
+  src: url('fonts/InstrumentSans-Medium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+$instrumentMedium: 'Instrument Sans Medium', sans-serif;
 
 //
 // BREAKPOINTS
