@@ -1,6 +1,6 @@
 .about-us-page {
   h1 {
-    @media (max-width: 991px) {
+    @include breakpoint-md-down {
       margin-bottom: 0.5rem;
     }
   }
@@ -10,7 +10,7 @@
     margin-bottom: 1rem;
     font-weight: 300;
 
-    @media (max-width: 991px) {
+    @include breakpoint-md-down {
       font-size: 22px;
       text-align: center;
       margin-top: 1.5rem;
@@ -18,7 +18,7 @@
   }
 
   .culture-heading {
-    @media (max-width: 991px) {
+    @include breakpoint-md-down {
       margin-top: 0 !important;
     }
   }
@@ -28,7 +28,7 @@
     line-height: 1.4;
     text-align: left;
 
-    @media (max-width: 991px) {
+    @include breakpoint-md-down {
       font-size: 16px;
       text-align: justify;
       padding: 0 10px;
@@ -41,7 +41,7 @@
     align-items: center;
     justify-content: center;
 
-    @media (max-width: 991px) {
+    @include breakpoint-md-down {
       display: block;
       img {
         margin-top: 0;
@@ -51,12 +51,12 @@
   }
 
   .location-row {
-    @media (max-width: 991px) {
+    @include breakpoint-md-down {
       flex-direction: column-reverse;
     }
 
     map-frame {
-      @media (max-width: 991px) {
+      @include breakpoint-md-down {
         height: 300px;
         margin-top: 1rem;
         margin-bottom: 1.5rem;
@@ -67,14 +67,14 @@
   img.rounded {
     border-radius: 8px;
 
-    @media (max-width: 991px) {
+    @include breakpoint-md-down {
       max-width: 90%;
       margin: 0 auto;
     }
   }
 
   .img-fluid {
-    @media (max-width: 991px) {
+    @include breakpoint-md-down {
       display: block;
       margin: 0 auto;
     }

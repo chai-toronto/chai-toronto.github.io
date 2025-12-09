@@ -2,11 +2,11 @@
   .row {
     margin-bottom: 4rem;
 
-    @media (max-width: 767px) {
+    @include breakpoint-sm-down {
       margin-bottom: 3rem;
     }
 
-    @media (max-width: 480px) {
+    @include breakpoint-xs-down {
       margin-bottom: 2.5rem;
     }
   }
@@ -14,7 +14,7 @@
   .row img {
     border-radius: 20px;
 
-    @media (max-width: 767px) {
+    @include breakpoint-sm-down {
       margin-top: 0;
       margin-bottom: 1.5rem;
     }
@@ -24,7 +24,7 @@
     overflow: hidden;
     border-radius: 1rem;
 
-    @media (max-width: 767px) {
+    @include breakpoint-sm-down {
       margin-bottom: 1.5rem;
       width: 100%;
     }
@@ -41,13 +41,13 @@
     font-size: 28px;
     margin-bottom: 1rem;
 
-    @media (max-width: 767px) {
+    @include breakpoint-sm-down {
       font-size: 22px;
       text-align: center;
       margin-bottom: 0.8rem;
     }
 
-    @media (max-width: 480px) {
+    @include breakpoint-xs-down {
       font-size: 20px;
     }
   }
@@ -58,34 +58,33 @@
     line-height: 1.4;
     margin-bottom: 1.5rem;
 
-    @media (max-width: 767px) {
+    @include breakpoint-sm-down {
       font-size: 16px;
       text-align: center;
       margin-bottom: 1.2rem;
     }
 
-    @media (max-width: 480px) {
+    @include breakpoint-xs-down {
       font-size: 15px;
       margin-bottom: 1rem;
     }
   }
 
   .see-work-btn {
-    float: left;
     display: inline-block;
     margin-top: 0.5rem;
     font-family: 'Instrument Sans Regular', sans-serif;
     font-size: 18px;
     font-weight: 600;
     padding: 1.3rem 2rem;
-    background-color: #008F8C;
+    background-color: $primaryTeal;
     border: none;
     border-radius: 20px;
-    color: #fff;
+    color: $white;
     text-decoration: none;
     transition: background-color 0.2s ease;
 
-    @media (max-width: 767px) {
+    @include breakpoint-sm-down {
       float: none;
       display: block;
       margin: 1rem auto;
@@ -95,26 +94,21 @@
       max-width: 200px;
     }
 
-    @media (max-width: 480px) {
+    @include breakpoint-xs-down {
       font-size: 15px;
       padding: 0.8rem 1.5rem;
       max-width: 180px;
     }
 
     &:hover {
-      background-color: #007974;
-      color: #fff;
+      background-color: $primaryTealDark;
+      color: $white;
       text-decoration: none;
     }
 
-    &:focus {
-      background-color: #005F5C;
-      color: #fff;
-      outline: none;
-    }
   }
 
-  @media (max-width: 767px) {
+  @include breakpoint-sm-down {
     .row.mobile-reverse {
       flex-direction: column-reverse;
     }

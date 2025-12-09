@@ -2,18 +2,37 @@
 // COLORS
 //
 
-// School colors
-$torontoBlue: #00204e;
-$torontoRed: #bb133e;
-$white: #fff;
+// Brand colors
+$primaryTeal: #008F8C;
+$primaryTealDark: #007974;
+$primaryMagenta: #AE2192;
+$primaryMagentaDark: #81186c;
+$primaryBlue: #003479;
+$accentBlue: #13b6ec;
+$accentBlueDark: #0b6d8e;
 
-// Other colors
-$blue: #4183C4;
+// Semantic colors
+$white: #fff;
 $black: #000;
-$darkerGray: #222;
-$darkGray: #333;
+$awardRed: #c70000;
+
+// Grays
+$grayDarker: #333;
+$grayDark: #444;
+$grayMedium: #555;
 $gray: #666;
-$lightGray: #eee;
+$grayLight: #999;
+$grayLighter: #ccc;
+$grayLightest: #ddd;
+$grayVeryLight: #eee;
+$grayPale: #f2f2f2;
+$grayPaler: #e0e0e0;
+$grayHover: #EFEFEF;
+$grayBackground: #E9F3F3;
+
+// Transparent colors
+$blackTransparent15: rgba(0, 0, 0, 0.15);
+$blackTransparent40: rgba(0, 0, 0, 0.4);
 
 //
 // FONTS
@@ -21,45 +40,99 @@ $lightGray: #eee;
 
 // Stacks
 $lato: 'Lato', sans-serif;
-$opensans: 'Open Sans', sans-serif;
 
-// Mobile breakpoints
-@mixin mobile {
-  @media screen and (max-width: 640px) {
+//
+// BREAKPOINTS
+//
+
+// Base breakpoint values
+$breakpoint-xs:              480px;   // Extra small devices (phones)
+$breakpoint-sm:              640px;   // Small devices (small phones)
+$breakpoint-md:              768px;   // Medium devices (tablets)
+$breakpoint-lg:              992px;   // Large devices (desktops)
+$breakpoint-xl:              1200px;  // Extra large devices (wide desktops)
+
+// Breakpoint boundaries (for max-width queries)
+$breakpoint-xs-max:          ($breakpoint-xs - 1);      // 479px
+$breakpoint-sm-max:          ($breakpoint-md - 1);      // 767px
+$breakpoint-md-max:          ($breakpoint-lg - 1);      // 991px
+$breakpoint-lg-max:          ($breakpoint-xl - 1);     // 1199px
+
+// Breakpoint mixins
+@mixin breakpoint-xs-down {
+  @media (max-width: $breakpoint-xs-max) {
     @content;
   }
 }
 
-// Extra small screen / phone
-//** Deprecated `$screen-xs` as of v3.0.1
-$screen-xs:                  480px;
-//** Deprecated `$screen-xs-min` as of v3.2.0
-$screen-xs-min:              $screen-xs;
-//** Deprecated `$screen-phone` as of v3.0.1
-$screen-phone:               $screen-xs-min;
+@mixin breakpoint-sm-down {
+  @media (max-width: $breakpoint-sm-max) {
+    @content;
+  }
+}
 
-// Small screen / tablet
-//** Deprecated `$screen-sm` as of v3.0.1
-$screen-sm:                  768px;
-$screen-sm-min:              $screen-sm;
-//** Deprecated `$screen-tablet` as of v3.0.1
-$screen-tablet:              $screen-sm-min;
+@mixin breakpoint-md-down {
+  @media (max-width: $breakpoint-md-max) {
+    @content;
+  }
+}
 
-// Medium screen / desktop
-//** Deprecated `$screen-md` as of v3.0.1
-$screen-md:                  992px;
-$screen-md-min:              $screen-md;
-//** Deprecated `$screen-desktop` as of v3.0.1
-$screen-desktop:             $screen-md-min;
+@mixin breakpoint-lg-down {
+  @media (max-width: $breakpoint-lg-max) {
+    @content;
+  }
+}
 
-// Large screen / wide desktop
-//** Deprecated `$screen-lg` as of v3.0.1
-$screen-lg:                  1200px;
-$screen-lg-min:              $screen-lg;
-//** Deprecated `$screen-lg-desktop` as of v3.0.1
-$screen-lg-desktop:          $screen-lg-min;
+@mixin breakpoint-xs-up {
+  @media (min-width: $breakpoint-xs) {
+    @content;
+  }
+}
 
-// So media queries don't overlap when required, provide a maximum
-$screen-xs-max:              ($screen-sm-min - 1);
-$screen-sm-max:              ($screen-md-min - 1);
-$screen-md-max:              ($screen-lg-min - 1);
+@mixin breakpoint-sm-up {
+  @media (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin breakpoint-md-up {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin breakpoint-lg-up {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin breakpoint-xl-up {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+// Legacy mixin for backward compatibility
+@mixin mobile {
+  @media screen and (max-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+// Legacy variables for backward compatibility (deprecated)
+$screen-xs:                  $breakpoint-xs;
+$screen-xs-min:              $breakpoint-xs;
+$screen-phone:               $breakpoint-xs;
+$screen-sm:                  $breakpoint-md;
+$screen-sm-min:              $breakpoint-md;
+$screen-tablet:              $breakpoint-md;
+$screen-md:                  $breakpoint-lg;
+$screen-md-min:              $breakpoint-lg;
+$screen-desktop:             $breakpoint-lg;
+$screen-lg:                  $breakpoint-xl;
+$screen-lg-min:              $breakpoint-xl;
+$screen-lg-desktop:          $breakpoint-xl;
+$screen-xs-max:              $breakpoint-sm-max;
+$screen-sm-max:              $breakpoint-md-max;
+$screen-md-max:              $breakpoint-lg-max;

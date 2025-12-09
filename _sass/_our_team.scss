@@ -1,4 +1,4 @@
-@media (max-width: 767px) {
+@include breakpoint-sm-down {
   .container {
     padding-left: 15px;
     padding-right: 15px;
@@ -10,12 +10,12 @@
   font-size: 30px;
   text-align: center;
 
-  @media (max-width: 767px) {
+  @include breakpoint-sm-down {
     font-size: 24px;
     padding: 1.5rem 1rem;
   }
 
-  @media (max-width: 480px) {
+  @include breakpoint-xs-down {
     font-size: 22px;
     padding: 1rem;
   }
@@ -27,7 +27,7 @@
   text-align: center;
   margin: 0 auto;
 
-  @media (max-width: 767px) {
+  @include breakpoint-sm-down {
     padding-left: 1rem;
     padding-right: 1rem;
     width: 100%;
@@ -37,7 +37,7 @@
     .col-md-8 {
       margin-left: 2rem;
 
-      @media (max-width: 767px) {
+      @include breakpoint-sm-down {
         margin-left: 0;
       }
     }
@@ -48,17 +48,17 @@
     font-size: 30px;
     font-family: 'Instrument Sans Medium', sans-serif;
 
-    @media (max-width: 767px) {
+    @include breakpoint-sm-down {
       font-size: 24px;
     }
 
-    @media (max-width: 480px) {
+    @include breakpoint-xs-down {
       font-size: 22px;
     }
   }
 
   .pi-image-container {
-    @media (max-width: 767px) {
+    @include breakpoint-sm-down {
       margin-bottom: 1.5rem;
     }
   }
@@ -70,7 +70,7 @@
     display: block;
     margin: 0 auto 1rem;
 
-    @media (max-width: 767px) {
+    @include breakpoint-sm-down {
       max-width: 250px;
       border-radius: 15px !important;
     }
@@ -82,7 +82,7 @@
     margin-bottom: 1rem;
     text-align: center;
 
-    @media (max-width: 767px) {
+    @include breakpoint-sm-down {
       font-size: 18px;
     }
   }
@@ -93,7 +93,7 @@
     text-align: center;
     margin: 0;
 
-    @media (max-width: 767px) {
+    @include breakpoint-sm-down {
       font-size: 14px;
     }
   }
@@ -102,13 +102,13 @@
     font-size: 16px;
     font-family: 'Instrument Sans Regular', sans-serif;
 
-    @media (max-width: 767px) {
+    @include breakpoint-sm-down {
       font-size: 14px;
     }
   }
 
   .pi-bio {
-    @media (max-width: 767px) {
+    @include breakpoint-sm-down {
       p {
         text-align: justify;
         font-size: 16px;
@@ -118,11 +118,11 @@
 }
 
 .students-section {
-  @media (max-width: 767px) {
+  @include breakpoint-sm-down {
     margin-bottom: 2rem !important;
   }
 
-  @media (max-width: 480px) {
+  @include breakpoint-xs-down {
     margin-bottom: 1.5rem !important;
   }
 }
@@ -131,12 +131,12 @@
   margin-top: 2rem;
   margin-bottom: 2rem;
 
-  @media (max-width: 767px) {
+  @include breakpoint-sm-down {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
   }
 
-  @media (max-width: 480px) {
+  @include breakpoint-xs-down {
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
@@ -150,7 +150,7 @@
   margin: 0 auto;
   padding: 0 2rem;
 
-  @media (max-width: 767px) {
+  @include breakpoint-sm-down {
     margin-top: 1rem;
     padding: 0 1rem;
   }
@@ -160,7 +160,7 @@
     margin-bottom: 1rem;
     font-weight: 600;
 
-    @media (max-width: 767px) {
+    @include breakpoint-sm-down {
       font-size: 18px;
       text-align: center;
     }
@@ -172,14 +172,14 @@
     gap: 30px;
     justify-content: center;
 
-    @media (max-width: 991px) {
+    @include breakpoint-md-down {
       gap: 20px;
       justify-content: center;
     }
-    @media (max-width: 767px) {
+    @include breakpoint-sm-down {
       gap: 10px;
     }
-    @media (max-width: 480px) {
+    @include breakpoint-xs-down {
       gap: 8px;
     }
   }
@@ -187,22 +187,22 @@
   .persona-card {
     width: 30%;
 
-    @media (max-width: 991px) {
+    @include breakpoint-md-down {
       width: 45%;
     }
 
     .persona-card-inner {
       position: relative;
-      border: 1px solid #ccc;
+      border: 1px solid $grayLighter;
       border-radius: 12px;
-      background: #fff;
+      background: $white;
       display: flex;
       flex-direction: column;
       text-align: left;
       transition: none;
       height: 100%;
 
-      @media (max-width: 767px) {
+      @include breakpoint-sm-down {
         border-radius: 8px;
       }
 
@@ -214,11 +214,11 @@
         flex-direction: column;
         align-items: flex-end;
 
-        @media (max-width: 767px) {
+        @include breakpoint-sm-down {
           top: -24px;
         }
 
-        @media (max-width: 480px) {
+        @include breakpoint-xs-down {
           top: -20px;
         }
 
@@ -226,21 +226,21 @@
           font-family: "Nunito", sans-serif;
           font-weight: 300;
           font-size: 14px;
-          background-color: #fff;
-          color: #000;
-          border: 1px solid #444;
+          background-color: $white;
+          color: $black;
+          border: 1px solid $grayDark;
           border-bottom: none;
           padding: 8px 10px;
           border-radius: 10px 10px 0 0;
           z-index: 2;
 
-          @media (max-width: 767px) {
+          @include breakpoint-sm-down {
             font-size: 10px;
             padding: 4px 6px;
             border-radius: 6px 6px 0 0;
           }
 
-          @media (max-width: 480px) {
+          @include breakpoint-xs-down {
             font-size: 8px;
             padding: 3px 5px;
             border-radius: 5px 5px 0 0;
@@ -251,23 +251,23 @@
           font-family: "Nunito", sans-serif;
           font-weight: 300;
           font-size: 16px;
-          background-color: #AE2192;
-          color: #fff;
+          background-color: $primaryMagenta;
+          color: $white;
           padding: 10px 15px;
-          border: 1px solid #AE2192;
+          border: 1px solid $primaryMagenta;
           border-top: none;
           border-radius: 10px 0 10px 10px;
           margin-top: -6px;
           z-index: 3;
 
-          @media (max-width: 767px) {
+          @include breakpoint-sm-down {
             font-size: 11px;
             padding: 5px 8px;
             margin-top: -4px;
             border-radius: 6px 0 6px 6px;
           }
 
-          @media (max-width: 480px) {
+          @include breakpoint-xs-down {
             font-size: 9px;
             padding: 4px 6px;
             margin-top: -3px;
@@ -281,12 +281,12 @@
         width: 100%;
         height: 300px;
 
-        @media (max-width: 767px) {
+        @include breakpoint-sm-down {
           padding: 5px;
           height: 150px;
         }
 
-        @media (max-width: 480px) {
+        @include breakpoint-xs-down {
           padding: 4px;
           height: 130px;
         }
@@ -296,9 +296,9 @@
           height: 100%;
           object-fit: cover;
           border-radius: 6px;
-          background: #f2f2f2;
+          background: $grayPale;
 
-          @media (max-width: 767px) {
+          @include breakpoint-sm-down {
             border-radius: 4px;
           }
         }
@@ -306,10 +306,10 @@
         .placeholder-img {
           width: 100%;
           height: 100%;
-          background: #e0e0e0;
+          background: $grayPaler;
           border-radius: 6px;
 
-          @media (max-width: 767px) {
+          @include breakpoint-sm-down {
             border-radius: 4px;
           }
         }
@@ -319,11 +319,11 @@
         padding: 20px;
         flex-grow: 1;
 
-        @media (max-width: 767px) {
+        @include breakpoint-sm-down {
           padding: 10px;
         }
 
-        @media (max-width: 480px) {
+        @include breakpoint-xs-down {
           padding: 6px;
         }
 
@@ -332,12 +332,12 @@
           font-size: 18px;
           margin-bottom: 0.5rem;
 
-          @media (max-width: 767px) {
+          @include breakpoint-sm-down {
             font-size: 16px;
             margin-bottom: 0.25rem;
           }
 
-          @media (max-width: 480px) {
+          @include breakpoint-xs-down {
             font-size: 13px;
           }
         }
@@ -347,12 +347,12 @@
           font-size: 16px;
           margin-bottom: 0.5rem;
 
-          @media (max-width: 767px) {
+          @include breakpoint-sm-down {
             font-size: 14px;
             margin-bottom: 0.25rem;
           }
 
-          @media (max-width: 480px) {
+          @include breakpoint-xs-down {
             font-size: 12px;
           }
         }
@@ -362,11 +362,11 @@
           font-size: 16px;
           color: black;
 
-          @media (max-width: 767px) {
+          @include breakpoint-sm-down {
             font-size: 14px;
           }
 
-          @media (max-width: 480px) {
+          @include breakpoint-xs-down {
             font-size: 12px;
           }
         }
@@ -379,12 +379,12 @@
   padding: 10px 20px;
   margin-top: -15px;
 
-  @media (max-width: 767px) {
+  @include breakpoint-sm-down {
     padding: 6px 8px;
     margin-top: -8px;
   }
 
-  @media (max-width: 480px) {
+  @include breakpoint-xs-down {
     padding: 5px 6px;
     margin-top: -6px;
   }
@@ -394,21 +394,21 @@
     &:hover {
       text-decoration: none;
       i {
-        color: #007974;
+        color: $primaryTealDark;
       }
     }
 
     i {
       font-size: 20px;
-      color: #444;
+      color: $grayDark;
       margin-right: 10px;
 
-      @media (max-width: 767px) {
+      @include breakpoint-sm-down {
         font-size: 14px;
         margin-right: 5px;
       }
 
-      @media (max-width: 480px) {
+      @include breakpoint-xs-down {
         font-size: 12px;
         margin-right: 4px;
       }

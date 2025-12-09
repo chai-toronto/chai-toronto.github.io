@@ -4,7 +4,7 @@
     p {
       margin-bottom: 2rem;
 
-      @media (max-width: 767px) {
+      @include breakpoint-sm-down {
         font-size: 16px;
         text-align: center;
       }
@@ -12,13 +12,13 @@
 
     .alumni-section {
       .section-heading {
-        @media (max-width: 767px) {
+        @include breakpoint-sm-down {
           text-align: center;
           font-size: 24px;
           margin-bottom: 1.5rem;
         }
 
-        @media (max-width: 480px) {
+        @include breakpoint-xs-down {
           font-size: 22px;
         }
       }
@@ -29,13 +29,13 @@
       max-width: 1600px;
       text-align: center;
 
-      @media (max-width: 991px) {
+      @include breakpoint-md-down {
         margin: 3rem auto;
       }
-      @media (max-width: 767px) {
+      @include breakpoint-sm-down {
         margin: 2rem auto;
       }
-      @media (max-width: 480px) {
+      @include breakpoint-xs-down {
         margin: 1.5rem auto;
       }
     }
@@ -48,15 +48,15 @@
       justify-items: center;
       margin: 0 auto;
 
-      @media (max-width: 991px) {
+      @include breakpoint-md-down {
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 25px;
       }
-      @media (max-width: 767px) {
+      @include breakpoint-sm-down {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         gap: 20px;
       }
-      @media (max-width: 480px) {
+      @include breakpoint-xs-down {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 15px;
       }
@@ -68,17 +68,17 @@
       max-width: 100%;
       margin-bottom: 20px;
 
-      @media (max-width: 767px) {
+      @include breakpoint-sm-down {
         margin-bottom: 15px;
       }
-      @media (max-width: 480px) {
+      @include breakpoint-xs-down {
         margin-bottom: 10px;
       }
 
       .persona-card-inner {
-        border: 1px solid #ccc;
+        border: 1px solid $grayLighter;
         border-radius: 12px;
-        background: #fff;
+        background: $white;
         display: flex;
         flex-direction: column;
         text-align: left;
@@ -88,11 +88,11 @@
           padding: 15px;
           flex-grow: 1;
 
-          @media (max-width: 767px) {
+          @include breakpoint-sm-down {
             padding: 12px;
           }
 
-          @media (max-width: 480px) {
+          @include breakpoint-xs-down {
             padding: 10px;
           }
 
@@ -101,11 +101,11 @@
             font-size: 18px;
             margin-bottom: 0.5rem;
 
-            @media (max-width: 767px) {
+            @include breakpoint-sm-down {
               font-size: 16px;
             }
 
-            @media (max-width: 480px) {
+            @include breakpoint-xs-down {
               font-size: 14px;
               margin-bottom: 0.3rem;
             }
@@ -116,7 +116,7 @@
             font-size: 14px;
             margin-bottom: 0.5rem;
 
-            @media (max-width: 480px) {
+            @include breakpoint-xs-down {
               font-size: 12px;
               margin-bottom: 0.3rem;
             }
@@ -125,10 +125,10 @@
           .persona-description {
             font-family: 'Instrument Sans Regular', sans-serif;
             font-size: 14px;
-            color: #666;
+            color: $gray;
             padding-bottom: 10px;
 
-            @media (max-width: 480px) {
+            @include breakpoint-xs-down {
               font-size: 12px;
             }
           }
@@ -136,32 +136,32 @@
 
         .persona-footer {
           padding: 12px 15px;
-          border-top: 1px solid #eee;
+          border-top: 1px solid $grayVeryLight;
           display: flex;
           gap: 15px;
 
-          @media (max-width: 767px) {
+          @include breakpoint-sm-down {
             padding: 10px 12px;
             gap: 12px;
           }
-          @media (max-width: 480px) {
+          @include breakpoint-xs-down {
             padding: 8px 10px;
             gap: 10px;
           }
 
           a {
-            color: #555;
+            color: $grayMedium;
             text-decoration: none;
             transition: color 0.2s;
 
             &:hover {
-              color: #008F8C;
+              color: $primaryTeal;
             }
 
             i {
               font-size: 16px;
 
-              @media (max-width: 480px) {
+              @include breakpoint-xs-down {
                 font-size: 14px;
               }
             }

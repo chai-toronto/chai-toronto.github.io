@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
 
-    @media (max-width: 991px) {
+    @include breakpoint-md-down {
       display: block;
     }
 
@@ -14,7 +14,7 @@
       padding-left: 0 !important;
       padding-right: 0 !important;
 
-      @media (max-width: 991px) {
+      @include breakpoint-md-down {
         margin-bottom: 1.5rem;
       }
 
@@ -25,7 +25,7 @@
         border-radius: 20px;
         margin-left: 10px;
 
-        @media (max-width: 991px) {
+        @include breakpoint-md-down {
           width: 100%;
           margin-left: 0;
           border-radius: 12px;
@@ -52,7 +52,7 @@
         margin-bottom: 1rem;
         text-align: left;
 
-        @media (max-width: 991px) {
+        @include breakpoint-md-down {
           margin-top: 1rem;
           font-size: 22px;
           text-align: center;
@@ -65,7 +65,7 @@
         margin-bottom: 1rem;
         text-align: left;
 
-        @media (max-width: 991px) {
+        @include breakpoint-md-down {
           text-align: justify;
           font-size: 15px;
         }
@@ -76,17 +76,17 @@
   .faq-section {
     margin-top: 1rem;
 
-    @media (max-width: 991px) {
+    @include breakpoint-md-down {
       margin-top: 1rem;
     }
 
     .faq-wrapper {
-      border: 1px solid #ddd;
+      border: 1px solid $grayLightest;
       border-radius: 5px;
       overflow: hidden;
       display: flex;
 
-      @media (max-width: 991px) {
+      @include breakpoint-md-down {
         flex-direction: column;
         border: none;
       }
@@ -94,9 +94,9 @@
 
     .faq-left {
       padding: 1rem;
-      background-color: #fff;
+      background-color: $white;
 
-      @media (max-width: 991px) {
+      @include breakpoint-md-down {
         padding: 0;
         margin-bottom: 1.5rem;
       }
@@ -106,15 +106,15 @@
         align-items: center;
         position: relative;
         padding: 0.75rem 1rem;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid $grayLightest;
         font-size: 20px;
-        color: #333;
+        color: $grayDarker;
         cursor: pointer;
 
-        @media (max-width: 991px) {
+        @include breakpoint-md-down {
           font-size: 16px;
           padding: 0.75rem 0.75rem;
-          border: 1px solid #ddd;
+          border: 1px solid $grayLightest;
           border-radius: 5px;
           margin-bottom: 0.5rem;
         }
@@ -122,8 +122,8 @@
         &:last-child {
           border-bottom: none;
 
-          @media (max-width: 991px) {
-            border-bottom: 1px solid #ddd;
+          @include breakpoint-md-down {
+            border-bottom: 1px solid $grayLightest;
             margin-bottom: 0;
           }
         }
@@ -132,30 +132,30 @@
         &::after {
           content: "\276F";
           font-size: 16px;
-          color: #999;
+          color: $grayLight;
           margin-left: auto;
 
-          @media (max-width: 480px) {
+          @include breakpoint-xs-down {
             font-size: 14px;
           }
         }
 
         &:hover {
-          background-color: #EFEFEF;
+          background-color: $grayHover;
         }
 
         &.selected {
           &::before {
-            background-color: #008F8C;
+            background-color: $primaryTeal;
           }
 
           &::after {
-            color: #008F8C;
+            color: $primaryTeal;
           }
 
-          @media (max-width: 991px) {
-            background-color: #E9F3F3;
-            border-color: #008F8C;
+          @include breakpoint-md-down {
+            background-color: $grayBackground;
+            border-color: $primaryTeal;
           }
         }
       }
@@ -163,15 +163,15 @@
 
     .faq-right {
       padding: 2rem;
-      background-color: #E9F3F3;
-      color: #333;
-      border-left: 1px solid #ddd;
+      background-color: $grayBackground;
+      color: $grayDarker;
+      border-left: 1px solid $grayLightest;
 
-      @media (max-width: 991px) {
+      @include breakpoint-md-down {
         padding: 1.5rem;
-        border: 1px solid #ddd;
+        border: 1px solid $grayLightest;
         border-radius: 5px;
-        border-color: #008F8C;
+        border-color: $primaryTeal;
       }
 
       h3 {
@@ -179,7 +179,7 @@
         margin-bottom: 10px;
         font-size: 20px;
 
-        @media (max-width: 767px) {
+        @include breakpoint-sm-down {
           font-size: 18px;
           text-align: center;
         }
@@ -189,7 +189,7 @@
         font-size: 16px;
         line-height: 1.5;
 
-        @media (max-width: 991px) {
+        @include breakpoint-md-down {
           text-align: justify;
           font-size: 15px;
         }
