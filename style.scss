@@ -48,7 +48,7 @@ html {
 body {
   background: #fcfcfc;
   font: 16px/1.2 $lato;
-  color: $darkGray;
+  color: $grayDark;
 
   @media (max-width: 768px) {
     font-size: 14px;
@@ -86,11 +86,11 @@ p {
 
 
 a {
-  color: $blue;
+  color: $primaryBlue;
   text-decoration: none;
   cursor: pointer;
   &:hover, &:active {
-    color: $blue;
+    color: $primaryBlue;
   }
 }
 
@@ -140,11 +140,11 @@ blockquote {
 
 ::-moz-selection {
   color: $black;
-  background: $blue;
+  background: $primaryBlue;
 }
 ::selection {
   color: $black;
-  background: $blue;
+  background: $primaryBlue;
 }
 
 // Nicolas Gallagher's micro clearfix hack
