@@ -86,11 +86,11 @@ p {
 
 
 a {
-  color: $primaryBlue;
+  color: $linkBlue;
   text-decoration: none;
   cursor: pointer;
   &:hover, &:active {
-    color: $primaryBlue;
+    color: $linkBlue;
   }
 }
 
