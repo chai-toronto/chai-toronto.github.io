@@ -158,6 +158,14 @@
   startyear: 2025
   active: true
 
+- id: joe_fang
+  name: Joe Fang
+  degree: BS
+  image: /images/members/joe_fang.jpg
+  linkedin: multiset
+  startyear: 2025
+  active: true
+
 - id: larry_kieu
   name: Larry Kieu
   degree: BS
