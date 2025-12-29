@@ -193,6 +193,14 @@
   active: true
   search: Grad School Position
 
+- id: aina_merchant
+  name: Aina Fatema Merchant
+  degree: BS
+  image: /images/members/aina_merchant.jpg
+  linkedin: aina-fatema-merchant-a12295221
+  startyear: 2026
+  active: true
+
 - id: tanaya_sharma
   name: Tanaya Sharma
   degree: BS

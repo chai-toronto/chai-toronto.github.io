@@ -2,6 +2,8 @@
   full_name: ACM Conference on Human Factors in Computing Systems (ACM CHI)
 - id: $EMBC$
   full_name: Engineering in Medicine and Biology Conference (EMBC)
+- id: $HEALTH$
+  full_name: ACM Transactions on Computing for Healthcare (ACM HEALTH)
 - id: $ICASSP$
   full_name: IEEE International Conference on Acoustics, Speech and Signal Processing (IEEE ICASSP)
 - id: $IMWUT$
