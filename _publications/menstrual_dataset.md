@@ -1,18 +1,18 @@
 ---
-title: 'mcPHASES: A Dataset of Physiological, Hormonal, and Self-reported Events and Symptoms for Menstrual Health Tracking with Wearables'
+title: 'A Longitudinal Dataset of Physiological, Hormonal, Metabolic, and Self-Reported Menstrual Health Data'
 authors: 
 - blue_lin
 - helen_li
 - kaavya_kalani
 - khai
 - mariakakis
-venue: PhysioNet
-date: 2025-09-10
-link: https://doi.org/10.13026/zx6a-2c81
+venue: Scientific Data
+date: 2026-02-10
+link: https://doi.org/10.1038/s41597-026-06805-3
 dataset: https://physionet.org/content/mcphases/1.0.0/
 thumbnail: /images/pubs/menstrual_dataset.jpeg
 abstract: |
-  mcPHASES (<b>m</b>enstrual <b>c</b>ycle <b>P</b>hysiological, <b>H</b>ormonal, and <b>S</b>elf-Reported <b>E</b>vents and <b>S</b>ymptoms) is a comprehensive dataset consisting of multimodal physiological, hormonal, and self-reported measures collected to support holistic menstrual health research. Data from 42 Canadian young adult menstruators was collected across two 3-month periods. Participants wore Fitbit Sense smartwatches and Dexcom G6 continuous glucose monitors to measure physiological signals, and they used Mira Plus Starter Kits to track their hormone levels. Additionally, participants self-reported daily experiences like cramps, sleep quality, and stress levels. The dataset contains 23 structured tables organized by signal category so that researchers can examine relationships between physiological signals and hormonal fluctuations, analyze the impacts of lifestyle factors on the menstrual cycle, and develop better algorithms for menstrual cycle prediction. More broadly, mcPHASES supports research in women's health, digital health technologies, and personalized care by providing unprecedented multimodal data for building a more accurate understanding of menstrual health patterns.
+  The mcPHASES (<b>menstrual <b>cycle <b>P</b>hysiological, <b>H</b>ormonal, <b>a</b>nd <b>S</b>elf-Reported <b>E</b>vents and <b>S</b>ymptoms) dataset provides a multimodal record of menstrual health that integrates physiological monitoring, hormone measurements, and self-reported experiences. Forty-two Canadian young adults who menstruate participated in a 3-month observation period, and 20 of them also completed a second 3-month observation period. During data collection, participants wore Fitbit Sense smartwatches to capture diverse physiological signals and Dexcom G6 continuous glucose monitors for metabolic data. Hormone levels were obtained using at-home Mira Plus urinalysis tests, and daily symptom and lifestyle information (e.g., pain, sleep, stress) was reported through surveys. In total, the dataset comprises 23 structured tables organized by signal category, allowing for analyses that link endocrine dynamics to wearable-derived measures and self-reported outcomes. This resource supports investigations into cycle variability, hormone-physiology interactions, and contextual influences on menstrual health, while also offering benchmark data for developing predictive algorithms and advancing menstrual health informatics.
 theme:
 - Passive Sensing
 health_topic:
