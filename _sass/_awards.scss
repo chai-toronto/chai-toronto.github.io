@@ -2,139 +2,135 @@
 
 .awards-page {
   .section-heading {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 
-      @include breakpoint-sm-down {
-        text-align: center;
-        font-size: 24px;
-      }
-
-      @include breakpoint-xs-down {
-        font-size: 22px;
-      }
+    @include breakpoint-sm-down {
+      text-align: center;
+      font-size: 24px;
     }
 
-    .awards-grid-wrapper {
-      .org-section {
-        display: flex;
+    @include breakpoint-xs-down {
+      font-size: 22px;
+    }
+  }
+
+  .awards-grid-wrapper {
+    .org-section {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      @include breakpoint-md-down {
+        flex-direction: column;
         align-items: center;
+      }
+
+      .org-logo-wrapper {
+        flex: 0 0 250px;
+        text-align: center;
+
+        @include breakpoint-md-down {
+          flex: 0 0 auto;
+          margin-right: 0;
+          margin-bottom: 2rem;
+          width: 100%;
+        }
+
+        img.org-logo {
+          max-width: 175px;
+          width: auto;
+          height: auto;
+          display: inline-block;
+        }
+      }
+
+      .award-block {
+        flex: 1 1 auto;
+        margin-top: 0;
         margin-bottom: 1rem;
 
         @include breakpoint-md-down {
-          flex-direction: column;
-          align-items: center;
+          width: 100%;
         }
 
-        .org-logo-wrapper {
-          flex: 0 0 250px;
+        .people-grid.awards-grid {
+          margin-top: 0.5rem;
+          width: 100%;
+          max-width: 1600px;
+          margin-left: auto;
+          margin-right: auto;
           text-align: center;
 
-          @include breakpoint-md-down {
-            flex: 0 0 auto;
-            margin-right: 0;
-            margin-bottom: 2rem;
-            width: 100%;
+          .cards-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            justify-items: center;
+            margin: 0 auto;
+
+            @include breakpoint-sm-down {
+              grid-template-columns: repeat(2, 1fr);
+              gap: 15px;
+            }
+
+            @include breakpoint-xs-down {
+              grid-template-columns: repeat(2, 1fr);
+              gap: 10px;
+            }
           }
 
-          img.org-logo {
-            max-width: 175px;
-            width: auto;
-            height: auto;
-            display: inline-block;
-          }
-        }
+          .persona-card {
+            width: 100% !important;
+            max-width: 100%;
+            margin-bottom: 10px;
+            margin-bottom: 10px;
 
-        .award-blocks {
-          flex: 1 1 auto;
-          margin-top: 0;
+            @include breakpoint-sm-down {
+              margin-bottom: 20px;
+            }
 
-          @include breakpoint-md-down {
-            width: 100%;
-          }
+            @include breakpoint-xs-down {
+              margin-bottom: 15px;
+            }
 
-          .award-block {
-            margin-bottom: 1rem;
+            .persona-card-inner {
+              border: 1px solid $grayLighter;
+              border-radius: 12px;
+              background: $white;
+              display: flex;
+              flex-direction: column;
+              text-align: left;
+              height: 100%;
+              word-wrap: break-word;
 
-            .people-grid.awards-grid {
-              margin-top: 0.5rem;
-              width: 100%;
-              max-width: 1600px;
-              margin-left: auto;
-              margin-right: auto;
-              text-align: center;
-
-              .cards-wrapper {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-                gap: 20px;
-                justify-content: center;
-                justify-items: center;
-                margin: 0 auto;
-
-                @include breakpoint-sm-down {
-                  grid-template-columns: repeat(2, 1fr);
-                  gap: 15px;
-                }
+              .persona-info {
+                padding: 12px;
+                flex-grow: 1;
 
                 @include breakpoint-xs-down {
-                  grid-template-columns: repeat(2, 1fr);
-                  gap: 10px;
-                }
-              }
-
-              .persona-card {
-                width: 100% !important;
-                max-width: 100%;
-                margin-bottom: 10px;
-                margin-bottom: 10px;
-
-                @include breakpoint-sm-down {
-                  margin-bottom: 20px;
+                  padding: 10px;
                 }
 
-                @include breakpoint-xs-down {
-                  margin-bottom: 15px;
+                .persona-name {
+                  font-weight: bold;
+                  font-size: 16px;
+                  margin-bottom: 8px;
+
+                  @include breakpoint-xs-down {
+                    font-size: 14px;
+                    margin-bottom: 6px;
+                  }
                 }
 
-                .persona-card-inner {
-                  border: 1px solid $grayLighter;
-                  border-radius: 12px;
-                  background: $white;
-                  display: flex;
-                  flex-direction: column;
-                  text-align: left;
-                  height: 100%;
-                  word-wrap: break-word;
+                .persona-description {
+                  font-size: 14px;
+                  color: $grayMedium;
+                  word-break: break-word;
 
-                  .persona-info {
-                    padding: 12px;
-                    flex-grow: 1;
-
-                    @include breakpoint-xs-down {
-                      padding: 10px;
-                    }
-
-                    .persona-name {
-                      font-weight: bold;
-                      font-size: 16px;
-                      margin-bottom: 8px;
-
-                      @include breakpoint-xs-down {
-                        font-size: 14px;
-                        margin-bottom: 6px;
-                      }
-                    }
-
-                    .persona-description {
-                      font-size: 14px;
-                      color: $grayMedium;
-                      word-break: break-word;
-
-                      @include breakpoint-xs-down {
-                        font-size: 12px;
-                      }
-                    }
+                  @include breakpoint-xs-down {
+                    font-size: 12px;
                   }
                 }
               }
@@ -142,9 +138,10 @@
           }
         }
       }
-
-      .org-section:not(:last-child) {
-        border-bottom: 1px solid $grayLighter;
-      }
     }
+
+    .org-section:not(:last-child) {
+      border-bottom: 1px solid $grayLighter;
+    }
+  }
 }

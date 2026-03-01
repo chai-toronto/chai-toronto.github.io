@@ -3,40 +3,38 @@
 
 <div class="awards-grid-wrapper">
   {% for org in include.awards %}
-    <div class="org-section">
-      <!-- Logo - will display on top for mobile, on left for desktop -->
-      <div class="org-logo-wrapper">
-        <img src="{{ site.baseurl }}/images/logos/{{ org.org | downcase | replace:' ', '_' }}.png"
+  <div class="org-section">
+    <!-- Logo - will display on top for mobile, on left for desktop -->
+    <div class="org-logo-wrapper">
+      <img src="{{ site.baseurl }}/images/logos/{{ org.org | downcase | replace:' ', '_' }}.png"
         alt="{{ org.org }} logo" class="org-logo" />
-      </div>
+    </div>
 
-      <!-- Award blocks - will display below logo on mobile, on right for desktop -->
-      <div class="award-blocks">
-        <div class="award-block">
-          <div class="people-grid awards-grid">
-            <div class="cards-wrapper">
-            {% for award in org.awards %}
-              <div class="persona-card">
-                <div class="persona-card-inner">
-                  <div class="persona-info">
-                    <div class="persona-name">
-                      {{ award.award }}
-                    </div>
-                    <div class="persona-description">
-                      {% for winner in award.winners %}
-                        {% include author_list.html authors=winner.name %}
-                        ({{ winner.year }}){% if forloop.last %}{% else %}<br/> {% endif %}
-                      {% endfor %}
-                    </div>
-                  </div>
+    <!-- Award blocks - will display below logo on mobile, on right for desktop -->
+    <div class="award-block">
+      <div class="people-grid awards-grid">
+        <div class="cards-wrapper">
+          {% for award in org.awards %}
+          <div class="persona-card">
+            <div class="persona-card-inner">
+              <div class="persona-info">
+                <div class="persona-name">
+                  {{ award.award }}
+                </div>
+                <div class="persona-description">
+                  {% for winner in award.winners %}
+                  {% include author_list.html authors=winner.name %}
+                  ({{ winner.year }}){% if forloop.last %}{% else %}<br /> {% endif %}
+                  {% endfor %}
                 </div>
               </div>
-            {% endfor %}
             </div>
           </div>
+          {% endfor %}
         </div>
       </div>
     </div>
+  </div>
   {% endfor %}
 </div>
 {% endcapture %}
