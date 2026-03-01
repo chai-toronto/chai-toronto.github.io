@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script>
@@ -27,10 +28,12 @@
 
   <link rel="stylesheet" href="{{ site.baseurl }}/bower_components/bootstrap/dist/css/bootstrap.min.css" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="{{ site.baseurl }}/bower_components/bootstrap/dist/css/bootstrap.min.css" />
 
   <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}"
+    href="{{ site.baseurl }}/feed.xml" />
   {{ page.extra_header }}
   <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/images/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/images/favicon/favicon-32x32.png">
@@ -43,188 +46,191 @@
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-  <div id="nav" class="nav-container">
-    <a class="navbar-brand" href="{{ site.baseurl }}/">
-      <img src="{{ site.baseurl }}/images/chai_banner.png" alt="CHAI Lab banner">
-    </a>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div id="nav" class="nav-container">
+      <a class="navbar-brand" href="{{ site.baseurl }}/">
+        <img src="{{ site.baseurl }}/images/chai_banner.png" alt="CHAI Lab banner">
+      </a>
 
-    <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
-      <i class="fas fa-bars"></i>
-    </button>
+      <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
 
-    <!-- Replace the existing script with this new script: -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const navbarToggler = document.querySelector('.navbar-toggler');
-        const navbarCollapse = document.getElementById('navbarNav');
+      <!-- Replace the existing script with this new script: -->
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const navbarToggler = document.querySelector('.navbar-toggler');
+          const navbarCollapse = document.getElementById('navbarNav');
 
-        navbarToggler.addEventListener('click', function() {
-          if (navbarCollapse.classList.contains('show')) {
-            navbarCollapse.classList.remove('show');
-            navbarCollapse.style.maxHeight = '0';
-          } else {
-            navbarCollapse.classList.add('show');
-            navbarCollapse.style.maxHeight = navbarCollapse.scrollHeight + 'px';
-          }
-        });
+          navbarToggler.addEventListener('click', function () {
+            if (navbarCollapse.classList.contains('show')) {
+              navbarCollapse.classList.remove('show');
+              navbarCollapse.style.maxHeight = '0';
+            } else {
+              navbarCollapse.classList.add('show');
+              navbarCollapse.style.maxHeight = navbarCollapse.scrollHeight + 'px';
+            }
+          });
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-          const isClickInside = navbarToggler.contains(event.target) || navbarCollapse.contains(event.target);
-          if (!isClickInside && navbarCollapse.classList.contains('show') && window.innerWidth <= 768) {
-            navbarCollapse.classList.remove('show');
-            navbarCollapse.style.maxHeight = '0';
-          }
-        });
+          // Close mobile menu when clicking outside
+          document.addEventListener('click', function (event) {
+            const isClickInside = navbarToggler.contains(event.target) || navbarCollapse.contains(event.target);
+            if (!isClickInside && navbarCollapse.classList.contains('show') && window.innerWidth <= 768) {
+              navbarCollapse.classList.remove('show');
+              navbarCollapse.style.maxHeight = '0';
+            }
+          });
 
-        // Update maxHeight on window resize
-        window.addEventListener('resize', function() {
-          if (navbarCollapse.classList.contains('show') && window.innerWidth <= 768) {
-            navbarCollapse.style.maxHeight = navbarCollapse.scrollHeight + 'px';
-          } else if (window.innerWidth > 768) {
-            navbarCollapse.style.maxHeight = '';
-            navbarCollapse.classList.remove('show');
-          }
-        });
-      });
-
-      document.addEventListener('DOMContentLoaded', function() {
-        // Handle dropdown toggles on mobile
-        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-
-        dropdownToggles.forEach(toggle => {
-          toggle.addEventListener('click', function(e) {
-            // Only handle clicks on mobile
-            if (window.innerWidth <= 768) {
-              e.preventDefault();
-              e.stopPropagation();
-
-              const parent = this.parentElement;
-              const dropdown = parent.querySelector('.dropdown-menu');
-
-              // Close all other dropdowns
-              document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
-                if (menu !== dropdown) {
-                  menu.classList.remove('show');
-                }
-              });
-
-              // Toggle current dropdown
-              dropdown.classList.toggle('show');
-
-              // Update parent container height to accommodate dropdown
-              const navbarCollapse = document.getElementById('navbarNav');
-              if (navbarCollapse.classList.contains('show')) {
-                setTimeout(() => {
-                  navbarCollapse.style.maxHeight = navbarCollapse.scrollHeight + 'px';
-                }, 10);
-              }
+          // Update maxHeight on window resize
+          window.addEventListener('resize', function () {
+            if (navbarCollapse.classList.contains('show') && window.innerWidth <= 768) {
+              navbarCollapse.style.maxHeight = navbarCollapse.scrollHeight + 'px';
+            } else if (window.innerWidth > 768) {
+              navbarCollapse.style.maxHeight = '';
+              navbarCollapse.classList.remove('show');
             }
           });
         });
-      });
 
-    </script>
+        document.addEventListener('DOMContentLoaded', function () {
+          // Handle dropdown toggles on mobile
+          const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+          dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', function (e) {
+              // Only handle clicks on mobile
+              if (window.innerWidth <= 768) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const parent = this.parentElement;
+                const dropdown = parent.querySelector('.dropdown-menu');
+
+                // Close all other dropdowns
+                document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+                  if (menu !== dropdown) {
+                    menu.classList.remove('show');
+                  }
+                });
+
+                // Toggle current dropdown
+                dropdown.classList.toggle('show');
+
+                // Update parent container height to accommodate dropdown
+                const navbarCollapse = document.getElementById('navbarNav');
+                if (navbarCollapse.classList.contains('show')) {
+                  setTimeout(() => {
+                    navbarCollapse.style.maxHeight = navbarCollapse.scrollHeight + 'px';
+                  }, 10);
+                }
+              }
+            });
+          });
+        });
+
+      </script>
 
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="{{ site.baseurl }}/about_us">About Us</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPeople" data-toggle="dropdown">
-            People
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownPeople">
-            <a class="dropdown-item" href="{{ site.baseurl }}/our_team">Our Team</a>
-            <a class="dropdown-item" href="{{ site.baseurl }}/alumni">Alumni</a>
-            <a class="dropdown-item" href="{{ site.baseurl }}/awards">Awards</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ site.baseurl }}/current_research">Current Research</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ site.baseurl }}/publications">Publications</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ site.baseurl }}/get_involved">Get Involved</a>
-        </li>
-      </ul>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ site.baseurl }}/about_us">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ site.baseurl }}/our_team">Our Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ site.baseurl }}/alumni">Alumni</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ site.baseurl }}/awards">Awards</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ site.baseurl }}/current_research">Current Research</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ site.baseurl }}/publications">Publications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ site.baseurl }}/get_involved">Get Involved</a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
+
+
+  <!-- CONTENT -->
+  <div id="main" role="main" class="container page-content">
+    {{ content }}
   </div>
-</nav>
 
+  <!-- FOOTER --><!-- FOOTER HTML CHANGES -->
+  <footer class="footer footer-container py-4">
+    <hr class="custom-footer-line">
+    <!-- First Row -->
+    <div class="row first-row">
+      <!-- Logo + Socials (left) -->
+      <div class="col-md-3 col-sm-4 col-4 text-center text-sm-left mb-4 footer-logo-container">
+        <img src="{{ site.baseurl }}/images/chai_logo.png" alt="CHAI Logo" class="footer-logo" />
+        <div class="mt-3 social-icons">
+          <a href="https://github.com/chai-toronto">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.youtube.com/@chai_toronto">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://x.com/chai_toronto">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://bsky.app/profile/chai-toronto.bsky.social">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20">
+              <path
+                d="M111.8 62.2C170.2 105.9 233 194.7 256 242.4c23-47.6 85.8-136.4 144.2-180.2c42.1-31.6 110.3-56 110.3 21.8c0 15.5-8.9 130.5-14.1 149.2C478.2 298 412 314.6 353.1 304.5c102.9 17.5 129.1 75.5 72.5 133.5c-107.4 110.2-154.3-27.6-166.3-62.9l0 0c-1.7-4.9-2.6-7.8-3.3-7.8s-1.6 3-3.3 7.8l0 0c-12 35.3-59 173.1-166.3 62.9c-56.5-58-30.4-116 72.5-133.5C100 314.6 33.8 298 15.7 233.1C10.4 214.4 1.5 99.4 1.5 83.9c0-77.8 68.2-53.4 110.3-21.8z" />
+            </svg>
+          </a>
+        </div>
+      </div>
 
-<!-- CONTENT -->
-<div id="main" role="main" class="container page-content">
-  {{ content }}
-</div>
+      <!-- Location Info -->
+      <div class="col-md-4 offset-md-2 col-sm-8 col-8 mb-3 location-info text-right-mobile">
+        <h4>Location</h4>
+        <p>Bahen Centre for Information Technology</p>
+        <p>Department of Computer Science</p>
+        <p>University of Toronto</p>
+        <p>40 St George St, Toronto, ON M5S 2E4</p>
+      </div>
 
-<!-- FOOTER --><!-- FOOTER HTML CHANGES -->
-<footer class="footer footer-container py-4">
-  <hr class="custom-footer-line">
-  <!-- First Row -->
-  <div class="row first-row">
-    <!-- Logo + Socials (left) -->
-    <div class="col-md-3 col-sm-4 col-4 text-center text-sm-left mb-4 footer-logo-container">
-      <img src="{{ site.baseurl }}/images/chai_logo.png" alt="CHAI Logo" class="footer-logo"/>
-      <div class="mt-3 social-icons">
-        <a href="https://github.com/chai-toronto">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="https://www.youtube.com/@chai_toronto">
-          <i class="fab fa-youtube"></i>
-        </a>
-        <a href="https://x.com/chai_toronto">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://bsky.app/profile/chai-toronto.bsky.social">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20"><path d="M111.8 62.2C170.2 105.9 233 194.7 256 242.4c23-47.6 85.8-136.4 144.2-180.2c42.1-31.6 110.3-56 110.3 21.8c0 15.5-8.9 130.5-14.1 149.2C478.2 298 412 314.6 353.1 304.5c102.9 17.5 129.1 75.5 72.5 133.5c-107.4 110.2-154.3-27.6-166.3-62.9l0 0c-1.7-4.9-2.6-7.8-3.3-7.8s-1.6 3-3.3 7.8l0 0c-12 35.3-59 173.1-166.3 62.9c-56.5-58-30.4-116 72.5-133.5C100 314.6 33.8 298 15.7 233.1C10.4 214.4 1.5 99.4 1.5 83.9c0-77.8 68.2-53.4 110.3-21.8z"/></svg>
-        </a>
+      <!-- Quick Links -->
+      <div class="col-md-3 offset-md-0 col-sm-12 col-12 mb-3 quick-links">
+        <h4>Quick Links</h4>
+        <ul class="list-unstyled">
+          <li><a href="{{ site.baseurl }}/">Home</a></li>
+          <li><a href="{{ site.baseurl }}/about_us">About Us</a></li>
+          <li><a href="{{ site.baseurl }}/our_team">Our Team</a></li>
+          <li><a href="{{ site.baseurl }}/alumni">Alumni</a></li>
+          <li><a href="{{ site.baseurl }}/awards">Awards</a></li>
+          <li><a href="{{ site.baseurl }}/current_research">Current Research</a></li>
+          <li><a href="{{ site.baseurl }}/publications">Publications</a></li>
+          <li><a href="{{ site.baseurl }}/get_involved">Get Involved</a></li>
+        </ul>
       </div>
     </div>
 
-    <!-- Location Info -->
-    <div class="col-md-4 offset-md-2 col-sm-8 col-8 mb-3 location-info text-right-mobile">
-      <h4>Location</h4>
-      <p>Bahen Centre for Information Technology</p>
-      <p>Department of Computer Science</p>
-      <p>University of Toronto</p>
-      <p>40 St George St, Toronto, ON M5S 2E4</p>
+    <!-- Second Row -->
+    <div class="row second-row mt-4">
+      <div class="col-md-6 col-sm-12 bottom-left">
+        <p style="margin-bottom: 0;">© 2025 CHAI Lab</p>
+      </div>
+      <div class="col-md-6 col-sm-12 bottom-right">
+        <img src="{{ site.baseurl }}/images/uoft_cs.png" alt="University of Toronto" style="height: 40px;" />
+      </div>
     </div>
+  </footer>
 
-    <!-- Quick Links -->
-    <div class="col-md-3 offset-md-0 col-sm-12 col-12 mb-3 quick-links">
-      <h4>Quick Links</h4>
-      <ul class="list-unstyled">
-        <li><a href="{{ site.baseurl }}/">Home</a></li>
-        <li><a href="{{ site.baseurl }}/about_us">About Us</a></li>
-        <li><a href="{{ site.baseurl }}/our_team">Our Team</a></li>
-        <li><a href="{{ site.baseurl }}/alumni">Alumni</a></li>
-        <li><a href="{{ site.baseurl }}/awards">Awards</a></li>
-        <li><a href="{{ site.baseurl }}/current_research">Current Research</a></li>
-        <li><a href="{{ site.baseurl }}/publications">Publications</a></li>
-        <li><a href="{{ site.baseurl }}/get_involved">Get Involved</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Second Row -->
-  <div class="row second-row mt-4">
-    <div class="col-md-6 col-sm-12 bottom-left">
-      <p style="margin-bottom: 0;">© 2025 CHAI Lab</p>
-    </div>
-    <div class="col-md-6 col-sm-12 bottom-right">
-      <img src="{{ site.baseurl }}/images/uoft_cs.png" alt="University of Toronto" style="height: 40px;" />
-    </div>
-  </div>
-</footer>
-
-{% include analytics.html %}
-{{ page.extra_js }}
+  {% include analytics.html %}
+  {{ page.extra_js }}
 </body>
+
 </html>
