@@ -8,7 +8,7 @@ authors:
 - mariakakis
 venue: Scientific Data
 date: 2026-02-10
-link: https://doi.org/10.1038/s41597-026-06805-3
+link: https://www.nature.com/articles/s41597-026-06805-3
 dataset: https://physionet.org/content/mcphases/1.0.0/
 thumbnail: /images/pubs/menstrual_dataset.jpeg
 abstract: |
