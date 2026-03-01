@@ -1,6 +1,5 @@
----
----
-
+--- 
+--- 
 //
 // IMPORTS
 //
@@ -17,6 +16,7 @@
 
 html {
   font-size: 100%;
+
   @media (max-width: 768px) {
     font-size: 14px;
   }
@@ -67,12 +67,15 @@ a {
   color: $linkBlue;
   text-decoration: none;
   cursor: pointer;
-  &:hover, &:active {
+
+  &:hover,
+  &:active {
     color: $linkBlue;
   }
 }
 
-ul, ol {
+ul,
+ol {
   margin: 15px 0;
   padding-left: 30px;
 }
@@ -85,19 +88,25 @@ ol {
   list-style-type: decimal;
 }
 
-ol ul, ul ol, ul ul, ol ol {
+ol ul,
+ul ol,
+ul ul,
+ol ol {
   margin: 0;
 }
 
-ul ul, ol ul {
+ul ul,
+ol ul {
   list-style-type: circle;
 }
 
-em, i {
+em,
+i {
   font-style: italic;
 }
 
-strong, b {
+strong,
+b {
   font-weight: bold;
 }
 
@@ -120,6 +129,7 @@ blockquote {
   color: $black;
   background: $linkBlue;
 }
+
 ::selection {
   color: $black;
   background: $linkBlue;
@@ -129,12 +139,12 @@ blockquote {
 // http://nicolasgallagher.com/micro-clearfix-hack/
 .clearfix:before,
 .clearfix:after {
-    content: " ";
-    display: table;
+  content: " ";
+  display: table;
 }
 
 .clearfix:after {
-    clear: both;
+  clear: both;
 }
 
 /****************/
@@ -155,6 +165,7 @@ blockquote {
       text-align: center;
       font-size: 28px;
     }
+
     @media (max-width: 480px) {
       font-size: 24px;
     }
@@ -170,7 +181,7 @@ blockquote {
   width: 100% !important;
   padding-left: 3rem !important;
   padding-right: 3rem !important;
-  
+
   @media (max-width: 767px) {
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
@@ -201,6 +212,7 @@ blockquote {
 #main {
   padding-top: 3rem;
   margin-top: 3rem;
+
   @media (max-width: 768px) {
     padding-top: 0.5rem;
     margin-top: 0.5rem;
@@ -223,14 +235,12 @@ blockquote {
   background-color: #fcfcfc;
   margin-top: 10px;
 
-
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    width:100%;
-
+    width: 100%;
   }
 
   .navbar-brand {
@@ -249,21 +259,17 @@ blockquote {
   }
 
   .navbar-toggler {
-    @media (min-width: 769px) {
-      display: none !important;
-    }
+    display: none !important;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1100px) {
       cursor: pointer;
-      display: block;
+      display: block !important;
       padding: 10px;
       background: transparent;
       border: none;
       outline: none;
-    }
 
-    i {
-      @media (max-width: 768px) {
+      i {
         font-size: 24px;
         color: #333;
       }
@@ -277,102 +283,7 @@ blockquote {
     display: flex;
     align-items: center;
 
-
-    .nav-item.dropdown {
-      position: relative;
-
-
-      &:hover .dropdown-menu {
-        display: block;
-      }
-
-      &:hover .nav-link,
-      &:hover .dropdown-menu {
-        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-      }
-
-      .nav-link {
-        font-family: $instrumentMedium;
-        display: inline-flex;
-        align-items: center;
-        padding: 20px 20px;
-        color: $black !important;
-        text-decoration: none;
-        border-radius: 10px 10px 0 0;
-        transition: box-shadow 0.2s ease;
-        background: #fcfcfc;
-
-        &.dropdown-toggle {
-          &::after {
-            content: "";
-            display: inline-block;
-            width: 0.6em;
-            height: 0.6em;
-            margin-left: 1em;
-            box-sizing: border-box;
-            background: transparent;
-            border: none;
-            border-right: 1px solid #000;
-            border-bottom: 1px solid #000;
-            transform: rotate(45deg);
-            position: relative;
-          }
-        }
-      }
-
-      .dropdown-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        min-width: 0 !important;
-        width: 100% !important;
-
-        display: none;
-        margin-top: -4px;
-        border-radius: 0 0 10px 10px;
-        background: #fcfcfc;
-        padding: 0;
-        z-index: 999;
-        box-shadow: none;
-
-        @media (max-width: 768px) {
-          position: static;
-          float: none;
-          width: 100%;
-          background-color: #f8f8f8;
-          border: none;
-          box-shadow: none;
-          padding: 0;
-          margin: 0;
-        }
-
-        .dropdown-item {
-          font-family: $instrumentMedium;
-          font-size: 16px;
-          display: block;
-          padding: 20px 20px;
-          border-radius: 0;
-          color: $black !important;
-          text-decoration: none;
-          transition: box-shadow 0.2s ease;
-
-          @media (max-width: 768px) {
-            padding: 10px 30px;
-            font-size: 14px;
-          }
-
-          &:hover {
-            text-decoration: none;
-            box-shadow: none;
-            background-color: #F4F4F4;
-            border-radius: 10px 10px 10px 10px;
-          }
-        }
-      }
-    }
-
-
-    .nav-item:not(.dropdown) {
+    .nav-item {
       .nav-link {
         font-family: $instrumentMedium;
         display: inline-flex;
@@ -387,16 +298,27 @@ blockquote {
         &:hover,
         &:active {
           text-decoration: none;
-          border-radius: 10px 10px 0 0;
-          box-shadow: 0 2px 0px rgba(0,0,0,0.1);
+          box-shadow: 0 2px 0px rgba(0, 0, 0, 0.1);
         }
       }
     }
   }
 }
 
+@media (min-width: 1101px) {
+  .navbar-custom-expand .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
+}
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
+  .navbar-collapse:not(.show) {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1100px) {
   #navbarNav {
     position: absolute;
     top: 100%;
@@ -404,45 +326,33 @@ blockquote {
     width: 250px;
     background: #fcfcfc;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 10px;
     z-index: 1000;
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.3s ease-in-out;
-  }
 
-  #navbarNav.show {
-    max-height: 500px;
-  }
+    &.show {
+      max-height: 500px;
+    }
 
-  #navbarNav .navbar-nav {
-    flex-direction: column;
-    width: 100%;
-    padding: 10px 0;
-  }
+    .navbar-nav {
+      flex-direction: column;
+      width: 100%;
+      padding: 10px 0;
 
-  #navbarNav .nav-item {
-    width: 100%;
-    margin: 0;
-  }
+      .nav-item {
+        width: 100%;
+        margin: 0;
 
-  #navbarNav .nav-link {
-    padding: 12px 20px;
-    width: 100%;
-    display: block;
-    font-size: 16px;
-    border-radius: 0;
-  }
-
-  #navbarNav .dropdown-menu.show {
-    display: block;
-  }
-  #navbarNav .nav-item.dropdown:hover .dropdown-menu {
-    display: none;
-  }
-
-  #navbarNav .nav-item.dropdown .dropdown-menu.show {
-    display: block;
+        .nav-link {
+          padding: 12px 20px;
+          display: block;
+          font-size: 16px;
+          border-radius: 0;
+        }
+      }
+    }
   }
 
   button,
@@ -452,7 +362,6 @@ blockquote {
     font-size: 14px;
     padding: 8px 12px;
   }
-
 }
 
 /*********************/
@@ -505,6 +414,7 @@ blockquote {
 
       img {
         max-height: 150px !important;
+
         @media (max-width: 991px) {
           max-height: 120px !important;
         }
@@ -516,8 +426,8 @@ blockquote {
         }
 
         a i {
-          font-size: 24px; 
-          margin-right: 8px; 
+          font-size: 24px;
+          margin-right: 8px;
           color: #000;
 
           @media (max-width: 991px) {
@@ -528,9 +438,11 @@ blockquote {
 
         a:hover {
           text-decoration: none;
+
           i {
             color: #007974;
           }
+
           svg {
             fill: #007974;
           }
@@ -562,6 +474,7 @@ blockquote {
           margin-bottom: 0.3rem;
           font-size: 16px;
         }
+
         @media (max-width: 768px) {
           font-size: 12px;
         }
@@ -591,7 +504,8 @@ blockquote {
       }
     }
 
-    .location-info, .quick-links {
+    .location-info,
+    .quick-links {
       text-align: left;
 
       @media (max-width: 991px) {
@@ -615,7 +529,7 @@ blockquote {
 
     .bottom-left {
       text-align: left;
-      
+
       @media (max-width: 991px) {
         width: 50%;
 
