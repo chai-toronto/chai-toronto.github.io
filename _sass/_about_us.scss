@@ -43,6 +43,7 @@
 
     @include breakpoint-md-down {
       display: block;
+
       img {
         margin-top: 0;
         margin-bottom: 1rem;
@@ -64,19 +65,11 @@
     }
   }
 
-  img.rounded {
+  .img-fluid {
     border-radius: 8px;
 
     @include breakpoint-md-down {
-      max-width: 90%;
-      margin: 0 auto;
-    }
-  }
-
-  .img-fluid {
-    @include breakpoint-md-down {
-      display: block;
-      margin: 0 auto;
+      display: none;
     }
   }
 }
