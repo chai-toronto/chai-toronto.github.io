@@ -6,40 +6,40 @@
     <div class="persona-card">
       <div class="persona-card-inner">
         {% if member.search %}
-          {% assign search_val = member.search | downcase %}
-          {% if search_val == "industry" %}
-            {% assign search_label = "Industry Position" %}
-            {% assign search_bg = "#003479" %}
-          {% elsif search_val == "postdoc" %}
-            {% assign search_label = "Postdoc Position" %}
-            {% assign search_bg = "#007974" %}
-          {% elsif search_val == "intern" %}
-            {% assign search_label = "Internship" %}
-            {% assign search_bg = "#ff9800" %}
-          {% elsif search_val == "grad_phd" %}
-            {% assign search_label = "PhD Position" %}
-            {% assign search_bg = "#ff9800" %}
-          {% elsif search_val == "grad_msc" %}
-            {% assign search_label = "Master's Position" %}
-            {% assign search_bg = "#ff9800" %}
-          {% elsif search_val == "grad" %}
-            {% assign search_label = "Grad School Position" %}
-            {% assign search_bg = "#ff9800" %}
-          {% else %}
-            {% assign search_label = member.search %}
-            {% assign search_bg = "#AE2192" %}
-          {% endif %}
-          <div class="persona-search-label">
-            <div class="search-label-prefix">Looking for</div>
-            <div class="search-label-position"
-                 style="background-color: {{ search_bg }}; border-color: {{ search_bg }};">
-              {{ search_label }}
-            </div>
+        {% assign search_val = member.search | downcase %}
+        {% if search_val == "industry" %}
+        {% assign search_label = "Industry Position" %}
+        {% assign search_bg = "#003479" %}
+        {% elsif search_val == "postdoc" %}
+        {% assign search_label = "Postdoc Position" %}
+        {% assign search_bg = "#007974" %}
+        {% elsif search_val == "intern" %}
+        {% assign search_label = "Internship" %}
+        {% assign search_bg = "#ff9800" %}
+        {% elsif search_val == "grad_phd" %}
+        {% assign search_label = "PhD Position" %}
+        {% assign search_bg = "#ff9800" %}
+        {% elsif search_val == "grad_msc" %}
+        {% assign search_label = "Master's Position" %}
+        {% assign search_bg = "#ff9800" %}
+        {% elsif search_val == "grad" %}
+        {% assign search_label = "Grad School Position" %}
+        {% assign search_bg = "#ff9800" %}
+        {% else %}
+        {% assign search_label = member.search %}
+        {% assign search_bg = "#AE2192" %}
+        {% endif %}
+        <div class="persona-search-label">
+          <div class="search-label-prefix">Looking for</div>
+          <div class="search-label-position" style="background-color: {{ search_bg }}; border-color: {{ search_bg }};">
+            {{ search_label }}
           </div>
+        </div>
         {% endif %}
         <div class="persona-image">
           {% if member.image %}
-          <img src="{{ member.image }}" alt="{{ member.name }}">
+          <img src="{{ member.image }}" alt="{{ member.name }}" loading="lazy" decoding="async" width="300"
+            height="300">
           {% else %}
           <div class="placeholder-img"></div>
           {% endif %}
@@ -49,12 +49,12 @@
           <div class="persona-degree">
             {{ member.degree }}
             {% if member.coadvisor %}
-              (co-advised by {% include author_list.html authors=member.coadvisor %})
+            (co-advised by {% include author_list.html authors=member.coadvisor %})
             {% endif %}
           </div>
           <div class="persona-description">
             {% if member.topic %}
-              {{ member.topic }}
+            {{ member.topic }}
             {% endif %}
           </div>
         </div>
