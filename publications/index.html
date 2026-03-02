@@ -114,6 +114,16 @@ title: Publications
           {% endfor %}
         </div>
 
+        <hr />
+
+        <!-- Resources -->
+        <div class="filter-group dataset">
+          <h3>Resources</h3>
+          <label>
+            <input type="checkbox" id="mobile-resourceCheckbox" value="dataset" /> Dataset
+          </label>
+        </div>
+
       </div>
     </div>
   </div>
@@ -214,6 +224,16 @@ title: Publications
         </label><br />
         {% endfor %}
       </div>
+
+      <hr />
+
+      <!-- Resources -->
+      <div class="filter-group dataset">
+        <h3>Resources</h3>
+        <label>
+          <input type="checkbox" id="resourceCheckbox" value="dataset" /> Dataset
+        </label>
+      </div>
     </div>
 
     <!-- Right Column: Publications Grid -->
@@ -229,7 +249,7 @@ title: Publications
         data-author="{{ pub.authors | join: ',' }}" data-theme="{{ pub.theme | join: ',' }}"
         data-skills="{{ pub.skills | join: ',' }}"
         data-device="{% if pub.device %}{{ pub.device | join: ',' }}{% elsif pub.devices %}{{ pub.devices | join: ',' }}{% endif %}"
-        data-dataset="{{ pub.dataset_available }}" data-award="{{ pub.award }}">
+        data-dataset="{{ pub.dataset }}" data-award="{{ pub.award }}">
         <div class="pub-image">
           {% if pub.date <= site.time %} <a href="{{ pub.link }}">
             <img src="{{ pub.thumbnail }}" alt="{{ pub.title }}">

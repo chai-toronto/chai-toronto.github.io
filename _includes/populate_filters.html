@@ -117,6 +117,7 @@
     const skillCheckboxes = Array.from(document.querySelectorAll('.filter-skill-checkbox'));
     const deviceCheckboxes = Array.from(document.querySelectorAll('.filter-device-checkbox'));
     const awardCheckboxes = Array.from(document.querySelectorAll('.filter-award-checkbox'));
+    const resourceCheckbox = document.getElementById('resourceCheckbox');
 
     // Mobile filters
     const mobileSearchInput = document.querySelector('.mobile-search');
@@ -128,6 +129,7 @@
     const mobileSkillCheckboxes = Array.from(document.querySelectorAll('.mobile-skill-checkbox'));
     const mobileDeviceCheckboxes = Array.from(document.querySelectorAll('.mobile-device-checkbox'));
     const mobileAwardCheckboxes = Array.from(document.querySelectorAll('.mobile-award-checkbox'));
+    const mobileResourceCheckbox = document.getElementById('mobile-resourceCheckbox');
 
     // Common elements
     const publicationCards = Array.from(document.querySelectorAll('.publication-card'));
@@ -182,6 +184,10 @@
             awardCheckboxes[index].checked = checkbox.checked;
           }
         });
+
+        if (resourceCheckbox && mobileResourceCheckbox) {
+          resourceCheckbox.checked = mobileResourceCheckbox.checked;
+        }
       }
       else {
         // Copy from desktop to mobile
@@ -214,6 +220,10 @@
             mobileAwardCheckboxes[index].checked = checkbox.checked;
           }
         });
+
+        if (resourceCheckbox && mobileResourceCheckbox) {
+          mobileResourceCheckbox.checked = resourceCheckbox.checked;
+        }
       }
     }
 
@@ -237,6 +247,7 @@
       const selectedSkills = getCheckedValues(skillCheckboxes);
       const selectedDevices = getCheckedValues(deviceCheckboxes);
       const selectedAwards = getCheckedValues(awardCheckboxes);
+      const resourceDatasetAvailable = resourceCheckbox ? resourceCheckbox.checked : false;
 
       // Reset to page 1 when filters change (but not when just changing pages)
       if (resetPage) {
@@ -290,6 +301,10 @@
           if (!selectedAwards.some(award => cardAward.includes(award))) {
             isVisible = false;
           }
+        }
+        // Resources
+        else if (resourceDatasetAvailable && (!card.dataset.dataset || card.dataset.dataset === "")) {
+          isVisible = false;
         }
 
         if (isVisible) {
@@ -388,7 +403,8 @@
         themeCheckboxes.some(c => c.checked) ||
         skillCheckboxes.some(c => c.checked) ||
         deviceCheckboxes.some(c => c.checked) ||
-        awardCheckboxes.some(c => c.checked);
+        awardCheckboxes.some(c => c.checked) ||
+        (resourceCheckbox && resourceCheckbox.checked);
 
       if (!hasActiveFilters) {
         activeFiltersPanel.style.display = 'none';
@@ -398,7 +414,7 @@
 
       // Search
       if (searchInput.value.trim() !== "") {
-        activeFiltersPanel.innerHTML += `<span class="active-filter-tag">Seartch: ${searchInput.value} <span class="remove-tag" data-type="search" data-value="">×</span></span>`;
+        activeFiltersPanel.innerHTML += `<span class="active-filter-tag">Search: ${searchInput.value} <span class="remove-tag" data-type="search" data-value="">×</span></span>`;
       }
       // Dropdowns
       if (yearSelect.value) {
@@ -426,6 +442,10 @@
       awardCheckboxes.filter(c => c.checked).forEach(c => {
         activeFiltersPanel.innerHTML += `<span class="active-filter-tag">Award: ${c.value} <span class="remove-tag" data-type="award" data-value="${c.value}">×</span></span>`;
       });
+      // Resources
+      if (resourceCheckbox && resourceCheckbox.checked) {
+        activeFiltersPanel.innerHTML += `<span class="active-filter-tag">Resource: Dataset <span class="remove-tag" data-type="resource" data-value="dataset">×</span></span>`;
+      }
 
       // Add event listeners to removal tags
       activeFiltersPanel.querySelectorAll('.remove-tag').forEach(el => {
@@ -493,6 +513,13 @@
           if (cb.value === value) cb.checked = false;
         });
       }
+      // Resources
+      else if (type === 'resource') {
+        if (value === 'dataset') {
+          if (resourceCheckbox) resourceCheckbox.checked = false;
+          if (mobileResourceCheckbox) mobileResourceCheckbox.checked = false;
+        }
+      }
       syncFilters();
       filterPublications();
     }
@@ -512,7 +539,7 @@
       mobileYearSelect, mobileHealthTopicSelect, mobileVenueSelect, mobileAuthorSelect].forEach(select => {
         if (select) {
           select.addEventListener('change', () => {
-            syncFilters(select.id.startsWith('mobile'));
+            syncFilters(select.id && select.id.startsWith('mobile'));
             filterPublications();
           });
         }
@@ -520,18 +547,15 @@
 
     // Checkbox filter event listeners (Desktop & Mobile)
     [...themeCheckboxes, ...skillCheckboxes, ...deviceCheckboxes, ...awardCheckboxes,
-    ...mobileThemeCheckboxes, ...mobileSkillCheckboxes, ...mobileDeviceCheckboxes, ...mobileAwardCheckboxes].forEach(c => {
-      if (c) {
-        c.addEventListener('change', () => {
-          syncFilters(c.classList.contains('mobile-theme-checkbox') ||
-            c.classList.contains('mobile-skill-checkbox') ||
-            c.classList.contains('mobile-device-checkbox') ||
-            c.classList.contains('mobile-award-checkbox'));
-          filterPublications();
-        });
-      }
-    });
-
+    ...mobileThemeCheckboxes, ...mobileSkillCheckboxes, ...mobileDeviceCheckboxes, ...mobileAwardCheckboxes,
+      resourceCheckbox, mobileResourceCheckbox].forEach(c => {
+        if (c) {
+          c.addEventListener('change', () => {
+            syncFilters(c.id && c.id.startsWith('mobile'));
+            filterPublications();
+          });
+        }
+      });
 
     // Initialize active filters panel and pagination
     filterPublications();
