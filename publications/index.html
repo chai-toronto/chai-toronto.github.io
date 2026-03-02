@@ -28,7 +28,7 @@ title: Publications
         <select id="mobile-yearSelect">
           <option value="">All</option>
           {% for y in years %}
-            <option value="{{ y }}">{{ y }}</option>
+          <option value="{{ y }}">{{ y }}</option>
           {% endfor %}
         </select>
 
@@ -37,7 +37,7 @@ title: Publications
         <select id="mobile-healthTopicSelect">
           <option value="">All</option>
           {% for topic in healthTopics %}
-            <option value="{{ topic }}">{{ topic }}</option>
+          <option value="{{ topic }}">{{ topic }}</option>
           {% endfor %}
         </select>
 
@@ -46,8 +46,8 @@ title: Publications
         <select id="mobile-venueSelect">
           <option value="">All</option>
           {% for venue in venues %}
-            {% include venue_name.html venue=venue %}
-            <option value="{{ venue }}">{{ venue_transformed }}</option>
+          {% include venue_name.html venue=venue %}
+          <option value="{{ venue }}">{{ venue_transformed }}</option>
           {% endfor %}
         </select>
 
@@ -56,12 +56,12 @@ title: Publications
         <select id="mobile-authorSelect">
           <option value="">Anyone</option>
           {% for author in all_author_ids %}
-            {% assign found_member = site.data.members | where:"id", author | first %}
-            {% if found_member %}
-              {% if found_member.degree == 'PhD' or found_member.degree == "MSc" or found_member.degree == 'MScAC' %}
-                <option value="{{ found_member.id }}">{{ found_member.name }}</option>
-              {% endif %}
-            {% endif %}
+          {% assign found_member = site.data.members | where:"id", author | first %}
+          {% if found_member %}
+          {% if found_member.degree == 'PhD' or found_member.degree == "MSc" or found_member.degree == 'MScAC' %}
+          <option value="{{ found_member.id }}">{{ found_member.name }}</option>
+          {% endif %}
+          {% endif %}
           {% endfor %}
         </select>
 
@@ -72,9 +72,9 @@ title: Publications
         <div class="filter-group theme">
           <h3>Theme</h3>
           {% for theme in themes %}
-            <label>
-              <input type="checkbox" class="mobile-theme-checkbox" value="{{ theme }}" /> {{ theme }}
-            </label><br />
+          <label>
+            <input type="checkbox" class="mobile-theme-checkbox" value="{{ theme }}" /> {{ theme }}
+          </label><br />
           {% endfor %}
         </div>
 
@@ -84,9 +84,9 @@ title: Publications
         <div class="filter-group skills">
           <h3>Skills</h3>
           {% for skill in skills %}
-            <label>
-              <input type="checkbox" class="mobile-skill-checkbox" value="{{ skill }}" /> {{ skill }}
-            </label><br />
+          <label>
+            <input type="checkbox" class="mobile-skill-checkbox" value="{{ skill }}" /> {{ skill }}
+          </label><br />
           {% endfor %}
         </div>
 
@@ -96,9 +96,9 @@ title: Publications
         <div class="filter-group device">
           <h3>Relevant Devices</h3>
           {% for dev in devices %}
-            <label>
-              <input type="checkbox" class="mobile-device-checkbox" value="{{ dev }}" /> {{ dev }}
-            </label><br />
+          <label>
+            <input type="checkbox" class="mobile-device-checkbox" value="{{ dev }}" /> {{ dev }}
+          </label><br />
           {% endfor %}
         </div>
 
@@ -108,13 +108,12 @@ title: Publications
         <div class="filter-group awards">
           <h3>Awards</h3>
           {% for award in awards %}
-            <label>
-              <input type="checkbox" class="mobile-award-checkbox" value="{{ award }}" /> {{ award }}
-            </label><br />
+          <label>
+            <input type="checkbox" class="mobile-award-checkbox" value="{{ award }}" /> {{ award }}
+          </label><br />
           {% endfor %}
         </div>
 
-        <button class="apply-filters">Apply</button>
       </div>
     </div>
   </div>
@@ -130,7 +129,7 @@ title: Publications
       <select id="yearSelect">
         <option value="">All</option>
         {% for y in years %}
-          <option value="{{ y }}">{{ y }}</option>
+        <option value="{{ y }}">{{ y }}</option>
         {% endfor %}
       </select>
 
@@ -139,7 +138,7 @@ title: Publications
       <select id="healthTopicSelect">
         <option value="">All</option>
         {% for topic in healthTopics %}
-          <option value="{{ topic }}">{{ topic }}</option>
+        <option value="{{ topic }}">{{ topic }}</option>
         {% endfor %}
       </select>
 
@@ -148,8 +147,8 @@ title: Publications
       <select id="venueSelect">
         <option value="">All</option>
         {% for venue in venues %}
-          {% include venue_name.html venue=venue %}
-          <option value="{{ venue }}">{{ venue_transformed }}</option>
+        {% include venue_name.html venue=venue %}
+        <option value="{{ venue }}">{{ venue_transformed }}</option>
         {% endfor %}
       </select>
 
@@ -158,12 +157,12 @@ title: Publications
       <select id="authorSelect">
         <option value="">Anyone</option>
         {% for author in all_author_ids %}
-          {% assign found_member = site.data.members | where:"id", author | first %}
-          {% if found_member %}
-            {% if found_member.degree == 'PhD' or found_member.degree == "MSc" or found_member.degree == 'MScAC' %}
-              <option value="{{ found_member.id }}">{{ found_member.name }}</option>
-            {% endif %}
-          {% endif %}
+        {% assign found_member = site.data.members | where:"id", author | first %}
+        {% if found_member %}
+        {% if found_member.degree == 'PhD' or found_member.degree == "MSc" or found_member.degree == 'MScAC' %}
+        <option value="{{ found_member.id }}">{{ found_member.name }}</option>
+        {% endif %}
+        {% endif %}
         {% endfor %}
       </select>
 
@@ -174,9 +173,9 @@ title: Publications
       <div class="filter-group theme">
         <h3>Theme</h3>
         {% for theme in themes %}
-          <label>
-            <input type="checkbox" class="filter-theme-checkbox" value="{{ theme }}" /> {{ theme }}
-          </label><br />
+        <label>
+          <input type="checkbox" class="filter-theme-checkbox" value="{{ theme }}" /> {{ theme }}
+        </label><br />
         {% endfor %}
       </div>
 
@@ -186,9 +185,9 @@ title: Publications
       <div class="filter-group skills">
         <h3>Skills</h3>
         {% for skill in skills %}
-          <label>
-            <input type="checkbox" class="filter-skill-checkbox" value="{{ skill }}" /> {{ skill }}
-          </label><br />
+        <label>
+          <input type="checkbox" class="filter-skill-checkbox" value="{{ skill }}" /> {{ skill }}
+        </label><br />
         {% endfor %}
       </div>
 
@@ -198,9 +197,9 @@ title: Publications
       <div class="filter-group device">
         <h3>Relevant Devices</h3>
         {% for dev in devices %}
-          <label>
-            <input type="checkbox" class="filter-device-checkbox" value="{{ dev }}" /> {{ dev }}
-          </label><br />
+        <label>
+          <input type="checkbox" class="filter-device-checkbox" value="{{ dev }}" /> {{ dev }}
+        </label><br />
         {% endfor %}
       </div>
 
@@ -210,9 +209,9 @@ title: Publications
       <div class="filter-group awards">
         <h3>Awards</h3>
         {% for award in awards %}
-          <label>
-            <input type="checkbox" class="filter-award-checkbox" value="{{ award }}" /> {{ award }}
-          </label><br />
+        <label>
+          <input type="checkbox" class="filter-award-checkbox" value="{{ award }}" /> {{ award }}
+        </label><br />
         {% endfor %}
       </div>
     </div>
@@ -222,35 +221,29 @@ title: Publications
       <div id="active-filters-panel"></div>
 
       {% for pub in sorted_pubs %}
-        <!-- Get the full venue name -->
-        {% include venue_name.html venue=pub.venue %}
+      <!-- Get the full venue name -->
+      {% include venue_name.html venue=pub.venue %}
 
-        <div class="publication-card"
-            data-year="{{ pub.date | date: '%Y' }}"
-            data-health-topic="{{ pub.health_topic | join: ',' }}"
-            data-venue="{{ venue_transformed }}"
-            data-author="{{ pub.authors | join: ',' }}"
-            data-theme="{{ pub.theme | join: ',' }}"
-            data-skills="{{ pub.skills | join: ',' }}"
-            data-device="{% if pub.device %}{{ pub.device | join: ',' }}{% elsif pub.devices %}{{ pub.devices | join: ',' }}{% endif %}"
-            data-dataset="{{ pub.dataset_available }}"
-            data-award="{{ pub.award }}">
-          <div class="pub-image">
-            {% if pub.date <= site.time %}
-            <a href="{{ pub.link }}">
-              <img src="{{ pub.thumbnail }}" alt="{{ pub.title }}">
+      <div class="publication-card" data-year="{{ pub.date | date: '%Y' }}"
+        data-health-topic="{{ pub.health_topic | join: ',' }}" data-venue="{{ venue_transformed }}"
+        data-author="{{ pub.authors | join: ',' }}" data-theme="{{ pub.theme | join: ',' }}"
+        data-skills="{{ pub.skills | join: ',' }}"
+        data-device="{% if pub.device %}{{ pub.device | join: ',' }}{% elsif pub.devices %}{{ pub.devices | join: ',' }}{% endif %}"
+        data-dataset="{{ pub.dataset_available }}" data-award="{{ pub.award }}">
+        <div class="pub-image">
+          {% if pub.date <= site.time %} <a href="{{ pub.link }}">
+            <img src="{{ pub.thumbnail }}" alt="{{ pub.title }}">
             </a>
             {% else %}
             <img src="{{ pub.thumbnail }}" alt="{{ pub.title }}">
             {% endif %}
-          </div>
-          <div class="pub-info">
-            {% if pub.date <= site.time %}
-              <a href="{{ pub.link }}">
-                <h2>{{ pub.title }}</h2>
-              </a>
+        </div>
+        <div class="pub-info">
+          {% if pub.date <= site.time %} <a href="{{ pub.link }}">
+            <h2>{{ pub.title }}</h2>
+            </a>
             {% else %}
-              <h2>{{ pub.title }}</h2>
+            <h2>{{ pub.title }}</h2>
             {% endif %}
             <p class="authors">
               {% include author_list.html authors=pub.authors %}
@@ -258,117 +251,125 @@ title: Publications
             <p class="venue-year">
               <em>
                 {% if pub.date > site.time %}
-                  <span class="to-appear">To appear in </span>
+                <span class="to-appear">To appear in </span>
                 {% endif %}
                 {% if pub.subvenue %}
-                  {{ pub.subvenue }},
+                {{ pub.subvenue }},
                 {% endif %}
                 {{ venue_transformed }}, {{ pub.date | date: "%Y" }}
               </em>
               {% if pub.award %}
-                <br>
-                <span class="award">{{ pub.award }}</span>
+              <br>
+              <span class="award">{{ pub.award }}</span>
               {% endif %}
             </p>
 
             <!-- Abstract and Video Buttons -->
             <div class="pub-buttons">
               {% if pub.abstract %}
-              <button type="button" class="btn btn-abstract" aria-label="Abstract" data-toggle="modal" data-target="#{{ pub.title | slugify }}_abstract">
+              <button type="button" class="btn btn-abstract" aria-label="Abstract" data-toggle="modal"
+                data-target="#{{ pub.title | slugify }}_abstract">
                 <i class="fas fa-book"></i> Abstract
               </button>
               {% endif %}
 
               {% if pub.video_embed %}
-              <button type="button" class="btn btn-video" aria-label="Video" data-toggle="modal" data-target="#{{ pub.title | slugify }}_video">
+              <button type="button" class="btn btn-video" aria-label="Video" data-toggle="modal"
+                data-target="#{{ pub.title | slugify }}_video">
                 <i class="fas fa-play"></i> Video
               </button>
               {% endif %}
 
               {% if pub.press %}
-              <button type="button" class="btn btn-press" aria-label="Press" data-toggle="modal" data-target="#{{ pub.title | slugify }}_press">
+              <button type="button" class="btn btn-press" aria-label="Press" data-toggle="modal"
+                data-target="#{{ pub.title | slugify }}_press">
                 <i class="fas fa-bullhorn"></i> Press Releases
               </button>
               {% endif %}
 
               {% if pub.dataset %}
-              <button type="button" class="btn btn-data" aria-label="Dataset" onclick="window.location.href='{{ pub.dataset }}'";>
+              <button type="button" class="btn btn-data" aria-label="Dataset"
+                onclick="window.location.href='{{ pub.dataset }}'" ;>
                 <i class="fas fa-database"></i> Dataset
               </button>
               {% endif %}
             </div>
-          </div>
         </div>
+      </div>
 
-        <!-- Abstract Modal -->
-        {% if pub.abstract %}
-        <div class="modal fade" tabindex="-1" role="dialog" id="{{ pub.title | slugify }}_abstract">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">{{ pub.title }}</h4>
-              </div>
-              <div class="modal-body">
-                {{ pub.abstract }}
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              </div>
+      <!-- Abstract Modal -->
+      {% if pub.abstract %}
+      <div class="modal fade" tabindex="-1" role="dialog" id="{{ pub.title | slugify }}_abstract">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">{{ pub.title }}</h4>
+            </div>
+            <div class="modal-body">
+              {{ pub.abstract }}
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
-        {% endif %}
+      </div>
+      {% endif %}
 
-        <!-- Video Modal -->
-        {% if pub.video_embed %}
-        <div class="modal fade" tabindex="-1" role="dialog" id="{{ pub.title | slugify }}_video">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">{{ pub.title }}</h4>
-              </div>
-              <div class="modal-body">
-                <iframe width="560" height="315" src="{{ pub.video_embed }}" frameborder="0" allowfullscreen></iframe>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              </div>
+      <!-- Video Modal -->
+      {% if pub.video_embed %}
+      <div class="modal fade" tabindex="-1" role="dialog" id="{{ pub.title | slugify }}_video">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">{{ pub.title }}</h4>
+            </div>
+            <div class="modal-body">
+              <iframe width="560" height="315" src="{{ pub.video_embed }}" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Press Modal -->
-        {% if pub.press %}
-        <div class="modal fade" tabindex="-1" role="dialog" id="{{ pub.title | slugify }}_press">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">{{ pub.title }}</h4>
-              </div>
-              <div class="modal-body">
-                {% assign sorted_articles = pub.press | sort: 'name' %}
-                {% for article in sorted_articles %}
-                  <u><a href="{{article.url}}">{{ article.name }}</a></u> ({{ article.date | date: '%b %-d, %Y'}}): {{ article.headline }}<br/>
-                {% endfor %}
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              </div>
+      <!-- Press Modal -->
+      {% if pub.press %}
+      <div class="modal fade" tabindex="-1" role="dialog" id="{{ pub.title | slugify }}_press">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">{{ pub.title }}</h4>
+            </div>
+            <div class="modal-body">
+              {% assign sorted_articles = pub.press | sort: 'name' %}
+              {% for article in sorted_articles %}
+              <u><a href="{{article.url}}">{{ article.name }}</a></u> ({{ article.date | date: '%b %-d, %Y'}}): {{
+              article.headline }}<br />
+              {% endfor %}
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
-        {% endif %}
+      </div>
+      {% endif %}
 
-        <!-- Close video when window closes -->
-        <script>
-          $('#{{pub.title | slugify}}_video').on('hidden.bs.modal', function () {
-            $("#{{pub.title | slugify}}_video iframe").attr("src", $("#{{pub.title | slugify}}_video iframe").attr("src"));
-          });
-        </script>
-        {% endif %}
+      <!-- Close video when window closes -->
+      <script>
+        $('#{{pub.title | slugify}}_video').on('hidden.bs.modal', function () {
+          $("#{{pub.title | slugify}}_video iframe").attr("src", $("#{{pub.title | slugify}}_video iframe").attr("src"));
+        });
+      </script>
+      {% endif %}
 
       {% endfor %}
     </div>

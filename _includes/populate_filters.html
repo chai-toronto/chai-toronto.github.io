@@ -142,7 +142,6 @@
     const overlay = document.querySelector('.filter-overlay');
     const openBtn = document.querySelector('.mobile-filter-toggle');
     const closeBtn = document.querySelector('.close-filters');
-    const applyBtn = document.querySelector('.apply-filters');
 
     // Toggle mobile filter overlay
     if (overlay && openBtn && closeBtn) {
@@ -508,26 +507,31 @@
       filterPublications();
     });
 
-    // Dropdown filter event listeners
-    [yearSelect, healthTopicSelect, venueSelect, authorSelect].forEach(select => {
-      select.addEventListener('change', () => {
-        syncFilters();
-        filterPublications();
+    // Dropdown filter event listeners (Desktop & Mobile)
+    [yearSelect, healthTopicSelect, venueSelect, authorSelect,
+      mobileYearSelect, mobileHealthTopicSelect, mobileVenueSelect, mobileAuthorSelect].forEach(select => {
+        if (select) {
+          select.addEventListener('change', () => {
+            syncFilters(select.id.startsWith('mobile'));
+            filterPublications();
+          });
+        }
       });
+
+    // Checkbox filter event listeners (Desktop & Mobile)
+    [...themeCheckboxes, ...skillCheckboxes, ...deviceCheckboxes, ...awardCheckboxes,
+    ...mobileThemeCheckboxes, ...mobileSkillCheckboxes, ...mobileDeviceCheckboxes, ...mobileAwardCheckboxes].forEach(c => {
+      if (c) {
+        c.addEventListener('change', () => {
+          syncFilters(c.classList.contains('mobile-theme-checkbox') ||
+            c.classList.contains('mobile-skill-checkbox') ||
+            c.classList.contains('mobile-device-checkbox') ||
+            c.classList.contains('mobile-award-checkbox'));
+          filterPublications();
+        });
+      }
     });
 
-    // Checkbox filter event listeners
-    [...themeCheckboxes, ...skillCheckboxes, ...deviceCheckboxes, ...awardCheckboxes].forEach(c => c.addEventListener('change', () => {
-      syncFilters();
-      filterPublications();
-    }));
-
-    // Apply button event listener
-    applyBtn.addEventListener('click', () => {
-      syncFilters(true);
-      filterPublications();
-      overlay.classList.remove('active');
-    });
 
     // Initialize active filters panel and pagination
     filterPublications();
