@@ -1,58 +1,58 @@
 <!-- Years -->
 {% assign years = "" | split: "" %}
 {% for pub in site.publications %}
-	{% assign pubYear = pub.date | date: '%Y' %}
-	{% unless years contains pubYear %}
-	{% assign years = years | push: pubYear %}
-	{% endunless %}
+{% assign pubYear = pub.date | date: '%Y' %}
+{% unless years contains pubYear %}
+{% assign years = years | push: pubYear %}
+{% endunless %}
 {% endfor %}
 {% assign years = years | sort | reverse %}
 
 <!-- Health Topics -->
 {% assign healthTopics = "" | split: "" %}
 {% for pub in site.publications %}
-	{% if pub.health_topic %}
-	{% for topic in pub.health_topic %}
-	{% unless healthTopics contains topic %}
-	{% assign healthTopics = healthTopics | push: topic %}
-	{% endunless %}
-	{% endfor %}
-	{% endif %}
+{% if pub.health_topic %}
+{% for topic in pub.health_topic %}
+{% unless healthTopics contains topic %}
+{% assign healthTopics = healthTopics | push: topic %}
+{% endunless %}
+{% endfor %}
+{% endif %}
 {% endfor %}
 {% assign healthTopics = healthTopics | sort %}
 
 <!-- Venues -->
 {% assign venues = "" | split: "" %}
 {% for conf in site.data.venues %}
-	{% assign venue_split = conf | split: "(" %}
-	{% assign venue_split = venue_split[1] | split: ")" %}
-	{% assign venues = venues | push: venue_split[0] %}
+{% assign venue_split = conf | split: "(" %}
+{% assign venue_split = venue_split[1] | split: ")" %}
+{% assign venues = venues | push: venue_split[0] %}
 {% endfor %}
 {% assign venues = venues | sort %}
 
 <!-- Leads -->
 {% assign all_lead_ids = "" | split: "" %}
 {% for project in site.projects %}
-	{% if project.leads %}
-		{% for lead in project.leads %}
-			{% unless all_lead_ids contains lead %}
-				{% assign all_lead_ids = all_lead_ids | push: lead %}
-			{% endunless %}
-		{% endfor %}
-	{% endif %}
+{% if project.leads %}
+{% for lead in project.leads %}
+{% unless all_lead_ids contains lead %}
+{% assign all_lead_ids = all_lead_ids | push: lead %}
+{% endunless %}
+{% endfor %}
+{% endif %}
 {% endfor %}
 {% assign all_lead_ids = all_lead_ids | sort %}
 
 <!-- Contributors -->
 {% assign all_author_ids = "" | split: "" %}
 {% for pub in site.publications %}
-	{% if pub.authors %}
-		{% for author in pub.authors %}
-			{% unless all_author_ids contains author %}
-				{% assign all_author_ids = all_author_ids | push: author %}
-			{% endunless %}
-		{% endfor %}
-	{% endif %}
+{% if pub.authors %}
+{% for author in pub.authors %}
+{% unless all_author_ids contains author %}
+{% assign all_author_ids = all_author_ids | push: author %}
+{% endunless %}
+{% endfor %}
+{% endif %}
 {% endfor %}
 {% assign all_author_ids = all_author_ids | sort %}
 
@@ -65,48 +65,48 @@
 <!-- Skills -->
 {% assign skills = "" | split: "" %}
 {% for pub in site.publications %}
-	{% if pub.skills %}
-		{% for skill in pub.skills %}
-			{% unless skills contains skill %}
-				{% assign skills = skills | push: skill %}
-			{% endunless %}
-		{% endfor %}
-	{% endif %}
+{% if pub.skills %}
+{% for skill in pub.skills %}
+{% unless skills contains skill %}
+{% assign skills = skills | push: skill %}
+{% endunless %}
+{% endfor %}
+{% endif %}
 {% endfor %}
 {% assign skills = skills | sort %}
 
 <!-- Devices -->
 {% assign devices = "" | split: "" %}
 {% for pub in site.publications %}
-	{% if pub.device %}
-		{% for dev in pub.device %}
-			{% unless devices contains dev %}
-				{% assign devices = devices | push: dev %}
-			{% endunless %}
-			{% endfor %}
-	{% elsif pub.devices %}
-		{% for dev in pub.devices %}
-			{% unless devices contains dev %}
-				{% assign devices = devices | push: dev %}
-			{% endunless %}
-		{% endfor %}
-	{% endif %}
+{% if pub.device %}
+{% for dev in pub.device %}
+{% unless devices contains dev %}
+{% assign devices = devices | push: dev %}
+{% endunless %}
+{% endfor %}
+{% elsif pub.devices %}
+{% for dev in pub.devices %}
+{% unless devices contains dev %}
+{% assign devices = devices | push: dev %}
+{% endunless %}
+{% endfor %}
+{% endif %}
 {% endfor %}
 {% assign devices = devices | sort %}
 
 <!-- Awards -->
 {% assign awards = "" | split: "" %}
 {% for pub in site.publications %}
-	{% if pub.award %}
-		{% unless awards contains pub.award %}
-			{% assign awards = awards | push: pub.award %}
-		{% endunless %}
-	{% endif %}
+{% if pub.award %}
+{% unless awards contains pub.award %}
+{% assign awards = awards | push: pub.award %}
+{% endunless %}
+{% endif %}
 {% endfor %}
 {% assign awards = awards | sort %}
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function () {
     // Desktop filters
     const searchInput = document.querySelector('.desktop-search');
     const yearSelect = document.getElementById('yearSelect');
@@ -133,7 +133,7 @@
     const publicationCards = Array.from(document.querySelectorAll('.publication-card'));
     const activeFiltersPanel = document.getElementById('active-filters-panel');
     const publicationsGrid = document.querySelector('.publications-grid');
-    
+
     // Pagination state
     let currentPage = 1;
     const itemsPerPage = 10;
@@ -183,7 +183,7 @@
             awardCheckboxes[index].checked = checkbox.checked;
           }
         });
-      } 
+      }
       else {
         // Copy from desktop to mobile
         mobileSearchInput.value = searchInput.value;
@@ -221,7 +221,7 @@
     function getCheckedValues(checkboxes) {
       let values = [];
       checkboxes.forEach(cb => {
-        if(cb.checked) {
+        if (cb.checked) {
           values.push(cb.value);
         }
       });
@@ -248,7 +248,7 @@
       const visibleCards = [];
       publicationCards.forEach(card => {
         let isVisible = true;
-        
+
         // Search
         let text = card.textContent.toLowerCase();
         if (query && !text.includes(query)) {
@@ -353,12 +353,6 @@
       });
       pagination.appendChild(prevBtn);
 
-      // Page info
-      const pageInfo = document.createElement('span');
-      pageInfo.className = 'pagination-info';
-      pageInfo.textContent = `Page ${currentPage} of ${totalPages} (${totalItems} total)`;
-      pagination.appendChild(pageInfo);
-
       // Next button
       const nextBtn = document.createElement('button');
       nextBtn.className = 'pagination-btn';
@@ -373,6 +367,12 @@
       });
       pagination.appendChild(nextBtn);
 
+      // Page info
+      const pageInfo = document.createElement('span');
+      pageInfo.className = 'pagination-info';
+      pageInfo.textContent = `Page ${currentPage} of ${totalPages} (${totalItems} total)`;
+      pagination.appendChild(pageInfo);
+
       // Insert pagination at the bottom of the publications grid
       publicationsGrid.appendChild(pagination);
     }
@@ -381,15 +381,15 @@
       // Skip early if no filters are active
       activeFiltersPanel.innerHTML = '';
       const hasActiveFilters =
-              searchInput.value ||
-              yearSelect.value ||
-              healthTopicSelect.value ||
-              venueSelect.value ||
-              authorSelect.value ||
-              themeCheckboxes.some(c => c.checked) ||
-              skillCheckboxes.some(c => c.checked) ||
-              deviceCheckboxes.some(c => c.checked) ||
-              awardCheckboxes.some(c => c.checked);
+        searchInput.value ||
+        yearSelect.value ||
+        healthTopicSelect.value ||
+        venueSelect.value ||
+        authorSelect.value ||
+        themeCheckboxes.some(c => c.checked) ||
+        skillCheckboxes.some(c => c.checked) ||
+        deviceCheckboxes.some(c => c.checked) ||
+        awardCheckboxes.some(c => c.checked);
 
       if (!hasActiveFilters) {
         activeFiltersPanel.style.display = 'none';
@@ -415,22 +415,22 @@
         activeFiltersPanel.innerHTML += `<span class="active-filter-tag">Author: ${authorSelect.selectedOptions[0].text} <span class="remove-tag" data-type="author" data-value="">×</span></span>`;
       }
       // Checkboxes
-      themeCheckboxes.filter(c=>c.checked).forEach(c => {
+      themeCheckboxes.filter(c => c.checked).forEach(c => {
         activeFiltersPanel.innerHTML += `<span class="active-filter-tag">Theme: ${c.value} <span class="remove-tag" data-type="theme" data-value="${c.value}">×</span></span>`;
       });
-      skillCheckboxes.filter(c=>c.checked).forEach(c => {
+      skillCheckboxes.filter(c => c.checked).forEach(c => {
         activeFiltersPanel.innerHTML += `<span class="active-filter-tag">Skill: ${c.value} <span class="remove-tag" data-type="skill" data-value="${c.value}">×</span></span>`;
       });
-      deviceCheckboxes.filter(c=>c.checked).forEach(c => {
+      deviceCheckboxes.filter(c => c.checked).forEach(c => {
         activeFiltersPanel.innerHTML += `<span class="active-filter-tag">Device: ${c.value} <span class="remove-tag" data-type="device" data-value="${c.value}">×</span></span>`;
       });
-      awardCheckboxes.filter(c=>c.checked).forEach(c => {
+      awardCheckboxes.filter(c => c.checked).forEach(c => {
         activeFiltersPanel.innerHTML += `<span class="active-filter-tag">Award: ${c.value} <span class="remove-tag" data-type="award" data-value="${c.value}">×</span></span>`;
       });
 
       // Add event listeners to removal tags
       activeFiltersPanel.querySelectorAll('.remove-tag').forEach(el => {
-        el.addEventListener('click', function() {
+        el.addEventListener('click', function () {
           const type = this.dataset.type;
           const value = this.dataset.value;
           removeFilter(type, value);
@@ -443,24 +443,24 @@
       if (type === 'search') {
         searchInput.value = '';
         mobileSearchInput.value = '';
-      } 
+      }
       // Dropdowns
       else if (type === 'year') {
         yearSelect.value = '';
         mobileYearSelect.value = '';
-      } 
+      }
       else if (type === 'health') {
         healthTopicSelect.value = '';
         mobileHealthTopicSelect.value = '';
-      } 
+      }
       else if (type === 'venue') {
         venueSelect.value = '';
         mobileVenueSelect.value = '';
-      } 
+      }
       else if (type === 'author') {
         authorSelect.value = '';
         mobileAuthorSelect.value = '';
-      } 
+      }
       // Checkboxes
       else if (type === 'theme') {
         themeCheckboxes.forEach(cb => {
@@ -469,7 +469,7 @@
         mobileThemeCheckboxes.forEach(cb => {
           if (cb.value === value) cb.checked = false;
         });
-      } 
+      }
       else if (type === 'skill') {
         skillCheckboxes.forEach(cb => {
           if (cb.value === value) cb.checked = false;
@@ -477,7 +477,7 @@
         mobileSkillCheckboxes.forEach(cb => {
           if (cb.value === value) cb.checked = false;
         });
-      } 
+      }
       else if (type === 'device') {
         deviceCheckboxes.forEach(cb => {
           if (cb.value === value) cb.checked = false;
@@ -485,7 +485,7 @@
         mobileDeviceCheckboxes.forEach(cb => {
           if (cb.value === value) cb.checked = false;
         });
-      } 
+      }
       else if (type === 'award') {
         awardCheckboxes.forEach(cb => {
           if (cb.value === value) cb.checked = false;
@@ -499,11 +499,11 @@
     }
 
     // Search filter event listeners
-    if (searchInput) searchInput.addEventListener('input', function() {
+    if (searchInput) searchInput.addEventListener('input', function () {
       syncFilters();
       filterPublications();
     });
-    if (mobileSearchInput) mobileSearchInput.addEventListener('input', function() {
+    if (mobileSearchInput) mobileSearchInput.addEventListener('input', function () {
       searchInput.value = mobileSearchInput.value;
       filterPublications();
     });
@@ -517,7 +517,7 @@
     });
 
     // Checkbox filter event listeners
-    [...themeCheckboxes, ...skillCheckboxes, ...deviceCheckboxes, ...awardCheckboxes].forEach(c=>c.addEventListener('change', () => {
+    [...themeCheckboxes, ...skillCheckboxes, ...deviceCheckboxes, ...awardCheckboxes].forEach(c => c.addEventListener('change', () => {
       syncFilters();
       filterPublications();
     }));

@@ -300,6 +300,7 @@
         @include breakpoint-xs-down {
           gap: 10px;
           flex-wrap: wrap;
+          justify-content: center;
         }
 
         .pagination-btn {
@@ -321,6 +322,7 @@
           @include breakpoint-xs-down {
             font-size: 12px;
             padding: 8px 16px;
+            flex: 0 1 auto; // Ensure buttons don't take full width
           }
 
           &:hover:not(:disabled) {
