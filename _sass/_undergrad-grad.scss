@@ -39,8 +39,7 @@
           display: block;
 
           @include breakpoint-md-down {
-            aspect-ratio: 3;
-            object-position: center;
+            display: none;
           }
         }
       }
