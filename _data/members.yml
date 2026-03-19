@@ -139,6 +139,15 @@
   topic: Health informatics with wearables
   active: true
 
+- id: ben_hartwick
+  name: Ben Hartwick
+  degree: MScAC
+  image: /images/members/ben_hartwick.png
+  linkedin: benhartwick
+  startyear: 2026
+  topic: Machine learning for depression screening
+  active: true
+
 - id: samanvay_vajpayee
   name: Samanvay Vajpayee
   degree: MScAC
