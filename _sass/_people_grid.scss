@@ -38,20 +38,22 @@
     margin: 0 auto;
 
     @include breakpoint-md-down {
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 25px;
     }
+
     @include breakpoint-sm-down {
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: 1fr 1fr;
       gap: 20px;
     }
+
     @include breakpoint-xs-down {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: 1fr 1fr;
       gap: 15px;
     }
   }
 
   .persona-card {
+    min-width: 0;
     width: 100% !important;
     max-width: 100%;
     margin-bottom: 20px;
@@ -59,6 +61,7 @@
     @include breakpoint-sm-down {
       margin-bottom: 15px;
     }
+
     @include breakpoint-xs-down {
       margin-bottom: 10px;
     }
@@ -187,7 +190,7 @@
         }
       }
 
-      & + .persona-info {
+      &+.persona-info {
         padding-top: 5px;
 
         @include breakpoint-sm-down {
@@ -289,6 +292,7 @@
     &:hover {
       text-decoration: none;
       color: $primaryTeal;
+
       i {
         color: $primaryTealDark;
       }
