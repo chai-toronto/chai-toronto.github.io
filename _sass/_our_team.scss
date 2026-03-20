@@ -75,7 +75,7 @@
     max-width: 275px;
     border-radius: 20px !important;
     display: block;
-    margin: 0 auto 1rem;
+    margin: 0 auto 0.5rem;
 
     @include breakpoint-sm-down {
       max-width: 250px;

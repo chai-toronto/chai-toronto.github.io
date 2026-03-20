@@ -1,29 +1,20 @@
 .people-grid {
-  margin-top: 2rem;
+  margin: 2rem auto 0 auto;
   width: 100%;
   max-width: 1400px;
-  margin: 0 auto;
   padding: 0 2rem;
 
   @include breakpoint-sm-down {
-    margin-top: 1rem;
+    margin: 1rem auto 0 auto;
     padding: 0 1rem;
   }
 
   &.alumni-grid {
-    margin: 4rem auto;
     max-width: 1600px;
     text-align: center;
 
-    @include breakpoint-md-down {
-      margin: 3rem auto;
-    }
     @include breakpoint-sm-down {
-      margin: 2rem auto;
       padding: 0;
-    }
-    @include breakpoint-xs-down {
-      margin: 1.5rem auto;
     }
   }
 
@@ -193,6 +184,18 @@
 
         @include breakpoint-sm-down {
           border-radius: 4px;
+        }
+      }
+
+      & + .persona-info {
+        padding-top: 5px;
+
+        @include breakpoint-sm-down {
+          padding-top: 5px;
+        }
+
+        @include breakpoint-xs-down {
+          padding-top: 4px;
         }
       }
     }
