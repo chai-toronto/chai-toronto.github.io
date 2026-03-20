@@ -56,14 +56,14 @@
     min-width: 0;
     width: 100% !important;
     max-width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
 
     @include breakpoint-sm-down {
-      margin-bottom: 15px;
+      margin-bottom: 6px;
     }
 
     @include breakpoint-xs-down {
-      margin-bottom: 10px;
+      margin-bottom: 4px;
     }
   }
 
@@ -301,16 +301,13 @@
     i {
       font-size: 20px;
       color: $grayDark;
-      margin-right: 10px;
 
       @include breakpoint-sm-down {
         font-size: 16px;
-        margin-right: 5px;
       }
 
       @include breakpoint-xs-down {
         font-size: 14px;
-        margin-right: 4px;
       }
     }
   }
