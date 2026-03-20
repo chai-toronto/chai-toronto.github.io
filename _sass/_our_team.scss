@@ -61,6 +61,13 @@
     @include breakpoint-sm-down {
       margin-bottom: 1.5rem;
     }
+
+    .persona-footer {
+      justify-content: center;
+      border-top: none;
+      margin-top: -10px;
+      padding-top: 0;
+    }
   }
 
   .pi-portrait {
@@ -79,11 +86,12 @@
   .pi-name {
     font-size: 20px;
     font-family: $instrumentMedium;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
     text-align: center;
 
     @include breakpoint-sm-down {
       font-size: 18px;
+      margin-bottom: 0.75rem;
     }
   }
 
@@ -127,7 +135,7 @@
   }
 }
 
-.mb-5 > h2 {
+.mb-5>h2 {
   margin-top: 2rem;
   margin-bottom: 2rem;
 
@@ -139,279 +147,5 @@
   @include breakpoint-xs-down {
     margin-top: 1rem;
     margin-bottom: 1rem;
-  }
-}
-
-.people-grid {
-  margin-top: 2rem;
-
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 2rem;
-
-  @include breakpoint-sm-down {
-    margin-top: 1rem;
-    padding: 0 1rem;
-  }
-
-  .people-grid-title {
-    font-size: 20px;
-    margin-bottom: 1rem;
-    font-weight: 600;
-
-    @include breakpoint-sm-down {
-      font-size: 18px;
-      text-align: center;
-    }
-  }
-
-  .cards-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-
-    @include breakpoint-md-down {
-      gap: 20px;
-      justify-content: center;
-    }
-    @include breakpoint-sm-down {
-      gap: 10px;
-    }
-    @include breakpoint-xs-down {
-      gap: 8px;
-    }
-  }
-
-  .persona-card {
-    width: 30%;
-
-    @include breakpoint-md-down {
-      width: 45%;
-    }
-
-    .persona-card-inner {
-      position: relative;
-      border: 1px solid $grayLighter;
-      border-radius: 12px;
-      background: $white;
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-      transition: none;
-      height: 100%;
-
-      @include breakpoint-sm-down {
-        border-radius: 8px;
-      }
-
-      .persona-search-label {
-        position: absolute;
-        top: -30px;
-        right: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-
-        @include breakpoint-sm-down {
-          top: -24px;
-        }
-
-        @include breakpoint-xs-down {
-          top: -20px;
-        }
-
-        .search-label-prefix {
-          font-family: "Nunito", sans-serif;
-          font-weight: 300;
-          font-size: 14px;
-          background-color: $white;
-          color: $black;
-          border: 1px solid $grayDark;
-          border-bottom: none;
-          padding: 8px 10px;
-          border-radius: 10px 10px 0 0;
-          z-index: 2;
-
-          @include breakpoint-sm-down {
-            font-size: 10px;
-            padding: 4px 6px;
-            border-radius: 6px 6px 0 0;
-          }
-
-          @include breakpoint-xs-down {
-            font-size: 8px;
-            padding: 3px 5px;
-            border-radius: 5px 5px 0 0;
-          }
-        }
-
-        .search-label-position {
-          font-family: "Nunito", sans-serif;
-          font-weight: 300;
-          font-size: 16px;
-          background-color: $primaryMagenta;
-          color: $white;
-          padding: 10px 15px;
-          border: 1px solid $primaryMagenta;
-          border-top: none;
-          border-radius: 10px 0 10px 10px;
-          margin-top: -6px;
-          z-index: 3;
-
-          @include breakpoint-sm-down {
-            font-size: 11px;
-            padding: 5px 8px;
-            margin-top: -4px;
-            border-radius: 6px 0 6px 6px;
-          }
-
-          @include breakpoint-xs-down {
-            font-size: 9px;
-            padding: 4px 6px;
-            margin-top: -3px;
-            border-radius: 5px 0 5px 5px;
-          }
-        }
-      }
-
-      .persona-image {
-        padding: 10px;
-        width: 100%;
-        height: 300px;
-
-        @include breakpoint-sm-down {
-          padding: 5px;
-          height: 150px;
-        }
-
-        @include breakpoint-xs-down {
-          padding: 4px;
-          height: 130px;
-        }
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 6px;
-          background: $grayPale;
-
-          @include breakpoint-sm-down {
-            border-radius: 4px;
-          }
-        }
-
-        .placeholder-img {
-          width: 100%;
-          height: 100%;
-          background: $grayPaler;
-          border-radius: 6px;
-
-          @include breakpoint-sm-down {
-            border-radius: 4px;
-          }
-        }
-      }
-
-      .persona-info {
-        padding: 20px;
-        flex-grow: 1;
-
-        @include breakpoint-sm-down {
-          padding: 10px;
-        }
-
-        @include breakpoint-xs-down {
-          padding: 6px;
-        }
-
-        .persona-name {
-          font-family: $instrumentMedium;
-          font-size: 18px;
-          margin-bottom: 0.5rem;
-
-          @include breakpoint-sm-down {
-            font-size: 16px;
-            margin-bottom: 0.25rem;
-          }
-
-          @include breakpoint-xs-down {
-            font-size: 13px;
-          }
-        }
-
-        .persona-degree {
-          font-family: $instrumentMedium;
-          font-size: 16px;
-          margin-bottom: 0.5rem;
-
-          @include breakpoint-sm-down {
-            font-size: 14px;
-            margin-bottom: 0.25rem;
-          }
-
-          @include breakpoint-xs-down {
-            font-size: 12px;
-          }
-        }
-
-        .persona-description {
-          font-family: $instrumentRegular;
-          font-size: 16px;
-          color: black;
-
-          @include breakpoint-sm-down {
-            font-size: 14px;
-          }
-
-          @include breakpoint-xs-down {
-            font-size: 12px;
-          }
-        }
-      }
-    }
-  }
-}
-
-.persona-footer {
-  padding: 10px 20px;
-  margin-top: -15px;
-
-  @include breakpoint-sm-down {
-    padding: 6px 8px;
-    margin-top: -8px;
-  }
-
-  @include breakpoint-xs-down {
-    padding: 5px 6px;
-    margin-top: -6px;
-  }
-
-  a {
-    text-decoration: none;
-    &:hover {
-      text-decoration: none;
-      i {
-        color: $primaryTealDark;
-      }
-    }
-
-    i {
-      font-size: 20px;
-      color: $grayDark;
-      margin-right: 10px;
-
-      @include breakpoint-sm-down {
-        font-size: 14px;
-        margin-right: 5px;
-      }
-
-      @include breakpoint-xs-down {
-        font-size: 12px;
-        margin-right: 4px;
-      }
-    }
   }
 }

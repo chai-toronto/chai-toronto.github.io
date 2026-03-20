@@ -1,172 +1,25 @@
 @import "variables";
 
 .alumni-page {
-    p {
-      margin-bottom: 2rem;
+  p {
+    margin-bottom: 2rem;
 
-      @include breakpoint-sm-down {
-        font-size: 16px;
-        text-align: center;
-      }
-
-
-    .alumni-section {
-      .section-heading {
-        @include breakpoint-sm-down {
-          text-align: center;
-          font-size: 24px;
-          margin-bottom: 1.5rem;
-        }
-
-        @include breakpoint-xs-down {
-          font-size: 22px;
-        }
-      }
-    }
-
-    .alumni-grid {
-      margin: 4rem auto;
-      max-width: 1600px;
+    @include breakpoint-sm-down {
+      font-size: 16px;
       text-align: center;
-
-      @include breakpoint-md-down {
-        margin: 3rem auto;
-      }
-      @include breakpoint-sm-down {
-        margin: 2rem auto;
-      }
-      @include breakpoint-xs-down {
-        margin: 1.5rem auto;
-      }
     }
+  }
 
-    .cards-wrapper {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
-      gap: 30px;
-      justify-content: center;
-      justify-items: center;
-      margin: 0 auto;
-
-      @include breakpoint-md-down {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 25px;
-      }
+  .alumni-section {
+    .section-heading {
       @include breakpoint-sm-down {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 20px;
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 1.5rem;
       }
+
       @include breakpoint-xs-down {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 15px;
-      }
-    }
-
-    .persona-card,
-    .alumni-card {
-      width: 100% !important;
-      max-width: 100%;
-      margin-bottom: 20px;
-
-      @include breakpoint-sm-down {
-        margin-bottom: 15px;
-      }
-      @include breakpoint-xs-down {
-        margin-bottom: 10px;
-      }
-
-      .persona-card-inner {
-        border: 1px solid $grayLighter;
-        border-radius: 12px;
-        background: $white;
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-        height: 100%;
-
-        .persona-info {
-          padding: 15px;
-          flex-grow: 1;
-
-          @include breakpoint-sm-down {
-            padding: 12px;
-          }
-
-          @include breakpoint-xs-down {
-            padding: 10px;
-          }
-
-          .persona-name {
-            font-family: $instrumentMedium;
-            font-size: 18px;
-            margin-bottom: 0.5rem;
-
-            @include breakpoint-sm-down {
-              font-size: 16px;
-            }
-
-            @include breakpoint-xs-down {
-              font-size: 14px;
-              margin-bottom: 0.3rem;
-            }
-          }
-
-          .persona-degree {
-            font-family: $instrumentMedium;
-            font-size: 14px;
-            margin-bottom: 0.5rem;
-
-            @include breakpoint-xs-down {
-              font-size: 12px;
-              margin-bottom: 0.3rem;
-            }
-          }
-
-          .persona-description {
-            font-family: $instrumentRegular;
-            font-size: 14px;
-            color: $gray;
-            padding-bottom: 10px;
-
-            @include breakpoint-xs-down {
-              font-size: 12px;
-            }
-          }
-        }
-
-        .persona-footer {
-          padding: 12px 15px;
-          border-top: 1px solid $grayVeryLight;
-          display: flex;
-          gap: 15px;
-
-          @include breakpoint-sm-down {
-            padding: 10px 12px;
-            gap: 12px;
-          }
-          @include breakpoint-xs-down {
-            padding: 8px 10px;
-            gap: 10px;
-          }
-
-          a {
-            color: $grayMedium;
-            text-decoration: none;
-            transition: color 0.2s;
-
-            &:hover {
-              color: $primaryTeal;
-            }
-
-            i {
-              font-size: 16px;
-
-              @include breakpoint-xs-down {
-                font-size: 14px;
-              }
-            }
-          }
-        }
+        font-size: 22px;
       }
     }
   }

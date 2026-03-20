@@ -19,13 +19,13 @@ title: Alumni
     <!-- GRADUATE ALUMNI -->
     <div class="alumni-section mb-5">
       <h2 class="section-heading">Graduate Alumni</h2>
-      {% include alumni_grid.html alumni=alumni_grads is_grad="True" %}
+      {% include people_grid.html people=alumni_grads is_alumni="True" is_grad="True" %}
     </div>
 
     <!-- UNDERGRADUATE ALUMNI -->
     <div class="alumni-section mb-5">
       <h2 class="section-heading">Undergraduate Alumni</h2>
-      {% include alumni_grid.html alumni=alumni_undergrads is_grad="False" %}
+      {% include people_grid.html people=alumni_undergrads is_alumni="True" is_grad="False" %}
     </div>
 
   </div>

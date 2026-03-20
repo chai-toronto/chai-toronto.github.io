@@ -1,11 +1,12 @@
-{% capture people_grid %}
-{% if include.people.size > 0 %}
-<div class="people-grid">
+{% capture grid_output %}
+{% assign members = include.people | default: include.alumni %}
+{% if members.size > 0 %}
+<div class="people-grid {% if include.is_alumni == 'True' %}alumni-grid{% endif %}">
   <div class="cards-wrapper">
-    {% for member in include.people %}
+    {% for member in members %}
     <div class="persona-card">
       <div class="persona-card-inner">
-        {% if member.search %}
+        {% if include.is_alumni != 'True' and member.search %}
         {% assign search_val = member.search | downcase %}
         {% if search_val == "industry" %}
         {% assign search_label = "Industry Position" %}
@@ -36,30 +37,58 @@
           </div>
         </div>
         {% endif %}
+
+        {% if include.is_alumni != 'True' or include.is_grad == 'True' %}
         <div class="persona-image">
           {% if member.image %}
-          <img src="{{ member.image }}" alt="{{ member.name }}" loading="lazy" decoding="async" width="300"
-            height="300">
+          <img src="{{ member.image }}" alt="{{ member.name }}" loading="lazy" decoding="async" width="300" height="300">
           {% else %}
           <div class="placeholder-img"></div>
           {% endif %}
         </div>
+        {% endif %}
+
         <div class="persona-info">
           <div class="persona-name">{{ member.name }}</div>
           <div class="persona-degree">
-            {{ member.degree }}
+            {{ member.degree }}{% if include.is_alumni == 'True' %},{% endif %}
+            
+            {% if include.is_alumni == 'True' %}
+              {% if member.startyear != member.endyear %}
+              {{ member.startyear }} – {{ member.endyear }}
+              {% else %}
+              {{ member.startyear }}
+              {% endif %}
+              <br />
+            {% endif %}
+
             {% if member.coadvisor %}
-            (co-advised by {% include author_list.html authors=member.coadvisor %})
+              {% if include.is_alumni != 'True' or include.is_grad == 'True' %}
+              (co-advised by {% include author_list.html authors=member.coadvisor %})
+              {% endif %}
             {% endif %}
           </div>
-          <div class="persona-description">
-            {% if member.topic %}
-            {{ member.topic }}
+          
+          {% if include.is_alumni == 'True' %}
+            {% if include.is_grad == 'True' %}
+            <div class="persona-description" style="padding: 0 0 10px 0">
+              <b>Thesis Title:</b> {{ member.thesis }}
+            </div>
+            <div class="persona-description">
+              <b>Last Known Position:</b> {{ member.now_at }}
+            </div>
             {% endif %}
-          </div>
+          {% else %}
+            <div class="persona-description">
+              {% if member.topic %}
+              {{ member.topic }}
+              {% endif %}
+            </div>
+          {% endif %}
         </div>
+
         <div class="persona-footer">
-          {% include profile_badges.html member=member%}
+          {% include profile_badges.html member=member %}
         </div>
       </div>
     </div>
@@ -68,4 +97,4 @@
 </div>
 {% endif %}
 {% endcapture %}
-{{ people_grid }}
+{{ grid_output }}
