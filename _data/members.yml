@@ -148,16 +148,6 @@
   topic: Machine learning for depression screening
   active: true
 
-- id: samanvay_vajpayee
-  name: Samanvay Vajpayee
-  degree: MScAC
-  image: /images/members/samanvay_vajpayee.jpg
-  linkedin: samvaj
-  startyear: 2025
-  topic: Medical LLM applications
-  active: true
-  search: PhD Position
-
 # Current Undergrads
 - id: irmak_aytekin
   name: Irmak Aytekin
@@ -208,14 +198,6 @@
   image: /images/members/aina_merchant.jpg
   linkedin: aina-fatema-merchant-a12295221
   startyear: 2026
-  active: true
-
-- id: tanaya_sharma
-  name: Tanaya Sharma
-  degree: BS
-  image: /images/members/tanaya_sharma.png
-  linkedin: tanayasharma
-  startyear: 2025
   active: true
 
 - id: harpuneet_singh
@@ -292,6 +274,17 @@
   now_at: Postdoc, Biomedical Informatics, Columbia University
 
 # Masters Alumni
+- id: samanvay_vajpayee
+  name: Samanvay Vajpayee
+  degree: MScAC
+  image: /images/members/samanvay_vajpayee.jpg
+  linkedin: samvaj
+  startyear: 2025
+  endyear: 2025
+  active: false
+  thesis: "LLMs for Cardiology Aftercare"
+  now_at: Deciding between grad schools
+
 - id: chengyue_zhang
   name: ChengYue Zhang
   degree: MScAC
@@ -333,6 +326,15 @@
   degree: BS
   image: /images/members/matthew_parvaneh.jpeg
   linkedin: matthewparvaneh
+  startyear: 2025
+  endyear: 2025
+  active: false
+
+- id: tanaya_sharma
+  name: Tanaya Sharma
+  degree: BS
+  image: /images/members/tanaya_sharma.png
+  linkedin: tanayasharma
   startyear: 2025
   endyear: 2025
   active: false
