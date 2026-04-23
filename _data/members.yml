@@ -2,7 +2,7 @@
 - id: mariakakis
   name: Alex Mariakakis
   degree: prof
-  image: /images/members/alex_mariakakis.jpeg
+  image: /images/members/alex_mariakakis.jpg
   website: https://mariakakis.github.io
   gscholar: YeGQtewAAAAJ
   linkedin: alex-mariakakis
@@ -12,7 +12,7 @@
 - id: salaar_liaqat
   name: Salaar Liaqat
   degree: PhD
-  image: /images/members/salaar_liaqat.jpeg
+  image: /images/members/salaar_liaqat.jpg
   website: https://www.cs.toronto.edu/~sliaqat/
   gscholar: 8e4FcXIAAAAJ
   linkedin: salaar-liaqat
@@ -24,7 +24,7 @@
 - id: sejal_bhalla
   name: Sejal Bhalla
   degree: PhD
-  image: /images/members/sejal_bhalla.jpeg
+  image: /images/members/sejal_bhalla.jpg
   website: https://www.sejalbhalla.com/
   gscholar: SwDlgvoAAAAJ
   linkedin: sejal-bhalla
@@ -38,7 +38,7 @@
 - id: ken_christofferson
   name: Ken Christofferson
   degree: PhD
-  image: /images/members/ken_christofferson.jpeg
+  image: /images/members/ken_christofferson.jpg
   website: https://ken-chris.github.io/
   gscholar: 0o9DeCAAAAAJ
   linkedin: kenneth-christofferson
@@ -51,7 +51,7 @@
 - id: dhruv_verma
   name: Dhruv Verma
   degree: PhD
-  image: /images/members/dhruv_verma.jpeg
+  image: /images/members/dhruv_verma.jpg
   website: https://dhruv-verma.com/
   gscholar: KJgi6GMAAAAJ
   linkedin: ~dhruvverma
@@ -64,7 +64,7 @@
 - id: ian_ruffolo
   name: Ian Ruffolo
   degree: PhD
-  image: /images/members/ian_ruffolo.jpeg
+  image: /images/members/ian_ruffolo.jpg
   website: https://ian.ruffolo.me
   linkedin: ian-ruffolo-7991471aa
   startyear: 2021
@@ -111,7 +111,7 @@
 - id: katherine_jelich
   name: Katherine Jelich
   degree: MSc
-  image: /images/members/katherine_jelich.jpeg
+  image: /images/members/katherine_jelich.jpg
   linkedin: katherinejelich
   twitter: KatherineJelich
   startyear: 2025
@@ -142,7 +142,7 @@
 - id: ben_hartwick
   name: Ben Hartwick
   degree: MScAC
-  image: /images/members/ben_hartwick.png
+  image: /images/members/ben_hartwick.jpg
   linkedin: benhartwick
   startyear: 2026
   topic: Machine learning for depression screening
@@ -170,7 +170,7 @@
 - id: minh_le
   name: Minh Le
   degree: BS
-  image: /images/members/minh_le.png
+  image: /images/members/minh_le.jpg
   linkedin: nm-le
   startyear: 2023
   active: true
@@ -204,7 +204,7 @@
 - id: maryam_taj
   name: Maryam Taj
   degree: BS
-  image: /images/members/maryam_taj.jpeg
+  image: /images/members/maryam_taj.jpg
   linkedin: maryamtaj
   startyear: 2025
   active: true
@@ -212,7 +212,7 @@
 - id: tianmen_wang
   name: Tianmen (Tim) Wang
   degree: BS
-  image: /images/members/tianmen_wang.png
+  image: /images/members/tianmen_wang.jpg
   linkedin: tim-tianmen-wang-8864a9197
   startyear: 2025
   active: true
@@ -229,7 +229,7 @@
 - id: richard_yin
   name: Richard Yin
   degree: BS
-  image: /images/members/richard_yin.png
+  image: /images/members/richard_yin.jpg
   linkedin: yin-richard
   startyear: 2025
   active: true
@@ -240,7 +240,7 @@
 - id: brenna_li
   name: Brenna Li
   degree: PhD
-  image: /images/members/brenna_li.jpeg
+  image: /images/members/brenna_li.jpg
   website: https://brennal.github.io/
   gscholar: wBRnwCoAAAAJ
   linkedin: brenna-li
@@ -255,7 +255,7 @@
 - id: blue_lin
   name: Blue Lin
   degree: PhD
-  image: /images/members/blue_lin.jpeg
+  image: /images/members/blue_lin.jpg
   website: https://www.bluelin.me/
   gscholar: rgcuaxcAAAAJ
   linkedin: blue-georgianna-lin
@@ -292,7 +292,7 @@
 - id: filip_miscevic
   name: Filip Miscevic
   degree: MScAC
-  image: /images/members/filip_miscevic.jpeg
+  image: /images/members/filip_miscevic.jpg
   gscholar: g-ONQy8AAAAJ
   linkedin: filip-miscevic-1874498b
   twitter: fil_mischievous
@@ -308,7 +308,7 @@
 - id: samraj_aneja
   name: Samraj Aneja
   degree: BS
-  image: /images/members/samraj_aneja.jpeg
+  image: /images/members/samraj_aneja.jpg
   linkedin: samraj-aneja-208bb6223
   startyear: 2025
   endyear: 2025
@@ -317,7 +317,7 @@
 - id: irmak_aytekin
   name: Irmak Aytekin
   degree: BS
-  image: /images/members/irmak_aytekin.jpeg
+  image: /images/members/irmak_aytekin.jpg
   linkedin: irmak-aytekin
   startyear: 2025
   endyear: 2025
@@ -335,7 +335,7 @@
 - id: matthew_parvaneh
   name: Matthew Parvaneh
   degree: BS
-  image: /images/members/matthew_parvaneh.jpeg
+  image: /images/members/matthew_parvaneh.jpg
   linkedin: matthewparvaneh
   startyear: 2025
   endyear: 2025
@@ -344,7 +344,7 @@
 - id: tanaya_sharma
   name: Tanaya Sharma
   degree: BS
-  image: /images/members/tanaya_sharma.png
+  image: /images/members/tanaya_sharma.jpg
   linkedin: tanayasharma
   startyear: 2025
   endyear: 2025
@@ -353,7 +353,7 @@
 - id: yibin_wang
   name: Yibin Wang
   degree: BS
-  image: /images/members/yibin_wang.jpeg
+  image: /images/members/yibin_wang.jpg
   linkedin: yibin-wang-516a46336
   startyear: 2025
   endyear: 2025
@@ -380,7 +380,7 @@
 - id: tien_han
   name: Tien Han
   degree: BS
-  image: /images/members/tien_han.jpeg
+  image: /images/members/tien_han.jpg
   linkedin: hantien
   startyear: 2024
   endyear: 2024
@@ -397,7 +397,7 @@
 - id: nina_huang
   name: Nina Huang
   degree: BS
-  image: /images/members/nina_huang.jpeg
+  image: /images/members/nina_huang.jpg
   linkedin: nina-huangg
   startyear: 2024
   endyear: 2025
@@ -415,7 +415,7 @@
 - id: katherine_jelich_ugrad
   name: Katherine Jelich
   degree: BS
-  image: /images/members/katherine_jelich.jpeg
+  image: /images/members/katherine_jelich.jpg
   linkedin: katherinejelich
   twitter: KatherineJelich
   startyear: 2024
@@ -452,7 +452,7 @@
 - id: shivesh_prakash
   name: Shivesh Prakash
   degree: BS
-  image: /images/members/shivesh_prakash.jpeg
+  image: /images/members/shivesh_prakash.jpg
   website: https://shivesh777.github.io/
   gscholar: YJeSJwsAAAAJ
   linkedin: shivesh777
@@ -464,7 +464,7 @@
 - id: andrew_qiu
   name: Andrew Qiu
   degree: BS
-  image: /images/members/andrew_qiu.jpeg
+  image: /images/members/andrew_qiu.jpg
   linkedin: andrew-qiu
   startyear: 2024
   endyear: 2025
@@ -473,7 +473,7 @@
 - id: jeb_thomas
   name: Jeb Thomas
   degree: BS
-  image: /images/members/jeb_thomas.jpeg
+  image: /images/members/jeb_thomas.jpg
   linkedin: jeb-thomas-877966293
   startyear: 2024
   endyear: 2025
@@ -482,7 +482,7 @@
 - id: rilong_zhang
   name: Rilong (Owen) Zhang
   degree: BS
-  image: /images/members/rilong_zhang.png
+  image: /images/members/rilong_zhang.jpg
   linkedin: rilong-zhang-0a5493209
   startyear: 2024
   endyear: 2025
@@ -500,7 +500,7 @@
 - id: yiteng_zhang
   name: Yiteng Zhang
   degree: BS
-  image: /images/members/yiteng_zhang.png
+  image: /images/members/yiteng_zhang.jpg
   website: https://github.com/3th4novo
   startyear: 2024
   endyear: 2024
@@ -527,7 +527,7 @@
 - id: ofek_gross
   name: Ofek Gross
   degree: BS
-  image: /images/members/ofek_gross.png
+  image: /images/members/ofek_gross.jpg
   gscholar: _7-jnFN9TaYC
   linkedin: ofek-gross
   startyear: 2023
@@ -546,7 +546,7 @@
 - id: kaartik_issar
   name: Kaartik Issar
   degree: BS
-  image: /images/members/kaartik_issar.png
+  image: /images/members/kaartik_issar.jpg
   linkedin: kaartik-issar-2492201a4
   startyear: 2023
   endyear: 2023
@@ -564,7 +564,7 @@
 - id: shawn_kong
   name: Shawn Kong
   degree: BS
-  image: /images/members/deshang_kong.png
+  image: /images/members/deshang_kong.jpg
   linkedin: shawn-kong-23b8b41a2
   startyear: 2023
   endyear: 2024
@@ -573,7 +573,7 @@
 - id: pierre_lessard
   name: Pierre-William Lessard
   degree: BS
-  image: /images/members/pierre_lessard.jpeg
+  image: /images/members/pierre_lessard.jpg
   linkedin: pierre-william-lessard
   startyear: 2023
   endyear: 2024
@@ -611,7 +611,7 @@
 - id: tanya_skoropad
   name: Tanya Skoropad
   degree: BS
-  image: /images/members/tanya_skoropad.jpeg
+  image: /images/members/tanya_skoropad.jpg
   linkedin: tetiana-skoropad-446725207
   startyear: 2022
   endyear: 2022
@@ -637,7 +637,7 @@
 - id: sid_gupta
   name: Sidharth Gupta
   degree: BS
-  image: /images/members/sid_gupta.jpeg
+  image: /images/members/sid_gupta.jpg
   linkedin: sidgupta-99
   startyear: 2021
   endyear: 2021
@@ -646,7 +646,7 @@
 - id: sixuan_wu
   name: Sixuan Wu
   degree: BS
-  image: /images/members/sixuan_wu.jpeg
+  image: /images/members/sixuan_wu.jpg
   website: https://sites.google.com/view/sixuan-wu/
   gscholar: 3DEXZOQAAAAJ
   linkedin: sixuan-wu-a6b794190
