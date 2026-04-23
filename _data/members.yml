@@ -149,22 +149,6 @@
   active: true
 
 # Current Undergrads
-- id: irmak_aytekin
-  name: Irmak Aytekin
-  degree: BS
-  image: /images/members/irmak_aytekin.jpeg
-  linkedin: irmak-aytekin
-  startyear: 2025
-  active: true
-
-- id: joe_fang
-  name: Joe Fang
-  degree: BS
-  image: /images/members/joe_fang.jpg
-  linkedin: multiset
-  startyear: 2025
-  active: true
-
 - id: larry_kieu
   name: Larry Kieu
   degree: BS
@@ -173,6 +157,15 @@
   startyear: 2025
   active: true
   search: Grad School Position
+
+- id: phoebe_kuang
+  name: Phoebe Kuang
+  degree: BS
+  image: /images/members/phoebe_kuang.jpg
+  website: https://kyhphoebe.github.io/
+  linkedin: phoebe-kuang
+  startyear: 2026
+  active: true
 
 - id: minh_le
   name: Minh Le
@@ -225,19 +218,19 @@
   active: true
   search: Grad School Position
 
+- id: camilla_xue
+  name: Camilla xue
+  degree: BS
+  image: /images/members/camilla_xue.jpg
+  website: https://caconoutt.github.io/
+  startyear: 2026
+  active: true
+
 - id: richard_yin
   name: Richard Yin
   degree: BS
   image: /images/members/richard_yin.png
   linkedin: yin-richard
-  startyear: 2025
-  active: true
-
-- id: yibin_wang
-  name: Yibin Wang
-  degree: BS
-  image: /images/members/yibin_wang.jpeg
-  linkedin: yibin-wang-516a46336
   startyear: 2025
   active: true
 
@@ -321,6 +314,24 @@
   endyear: 2025
   active: false
 
+- id: irmak_aytekin
+  name: Irmak Aytekin
+  degree: BS
+  image: /images/members/irmak_aytekin.jpeg
+  linkedin: irmak-aytekin
+  startyear: 2025
+  endyear: 2025
+  active: false
+
+- id: joe_fang
+  name: Joe Fang
+  degree: BS
+  image: /images/members/joe_fang.jpg
+  linkedin: multiset
+  startyear: 2025
+  endyear: 2025
+  active: false
+  
 - id: matthew_parvaneh
   name: Matthew Parvaneh
   degree: BS
@@ -335,6 +346,15 @@
   degree: BS
   image: /images/members/tanaya_sharma.png
   linkedin: tanayasharma
+  startyear: 2025
+  endyear: 2025
+  active: false
+
+- id: yibin_wang
+  name: Yibin Wang
+  degree: BS
+  image: /images/members/yibin_wang.jpeg
+  linkedin: yibin-wang-516a46336
   startyear: 2025
   endyear: 2025
   active: false
