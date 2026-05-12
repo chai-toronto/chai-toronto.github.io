@@ -175,15 +175,6 @@
   startyear: 2023
   active: true
   search: Grad School Position
-  
-- id: zulaa_lkhagvajav
-  name: Zulaa Lkhagvajav
-  degree: BS
-  image: /images/members/zulaa_lkhagvajav.jpg
-  linkedin: lk-zul
-  startyear: 2025
-  active: true
-  search: Grad School Position
 
 - id: aina_merchant
   name: Aina Fatema Merchant
@@ -330,6 +321,15 @@
   linkedin: multiset
   startyear: 2025
   endyear: 2025
+  active: false
+
+- id: zulaa_lkhagvajav
+  name: Zulaa Lkhagvajav
+  degree: BS
+  image: /images/members/zulaa_lkhagvajav.jpg
+  linkedin: lk-zul
+  startyear: 2025
+  endyear: 2026
   active: false
   
 - id: matthew_parvaneh
