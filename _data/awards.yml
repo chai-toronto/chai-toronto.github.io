@@ -4,6 +4,16 @@
       winners:
       - name: helen_li
         year: Honorable Mention, 2024 
+- org: GI
+  awards:
+    - award: Bill Buxton Outstanding Dissertation Award 
+      winners:
+      - name: blue_lin
+        year: 2026
+    - award: CHCCS HCI Early Career Researcher Award
+      winners:
+      - name: mariakakis
+        year: 2026
 - org: Mitacs
   awards:
   - award: Globalink Research Award
