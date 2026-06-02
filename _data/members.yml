@@ -9,18 +9,6 @@
   twitter: alex_mariakakis
 
 # Current PhDs
-- id: salaar_liaqat
-  name: Salaar Liaqat
-  degree: PhD
-  image: /images/members/salaar_liaqat.jpg
-  website: https://www.cs.toronto.edu/~sliaqat/
-  gscholar: 8e4FcXIAAAAJ
-  linkedin: salaar-liaqat
-  startyear: 2018
-  coadvisor: delara
-  topic: Remote patient monitoring for respiratory diseases
-  active: true
-
 - id: sejal_bhalla
   name: Sejal Bhalla
   degree: PhD
@@ -242,6 +230,20 @@
   active: false
   thesis: "Enhancing Patient-Centered Care: Examining the Design and Evaluation of Conversational Agents for Clinical Pre-Consultation"
   now_at: Postdoc, Medicine, Stanford University
+
+- id: salaar_liaqat
+  name: Salaar Liaqat
+  degree: PhD
+  image: /images/members/salaar_liaqat.jpg
+  website: https://www.cs.toronto.edu/~sliaqat/
+  gscholar: 8e4FcXIAAAAJ
+  linkedin: salaar-liaqat
+  startyear: 2018
+  endyear: 2026
+  coadvisor: delara
+  active: false
+  thesis: "Challenges and Opportunities in Wearable-Based Remote Patient Monitoring: Case Studies on Respiratory Diseases"
+  now_at: Co-Founder and CTO, Tabiat
 
 - id: blue_lin
   name: Blue Lin
