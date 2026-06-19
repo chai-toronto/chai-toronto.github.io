@@ -1,25 +1,25 @@
 - org: CRA
   awards:
-    - award: Outstanding Undergraduate Researcher Award
-      winners:
-      - name: helen_li
-        year: Honorable Mention, 2024 
+  - award: Outstanding Undergraduate Researcher Award
+    winners:
+    - name: helen_li
+      year: Honorable Mention, 2024
+- org: CS-CAN
+  awards:
+  - award: Canadian Computer Science Distinguished Dissertation Award
+    winners:
+    - name: blue_lin
+      year: 2026
 - org: GI
   awards:
-    - award: Bill Buxton Outstanding Dissertation Award 
-      winners:
-      - name: blue_lin
-        year: 2026
-    - award: CHCCS HCI Early Career Researcher Award
-      winners:
-      - name: mariakakis
-        year: 2026
-- org: Mitacs
-  awards:
-  - award: Globalink Research Award
+  - award: Bill Buxton Outstanding Dissertation Award 
     winners:
-    - name: andrii_lenyshyn
-      year: 2022
+    - name: blue_lin
+      year: 2026
+  - award: CHCCS HCI Early Career Researcher Award
+    winners:
+    - name: mariakakis
+      year: 2026
 - org: Laidlaw
   awards: 
   - award: Scholars Programme
@@ -34,7 +34,7 @@
       year: 2025
 - org: Ubicomp
   awards:
-    - award: Doctoral Consortium Contribution Award 
-      winners:
-      - name: sejal_bhalla
-        year: 2025
+  - award: Doctoral Consortium Contribution Award 
+    winners:
+    - name: sejal_bhalla
+      year: 2025
