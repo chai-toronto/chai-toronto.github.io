@@ -205,14 +205,6 @@
   startyear: 2026
   active: true
 
-- id: richard_yin
-  name: Richard Yin
-  degree: BS
-  image: /images/members/richard_yin.jpg
-  linkedin: yin-richard
-  startyear: 2025
-  active: true
-
 # Staff
 
 # PhD Alumni
@@ -368,6 +360,15 @@
   linkedin: yulong-wu-647aa62a2
   startyear: 2025
   endyear: 2025
+  active: false
+
+- id: richard_yin
+  name: Richard Yin
+  degree: BS
+  image: /images/members/richard_yin.jpg
+  linkedin: yin-richard
+  startyear: 2025
+  endyear: 2026
   active: false
 
 - id: benson_chou
