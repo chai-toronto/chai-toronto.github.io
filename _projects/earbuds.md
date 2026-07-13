@@ -4,6 +4,7 @@ leads:
 - ken_christofferson
 - thomas_kleinknecht
 - vaibhav_ganatra
+- andrii_lenyshyn
 thumbnail: /images/projects/earbuds.jpeg
 description: To assess heart health using audio transduced in the ear canal
 theme: 
