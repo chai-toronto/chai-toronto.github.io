@@ -1,0 +1,80 @@
+- question: "What does a typical day look like in the CHAI Lab?"
+  answer: "On a weekly basis, each student has a 1-on-1 meeting with 
+  Prof. Mariakakis, and we have a lab meeting as a group. Most lab members 
+  also have project-specific meetings with collaborators at various cadences. 
+  Beyond these scheduled events, Prof. Mariakakis makes intentional efforts to 
+  be reachable over various communication channels throughout the week (e.g., email, 
+  Slack, impromptu meetings)."
+
+- question: "Where does the CHAI Lab publish its work?"
+  answer: 'Our primary publication targets are 
+  <a href="https://dl.acm.org/doi/proceedings/10.1145/3706598" 
+  target="_blank">ACM CHI</a> and 
+  <a href="https://dl.acm.org/journal/imwut" 
+  target="_blank">ACM IMWUT</a>, the premier international venues for human‐computer 
+  interaction and ubiquitous computing. We also publish our work to journals for digital health (e.g., 
+  <a href="https://www.nature.com/npjdigitalmed/" 
+  target="_blank">npj Digital Medicine</a>, 
+  <a href="https://mhealth.jmir.org/" 
+  target="_blank">JMIR mHealth & uHealth</a>) 
+  and specialized clinical audiences.'
+
+- question: "What collaboration opportunities are available?"
+  answer: 'Our lab is functionally situated within 
+  <a href="https://dgp.toronto.edu" target="_blank">DGP</a> — 
+  the University of Toronto''s world-renowned center for all things related 
+  to human‐computer interaction and related topics. Since most of our projects 
+  require clinical expertise, we also often collaborate with experts based in one 
+  of the 15 academic health organizations within the Toronto Academic Health Science 
+  Network (<a href="https://tahsn.ca/" target="_blank">TAHSN</a>). 
+  These include but are not limited to the University Health Network 
+  (<a href="https://www.uhn.ca/Research/pages/default.aspx" target="_blank">UHN</a>), 
+  Sunnybrook Health Sciences Centre 
+  (<a href="https://research.sunnybrook.ca/about-sri/" target="_blank">Sunnybrook</a>), 
+  and the Hospital for Sick Children 
+  (<a href="https://www.sickkids.ca/en/research/about-research-institute/" target="_blank">SickKids</a>).'
+
+- question: "How do I apply to work with the CHAI Lab?"
+  answer: 'First and foremost, send an email to Prof. Mariakakis 
+  (mariakakis at cs dot toronto dot edu) to introduce yourself and learn about 
+  potential openings. Although he will do his best to respond to everyone, please 
+  bear in mind that he is more likely to promising candidates between June and October.
+  <br /><br />Potential students must formally apply to the university in order to be 
+  considered for positions. Applications are typically due in late November or early 
+  December. Please refer to this 
+  <a href="https://web.cs.toronto.edu/graduate/prospective" target="_blank">page</a> 
+  for more information. When you apply, be sure to list Prof. Mariakakis as a potential 
+  supervisor of interest.'
+
+- question: "What would make my application stand out?"
+  answer: "Technical proficiency, critical thinking, and previous 
+  research experience are all important components that should definitely 
+  be highlighted in your application, but Prof. Mariakakis particularly values 
+  academic writing. Research only gets appreciated when it is shared in a format 
+  that is easily understood by others, so demonstrating clear and effective writing 
+  (or a willingness to improve on such skills) would 
+  be beneficial.
+  <br /><br />
+  While Prof. Mariakakis is willing to work on various topics related to digital health, 
+  it would be advantagous to express any interests you have in the following high-priority 
+  areas: 
+  <ul>
+  <li><b>Women's health:</b> machine learning and interfaces for people going through menstruation, menopause, pregnancy</li>
+  <li><b>Remote clinical monitoring:</b> multimodal modeling and dashboards for data from wearables</li>
+  <li><b>Earbud sensing:</b> hardware building, acoustic machine learning</li>
+  <li><b>Dyadic interfaces:</b> conversational chatbots and interfaces design to support collaborative care or patient-caregiver interactions</li>
+  </ul>"
+
+- question: "What should I know about the Univerisity of Toronto's admissions process?"
+  answer: "Our department strongly suggests that prospective students without a Master's 
+  degree apply to different programs depending on their citizenship status:
+  <ul>
+  <li><b>International Students:</b> Because of how the University of Toronto structures 
+  student tuition, we are essentially unable to accept students from outside of Canada 
+  into our Master's program. International students are strongly encouraged to consider 
+  applying to the PhD program.</li>
+  <li><b>Domestic Students:</b> Students within Canada are strongly encouraged to apply 
+  to the Master''s program even if they are interested in doing a PhD. If everything goes 
+  well and you are interested in continuing with the PhD, the transition into the PhD 
+  program is fairly seamless.</li>
+  </ul>"
