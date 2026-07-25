@@ -137,6 +137,14 @@
   active: true
 
 # Current Undergrads
+- id: irmak_aytekin
+  name: Irmak Aytekin
+  degree: BS
+  image: /images/members/irmak_aytekin.jpg
+  linkedin: irmak-aytekin
+  startyear: 2025
+  active: true
+
 - id: larry_kieu
   name: Larry Kieu
   degree: BS
@@ -154,15 +162,6 @@
   linkedin: phoebe-kuang
   startyear: 2026
   active: true
-
-- id: minh_le
-  name: Minh Le
-  degree: BS
-  image: /images/members/minh_le.jpg
-  linkedin: nm-le
-  startyear: 2023
-  active: true
-  search: Grad School Position
 
 - id: aina_merchant
   name: Aina Fatema Merchant
@@ -196,6 +195,14 @@
   startyear: 2025
   active: true
   search: Grad School Position
+
+- id: yibin_wang
+  name: Yibin Wang
+  degree: BS
+  image: /images/members/yibin_wang.jpg
+  linkedin: yibin-wang-516a46336
+  startyear: 2025
+  active: true
 
 - id: camilla_xue
   name: Camilla Xue
@@ -299,15 +306,6 @@
   endyear: 2025
   active: false
 
-- id: irmak_aytekin
-  name: Irmak Aytekin
-  degree: BS
-  image: /images/members/irmak_aytekin.jpg
-  linkedin: irmak-aytekin
-  startyear: 2025
-  endyear: 2025
-  active: false
-
 - id: joe_fang
   name: Joe Fang
   degree: BS
@@ -340,15 +338,6 @@
   degree: BS
   image: /images/members/tanaya_sharma.jpg
   linkedin: tanayasharma
-  startyear: 2025
-  endyear: 2025
-  active: false
-
-- id: yibin_wang
-  name: Yibin Wang
-  degree: BS
-  image: /images/members/yibin_wang.jpg
-  linkedin: yibin-wang-516a46336
   startyear: 2025
   endyear: 2025
   active: false
@@ -571,6 +560,15 @@
   linkedin: shawn-kong-23b8b41a2
   startyear: 2023
   endyear: 2024
+  active: false
+
+- id: minh_le
+  name: Minh Le
+  degree: BS
+  image: /images/members/minh_le.jpg
+  linkedin: nm-le
+  startyear: 2023
+  endyear: 2026
   active: false
 
 - id: pierre_lessard
