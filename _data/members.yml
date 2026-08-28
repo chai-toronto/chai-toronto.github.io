@@ -163,22 +163,6 @@
   startyear: 2026
   active: true
 
-- id: aina_merchant
-  name: Aina Fatema Merchant
-  degree: BS
-  image: /images/members/aina_merchant.jpg
-  linkedin: aina-fatema-merchant-a12295221
-  startyear: 2026
-  active: true
-
-- id: harpuneet_singh
-  name: Harpuneet Singh
-  degree: BS
-  image: /images/members/harpuneet_singh.jpg
-  linkedin: harpuneet2005
-  startyear: 2024
-  active: true
-
 - id: maryam_taj
   name: Maryam Taj
   degree: BS
@@ -323,6 +307,15 @@
   startyear: 2025
   endyear: 2026
   active: false
+
+- id: aina_merchant
+  name: Aina Fatema Merchant
+  degree: BS
+  image: /images/members/aina_merchant.jpg
+  linkedin: aina-fatema-merchant-a12295221
+  startyear: 2026
+  endyear: 2026
+  active: false
   
 - id: matthew_parvaneh
   name: Matthew Parvaneh
@@ -460,6 +453,15 @@
   linkedin: andrew-qiu
   startyear: 2024
   endyear: 2025
+  active: false
+
+- id: harpuneet_singh
+  name: Harpuneet Singh
+  degree: BS
+  image: /images/members/harpuneet_singh.jpg
+  linkedin: harpuneet2005
+  startyear: 2024
+  endyear: 2026
   active: false
 
 - id: jeb_thomas
