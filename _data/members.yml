@@ -23,19 +23,6 @@
   active: true
   search: Industry or Postdoc Position
 
-- id: ken_christofferson
-  name: Ken Christofferson
-  degree: PhD
-  image: /images/members/ken_christofferson.jpg
-  website: https://ken-chris.github.io/
-  gscholar: 0o9DeCAAAAAJ
-  linkedin: kenneth-christofferson
-  startyear: 2021
-  coadvisor: cafazzo
-  topic: Applied machine learning with earbuds
-  active: true
-  search: industry
-
 - id: dhruv_verma
   name: Dhruv Verma
   degree: PhD
@@ -199,6 +186,20 @@
 # Staff
 
 # PhD Alumni
+- id: ken_christofferson
+  name: Ken Christofferson
+  degree: PhD
+  image: /images/members/ken_christofferson.jpg
+  website: https://ken-chris.github.io/
+  gscholar: 0o9DeCAAAAAJ
+  linkedin: kenneth-christofferson
+  startyear: 2021
+  endyear: 2026
+  coadvisor: cafazzo
+  thesis: "Towards Cardiovascular Assessment from the Occluded Ear Canal using Active Noise-Cancelling Earbuds"
+  active: false
+  now_at: Algorithm Scientist at Oura
+
 - id: salaar_liaqat
   name: Salaar Liaqat
   degree: PhD
@@ -211,7 +212,7 @@
   coadvisor: delara
   active: false
   thesis: "Challenges and Opportunities in Wearable-Based Remote Patient Monitoring: Case Studies on Respiratory Diseases"
-  now_at: Co-Founder and CTO, Tabiat
+  now_at: Co-Founder and CTO of Tabiat
   
 - id: brenna_li
   name: Brenna Li
@@ -226,7 +227,7 @@
   coadvisor: khai
   active: false
   thesis: "Enhancing Patient-Centered Care: Examining the Design and Evaluation of Conversational Agents for Clinical Pre-Consultation"
-  now_at: Postdoc, Medicine, Stanford University
+  now_at: Postdoc in Stanford University's School of Medicine
 
 - id: blue_lin
   name: Blue Lin
@@ -240,7 +241,7 @@
   coadvisor: khai
   active: false
   thesis: "Multimodal Tracking with Ubiquitous Devices to Foster Holistic Menstrual Health Sensemaking"
-  now_at: Postdoc, Biomedical Informatics, Columbia University
+  now_at: Postdoc in Columbia University's Department of Biomedical Informatics
 
 # Masters Alumni
 - id: samanvay_vajpayee
@@ -252,7 +253,7 @@
   endyear: 2025
   active: false
   thesis: "LLMs for Cardiology Aftercare"
-  now_at: Deciding between grad schools
+  now_at: PhD Student in University of Toronto's Department of Computer Science
 
 - id: chengyue_zhang
   name: ChengYue Zhang
@@ -263,7 +264,7 @@
   endyear: 2025
   active: false
   thesis: "Structuring Biomechanical Waveforms"
-  now_at: Data Scientist, Wuxi Apptec
+  now_at: Data Scientist at Wuxi Apptec
 
 - id: filip_miscevic
   name: Filip Miscevic
@@ -277,7 +278,7 @@
   coadvisor: Gerard O'Leary
   active: false
   thesis: "Mobile Seizure Detection: Towards Data-Driven, Personalized Seizure Treatment"
-  now_at: PhD Student, Biomedical Engineering, University of Toronto
+  now_at: PhD Student in University of Toronto's Department of Biomedical Engineering
 
 # Undergrad Alumni
 # Sort by start year, then last name
