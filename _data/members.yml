@@ -47,18 +47,6 @@
   topic: Bedside physiological monitoring
   active: true
 
-- id: andrii_lenyshyn
-  name: Andrii Lenyshyn
-  degree: PhD
-  image: /images/members/andrii_lenyshyn.jpg
-  website: https://andreeew2k.github.io/
-  gscholar: OWPpHvwAAAAJ
-  linkedin: andrew2k
-  startyear: 2023
-  topic: Health monitoring with virtual reality
-  active: true
-  search: industry
-
 - id: zahra_hassanzadeh
   name: Zahra Hassanzadeh
   degree: PhD
@@ -244,6 +232,19 @@
   now_at: Postdoc in Columbia University's Department of Biomedical Informatics
 
 # Masters Alumni
+- id: andrii_lenyshyn
+  name: Andrii Lenyshyn
+  degree: PhD
+  image: /images/members/andrii_lenyshyn.jpg
+  website: https://andreeew2k.github.io/
+  gscholar: OWPpHvwAAAAJ
+  linkedin: andrew2k
+  startyear: 2023
+  endyear: 2026
+  active: false
+  topic: "HoleyMoley: A Cognitive Assessment for Emotion Recognition in Virtual Reality"
+  now_at: UX Researcher at McAfee
+
 - id: samanvay_vajpayee
   name: Samanvay Vajpayee
   degree: MScAC
