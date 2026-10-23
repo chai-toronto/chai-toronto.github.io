@@ -137,6 +137,14 @@
   startyear: 2026
   active: true
 
+- id: harpuneet_singh
+  name: Harpuneet Singh
+  degree: BS
+  image: /images/members/harpuneet_singh.jpg
+  linkedin: harpuneet2005
+  startyear: 2024
+  active: true
+
 - id: tianmen_wang
   name: Tianmen (Tim) Wang
   degree: BS
@@ -456,15 +464,6 @@
   linkedin: andrew-qiu
   startyear: 2024
   endyear: 2025
-  active: false
-
-- id: harpuneet_singh
-  name: Harpuneet Singh
-  degree: BS
-  image: /images/members/harpuneet_singh.jpg
-  linkedin: harpuneet2005
-  startyear: 2024
-  endyear: 2026
   active: false
 
 - id: jeb_thomas
